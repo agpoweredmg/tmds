@@ -23,14 +23,14 @@
     <p>
     <center>
     <asp:Button ID="createEvent_btn" runat="server" Height="38px" Text="Create Event" 
-        Width="151px" style="margin-left: 0px"  />
+        Width="151px" style="margin-left: 0px" onclick="createEvent_btn_Click"  />
     <p>
     <asp:Button ID="infromationLookup_btn" runat="server" Height="38px" Text="Information Lookup" 
-        Width="150px" />
+        Width="150px" onclick="infromationLookup_btn_Click" />
     </p>
     <p>
     <asp:Button ID="timeManagment_btn" runat="server" Height="38px" Text="Time Managment" 
-        Width="150px" />
+        Width="150px" onclick="timeManagment_btn_Click" />
     </p>
         <p>
             &nbsp;</p>

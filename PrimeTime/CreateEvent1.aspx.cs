@@ -11,4 +11,8 @@ public partial class CreateEvent1 : System.Web.UI.Page
     {
 
     }
+    protected void next_btn_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("CreateEvent2.aspx");
+    }
 }

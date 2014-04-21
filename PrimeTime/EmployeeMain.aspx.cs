@@ -11,4 +11,16 @@ public partial class EmployeeMain : System.Web.UI.Page
     {
 
     }
+    protected void timeManagment_btn_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("TimeManagement.aspx");
+    }
+    protected void infromationLookup_btn_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("InformationLookup.aspx");
+    }
+    protected void createEvent_btn_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("CreateEvent1.aspx");
+    }
 }

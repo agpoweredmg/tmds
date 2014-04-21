@@ -130,7 +130,8 @@
                      />
                 &nbsp;&nbsp;
                 <asp:Button ID="next_btn" runat="server" BorderColor="Black" BorderStyle="Double"
-                    Height="38px" Style="text-align: center" Text="Next>>" Width="69px" />
+                    Height="38px" Style="text-align: center" Text="Next>>" Width="69px" 
+                    onclick="next_btn_Click" />
                 <br />
             </asp:Panel>
             <br />
