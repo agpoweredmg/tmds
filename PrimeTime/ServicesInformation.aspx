@@ -69,15 +69,6 @@
                 Text="Services:(select all that apply)"></asp:Label>
             <br />
             <br />
-            <asp:ListBox ID="ListBox1" runat="server" SelectionMode="Multiple" 
-                Height="81px" Width="143px">
-                <asp:ListItem Value="0">DJ</asp:ListItem>
-                <asp:ListItem Value="1">Wet Bar</asp:ListItem>
-                <asp:ListItem Value="2">Room Setup</asp:ListItem>
-                <asp:ListItem Value="3">Room Take Down</asp:ListItem>
-                <asp:ListItem Value="5">Cake</asp:ListItem>
-                <asp:ListItem Value="6">Services</asp:ListItem>
-            </asp:ListBox>
             <br />
             <br />
             </td>
