@@ -135,23 +135,17 @@
                 <table>
                     <tr>
                         <td class="style3">
-                            <asp:CheckBox ID="roomSetup_chk" runat="server" Text="Room Setup" />
-                        </td>
+                            &nbsp;</td>
                         <td class="style1">
-                            <asp:CheckBox ID="dj_chk" runat="server" 
-                                 Text="Dj" />
-                        </td>
+                            &nbsp;</td>
                         <td>
-                            <asp:CheckBox ID="serving_chk" runat="server" Text="Serving" />
-                        </td>
+                            &nbsp;</td>
                     </tr>
                     <tr>
                         <td class="style3">
-                            <asp:CheckBox ID="roomTakeDown_chk" runat="server" Text="Room Take Down" />
-                        </td>
+                            &nbsp;</td>
                         <td>
-                            <asp:CheckBox ID="cakeCutting_chk" runat="server" Text="Cake Cutting" />
-                        </td>
+                            &nbsp;</td>
                     </tr>
                 </table>
                 
