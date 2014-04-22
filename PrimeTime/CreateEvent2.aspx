@@ -123,31 +123,26 @@
                 <br />
                 <br />
                
+                <b>
+                <asp:ListBox ID="ListBox1" runat="server" DataSourceID="services" 
+                    DataTextField="Service_Name" DataValueField="Service_Name" Width="201px">
+                </asp:ListBox>
+                <asp:SqlDataSource ID="services" runat="server" 
+                    ConnectionString="<%$ ConnectionStrings:group3_6ConnectionString2 %>" 
+                    SelectCommand="SELECT [Service_Name] FROM [Special_Services]">
+                </asp:SqlDataSource>
+                </b>
+               
                 <br />
                 <br />
     </asp:Panel>
 
     <br />
             <asp:Panel ID="Panel3" runat="server" BorderColor="Black" Font-Size="Medium" 
-            GroupingText="Services" Height="117px" style="text-align: justify" 
+            GroupingText="Services" Height="173px" style="text-align: justify; margin-bottom: 4px;" 
             Width="854px">
                 <br />
-                <table>
-                    <tr>
-                        <td class="style3">
-                            &nbsp;</td>
-                        <td class="style1">
-                            &nbsp;</td>
-                        <td>
-                            &nbsp;</td>
-                    </tr>
-                    <tr>
-                        <td class="style3">
-                            &nbsp;</td>
-                        <td>
-                            &nbsp;</td>
-                    </tr>
-                </table>
+                
                 
     </asp:Panel>
     <table>
