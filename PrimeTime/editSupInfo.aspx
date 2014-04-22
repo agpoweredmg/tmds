@@ -52,10 +52,10 @@
                     <th>
                         <asp:DropDownList ID="actionToPerform_ddl" runat="server">
                             <asp:ListItem Value="0">Choose an Action</asp:ListItem>
-                            <asp:ListItem Value="1">Add New Account</asp:ListItem>
-                            <asp:ListItem Value="2">Update Account </asp:ListItem>
-                            <asp:ListItem Value="3">Search Account ID</asp:ListItem>
-                            <asp:ListItem Value="4">Delete Account</asp:ListItem>
+                            <asp:ListItem Value="1">Add New Supplier</asp:ListItem>
+                            <asp:ListItem Value="2">Update Supplier </asp:ListItem>
+                            <asp:ListItem Value="3">Search Supplier ID</asp:ListItem>
+                            <asp:ListItem Value="4">Delete Supplier</asp:ListItem>
                         </asp:DropDownList>
                     </th>
                 </tr>

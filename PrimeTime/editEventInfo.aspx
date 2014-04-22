@@ -42,10 +42,10 @@
                     <th>
                         <asp:DropDownList ID="actionToPerform_ddl" runat="server">
                             <asp:ListItem Value="0">Choose an Action</asp:ListItem>
-                            <asp:ListItem Value="1">Add New Account</asp:ListItem>
-                            <asp:ListItem Value="2">Update Account </asp:ListItem>
-                            <asp:ListItem Value="3">Search Account ID</asp:ListItem>
-                            <asp:ListItem Value="4">Delete Account</asp:ListItem>
+                            <asp:ListItem Value="1">Add New Event</asp:ListItem>
+                            <asp:ListItem Value="2">Update Event</asp:ListItem>
+                            <asp:ListItem Value="3">Search Event ID</asp:ListItem>
+                            <asp:ListItem Value="4">Delete Event</asp:ListItem>
                         </asp:DropDownList>
                     </th>
                 </tr>
@@ -68,6 +68,9 @@
                         <asp:TextBox ID="eventDate_tb" runat="server"></asp:TextBox>
                     </th>
                     <th>
+                        <asp:CheckBoxList ID="CheckBoxList1" runat="server" 
+                            onselectedindexchanged="CheckBoxList1_SelectedIndexChanged" Visible="False">
+                        </asp:CheckBoxList>
                         &nbsp;
                     </th>
                 </tr>
