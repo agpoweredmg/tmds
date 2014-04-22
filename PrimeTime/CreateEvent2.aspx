@@ -114,7 +114,7 @@
                 <br />
                
                 <b>
-                <asp:ListBox ID="ListBox1" runat="server" DataSourceID="services" 
+                <asp:ListBox ID="services_listBox" runat="server" DataSourceID="services" 
                     DataTextField="Service_Name" DataValueField="Service_Name" Width="201px">
                 </asp:ListBox>
                 <asp:SqlDataSource ID="services" runat="server" 
@@ -174,6 +174,14 @@
     <br />
 
    
+
+                <b>
+                <asp:Button ID="clear_btn" runat="server" BorderColor="Black" BorderStyle="Double"
+                    Height="38px" Style="text-align: center" Text="Clear" Width="69px" 
+                    onclick="clear_btn_Click" />
+                </b>
+
+     &nbsp;&nbsp;
 
         <asp:Button ID="submit_btn" runat="server" BorderColor="Black" 
         BorderStyle="Double" Height="38px" style="text-align: center" Text="Submit" 
