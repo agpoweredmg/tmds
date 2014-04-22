@@ -95,7 +95,6 @@
     <asp:Label ID="Label3" runat="server" Text="Total Cost"></asp:Label>
             </td>
         <td class="style5">
-    <asp:TextBox ID="TextBox2" runat="server" Width="140px"></asp:TextBox>
             <br />
             </td>
         <td class="style4">
