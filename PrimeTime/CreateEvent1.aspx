@@ -99,8 +99,9 @@
                         <td class="style2"><b>Street:</b></td>
                         <td><asp:TextBox ID="billingStreet_txt" runat="server" Width="200px"></asp:TextBox></td>
                         <td>Apt./Suite:</td>
-                        <td><asp:TextBox ID="TextBox2"
-                    runat="server" Style="text-align: left" Width="200px"></asp:TextBox></td>
+                        <td><asp:TextBox ID="billlingSuiteApt_txt"
+                    runat="server" Style="text-align: left" Width="200px" 
+                                ></asp:TextBox></td>
                     <td>City:</td>
                     <td><asp:TextBox ID="billingCity_txt" runat="server" Style="text-align: left" 
                             Width="200px"></asp:TextBox></td>
@@ -117,7 +118,8 @@
                 <br />
                 <br />
                 <asp:Button ID="clear_btn" runat="server" BorderColor="Black" BorderStyle="Double"
-                    Height="38px" Style="text-align: center" Text="Clear" Width="69px" />
+                    Height="38px" Style="text-align: center" Text="Clear" Width="69px" 
+                    onclick="clear_btn_Click" />
                 &nbsp;&nbsp;
                 <asp:Button ID="back_btn" runat="server" BorderColor="Black" BorderStyle="Double"
                     Height="38px" Style="text-align: center" Text="&lt;&lt;Back" Width="69px" />

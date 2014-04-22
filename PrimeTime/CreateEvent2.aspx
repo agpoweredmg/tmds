@@ -5,16 +5,6 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
-    <style type="text/css">
-        .style1
-        {
-            width: 122px;
-        }
-        .style3
-        {
-            width: 189px;
-        }
-    </style>
 </head>
 <center>
 <b>
@@ -136,6 +126,7 @@
                 <br />
                 <br />
     </asp:Panel>
+
 
     <br />
             <asp:Panel ID="Panel3" runat="server" BorderColor="Black" Font-Size="Medium" 

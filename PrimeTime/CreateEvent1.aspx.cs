@@ -15,4 +15,25 @@ public partial class CreateEvent1 : System.Web.UI.Page
     {
         Response.Redirect("CreateEvent2.aspx");
     }
+    protected void clear_btn_Click(object sender, EventArgs e)
+    {
+        customerId_txt.Text = " ";
+        firstName_txt.Text =  " ";
+        lastName_txt.Text = " ";
+        phone1_txt.Text = " ";
+        phone2_txt.Text = " ";
+        email_txt.Text = " ";
+        street_txt.Text = " ";
+        apt_suite_txt.Text = " ";
+        city_txt.Text = " ";
+        state_txt.Text = " ";
+        zip_txt.Text = " ";
+        billingStreet_txt.Text = " ";
+        billlingSuiteApt_txt.Text = " ";
+        billingCity_txt.Text = " ";
+        billingState_txt.Text = " ";
+        billingZip_txt.Text = " ";
+
+    }
+
 }
