@@ -86,7 +86,6 @@
 
         <tr>
         <td class="style8" style="text-align: justify">
-    <asp:Label ID="Label3" runat="server" Text="Total Cost"></asp:Label>
             </td>
         <td class="style5">
             <br />
