@@ -13,12 +13,12 @@
         }
         .style2
         {
-            height: 121px;
+            height: 81px;
         }
         .style3
         {
             width: 194px;
-            height: 121px;
+            height: 81px;
         }
         .style4
         {
@@ -35,7 +35,7 @@
         }
         .style7
         {
-            height: 121px;
+            height: 81px;
             width: 72px;
         }
         .style8
@@ -65,13 +65,7 @@
         <td class="style7">
             </td>
         <td class="style3">
-            <asp:Label ID="Label4" runat="server" 
-                Text="Services:(select all that apply)"></asp:Label>
-            <br />
-            <br />
-            <br />
-            <br />
-            </td>
+            &nbsp;</td>
         <td style="text-align: center" class="style2">
             <br />
             <br />
@@ -92,7 +86,6 @@
 
         <tr>
         <td class="style8" style="text-align: justify">
-    <asp:Label ID="Label3" runat="server" Text="Total Cost"></asp:Label>
             </td>
         <td class="style5">
             <br />
@@ -105,10 +98,7 @@
         <td class="style6">
             &nbsp;</td>
         <td class="style1">
-    <asp:SqlDataSource ID="SqlDataSource2" runat="server" 
-        ConnectionString="<%$ ConnectionStrings:group3_6ConnectionString2 %>" 
-        SelectCommand="SELECT [Item_Name] FROM [SIDE_ITEMS]"></asp:SqlDataSource>
-            </td>
+            &nbsp;</td>
         <td></td>
         </tr>
 
@@ -116,10 +106,7 @@
         <td class="style6">
             &nbsp;</td>
         <td class="style1">
-            <asp:SqlDataSource ID="SqlDataSource3" runat="server" 
-                ConnectionString="<%$ ConnectionStrings:group3_6ConnectionString3 %>" 
-                SelectCommand="SELECT [Item_Name] FROM [ENTREE_ITEMS]"></asp:SqlDataSource>
-            </td>
+            &nbsp;</td>
         <td></td>
         </tr>
         
