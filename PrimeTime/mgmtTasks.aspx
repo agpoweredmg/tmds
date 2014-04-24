@@ -83,7 +83,8 @@
                         &nbsp;
                     </td>
                     <td>
-                        <asp:Button ID="specialServices_btn" runat="server" Text="Special Services" Width="184px" />
+                        <asp:Button ID="specialServices_btn" runat="server" 
+                            Text="Special Services Information" Width="184px" />
                     </td>
                 </tr>
             </table>
