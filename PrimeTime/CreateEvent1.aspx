@@ -20,8 +20,9 @@
         }
     </style>
 </head>
-<center>
+
     <body>
+        <center>
         <form id="form1" runat="server">
         <asp:Image ID="Image1" runat="server" ImageUrl="~/untitled.png" Style="text-align: left" />
         <div>
@@ -32,7 +33,6 @@
             <asp:Panel ID="Panel1" runat="server" BorderColor="Black" Font-Size="Medium" GroupingText="Customers Information"
                 Height="539px" Style="text-align: justify" Width="1112px">
                 <br />
-                <b>
                 <table>
                     <tr>
                         <td class="style2">
@@ -143,6 +143,6 @@
             <br />
         </div>
         </form>
+        </center>
     </body>
-</center>
 </html>

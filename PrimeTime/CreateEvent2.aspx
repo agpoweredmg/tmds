@@ -6,15 +6,14 @@
 <head runat="server">
     <title></title>
 </head>
-<center>
-<b>
 <body>
+    <center>
     <form id="form1" runat="server">
     <asp:Image ID="Image1" runat="server" ImageUrl="~/untitled.png" 
     style="text-align: left" />
     <div>
     <br />
-<div font-family: sans-serif; font-size: 15.75px; font-weight: bold; width: 209px; text-align: center;">
+<div>
     Create Customer</div>
         <br />
  
@@ -209,7 +208,6 @@
         Width="69px" onclick="logout_btn_Click" />
 
     </form>
+    </center>
 </body>
-</b>
-</center>
 </html>

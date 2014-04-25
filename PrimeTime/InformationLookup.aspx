@@ -7,9 +7,8 @@
     <title></title>
 
 </head>
-<center>
-<b>
 <body>
+<center>
     <form id="form1" runat="server">
     <asp:Image ID="Image1" runat="server" ImageUrl="~/untitled.png" Style="text-align: left" />
     <div>
@@ -185,7 +184,7 @@
         Height="38px" Style="text-align: center" Text="Logout" Width="69px" 
         onclick="logout_btn_Click" />
     </form>
+    </center>
 </body>
-</b>
-</center>
+
 </html>

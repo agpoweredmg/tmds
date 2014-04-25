@@ -6,9 +6,8 @@
 <head runat="server">
     <title></title>
 </head>
-<center>
-    <b>
         <body>
+            <center>
             <form id="form1" runat="server">
             <div>
                 <asp:Image ID="Image1" runat="server" ImageUrl="untitled.png" />
@@ -188,6 +187,7 @@
                     <td>
                         <b>
                             <asp:TextBox ID="reportStartDate_txt" runat="server" Width="200" Style="text-align: left"></asp:TextBox>
+                        </b>
                     </td>
                 </tr>
                 <tr>
@@ -197,6 +197,7 @@
                     <td>
                         <b>
                             <asp:TextBox ID="reportEndDate_txt" runat="server" Width="200" Style="text-align: left"></asp:TextBox>
+                        </b>
                     </td>
                 </tr>
             </table>
@@ -222,7 +223,6 @@
                 </b>
             </p>
             </form>
+            </center>
         </body>
-    </b>
-</center>
 </html>

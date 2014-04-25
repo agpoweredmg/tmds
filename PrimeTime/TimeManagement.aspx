@@ -6,9 +6,8 @@
 <head runat="server">
     <title></title>
 </head>
-<center>
-<b>
 <body>
+    <center>
     <form id="form1" runat="server">
     <div>
     
@@ -84,7 +83,6 @@
 
     </b>
     </form>
+    </center>
 </body>
-</b>
-</center>
 </html>
