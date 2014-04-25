@@ -40,11 +40,11 @@
                     </td>
                     <td>
                         <asp:Button ID="editCustomer_btn" runat="server" Text="Edit Customer" Style="text-align: center"
-                            Width="184px" />
+                            Width="184px" onclick="editCustomer_btn_Click" />
                     </td>
                     <td>
                         <asp:Button ID="editInventoryDetails_btn" runat="server" Text="Edit Inventory Details"
-                            Width="184px" />
+                            Width="184px" onclick="editInventoryDetails_btn_Click" />
                     </td>
                 </tr>
                 <tr>
@@ -58,7 +58,7 @@
                     </td>
                     <td>
                         <asp:Button ID="editEmployeeDetails_btn" runat="server" Text="Edit Employee Details"
-                            Width="184px" />
+                            Width="184px" onclick="editEmployeeDetails_btn_Click" />
                     </td>
                 </tr>
                 <tr>
@@ -67,7 +67,8 @@
                             onclick="editEvent_btn_Click" />
                     </td>
                     <td>
-                        <asp:Button ID="editMealDetails_btn" runat="server" Text="Edit Meal Details" Width="184px" />
+                        <asp:Button ID="editMealDetails_btn" runat="server" Text="Edit Meal Details" 
+                            Width="184px" onclick="editMealDetails_btn_Click" />
                     </td>
                     <td>
                         <asp:Button ID="editPayRollDetails_btn" runat="server" Text="Edit Pay Roll Details"
@@ -83,7 +84,8 @@
                         &nbsp;
                     </td>
                     <td>
-                        <asp:Button ID="specialServices_btn" runat="server" Text="Special Services" Width="184px" />
+                        <asp:Button ID="specialServices_btn" runat="server" Text="Special Services" 
+                            Width="184px" onclick="specialServices_btn_Click" />
                     </td>
                 </tr>
             </table>

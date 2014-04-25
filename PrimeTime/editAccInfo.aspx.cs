@@ -18,4 +18,8 @@ public partial class editAccInfo : System.Web.UI.Page
         amountDue_tb.Text = "";
         dateDue_tb.Text = "";
     }
+    protected void accountID_tb_TextChanged(object sender, EventArgs e)
+    {
+
+    }
 }

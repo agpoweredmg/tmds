@@ -25,7 +25,8 @@
                         Account ID:
                     </th>
                     <th>
-                        <asp:TextBox ID="accountID_tb" runat="server"></asp:TextBox>
+                        <asp:TextBox ID="accountID_tb" runat="server" 
+                            ontextchanged="accountID_tb_TextChanged"></asp:TextBox>
                     </th>
                     <th>
                         <asp:Button ID="submit_btn" runat="server" Text="Submit" />&nbsp;&nbsp;&nbsp;&nbsp;

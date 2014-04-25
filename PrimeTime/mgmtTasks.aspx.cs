@@ -27,4 +27,24 @@ public partial class mgmtTasks : System.Web.UI.Page
     {
         Response.Redirect("editAccInfo.aspx");
     }
+
+
+    protected void editMealDetails_btn_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("MealInformation.aspx");
+    }
+
+    protected void editInventoryDetails_btn_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("InventoryInformation.aspx");
+    }
+    protected void editEmployeeDetails_btn_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("EmployeeInformation.aspx");
+    }
+
+    protected void specialServices_btn_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("ServiceInformation.aspx");
+    }
 }
