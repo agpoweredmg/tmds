@@ -63,18 +63,37 @@
         </tr>
         <tr>
         <td class="style7">
+            <asp:Label ID="Label4" runat="server" Text="ID:"></asp:Label>
+            <br />
+            <br />
+            <asp:Label ID="Label5" runat="server" Text="Name:"></asp:Label>
+            <br />
+            <br />
+            <asp:Label ID="Label6" runat="server" Text="Price:"></asp:Label>
+            <br />
             </td>
         <td class="style3">
-            &nbsp;</td>
+            <br />
+            <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+            <br />
+            <br />
+            <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
+            <br />
+            <br />
+            <asp:TextBox ID="TextBox3" runat="server"></asp:TextBox>
+            <br />
+            <br />
+            </td>
         <td style="text-align: center" class="style2">
             <br />
             <br />
-            <asp:Button ID="Button9" runat="server" Text="Submit" />
-    &nbsp;&nbsp;&nbsp;<asp:Button ID="Button10" runat="server" Text="Clear" 
+            <asp:Button ID="Button9" runat="server" Text="Submit" onclick="Button9_Click" />
+    &nbsp;&nbsp;&nbsp;<asp:Button ID="Button10" runat="server" Text="Clear" onclick="Button10_Click" 
                 />
             <br />
             <br />
-            <asp:DropDownList ID="DropDownList4" runat="server">
+            <asp:DropDownList ID="DropDownList4" runat="server" 
+                onselectedindexchanged="DropDownList4_SelectedIndexChanged">
                 <asp:ListItem Value="0">Choose an Action</asp:ListItem>
                 <asp:ListItem Value="1">Add Service</asp:ListItem>
                 <asp:ListItem Value="2">Delete Service</asp:ListItem>
@@ -86,7 +105,7 @@
 
         <tr>
         <td class="style8" style="text-align: justify">
-            </td>
+            &nbsp;</td>
         <td class="style5">
             <br />
             </td>
@@ -104,9 +123,11 @@
 
         <tr>
         <td class="style6">
-            &nbsp;</td>
+    <asp:Label ID="Label3" runat="server" Text="Total Cost"></asp:Label>
+            :</td>
         <td class="style1">
-            &nbsp;</td>
+            <asp:TextBox ID="TextBox4" runat="server"></asp:TextBox>
+            </td>
         <td></td>
         </tr>
         

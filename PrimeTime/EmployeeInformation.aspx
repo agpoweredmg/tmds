@@ -85,9 +85,9 @@
             <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
             </td>
         <td class="style10">
-            <asp:Button ID="Button2" runat="server" Text="Submit" />
+            <asp:Button ID="Button2" runat="server" Text="Submit" Width="61px" />
             &nbsp;<asp:Button ID="Button3" runat="server" Text="Clear" Width="61px" 
-                style="height: 26px" />
+                style="height: 26px" onclick="Button3_Click1" />
             </td>
         </tr>
 
@@ -98,7 +98,8 @@
             <asp:TextBox ID="TextBox3" runat="server"></asp:TextBox>
             </td>
         <td class="style10">
-            <asp:DropDownList ID="DropDownList4" runat="server">
+            <asp:DropDownList ID="DropDownList4" runat="server" 
+                onselectedindexchanged="DropDownList4_SelectedIndexChanged">
                 <asp:ListItem Value="0">Choose an Action</asp:ListItem>
                 <asp:ListItem Value="1">Add Employee</asp:ListItem>
                 <asp:ListItem Value="2">Delete Employee</asp:ListItem>
@@ -108,15 +109,6 @@
             </td>
         </tr>
 
-        <tr>
-        <td class="style6">
-            Birth Date: </td>
-        <td width="174">
-            <asp:TextBox ID="TextBox4" runat="server"></asp:TextBox>
-            </td>
-        <td class="style10">
-            &nbsp;</td>
-        </tr>
 
         <tr>
         <td class="style6">
@@ -201,7 +193,8 @@
     <asp:Button ID="Button6" runat="server" Text="&lt;&lt; Back" Width="68px" 
             Height="38px" />
 &nbsp;&nbsp;&nbsp;
-    <asp:Button ID="Button7" runat="server" Text="Home" Width="68px" Height="38px" />
+    <asp:Button ID="Button7" runat="server" Text="Home" Width="68px" Height="38px" 
+            onclick="Button7_Click" />
 &nbsp;&nbsp;&nbsp;
     <asp:Button ID="Button8" runat="server" Text="Logout" Width="68px" Height="38px" />
      </div>

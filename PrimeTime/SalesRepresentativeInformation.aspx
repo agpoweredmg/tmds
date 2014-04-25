@@ -48,21 +48,22 @@
             <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
             </td>
         <td>
-    <asp:Button ID="Button1" runat="server" Text="Submit" Width="61px"  />
-    &nbsp;&nbsp;&nbsp;<asp:Button ID="Button3" runat="server" Text="Clear" Width="61px" 
+    <asp:Button ID="SubmitButton" runat="server" Text="Submit" Width="61px"  />
+    &nbsp;&nbsp;&nbsp;<asp:Button ID="ClearButton" runat="server" Text="Clear" Width="61px" onclick="ClearButton_Click" 
                 />
             &nbsp;</td>
         </tr>
 
         <tr>
-        <td>
+        <td class="style3">
             First
             Name:</td>
-        <td class="style4">
+        <td class="style5">
             <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
             </td>
-        <td>
-            <asp:DropDownList ID="DropDownList4" runat="server" Height="16px" Width="140px">
+        <td class="style3">
+            <asp:DropDownList ID="ActionDropDownList" runat="server" Height="16px" 
+                Width="140px" onselectedindexchanged="DropDownList4_SelectedIndexChanged">
                 <asp:ListItem Value="0">Choose an Action</asp:ListItem>
                 <asp:ListItem Value="1">Add Representative</asp:ListItem>
                 <asp:ListItem Value="2">Delete Representative</asp:ListItem>
@@ -73,12 +74,12 @@
         </tr>
 
         <tr>
-        <td>
+        <td class="style3">
             Last Name:</td>
-        <td class="style4">
+        <td class="style5">
             <asp:TextBox ID="TextBox3" runat="server"></asp:TextBox>
             </td>
-        <td>&nbsp;</td>
+        <td class="style3"></td>
         </tr>
 
         <tr>
@@ -116,12 +117,14 @@
        
         <br />
        
-    <asp:Button ID="Button6" runat="server" Text="&lt;&lt; Back" Width="68px" 
+    <asp:Button ID="BackButton" runat="server" Text="&lt;&lt; Back" Width="68px" 
+            Height="38px" onclick="Button6_Click" />
+&nbsp;&nbsp;&nbsp;
+    <asp:Button ID="HomeButton" runat="server" Text="Home" Width="68px" Height="38px" 
+            onclick="Button7_Click" />
+&nbsp;&nbsp;&nbsp;
+    <asp:Button ID="LogoutButton" runat="server" Text="Logout" Width="68px" 
             Height="38px" />
-&nbsp;&nbsp;&nbsp;
-    <asp:Button ID="Button7" runat="server" Text="Home" Width="68px" Height="38px" />
-&nbsp;&nbsp;&nbsp;
-    <asp:Button ID="Button8" runat="server" Text="Logout" Width="68px" Height="38px" />
      </div>
     
      </div>

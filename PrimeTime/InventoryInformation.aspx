@@ -31,7 +31,8 @@
             </td>
         <td>
     &nbsp;<asp:Button ID="Button1" runat="server" Text="Submit" Width="61px" />
-    &nbsp;&nbsp;<asp:Button ID="Button3" runat="server" Text="Clear" Width="61px" />
+    &nbsp;&nbsp;<asp:Button ID="Button3" runat="server" Text="Clear" Width="61px" 
+                onclick="Button3_Click" />
             &nbsp;&nbsp;</td>
         </tr>
 
@@ -42,7 +43,9 @@
             <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
             </td>
         <td>
-            &nbsp;<asp:DropDownList ID="DropDownList4" runat="server" Height="16px" Width="133px">
+            &nbsp;<asp:DropDownList ID="DropDownList4" runat="server" 
+                Height="16px" Width="133px" 
+                onselectedindexchanged="DropDownList4_SelectedIndexChanged">
                 <asp:ListItem Value="0">Choose an Action</asp:ListItem>
                 <asp:ListItem Value="1">Add Inventory</asp:ListItem>
                 <asp:ListItem Value="2">Delete Inventory</asp:ListItem>

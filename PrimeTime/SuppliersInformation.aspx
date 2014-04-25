@@ -46,8 +46,9 @@
             </td>
         <td class="style1">
     &nbsp;
-    <asp:Button ID="Button1" runat="server" Text="Submit" Width="61px" />
-            &nbsp;<asp:Button ID="Button3" runat="server" Text="Clear" Width="61px" 
+    <asp:Button ID="Submit" runat="server" Text="Submit" Width="61px" 
+                onclick="Button1_Click" />
+            &nbsp;<asp:Button ID="ClearButton" runat="server" Text="Clear" Width="61px" 
                 onclick="Button3_Click" />
             </td>
         </tr>
@@ -60,7 +61,8 @@
             </td>
         <td class="style1">
             &nbsp;
-            <asp:DropDownList ID="DropDownList4" runat="server">
+            <asp:DropDownList ID="DropDownList4" runat="server" AutoPostBack="True" 
+                onselectedindexchanged="DropDownList4_SelectedIndexChanged">
                 <asp:ListItem Value="0">Choose an Action</asp:ListItem>
                 <asp:ListItem Value="1">Add Supplier</asp:ListItem>
                 <asp:ListItem Value="2">Delete Supplier</asp:ListItem>
