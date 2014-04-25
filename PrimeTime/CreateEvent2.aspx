@@ -185,7 +185,7 @@
 
         <asp:Button ID="submit_btn" runat="server" BorderColor="Black" 
         BorderStyle="Double" Height="38px" style="text-align: center" Text="Submit" 
-        Width="69px" />
+        Width="69px" onclick="submit_btn_Click" />
 
    &nbsp;&nbsp;
 
@@ -200,13 +200,13 @@
 
         <asp:Button ID="home_btn" runat="server" BorderColor="Black" 
         BorderStyle="Double" Height="38px" style="text-align: center" Text="Home" 
-        Width="69px" />
+        Width="69px" onclick="home_btn_Click" />
 
     &nbsp;&nbsp;
 
         <asp:Button ID="logout_btn" runat="server" BorderColor="Black" 
         BorderStyle="Double" Height="38px" style="text-align: center" Text="Logout" 
-        Width="69px" />
+        Width="69px" onclick="logout_btn_Click" />
 
     </form>
 </body>

@@ -11,4 +11,24 @@ public partial class InformationLookup : System.Web.UI.Page
     {
 
     }
+    protected void lookup_btn_Click(object sender, EventArgs e)
+    {
+
+    }
+    protected void submmit_btn_Click(object sender, EventArgs e)
+    {
+
+    }
+    protected void back_btn_Click(object sender, EventArgs e)
+    {
+
+    }
+    protected void home_btn_Click(object sender, EventArgs e)
+    {
+
+    }
+    protected void logout_btn_Click(object sender, EventArgs e)
+    {
+
+    }
 }

@@ -27,12 +27,13 @@
         <td>
             ID:</td>
         <td>
-            <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+            <asp:TextBox ID="id_tb" runat="server"></asp:TextBox>
             </td>
         <td>
-    &nbsp;<asp:Button ID="Button1" runat="server" Text="Submit" Width="61px" />
-    &nbsp;&nbsp;<asp:Button ID="Button3" runat="server" Text="Clear" Width="61px" 
-                onclick="Button3_Click" />
+    &nbsp;<asp:Button ID="submit_btn" runat="server" Text="Submit" Width="61px" 
+                onclick="submit_btn_Click" />
+    &nbsp;&nbsp;<asp:Button ID="clear_btn" runat="server" Text="Clear" Width="61px" 
+                onclick="clear_btn_Click" />
             &nbsp;&nbsp;</td>
         </tr>
 
@@ -40,12 +41,12 @@
         <td>
             Name:</td>
         <td>
-            <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
+            <asp:TextBox ID="name_tb" runat="server"></asp:TextBox>
             </td>
         <td>
-            &nbsp;<asp:DropDownList ID="DropDownList4" runat="server" 
+            &nbsp;<asp:DropDownList ID="chooseAction_ddl" runat="server" 
                 Height="16px" Width="133px" 
-                onselectedindexchanged="DropDownList4_SelectedIndexChanged">
+                onselectedindexchanged="chooseAction_SelectedIndexChanged">
                 <asp:ListItem Value="0">Choose an Action</asp:ListItem>
                 <asp:ListItem Value="1">Add Inventory</asp:ListItem>
                 <asp:ListItem Value="2">Delete Inventory</asp:ListItem>
@@ -59,7 +60,7 @@
         <td>
             Category:</td>
         <td>
-            <asp:TextBox ID="TextBox3" runat="server"></asp:TextBox>
+            <asp:TextBox ID="category_tb" runat="server"></asp:TextBox>
             </td>
         <td>&nbsp;</td>
         </tr>
@@ -68,7 +69,7 @@
         <td>
             Cost: </td>
         <td>
-            <asp:TextBox ID="TextBox4" runat="server"></asp:TextBox>
+            <asp:TextBox ID="cost_tb" runat="server"></asp:TextBox>
             </td>
         <td>
             &nbsp;</td>
@@ -78,7 +79,7 @@
         <td>
             Expiration Date:</td>
         <td>
-            <asp:TextBox ID="TextBox5" runat="server"></asp:TextBox>
+            <asp:TextBox ID="expirationDate_tb" runat="server"></asp:TextBox>
             </td>
         <td>
             &nbsp;</td>
@@ -88,7 +89,7 @@
         <td>
             Quantity On Hand:</td>
         <td>
-            <asp:TextBox ID="TextBox6" runat="server"></asp:TextBox>
+            <asp:TextBox ID="quantityOnHand_tb" runat="server"></asp:TextBox>
             </td>
         <td>&nbsp;</td>
         </tr>
@@ -97,7 +98,7 @@
         <td>
             Minimum:</td>
         <td>
-            <asp:TextBox ID="TextBox7" runat="server"></asp:TextBox>
+            <asp:TextBox ID="minimum_tb" runat="server"></asp:TextBox>
             </td>
         <td></td>
         </tr>
@@ -106,7 +107,7 @@
         <td>
             Maximum:</td>
         <td>
-            <asp:TextBox ID="TextBox8" runat="server"></asp:TextBox>
+            <asp:TextBox ID="maximum_tb" runat="server"></asp:TextBox>
             </td>
         <td></td>
         </tr>
@@ -124,12 +125,14 @@
        
         <br />
        
-    <asp:Button ID="Button6" runat="server" Text="&lt;&lt; Back" Width="68px" 
-            Height="38px" />
+    <asp:Button ID="back_btn" runat="server" Text="&lt;&lt; Back" Width="68px" 
+            Height="38px" onclick="back_btn_Click" />
 &nbsp;&nbsp;&nbsp;
-    <asp:Button ID="Button7" runat="server" Text="Home" Width="68px" Height="38px" />
+    <asp:Button ID="home_btn" runat="server" Text="Home" Width="68px" Height="38px" 
+            onclick="home_btn_Click" />
 &nbsp;&nbsp;&nbsp;
-    <asp:Button ID="Button8" runat="server" Text="Logout" Width="68px" Height="38px" />
+    <asp:Button ID="logout_btn" runat="server" Text="Logout" Width="68px" Height="38px" 
+            onclick="logout_btn_Click" />
      </div>
     
     </div>

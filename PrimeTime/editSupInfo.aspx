@@ -36,7 +36,8 @@
                         <asp:TextBox ID="supplierID_tb" runat="server"></asp:TextBox>
                     </th>
                     <th>
-                        <asp:Button ID="submit_btn" runat="server" Text="Submit" />
+                        <asp:Button ID="submit_btn" runat="server" Text="Submit" 
+                            onclick="submit_btn_Click" />
                         &nbsp;&nbsp;&nbsp;&nbsp;
                         <asp:Button ID="clear_btn" runat="server" Text="Clear" Width="61px" 
                             onclick="clear_btn_Click" />
@@ -50,7 +51,8 @@
                         <asp:TextBox ID="supplierName_tb" runat="server"></asp:TextBox>
                     </th>
                     <th>
-                        <asp:DropDownList ID="actionToPerform_ddl" runat="server">
+                        <asp:DropDownList ID="actionToPerform_ddl" runat="server" 
+                            onselectedindexchanged="actionToPerform_ddl_SelectedIndexChanged">
                             <asp:ListItem Value="0">Choose an Action</asp:ListItem>
                             <asp:ListItem Value="1">Add New Account</asp:ListItem>
                             <asp:ListItem Value="2">Update Account </asp:ListItem>
@@ -141,11 +143,14 @@
     </div>
     <br />
     <br />
-    <asp:Button ID="back_btn" runat="server" Height="38px" Text="&lt;&lt;Back" Width="68px" />
+    <asp:Button ID="back_btn" runat="server" Height="38px" Text="&lt;&lt;Back" 
+        Width="68px" onclick="back_btn_Click" />
     &nbsp;&nbsp;&nbsp;&nbsp;
-    <asp:Button ID="home_btn" runat="server" Height="38px" Text="Home" Width="68px" />
+    <asp:Button ID="home_btn" runat="server" Height="38px" Text="Home" Width="68px" 
+        onclick="home_btn_Click" />
     &nbsp;&nbsp;&nbsp;&nbsp;
-    <asp:Button ID="logout_btn" runat="server" Height="38px" Text="Logout" Width="68px" />
+    <asp:Button ID="logout_btn" runat="server" Height="38px" Text="Logout" 
+        Width="68px" onclick="logout_btn_Click" />
     &nbsp;&nbsp;&nbsp;&nbsp;
     </form>
 </body>

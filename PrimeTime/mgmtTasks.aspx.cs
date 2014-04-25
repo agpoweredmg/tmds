@@ -27,4 +27,8 @@ public partial class mgmtTasks : System.Web.UI.Page
     {
         Response.Redirect("editAccInfo.aspx");
     }
+    protected void home_btn_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("");
+    }
 }

@@ -90,7 +90,8 @@
             </table>
             <br />
             <asp:Button ID="back_btn" runat="server" Text="&lt;&lt;Back" Height="38px" Width="68px" />&nbsp;&nbsp;&nbsp;&nbsp;
-            <asp:Button ID="home_btn" runat="server" Text="Home" Height="38px" Width="68px" />&nbsp;&nbsp;&nbsp;&nbsp;
+            <asp:Button ID="home_btn" runat="server" Text="Home" Height="38px" Width="68px" 
+                onclick="home_btn_Click" />&nbsp;&nbsp;&nbsp;&nbsp;
             <asp:Button ID="logout_btn" runat="server" Text="Logout" Height="38px" Width="68px" />&nbsp;&nbsp;&nbsp;&nbsp;
         </center>
         <br />

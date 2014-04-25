@@ -52,16 +52,21 @@
                                 <td>
                                     <b>
                                         <asp:Button ID="login_btn" runat="server" BorderColor="Black" BorderStyle="Double"
-                                            Height="38px" Style="text-align: center" Text="LogIn" Width="162px" />
+                                            Height="38px" Style="text-align: center" Text="LogIn" Width="162px" 
+                                        onclick="login_btn_Click" />
                                     </b>
                                 </td>
                             </tr>
                         </caption>
                     </table>
-                </br>
+                <br></br>
                 <br>
-                </br> 
-                <br> </br>
+                <br></br>
+                <br>
+                <br></br>
+                </br>
+                </br>
+                </br>
             </asp:Panel>
             </form>
         </body>

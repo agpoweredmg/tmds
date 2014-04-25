@@ -51,7 +51,7 @@
     <br />
     <b>
     <asp:Button ID="enterTime_btn" runat="server" Height="38px" Text="Enter Time" 
-        Width="151px" style="margin-left: 0px"  />
+        Width="151px" style="margin-left: 0px" onclick="enterTime_btn_Click"  />
     <br />
     <br />
 

@@ -11,13 +11,28 @@ public partial class MealInformation : System.Web.UI.Page
     {
 
     }
-    protected void Button3_Click(object sender, EventArgs e)
+    protected void clear_btn_Click(object sender, EventArgs e)
     {
-        DropDownList1.SelectedIndex = 0;
-        DropDownList2.SelectedIndex = 1;
-        DropDownList3.SelectedIndex = 2;
-        DropDownList4.SelectedIndex = 3;
-        TextBox1.Text = "";
-        TextBox2.Text = "";
+   
+    }
+    protected void back_btn_Click(object sender, EventArgs e)
+    {
+
+    }
+    protected void submit_btn_Click(object sender, EventArgs e)
+    {
+
+    }
+    protected void chooseAction_ddl_SelectedIndexChanged(object sender, EventArgs e)
+    {
+
+    }
+    protected void home_btn_Click(object sender, EventArgs e)
+    {
+
+    }
+    protected void logout_btn_Click(object sender, EventArgs e)
+    {
+
     }
 }

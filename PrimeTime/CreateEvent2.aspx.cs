@@ -32,4 +32,16 @@ public partial class CreateEvent2 : System.Web.UI.Page
     {
         Response.Redirect("CreateEvent1.aspx");
     }
+    protected void submit_btn_Click(object sender, EventArgs e)
+    {
+
+    }
+    protected void home_btn_Click(object sender, EventArgs e)
+    {
+
+    }
+    protected void logout_btn_Click(object sender, EventArgs e)
+    {
+
+    }
 }

@@ -23,4 +23,24 @@ public partial class editSupInfo : System.Web.UI.Page
         supplierState_tb.Text = "";
         supplierZip_tb.Text = "";
     }
+    protected void submit_btn_Click(object sender, EventArgs e)
+    {
+
+    }
+    protected void actionToPerform_ddl_SelectedIndexChanged(object sender, EventArgs e)
+    {
+
+    }
+    protected void back_btn_Click(object sender, EventArgs e)
+    {
+
+    }
+    protected void home_btn_Click(object sender, EventArgs e)
+    {
+
+    }
+    protected void logout_btn_Click(object sender, EventArgs e)
+    {
+
+    }
 }

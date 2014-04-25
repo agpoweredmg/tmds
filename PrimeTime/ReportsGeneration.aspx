@@ -26,7 +26,7 @@
                         <asp:DropDownList ID="accountsDetails_ddl" runat="server" DataSourceID="accounts" DataTextField="Acct_ID"
                             DataValueField="Acct_ID" Width="150px">
                         </asp:DropDownList>
-                        <asp:SqlDataSource ID="accounts" runat="server" ConnectionString="<%$ ConnectionStrings:group3_6ConnectionString %>"
+                        <asp:SqlDataSource ID="accounts" runat="server" ConnectionString="<%$ ConnectionStrings:group3_6_WEBUSER %>"
                             SelectCommand="SELECT [Acct_ID] FROM [Acct_Rec_Detail]"></asp:SqlDataSource>
                     </td>
                 </tr>
@@ -41,7 +41,7 @@
                             DataTextField="Supplier_Name" DataValueField="Supplier_Name" Width="150px">
                             <asp:ListItem Selected="True" Value="select* From Suppliers">All Suppliers</asp:ListItem>
                         </asp:DropDownList>
-                        <asp:SqlDataSource ID="SqlDataSource_supplier" runat="server" ConnectionString="<%$ ConnectionStrings:group3_6ConnectionString %>"
+                        <asp:SqlDataSource ID="SqlDataSource_supplier" runat="server" ConnectionString="<%$ ConnectionStrings:group3_6_WEBUSER %>"
                             SelectCommand="SELECT [Supplier_Name] FROM [Suppliers]"></asp:SqlDataSource>
                     </td>
                 </tr>
@@ -56,7 +56,7 @@
                             DataTextField="Event_Name" DataValueField="Event_Name" Width="150px">
                             <asp:ListItem Selected="True" Value="select* From Suppliers">All Suppliers</asp:ListItem>
                         </asp:DropDownList>
-                        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:group3_6ConnectionString %>"
+                        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:group3_6_WEBUSER %>"
                             SelectCommand="SELECT [Event_Name] FROM [Events]"></asp:SqlDataSource>
                     </td>
                 </tr>
@@ -71,7 +71,7 @@
                             DataValueField="Contract_ID" Width="150px">
                             <asp:ListItem Selected="True" Value="select* From Suppliers">All Suppliers</asp:ListItem>
                         </asp:DropDownList>
-                        <asp:SqlDataSource ID="Contracts" runat="server" ConnectionString="<%$ ConnectionStrings:group3_6ConnectionString %>"
+                        <asp:SqlDataSource ID="Contracts" runat="server" ConnectionString="<%$ ConnectionStrings:group3_6_WEBUSER %>"
                             SelectCommand="SELECT [Contract_ID] FROM [Contract_Details]"></asp:SqlDataSource>
                     </td>
                 </tr>
@@ -86,7 +86,7 @@
                             DataValueField="Cust_L_Name" Width="150px">
                             <asp:ListItem Selected="True" Value="select* From Suppliers">All Suppliers</asp:ListItem>
                         </asp:DropDownList>
-                        <asp:SqlDataSource ID="customers" runat="server" ConnectionString="<%$ ConnectionStrings:group3_6ConnectionString %>"
+                        <asp:SqlDataSource ID="customers" runat="server" ConnectionString="<%$ ConnectionStrings:group3_6_WEBUSER %>"
                             SelectCommand="SELECT [Cust_L_Name], [Cust_F_Name] FROM [Customers]"></asp:SqlDataSource>
                     </td>
                 </tr>
@@ -101,7 +101,7 @@
                             DataValueField="Service_Name" Width="150px">
                             <asp:ListItem Selected="True" Value="select* From Suppliers">All Suppliers</asp:ListItem>
                         </asp:DropDownList>
-                        <asp:SqlDataSource ID="services" runat="server" ConnectionString="<%$ ConnectionStrings:group3_6ConnectionString %>"
+                        <asp:SqlDataSource ID="services" runat="server" ConnectionString="<%$ ConnectionStrings:group3_6_WEBUSER %>"
                             SelectCommand="SELECT [Service_Name] FROM [Special_Services]"></asp:SqlDataSource>
                     </td>
                 </tr>
@@ -116,7 +116,7 @@
                             DataTextField="Inventory_ID" DataValueField="Inventory_ID" Width="150px">
                             <asp:ListItem Selected="True" Value="select* From Suppliers">All Suppliers</asp:ListItem>
                         </asp:DropDownList>
-                        <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:group3_6ConnectionString %>"
+                        <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:group3_6_WEBUSER %>"
                             SelectCommand="SELECT [Inventory_ID] FROM [Inventory]"></asp:SqlDataSource>
                     </td>
                 </tr>
@@ -131,7 +131,7 @@
                             DataValueField="Emp_L_Name" Width="150px">
                             <asp:ListItem Selected="True" Value="select* From Suppliers">All Suppliers</asp:ListItem>
                         </asp:DropDownList>
-                        <asp:SqlDataSource ID="employees" runat="server" ConnectionString="<%$ ConnectionStrings:group3_6ConnectionString %>"
+                        <asp:SqlDataSource ID="employees" runat="server" ConnectionString="<%$ ConnectionStrings:group3_6_WEBUSER %>"
                             SelectCommand="SELECT [Emp_F_Name], [Emp_L_Name] FROM [Employees]"></asp:SqlDataSource>
                     </td>
                 </tr>
@@ -162,7 +162,7 @@
                                 DataValueField="Purchase_Order_ID" Width="150px">
                                 <asp:ListItem Selected="True" Value="select* From Suppliers">All Suppliers</asp:ListItem>
                             </asp:DropDownList>
-                            <asp:SqlDataSource ID="PO_Orders" runat="server" ConnectionString="<%$ ConnectionStrings:group3_6ConnectionString %>"
+                            <asp:SqlDataSource ID="PO_Orders" runat="server" ConnectionString="<%$ ConnectionStrings:group3_6_WEBUSER %>"
                                 SelectCommand="SELECT [Purchase_Order_ID] FROM [PO_Details]"></asp:SqlDataSource>
                         </b>
                     </td>

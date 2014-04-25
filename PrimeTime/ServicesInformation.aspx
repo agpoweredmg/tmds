@@ -141,7 +141,8 @@
 &nbsp;&nbsp;&nbsp;
     <asp:Button ID="home_btn" runat="server" Text="Home" Width="68px" Height="38px" />
 &nbsp;&nbsp;&nbsp;
-    <asp:Button ID="logout_btn" runat="server" Text="Logout" Width="68px" Height="38px" />
+    <asp:Button ID="logout_btn" runat="server" Text="Logout" Width="68px" Height="38px" 
+            onclick="logout_btn_Click" />
      </div>
     <div>
     
