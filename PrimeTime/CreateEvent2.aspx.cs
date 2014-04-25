@@ -28,4 +28,8 @@ public partial class CreateEvent2 : System.Web.UI.Page
         
 
     }
+    protected void back_btn_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("CreateEvent1.aspx");
+    }
 }

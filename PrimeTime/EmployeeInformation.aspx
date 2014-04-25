@@ -3,7 +3,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
+<head id="Head1" runat="server">
     <title></title>
     <style type="text/css">
         .style1
@@ -71,7 +71,7 @@
         <td class="style6">
             ID:</td>
         <td width="174">
-            <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+            <asp:TextBox ID="id_tb" runat="server"></asp:TextBox>
             </td>
         <td class="style10">
     &nbsp;&nbsp;&nbsp;&nbsp;</td>
@@ -82,12 +82,13 @@
             First
             Name:</td>
         <td width="174">
-            <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
+            <asp:TextBox ID="name_tb" runat="server"></asp:TextBox>
             </td>
         <td class="style10">
-            <asp:Button ID="Button2" runat="server" Text="Submit" Width="61px" />
-            &nbsp;<asp:Button ID="Button3" runat="server" Text="Clear" Width="61px" 
-                style="height: 26px" onclick="Button3_Click1" />
+            <asp:Button ID="submit_btn" runat="server" Text="Submit" Width="61px" 
+                onclick="submit_btn_Click" />
+            &nbsp;<asp:Button ID="clear_btn" runat="server" Text="Clear" Width="61px" 
+                style="height: 26px" onclick="clear_btn_Click" />
             </td>
         </tr>
 
@@ -95,11 +96,11 @@
         <td class="style6">
             Last Name:</td>
         <td width="174">
-            <asp:TextBox ID="TextBox3" runat="server"></asp:TextBox>
+            <asp:TextBox ID="lastName_tb" runat="server"></asp:TextBox>
             </td>
         <td class="style10">
-            <asp:DropDownList ID="DropDownList4" runat="server" 
-                onselectedindexchanged="DropDownList4_SelectedIndexChanged">
+            <asp:DropDownList ID="chooseAction_ddl" runat="server" 
+                onselectedindexchanged="chooseAction_ddl_SelectedIndexChanged">
                 <asp:ListItem Value="0">Choose an Action</asp:ListItem>
                 <asp:ListItem Value="1">Add Employee</asp:ListItem>
                 <asp:ListItem Value="2">Delete Employee</asp:ListItem>
@@ -114,7 +115,7 @@
         <td class="style6">
             SSN:</td>
         <td width="174">
-            <asp:TextBox ID="TextBox5" runat="server"></asp:TextBox>
+            <asp:TextBox ID="ssn_tb" runat="server"></asp:TextBox>
             </td>
         <td class="style10">
             &nbsp;&nbsp;&nbsp;
@@ -125,7 +126,7 @@
         <td class="style6">
             Hire Date:</td>
         <td width="174">
-            <asp:TextBox ID="TextBox6" runat="server"></asp:TextBox>
+            <asp:TextBox ID="hireDate_tb" runat="server"></asp:TextBox>
             </td>
         <td class="style10">
             &nbsp;</td>
@@ -135,7 +136,7 @@
         <td class="style6">
             End Date:</td>
         <td width="174">
-            <asp:TextBox ID="TextBox7" runat="server"></asp:TextBox>
+            <asp:TextBox ID="endDate_tb" runat="server"></asp:TextBox>
             </td>
         <td class="style10">&nbsp;</td>
         </tr>
@@ -144,7 +145,7 @@
         <td class="style6">
             Phone:</td>
         <td width="174">
-            <asp:TextBox ID="TextBox8" runat="server"></asp:TextBox>
+            <asp:TextBox ID="phone_tb" runat="server"></asp:TextBox>
             </td>
         <td class="style10"></td>
         </tr>
@@ -153,7 +154,7 @@
         <td class="style6">
             Alt Phone:</td>
         <td width="174">
-            <asp:TextBox ID="TextBox9" runat="server"></asp:TextBox>
+            <asp:TextBox ID="altPhone_tb" runat="server"></asp:TextBox>
             </td>
         <td class="style10"></td>
         </tr>
@@ -162,17 +163,18 @@
         <td class="style7">
             Password:</td>
         <td class="style2" width="174">
-            <asp:TextBox ID="TextBox10" runat="server"></asp:TextBox>
+            <asp:TextBox ID="password_tb" runat="server"></asp:TextBox>
             </td>
         <td class="style4"></td>
         </tr>
 
         <tr>
         <td class="style8">
-            <asp:Label ID="Label2" runat="server" Text="Manager"></asp:Label>
+            <asp:Label ID="manager_lbl" runat="server" Text="Manager"></asp:Label>
             </td>
         <td class="style1" width="174">
-            <asp:CheckBox ID="CheckBox1" runat="server" />
+            <asp:CheckBox ID="manager_chkbx" runat="server" 
+                oncheckedchanged="manager_chkbx_CheckedChanged" />
             </td>
         <td class="style5"></td>
         </tr>
@@ -190,13 +192,14 @@
        
         <br />
        
-    <asp:Button ID="Button6" runat="server" Text="&lt;&lt; Back" Width="68px" 
-            Height="38px" />
+    <asp:Button ID="back_btn" runat="server" Text="&lt;&lt; Back" Width="68px" 
+            Height="38px" onclick="back_btn_Click" />
 &nbsp;&nbsp;&nbsp;
-    <asp:Button ID="Button7" runat="server" Text="Home" Width="68px" Height="38px" 
-            onclick="Button7_Click" />
+    <asp:Button ID="home_btn" runat="server" Text="Home" Width="68px" Height="38px" 
+            onclick="home_btn_Click" />
 &nbsp;&nbsp;&nbsp;
-    <asp:Button ID="Button8" runat="server" Text="Logout" Width="68px" Height="38px" />
+    <asp:Button ID="logout_btn" runat="server" Text="Logout" Width="68px" Height="38px" 
+            onclick="logout_btn_Click" />
      </div>
     
     </div>

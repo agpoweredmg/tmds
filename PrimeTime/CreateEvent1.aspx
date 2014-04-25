@@ -122,10 +122,12 @@
                     onclick="clear_btn_Click" />
                 &nbsp;&nbsp;
                 <asp:Button ID="back_btn" runat="server" BorderColor="Black" BorderStyle="Double"
-                    Height="38px" Style="text-align: center" Text="&lt;&lt;Back" Width="69px" />
+                    Height="38px" Style="text-align: center" Text="&lt;&lt;Back" Width="69px" 
+                    onclick="back_btn_Click" />
                 &nbsp;&nbsp;
                 <asp:Button ID="home_btn" runat="server" BorderColor="Black" BorderStyle="Double"
-                    Height="38px" Style="text-align: center" Text="Home" Width="69px" />
+                    Height="38px" Style="text-align: center" Text="Home" Width="69px" 
+                    onclick="home_btn_Click" />
                 &nbsp;&nbsp;
                 <asp:Button ID="logout_btn" runat="server" BorderColor="Black" BorderStyle="Double"
                     Height="38px" Style="text-align: center" Text="Logout" Width="69px" 

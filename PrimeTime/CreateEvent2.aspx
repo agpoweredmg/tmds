@@ -52,7 +52,7 @@
                                 DataValueField="Item_Name">
                             </asp:DropDownList>
                             <asp:SqlDataSource ID="SqlDataSource_Entree" runat="server" 
-                                ConnectionString="<%$ ConnectionStrings:group3_6ConnectionString %>" 
+                                ConnectionString="<%$ ConnectionStrings:group3_6_WEBUSER %>" 
                                 SelectCommand="SELECT [Item_Name] FROM [ENTREE_ITEMS]"></asp:SqlDataSource>
                         </td>
                         <td>Qtn.:</td>
@@ -72,7 +72,7 @@
                                 DataValueField="Item_Name">
                             </asp:DropDownList>
                             <asp:SqlDataSource ID="SqlDataSource_Sides" runat="server" 
-                                ConnectionString="<%$ ConnectionStrings:group3_6ConnectionString %>" 
+                                ConnectionString="<%$ ConnectionStrings:group3_6_WEBUSER %>" 
                                 SelectCommand="SELECT [Item_Name] FROM [SIDE_ITEMS]"></asp:SqlDataSource>
                         </td>
                         <td>Side2:</td>
@@ -118,7 +118,7 @@
                     DataTextField="Service_Name" DataValueField="Service_Name" Width="201px">
                 </asp:ListBox>
                 <asp:SqlDataSource ID="services" runat="server" 
-                    ConnectionString="<%$ ConnectionStrings:group3_6ConnectionString2 %>" 
+                    ConnectionString="<%$ ConnectionStrings:group3_6_WEBUSER %>" 
                     SelectCommand="SELECT [Service_Name] FROM [Special_Services]">
                 </asp:SqlDataSource>
                 </b>
@@ -193,7 +193,7 @@
 
         <asp:Button ID="back_btn" runat="server" BorderColor="Black" 
         BorderStyle="Double" Height="38px" style="text-align: center" Text="&lt;&lt;Back" 
-        Width="69px" />
+        Width="69px" onclick="back_btn_Click" />
     &nbsp;&nbsp;
 
 

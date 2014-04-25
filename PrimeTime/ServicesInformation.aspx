@@ -56,44 +56,44 @@
         <tr>
             <th class="style6">&nbsp;</th>
             <th class="style1">
-        <asp:Label ID="Label1" runat="server" Text="Services Information"></asp:Label>
+        <asp:Label ID="servicesInformation_lbl" runat="server" Text="Services Information"></asp:Label>
             </th>
             <th></th>
 
         </tr>
         <tr>
         <td class="style7">
-            <asp:Label ID="Label4" runat="server" Text="ID:"></asp:Label>
+            <asp:Label ID="id_lbl" runat="server" Text="ID:"></asp:Label>
             <br />
             <br />
-            <asp:Label ID="Label5" runat="server" Text="Name:"></asp:Label>
+            <asp:Label ID="name_lbl" runat="server" Text="Name:"></asp:Label>
             <br />
             <br />
-            <asp:Label ID="Label6" runat="server" Text="Price:"></asp:Label>
+            <asp:Label ID="price_lbl" runat="server" Text="Price:"></asp:Label>
             <br />
             </td>
         <td class="style3">
             <br />
-            <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+            <asp:TextBox ID="id_tb" runat="server"></asp:TextBox>
             <br />
             <br />
-            <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
+            <asp:TextBox ID="name_tb" runat="server"></asp:TextBox>
             <br />
             <br />
-            <asp:TextBox ID="TextBox3" runat="server"></asp:TextBox>
+            <asp:TextBox ID="price_tb" runat="server"></asp:TextBox>
             <br />
             <br />
             </td>
         <td style="text-align: center" class="style2">
             <br />
             <br />
-            <asp:Button ID="Button9" runat="server" Text="Submit" onclick="Button9_Click" />
-    &nbsp;&nbsp;&nbsp;<asp:Button ID="Button10" runat="server" Text="Clear" onclick="Button10_Click" 
+            <asp:Button ID="submit_btn" runat="server" Text="Submit" onclick="submit_btn_Click" />
+    &nbsp;&nbsp;&nbsp;<asp:Button ID="clear_btn" runat="server" Text="Clear" onclick="clear_btn_Click" 
                 />
             <br />
             <br />
-            <asp:DropDownList ID="DropDownList4" runat="server" 
-                onselectedindexchanged="DropDownList4_SelectedIndexChanged">
+            <asp:DropDownList ID="chooseAction_ddl" runat="server" 
+                onselectedindexchanged="chooseAction_ddl_SelectedIndexChanged">
                 <asp:ListItem Value="0">Choose an Action</asp:ListItem>
                 <asp:ListItem Value="1">Add Service</asp:ListItem>
                 <asp:ListItem Value="2">Delete Service</asp:ListItem>
@@ -136,12 +136,12 @@
        
         <br />
        
-    <asp:Button ID="Button6" runat="server" Text="&lt;&lt; Back" Width="68px" 
+    <asp:Button ID="back_btn" runat="server" Text="&lt;&lt; Back" Width="68px" 
             Height="38px" />
 &nbsp;&nbsp;&nbsp;
-    <asp:Button ID="Button7" runat="server" Text="Home" Width="68px" Height="38px" />
+    <asp:Button ID="home_btn" runat="server" Text="Home" Width="68px" Height="38px" />
 &nbsp;&nbsp;&nbsp;
-    <asp:Button ID="Button8" runat="server" Text="Logout" Width="68px" Height="38px" />
+    <asp:Button ID="logout_btn" runat="server" Text="Logout" Width="68px" Height="38px" />
      </div>
     <div>
     

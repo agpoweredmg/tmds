@@ -36,4 +36,12 @@ public partial class CreateEvent1 : System.Web.UI.Page
 
     }
 
+    protected void back_btn_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("EmployeeMain.aspx");
+    }
+    protected void home_btn_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("EmployeeMain.aspx");
+    }
 }

@@ -3,7 +3,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
+<head id="Head1" runat="server">
     <title></title>
     <style type="text/css">
         .style3
@@ -45,11 +45,12 @@
             Sales Rep
             ID:</td>
         <td class="style4">
-            <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+            <asp:TextBox ID="salesRepID_tb" runat="server"></asp:TextBox>
             </td>
         <td>
-    <asp:Button ID="SubmitButton" runat="server" Text="Submit" Width="61px"  />
-    &nbsp;&nbsp;&nbsp;<asp:Button ID="ClearButton" runat="server" Text="Clear" Width="61px" onclick="ClearButton_Click" 
+    <asp:Button ID="submit_btn" runat="server" Text="Submit" Width="61px" 
+                onclick="submit_btn_Click"  />
+    &nbsp;&nbsp;&nbsp;<asp:Button ID="clear_btn" runat="server" Text="Clear" Width="61px" onclick="clear_btn_Click" 
                 />
             &nbsp;</td>
         </tr>
@@ -59,11 +60,11 @@
             First
             Name:</td>
         <td class="style5">
-            <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
+            <asp:TextBox ID="firstName_tb" runat="server"></asp:TextBox>
             </td>
         <td class="style3">
-            <asp:DropDownList ID="ActionDropDownList" runat="server" Height="16px" 
-                Width="140px" onselectedindexchanged="DropDownList4_SelectedIndexChanged">
+            <asp:DropDownList ID="chooseAction_ddl" runat="server" Height="16px" 
+                Width="140px" onselectedindexchanged="chooseAction_ddl_SelectedIndexChanged">
                 <asp:ListItem Value="0">Choose an Action</asp:ListItem>
                 <asp:ListItem Value="1">Add Representative</asp:ListItem>
                 <asp:ListItem Value="2">Delete Representative</asp:ListItem>
@@ -77,7 +78,7 @@
         <td class="style3">
             Last Name:</td>
         <td class="style5">
-            <asp:TextBox ID="TextBox3" runat="server"></asp:TextBox>
+            <asp:TextBox ID="lastName_tb" runat="server"></asp:TextBox>
             </td>
         <td class="style3"></td>
         </tr>
@@ -86,7 +87,7 @@
         <td class="style3">
             Phone: </td>
         <td class="style5">
-            <asp:TextBox ID="TextBox4" runat="server"></asp:TextBox>
+            <asp:TextBox ID="phone_tb" runat="server"></asp:TextBox>
             </td>
         <td class="style3">
             &nbsp;</td>
@@ -96,7 +97,7 @@
         <td>
             Alt Phone:</td>
         <td class="style4">
-            <asp:TextBox ID="TextBox5" runat="server"></asp:TextBox>
+            <asp:TextBox ID="altPhone_tb" runat="server"></asp:TextBox>
             </td>
         <td>
             &nbsp;</td>
@@ -106,7 +107,7 @@
         <td>
             Email:</td>
         <td class="style4">
-            <asp:TextBox ID="TextBox6" runat="server"></asp:TextBox>
+            <asp:TextBox ID="email_tb" runat="server"></asp:TextBox>
             </td>
         <td>
             &nbsp;</td>
@@ -117,14 +118,14 @@
        
         <br />
        
-    <asp:Button ID="BackButton" runat="server" Text="&lt;&lt; Back" Width="68px" 
-            Height="38px" onclick="Button6_Click" />
+    <asp:Button ID="back_btn" runat="server" Text="&lt;&lt; Back" Width="68px" 
+            Height="38px" onclick="back_btn_Click" />
 &nbsp;&nbsp;&nbsp;
-    <asp:Button ID="HomeButton" runat="server" Text="Home" Width="68px" Height="38px" 
-            onclick="Button7_Click" />
+    <asp:Button ID="home_btn" runat="server" Text="Home" Width="68px" Height="38px" 
+            onclick="home_btn_Click" />
 &nbsp;&nbsp;&nbsp;
-    <asp:Button ID="LogoutButton" runat="server" Text="Logout" Width="68px" 
-            Height="38px" />
+    <asp:Button ID="logout_btn" runat="server" Text="Logout" Width="68px" 
+            Height="38px" onclick="logout_btn_Click" />
      </div>
     
      </div>
