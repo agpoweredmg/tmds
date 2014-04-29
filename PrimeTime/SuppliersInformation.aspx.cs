@@ -29,7 +29,7 @@ public partial class SuppliersInformation : System.Web.UI.Page
             command.Parameters.AddWithValue("@supplier_fax", fax_tb.Text.ToString());
             command.Parameters.AddWithValue("@supplier_email", email_tb.Text.ToString());
             command.Parameters.AddWithValue("@supplier_street", street_tb.Text.ToString());
-            command.Parameters.AddWithValue("@supplier_suite_box_no", "3");
+            command.Parameters.AddWithValue("@supplier_suite_box_no", suite_tb.Text.ToString());
             command.Parameters.AddWithValue("@supplier_city", city_tb.Text.ToString());
             command.Parameters.AddWithValue("@supplier_state", state_tb.Text.ToString());
             command.Parameters.AddWithValue("@supplier_zip", zip_tb.Text.ToString());
