@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Data;
 using System.Data.SqlClient;
 
 public partial class SuppliersInformation : System.Web.UI.Page
@@ -19,6 +20,26 @@ public partial class SuppliersInformation : System.Web.UI.Page
         if (chooseAction_ddl.SelectedIndex == 1)
         {
             SqlCommand command = new SqlCommand("new_suppliers", conn);
+
+            command.CommandType = CommandType.StoredProcedure;
+
+            command.Parameters.AddWithValue("@supplier_id", id_tb.Text.ToString());
+            command.Parameters.AddWithValue("@supplier_name", name_tb.Text.ToString());
+            command.Parameters.AddWithValue("@supplier_phone", phone_tb.Text.ToString());
+            command.Parameters.AddWithValue("@supplier_fax", fax_tb.Text.ToString());
+            command.Parameters.AddWithValue("@supplier_email", email_tb.Text.ToString());
+            command.Parameters.AddWithValue("@supplier_street", street_tb.Text.ToString());
+            command.Parameters.AddWithValue("@supplier_suite_box_no", "3");
+            command.Parameters.AddWithValue("@supplier_city", city_tb.Text.ToString());
+            command.Parameters.AddWithValue("@supplier_state", state_tb.Text.ToString());
+            command.Parameters.AddWithValue("@supplier_zip", zip_tb.Text.ToString());
+
+            conn.Open();
+
+            command.ExecuteNonQuery();
+
+            conn.Close();
+
         }
     }
     protected void clear_btn_Click(object sender, EventArgs e)
