@@ -70,9 +70,6 @@
                         <asp:TextBox ID="eventDate_tb" runat="server"></asp:TextBox>
                     </th>
                     <th>
-                        <asp:CheckBoxList ID="CheckBoxList1" runat="server" 
-                            onselectedindexchanged="CheckBoxList1_SelectedIndexChanged" Visible="False">
-                        </asp:CheckBoxList>
                         &nbsp;
                     </th>
                 </tr>

@@ -53,4 +53,8 @@ public partial class mgmtTasks : System.Web.UI.Page
     {
         Response.Redirect("login.aspx");
     }
+    protected void editCustomer_btn_Click(object sender, EventArgs e)
+    {
+
+    }
 }
