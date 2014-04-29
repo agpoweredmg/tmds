@@ -114,7 +114,7 @@
             Suite or Box No:
         </td>
         <td>
-            <asp:TextBox ID="Suite_tb" runat="server"></asp:TextBox>
+            <asp:TextBox ID="suite_tb" runat="server"></asp:TextBox>
         </td>
         <td>
         </td>
