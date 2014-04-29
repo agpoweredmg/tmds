@@ -7,9 +7,8 @@
     <title></title>
 
 </head>
-<center>
-<b>
 <body>
+<center>
     <form id="form1" runat="server">
     <asp:Image ID="Image1" runat="server" ImageUrl="~/untitled.png" Style="text-align: left" />
     <div>
@@ -131,57 +130,61 @@
                 TextMode="MultiLine"></asp:TextBox>
             <br />
             <asp:SqlDataSource ID="SqlDataSource2" runat="server" 
-                ConnectionString="<%$ ConnectionStrings:group3_6ConnectionString %>" 
+                ConnectionString="<%$ ConnectionStrings:group3_6_WEBUSER %>" 
                 SelectCommand="SELECT [Acct_ID] FROM [Acct_Rec_Detail]"></asp:SqlDataSource>
             <asp:SqlDataSource ID="SqlDataSource8" runat="server" 
-                ConnectionString="<%$ ConnectionStrings:group3_6ConnectionString %>" 
+                ConnectionString="<%$ ConnectionStrings:group3_6_WEBUSER %>" 
                 SelectCommand="SELECT [Purchase_Order_ID] FROM [PO_Details]">
             </asp:SqlDataSource>
             <asp:SqlDataSource ID="SqlDataSource6" runat="server" 
-                ConnectionString="<%$ ConnectionStrings:group3_6ConnectionString %>" 
+                ConnectionString="<%$ ConnectionStrings:group3_6_WEBUSER %>" 
                 SelectCommand="SELECT [Service_Name] FROM [Special_Services]">
             </asp:SqlDataSource>
             <asp:SqlDataSource ID="SqlDataSource5" runat="server" 
-                ConnectionString="<%$ ConnectionStrings:group3_6ConnectionString %>" 
+                ConnectionString="<%$ ConnectionStrings:group3_6_WEBUSER %>" 
                 SelectCommand="SELECT [Contract_ID] FROM [Contract_Details]">
             </asp:SqlDataSource>
             <asp:SqlDataSource ID="SqlDataSource3" runat="server" 
-                ConnectionString="<%$ ConnectionStrings:group3_6ConnectionString %>" 
+                ConnectionString="<%$ ConnectionStrings:group3_6_WEBUSER %>" 
                 SelectCommand="SELECT [Supplier_Name] FROM [Suppliers]"></asp:SqlDataSource>
             </td>
         </tr>
     </table>
     <br />
     <asp:SqlDataSource ID="SqlDataSource1" runat="server" 
-        ConnectionString="<%$ ConnectionStrings:group3_6ConnectionString %>" 
+        ConnectionString="<%$ ConnectionStrings:group3_6_WEBUSER %>" 
         SelectCommand="SELECT [Cust_F_Name], [Cust_L_Name] FROM [Customers]">
     </asp:SqlDataSource>
     <asp:SqlDataSource ID="SqlDataSource4" runat="server" 
-        ConnectionString="<%$ ConnectionStrings:group3_6ConnectionString %>" 
+        ConnectionString="<%$ ConnectionStrings:group3_6_WEBUSER %>" 
         SelectCommand="SELECT [Event_Name] FROM [Events]"></asp:SqlDataSource>
     <asp:SqlDataSource ID="SqlDataSource7" runat="server" 
-        ConnectionString="<%$ ConnectionStrings:group3_6ConnectionString %>" 
+        ConnectionString="<%$ ConnectionStrings:group3_6_WEBUSER %>" 
         SelectCommand="SELECT [Inventory_ID] FROM [Inventory]"></asp:SqlDataSource>
     <br />
-    <asp:Button ID="createEvent_btn" runat="server" Height="38px" Text="Lookup" 
-        Width="151px" style="margin-left: 0px"  />
+    <asp:Button ID="lookup_btn" runat="server" Height="38px" Text="Lookup" 
+        Width="151px" style="margin-left: 0px" onclick="lookup_btn_Click"  />
     <br />
     <br />
     <br />
     <br />
     <asp:Button ID="submmit_btn" runat="server" BorderColor="Black" BorderStyle="Double"
-        Height="38px" Style="text-align: center" Text="Submit" Width="69px" />
+        Height="38px" Style="text-align: center" Text="Submit" Width="69px" 
+        onclick="submmit_btn_Click" />
     &nbsp;&nbsp;
     <asp:Button ID="back_btn" runat="server" BorderColor="Black" BorderStyle="Double"
-        Height="38px" Style="text-align: center" Text="&lt;&lt;Back" Width="69px" />
+        Height="38px" Style="text-align: center" Text="&lt;&lt;Back" Width="69px" 
+        onclick="back_btn_Click" />
     &nbsp;&nbsp;
     <asp:Button ID="home_btn" runat="server" BorderColor="Black" BorderStyle="Double"
-        Height="38px" Style="text-align: center" Text="Home" Width="69px" />
+        Height="38px" Style="text-align: center" Text="Home" Width="69px" 
+        onclick="home_btn_Click" />
     &nbsp;&nbsp;
     <asp:Button ID="logout_btn" runat="server" BorderColor="Black" BorderStyle="Double"
-        Height="38px" Style="text-align: center" Text="Logout" Width="69px" />
+        Height="38px" Style="text-align: center" Text="Logout" Width="69px" 
+        onclick="logout_btn_Click" />
     </form>
+    </center>
 </body>
-</b>
-</center>
+
 </html>

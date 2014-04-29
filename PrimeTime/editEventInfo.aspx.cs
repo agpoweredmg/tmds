@@ -19,4 +19,24 @@ public partial class editEventInfo : System.Web.UI.Page
         eventDate_tb.Text = "";
 
     }
+    protected void back_btn_Click(object sender, EventArgs e)
+    {
+
+    }
+    protected void home_btn_Click(object sender, EventArgs e)
+    {
+
+    }
+    protected void logout_btn_Click(object sender, EventArgs e)
+    {
+
+    }
+    protected void submit_btn_Click(object sender, EventArgs e)
+    {
+
+    }
+    protected void actionToPerform_ddl_SelectedIndexChanged(object sender, EventArgs e)
+    {
+
+    }
 }

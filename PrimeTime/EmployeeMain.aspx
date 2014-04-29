@@ -7,7 +7,6 @@
     <title></title>
 </head>
 
-<b>
 <body>
 <center>
     <form id="form1" runat="server">
@@ -20,8 +19,8 @@
     </div>
     <p>
         &nbsp;</p>
-    <p>
     <center>
+    <p>
     <asp:Button ID="createEvent_btn" runat="server" Height="38px" Text="Create Event" 
         Width="151px" style="margin-left: 0px" onclick="createEvent_btn_Click"  />
     <p>
@@ -44,6 +43,5 @@
     </form>
     </center>
 </body>
-</b>
 
 </html>

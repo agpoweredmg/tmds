@@ -29,6 +29,7 @@ public partial class mgmtTasks : System.Web.UI.Page
     }
 
 
+
     protected void editMealDetails_btn_Click(object sender, EventArgs e)
     {
         Response.Redirect("MealInformation.aspx");
@@ -46,5 +47,10 @@ public partial class mgmtTasks : System.Web.UI.Page
     protected void specialServices_btn_Click(object sender, EventArgs e)
     {
         Response.Redirect("ServiceInformation.aspx");
+    }
+   
+    protected void  logout_btn_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("login.aspx");
     }
 }

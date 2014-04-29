@@ -30,7 +30,8 @@
                             <asp:TextBox ID="contractID_tb" runat="server"></asp:TextBox>
                         </th>
                         <th>
-                            <asp:Button ID="submit_btn" runat="server" Text="Submit" />&nbsp;&nbsp;&nbsp;&nbsp;
+                            <asp:Button ID="submit_btn" runat="server" Text="Submit" 
+                                onclick="submit_btn_Click" />&nbsp;&nbsp;&nbsp;&nbsp;
                             <asp:Button ID="clear_btn" runat="server" Text="Clear" Width="61px" 
                                 onclick="clear_btn_Click" />
                         </th>
@@ -43,7 +44,8 @@
                             <asp:TextBox ID="accountID_tb" runat="server"></asp:TextBox>
                         </th>
                         <th>
-                            <asp:DropDownList ID="actionToPerform_ddl" runat="server">
+                            <asp:DropDownList ID="actionToPerform_ddl" runat="server" 
+                                onselectedindexchanged="actionToPerform_ddl_SelectedIndexChanged">
                                 <asp:ListItem Value="0">Choose an Action</asp:ListItem>
                                 <asp:ListItem Value="1">Add New Contract</asp:ListItem>
                                 <asp:ListItem Value="2">Update Contract</asp:ListItem>
@@ -89,9 +91,12 @@
             </center>
             <br />
             <br />
-            <asp:Button ID="back_btn" runat="server" Text="&lt;&lt;Back" Height="38px" Width="68px" />&nbsp;&nbsp;&nbsp;&nbsp;
-            <asp:Button ID="home_btn" runat="server" Text="Home" Height="38px" Width="68px" />&nbsp;&nbsp;&nbsp;&nbsp;
-            <asp:Button ID="logout_btn" runat="server" Text="Logout" Height="38px" Width="68px" />
+            <asp:Button ID="back_btn" runat="server" Text="&lt;&lt;Back" Height="38px" 
+                Width="68px" onclick="back_btn_Click" />&nbsp;&nbsp;&nbsp;&nbsp;
+            <asp:Button ID="home_btn" runat="server" Text="Home" Height="38px" Width="68px" 
+                onclick="home_btn_Click" />&nbsp;&nbsp;&nbsp;&nbsp;
+            <asp:Button ID="logout_btn" runat="server" Text="Logout" Height="38px" 
+                Width="68px" onclick="logout_btn_Click" />
         </div>
     </div>
     </form>

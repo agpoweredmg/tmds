@@ -11,4 +11,8 @@ public partial class TimeManagment : System.Web.UI.Page
     {
 
     }
+    protected void enterTime_btn_Click(object sender, EventArgs e)
+    {
+
+    }
 }

@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="ServicesInformation.aspx.cs" Inherits="ServicesInformation" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="SpecialServicesInformation.aspx.cs" Inherits="ServicesInformation" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
@@ -56,44 +56,25 @@
         <tr>
             <th class="style6">&nbsp;</th>
             <th class="style1">
-        <asp:Label ID="servicesInformation_lbl" runat="server" Text="Services Information"></asp:Label>
+        <asp:Label ID="Label1" runat="server" Text="Services Information"></asp:Label>
             </th>
             <th></th>
 
         </tr>
         <tr>
         <td class="style7">
-            <asp:Label ID="id_lbl" runat="server" Text="ID:"></asp:Label>
-            <br />
-            <br />
-            <asp:Label ID="name_lbl" runat="server" Text="Name:"></asp:Label>
-            <br />
-            <br />
-            <asp:Label ID="price_lbl" runat="server" Text="Price:"></asp:Label>
-            <br />
             </td>
         <td class="style3">
-            <br />
-            <asp:TextBox ID="id_tb" runat="server"></asp:TextBox>
-            <br />
-            <br />
-            <asp:TextBox ID="name_tb" runat="server"></asp:TextBox>
-            <br />
-            <br />
-            <asp:TextBox ID="price_tb" runat="server"></asp:TextBox>
-            <br />
-            <br />
-            </td>
+            &nbsp;</td>
         <td style="text-align: center" class="style2">
             <br />
             <br />
-            <asp:Button ID="submit_btn" runat="server" Text="Submit" onclick="submit_btn_Click" />
-    &nbsp;&nbsp;&nbsp;<asp:Button ID="clear_btn" runat="server" Text="Clear" onclick="clear_btn_Click" 
+            <asp:Button ID="Button9" runat="server" Text="Submit" />
+    &nbsp;&nbsp;&nbsp;<asp:Button ID="Button10" runat="server" Text="Clear" 
                 />
             <br />
             <br />
-            <asp:DropDownList ID="chooseAction_ddl" runat="server" 
-                onselectedindexchanged="chooseAction_ddl_SelectedIndexChanged">
+            <asp:DropDownList ID="DropDownList4" runat="server">
                 <asp:ListItem Value="0">Choose an Action</asp:ListItem>
                 <asp:ListItem Value="1">Add Service</asp:ListItem>
                 <asp:ListItem Value="2">Delete Service</asp:ListItem>
@@ -105,7 +86,7 @@
 
         <tr>
         <td class="style8" style="text-align: justify">
-            &nbsp;</td>
+            </td>
         <td class="style5">
             <br />
             </td>
@@ -123,11 +104,9 @@
 
         <tr>
         <td class="style6">
-    <asp:Label ID="Label3" runat="server" Text="Total Cost"></asp:Label>
-            :</td>
+            &nbsp;</td>
         <td class="style1">
-            <asp:TextBox ID="TextBox4" runat="server"></asp:TextBox>
-            </td>
+            &nbsp;</td>
         <td></td>
         </tr>
         
@@ -136,13 +115,12 @@
        
         <br />
        
-    <asp:Button ID="back_btn" runat="server" Text="&lt;&lt; Back" Width="68px" 
+    <asp:Button ID="Button6" runat="server" Text="&lt;&lt; Back" Width="68px" 
             Height="38px" />
 &nbsp;&nbsp;&nbsp;
-    <asp:Button ID="home_btn" runat="server" Text="Home" Width="68px" Height="38px" />
+    <asp:Button ID="Button7" runat="server" Text="Home" Width="68px" Height="38px" />
 &nbsp;&nbsp;&nbsp;
-    <asp:Button ID="logout_btn" runat="server" Text="Logout" Width="68px" Height="38px" 
-            onclick="logout_btn_Click" />
+    <asp:Button ID="Button8" runat="server" Text="Logout" Width="68px" Height="38px" />
      </div>
     <div>
     

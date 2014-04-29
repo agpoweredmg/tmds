@@ -6,9 +6,8 @@
 <head runat="server">
     <title></title>
 </head>
-<center>
-<b>
 <body>
+    <center>
     <form id="form1" runat="server">
     <div>
     
@@ -51,7 +50,7 @@
     <br />
     <b>
     <asp:Button ID="enterTime_btn" runat="server" Height="38px" Text="Enter Time" 
-        Width="151px" style="margin-left: 0px"  />
+        Width="151px" style="margin-left: 0px" onclick="enterTime_btn_Click"  />
     <br />
     <br />
 
@@ -84,7 +83,6 @@
 
     </b>
     </form>
+    </center>
 </body>
-</b>
-</center>
 </html>

@@ -15,20 +15,4 @@ public partial class ServicesInformation : System.Web.UI.Page
     {
 
     }
-    protected void chooseAction_ddl_SelectedIndexChanged(object sender, EventArgs e)
-    {
-        
-    }
-    protected void clear_btn_Click(object sender, EventArgs e)
-    {
-        
-    }
-    protected void submit_btn_Click(object sender, EventArgs e)
-    {
-
-    }
-    protected void logout_btn_Click(object sender, EventArgs e)
-    {
-
-    }
 }

@@ -5,10 +5,6 @@
 <head runat="server">
     <title></title>
     <style type="text/css">
-        .style1
-        {
-            font-size: medium;
-        }
         .wrap
         {
             white-space: normal;
@@ -84,15 +80,15 @@
                         &nbsp;
                     </td>
                     <td>
-                        <asp:Button ID="specialServices_btn" runat="server" Text="Special Services" 
+&nbsp;<asp:Button ID="specialServices_btn" runat="server" Text="Special Services" 
                             Width="184px" onclick="specialServices_btn_Click" />
-                    </td>
+&nbsp;</td>
                 </tr>
             </table>
             <br />
-            <asp:Button ID="back_btn" runat="server" Text="&lt;&lt;Back" Height="38px" Width="68px" />&nbsp;&nbsp;&nbsp;&nbsp;
-            <asp:Button ID="home_btn" runat="server" Text="Home" Height="38px" Width="68px" />&nbsp;&nbsp;&nbsp;&nbsp;
-            <asp:Button ID="logout_btn" runat="server" Text="Logout" Height="38px" Width="68px" />&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            <asp:Button ID="logout_btn" runat="server" Text="Logout" Height="38px" 
+                Width="68px" onclick="logout_btn_Click" />&nbsp;&nbsp;&nbsp;&nbsp;
         </center>
         <br />
     </div>

@@ -24,38 +24,41 @@
         </tr>
         <tr>
         <td>
-            <asp:Label ID="Label4" runat="server" Text="Entree"></asp:Label>
+            <asp:Label ID="entree_lbl" runat="server" Text="Entree"></asp:Label>
             </td>
         <td>
             <asp:SqlDataSource ID="SqlDataSource3" runat="server" 
-                ConnectionString="<%$ ConnectionStrings:group3_6ConnectionString3 %>" 
+                ConnectionString="<%$ ConnectionStrings:group3_6_WEBUSER %>" 
                 SelectCommand="SELECT [Item_Name] FROM [ENTREE_ITEMS]"></asp:SqlDataSource>
-    <asp:DropDownList ID="DropDownList1" runat="server" 
+    <asp:DropDownList ID="entree_ddl" runat="server" 
         DataSourceID="SqlDataSource3" DataTextField="Item_Name" 
         DataValueField="Item_Name" Width="85px">
     </asp:DropDownList>
             </td>
         <td>
-    <asp:Button ID="Button1" runat="server" Text="Submit" Width="61px" />
-    &nbsp;&nbsp;&nbsp;&nbsp;<asp:Button ID="Button3" runat="server" Text="Clear" Width="61px" />
+    <asp:Button ID="submit_btn" runat="server" Text="Submit" Width="61px" 
+                onclick="submit_btn_Click" />
+    &nbsp;&nbsp;&nbsp;&nbsp;<asp:Button ID="Button3" runat="server" Text="Clear" 
+                Width="61px" onclick="clear_btn_Click" />
             </td>
         </tr>
 
         <tr>
         <td>
-            <asp:Label ID="Label5" runat="server" Text="Side One"></asp:Label>
+            <asp:Label ID="sideOne_lbl" runat="server" Text="Side One"></asp:Label>
             </td>
         <td>
-    <asp:DropDownList ID="DropDownList2" runat="server" 
+    <asp:DropDownList ID="sideOne_ddl" runat="server" 
         DataSourceID="SqlDataSource2" DataTextField="Item_Name" 
         DataValueField="Item_Name" Width="85px">
     </asp:DropDownList>
     <asp:SqlDataSource ID="SqlDataSource2" runat="server" 
-        ConnectionString="<%$ ConnectionStrings:group3_6ConnectionString2 %>" 
+        ConnectionString="<%$ ConnectionStrings:group3_6_WEBUSER %>" 
         SelectCommand="SELECT [Item_Name] FROM [SIDE_ITEMS]"></asp:SqlDataSource>
             </td>
         <td>
-            <asp:DropDownList ID="DropDownList4" runat="server">
+            <asp:DropDownList ID="chooseAction_ddl" runat="server" 
+                onselectedindexchanged="chooseAction_ddl_SelectedIndexChanged">
                 <asp:ListItem Value="0">Choose an Action</asp:ListItem>
                 <asp:ListItem Value="1">Add Meal</asp:ListItem>
                 <asp:ListItem Value="2">Delete Meal</asp:ListItem>
@@ -67,10 +70,10 @@
 
         <tr>
         <td>
-            <asp:Label ID="Label6" runat="server" Text="Side Two"></asp:Label>
+            <asp:Label ID="sideTwo_lbl" runat="server" Text="Side Two"></asp:Label>
             </td>
         <td>
-    <asp:DropDownList ID="DropDownList3" runat="server" 
+    <asp:DropDownList ID="sideTwo_ddl" runat="server" 
         DataSourceID="SqlDataSource2" DataTextField="Item_Name" 
         DataValueField="Item_Name" Width="85px">
     </asp:DropDownList>
@@ -80,20 +83,20 @@
 
         <tr>
         <td>
-        <asp:Label ID="Label2" runat="server" Text="Number of Meals"></asp:Label>
+        <asp:Label ID="numberOfMeals_lbl" runat="server" Text="Number of Meals"></asp:Label>
             </td>
         <td>
-        <asp:TextBox ID="TextBox1" runat="server" Width="80px"></asp:TextBox>
+        <asp:TextBox ID="numberOfMeals_tb" runat="server" Width="80px"></asp:TextBox>
             </td>
         <td></td>
         </tr>
 
         <tr>
         <td>
-    <asp:Label ID="Label3" runat="server" Text="Total Cost"></asp:Label>
+    <asp:Label ID="totalCost_lbl" runat="server" Text="Total Cost"></asp:Label>
             </td>
         <td>
-    <asp:TextBox ID="TextBox2" runat="server" Width="80px"></asp:TextBox>
+            <asp:Label ID="totalCostOutput_lbl" runat="server"></asp:Label>
             </td>
         <td></td>
         </tr>
@@ -103,17 +106,15 @@
        
         <br />
        
-    <asp:Button ID="Button6" runat="server" Text="&lt;&lt; Back" Width="68px" 
-            Height="38px" />
+    <asp:Button ID="back_btn" runat="server" Text="&lt;&lt; Back" Width="68px" 
+            Height="38px" onclick="back_btn_Click" />
 &nbsp;&nbsp;&nbsp;
-    <asp:Button ID="Button7" runat="server" Text="Home" Width="68px" Height="38px" />
+    <asp:Button ID="home_btn" runat="server" Text="Home" Width="68px" Height="38px" 
+            onclick="home_btn_Click" />
 &nbsp;&nbsp;&nbsp;
-    <asp:Button ID="Button8" runat="server" Text="Logout" Width="68px" Height="38px" />
+    <asp:Button ID="logout_btn" runat="server" Text="Logout" Width="68px" Height="38px" 
+            onclick="logout_btn_Click" />
      </div>
-    <asp:SqlDataSource ID="SqlDataSource1" runat="server" 
-        ConnectionString="<%$ ConnectionStrings:group3_6ConnectionString %>" 
-        SelectCommand="SELECT [Item_Name] FROM [Unprepared_Item]">
-    </asp:SqlDataSource>
     </form>
 </body>
 </html>

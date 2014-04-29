@@ -5,26 +5,15 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
-    <style type="text/css">
-        .style1
-        {
-            width: 122px;
-        }
-        .style3
-        {
-            width: 189px;
-        }
-    </style>
 </head>
-<center>
-<b>
 <body>
+    <center>
     <form id="form1" runat="server">
     <asp:Image ID="Image1" runat="server" ImageUrl="~/untitled.png" 
     style="text-align: left" />
     <div>
     <br />
-<div font-family: sans-serif; font-size: 15.75px; font-weight: bold; width: 209px; text-align: center;">
+<div>
     Create Customer</div>
         <br />
  
@@ -62,7 +51,7 @@
                                 DataValueField="Item_Name">
                             </asp:DropDownList>
                             <asp:SqlDataSource ID="SqlDataSource_Entree" runat="server" 
-                                ConnectionString="<%$ ConnectionStrings:group3_6ConnectionString %>" 
+                                ConnectionString="<%$ ConnectionStrings:group3_6_WEBUSER %>" 
                                 SelectCommand="SELECT [Item_Name] FROM [ENTREE_ITEMS]"></asp:SqlDataSource>
                         </td>
                         <td>Qtn.:</td>
@@ -82,7 +71,7 @@
                                 DataValueField="Item_Name">
                             </asp:DropDownList>
                             <asp:SqlDataSource ID="SqlDataSource_Sides" runat="server" 
-                                ConnectionString="<%$ ConnectionStrings:group3_6ConnectionString %>" 
+                                ConnectionString="<%$ ConnectionStrings:group3_6_WEBUSER %>" 
                                 SelectCommand="SELECT [Item_Name] FROM [SIDE_ITEMS]"></asp:SqlDataSource>
                         </td>
                         <td>Side2:</td>
@@ -124,11 +113,11 @@
                 <br />
                
                 <b>
-                <asp:ListBox ID="ListBox1" runat="server" DataSourceID="services" 
+                <asp:ListBox ID="services_listBox" runat="server" DataSourceID="services" 
                     DataTextField="Service_Name" DataValueField="Service_Name" Width="201px">
                 </asp:ListBox>
                 <asp:SqlDataSource ID="services" runat="server" 
-                    ConnectionString="<%$ ConnectionStrings:group3_6ConnectionString2 %>" 
+                    ConnectionString="<%$ ConnectionStrings:group3_6_WEBUSER %>" 
                     SelectCommand="SELECT [Service_Name] FROM [Special_Services]">
                 </asp:SqlDataSource>
                 </b>
@@ -136,6 +125,7 @@
                 <br />
                 <br />
     </asp:Panel>
+
 
     <br />
             <asp:Panel ID="Panel3" runat="server" BorderColor="Black" Font-Size="Medium" 
@@ -184,9 +174,17 @@
 
    
 
+                <b>
+                <asp:Button ID="clear_btn" runat="server" BorderColor="Black" BorderStyle="Double"
+                    Height="38px" Style="text-align: center" Text="Clear" Width="69px" 
+                    onclick="clear_btn_Click" />
+                </b>
+
+     &nbsp;&nbsp;
+
         <asp:Button ID="submit_btn" runat="server" BorderColor="Black" 
         BorderStyle="Double" Height="38px" style="text-align: center" Text="Submit" 
-        Width="69px" />
+        Width="69px" onclick="submit_btn_Click" />
 
    &nbsp;&nbsp;
 
@@ -194,23 +192,22 @@
 
         <asp:Button ID="back_btn" runat="server" BorderColor="Black" 
         BorderStyle="Double" Height="38px" style="text-align: center" Text="&lt;&lt;Back" 
-        Width="69px" />
+        Width="69px" onclick="back_btn_Click" />
     &nbsp;&nbsp;
 
 
 
         <asp:Button ID="home_btn" runat="server" BorderColor="Black" 
         BorderStyle="Double" Height="38px" style="text-align: center" Text="Home" 
-        Width="69px" />
+        Width="69px" onclick="home_btn_Click" />
 
     &nbsp;&nbsp;
 
         <asp:Button ID="logout_btn" runat="server" BorderColor="Black" 
         BorderStyle="Double" Height="38px" style="text-align: center" Text="Logout" 
-        Width="69px" />
+        Width="69px" onclick="logout_btn_Click" />
 
     </form>
+    </center>
 </body>
-</b>
-</center>
 </html>

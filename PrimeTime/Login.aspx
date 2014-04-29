@@ -11,9 +11,8 @@
         }
     </style>
 </head>
-<center>
-    <b>
         <body>
+            <center>
             <form id="form1" runat="server">
             <div>
                 <asp:Image ID="Image1" runat="server" ImageUrl="~/untitled.png" Style="text-align: left" />
@@ -25,7 +24,7 @@
             <br />
             <asp:Panel ID="Panel1" runat="server" GroupingText="Please Login" 
                 Height="183px" Width="710px">
-                <br>
+                <br/>
                     <table>
                         <tr>
                             <td>
@@ -46,25 +45,27 @@
                         </tr>
                     </table>
                     <table>
-                        <caption>
-                            <br>
+                        
+                            
                             <tr>
                                 <td>
                                     <b>
                                         <asp:Button ID="login_btn" runat="server" BorderColor="Black" BorderStyle="Double"
-                                            Height="38px" Style="text-align: center" Text="LogIn" Width="162px" />
+                                            Height="38px" Style="text-align: center" Text="LogIn" Width="162px" 
+                                        onclick="login_btn_Click" />
                                     </b>
                                 </td>
                             </tr>
-                        </caption>
+                        
                     </table>
-                </br>
-                <br>
-                </br> 
-                <br> </br>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
             </asp:Panel>
             </form>
+            </center>
         </body>
-    </b>
-</center>
 </html>
