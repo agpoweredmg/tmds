@@ -5,6 +5,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
+    <style type="text/css">
+        .style2
+        {
+            height: 21px;
+        }
+    </style>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -13,11 +19,11 @@
         <asp:Image ID="Image1" runat="server" ImageUrl="~/untitled.png" />
     <table>
     <tr>
-    <th></th>
-    <th>
+    <th class="style2"></th>
+    <th class="style2">
         Edit Customer Information
     </th>
-    <th></th>
+    <th class="style2"></th>
     </tr>
 
     <tr>

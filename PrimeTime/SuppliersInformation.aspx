@@ -82,7 +82,6 @@
                 <asp:ListItem Value="1">Add Supplier</asp:ListItem>
                 <asp:ListItem Value="2">Delete Supplier</asp:ListItem>
                 <asp:ListItem Value="3">Update Supplier</asp:ListItem>
-                <asp:ListItem Value="4">Search Suppliers</asp:ListItem>
             </asp:DropDownList>
             </td>
         </tr>
@@ -105,7 +104,9 @@
         <td class="style6">
             <asp:DropDownList ID="supplierLookup_ddl" runat="server" AutoPostBack="True" 
                 DataSourceID="supplierLookup" DataTextField="Supplier_Name" 
-                DataValueField="Supplier_ID" Visible="False">
+                DataValueField="Supplier_ID" 
+                onselectedindexchanged="supplierLookup_ddl_SelectedIndexChanged" 
+                Visible="False">
             </asp:DropDownList>
             <asp:SqlDataSource ID="supplierLookup" runat="server" 
                 ConnectionString="<%$ ConnectionStrings:WebUserLookup %>" 
