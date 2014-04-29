@@ -109,7 +109,16 @@
             </td>
         <td class="style1">&nbsp;</td>
         </tr>
-
+        <tr>
+        <td>
+            Suite or Box No:
+        </td>
+        <td>
+            <asp:TextBox ID="Suite_tb" runat="server"></asp:TextBox>
+        </td>
+        <td>
+        </td>
+        </tr>
         <tr>
         <td class="style2">
             City:</td>
