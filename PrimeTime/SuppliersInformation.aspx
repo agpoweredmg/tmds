@@ -47,10 +47,17 @@
         <td>
             <asp:DropDownList ID="chooseAction_ddl" runat="server" AutoPostBack="True" 
                 onselectedindexchanged="chooseAction_ddl_SelectedIndexChanged">
+<<<<<<< HEAD
                  <asp:ListItem Value="0">Choose an Action</asp:ListItem>
                             <asp:ListItem Value="1">Add Supplier</asp:ListItem>
                             <asp:ListItem Value="2">Delete Supplier</asp:ListItem>
                             <asp:ListItem Value="3">Update Supplier</asp:ListItem>
+=======
+                <asp:ListItem Value="0">Choose an Action</asp:ListItem>
+                <asp:ListItem Value="1">Add Supplier</asp:ListItem>
+                <asp:ListItem Value="2">Delete Supplier</asp:ListItem>
+                <asp:ListItem Value="3">Update Supplier</asp:ListItem>
+>>>>>>> 9805c386dc4f9aea1ef976bbe1ca1016af52cc7b
             </asp:DropDownList>
             </td>
         </tr>
@@ -71,8 +78,22 @@
         <td>
             <asp:TextBox ID="email_tb" runat="server"></asp:TextBox>
             </td>
+<<<<<<< HEAD
         <td>
             
+=======
+        <td class="style6">
+            <asp:DropDownList ID="supplierLookup_ddl" runat="server" AutoPostBack="True" 
+                DataSourceID="supplierLookup" DataTextField="Supplier_Name" 
+                DataValueField="Supplier_ID" 
+                onselectedindexchanged="supplierLookup_ddl_SelectedIndexChanged" 
+                Visible="False">
+            </asp:DropDownList>
+            <asp:SqlDataSource ID="supplierLookup" runat="server" 
+                ConnectionString="<%$ ConnectionStrings:WebUserLookup %>" 
+                SelectCommand="SELECT [Supplier_ID], [Supplier_Name] FROM [Suppliers]">
+            </asp:SqlDataSource>
+>>>>>>> 9805c386dc4f9aea1ef976bbe1ca1016af52cc7b
             </td>
         </tr>
 

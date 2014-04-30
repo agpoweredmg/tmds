@@ -5,6 +5,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
+    <style type="text/css">
+        .style2
+        {
+            height: 21px;
+        }
+    </style>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -13,11 +19,11 @@
         <asp:Image ID="Image1" runat="server" ImageUrl="~/untitled.png" />
     <table>
     <tr>
-    <th></th>
-    <th>
+    <th class="style2"></th>
+    <th class="style2">
         Edit Customer Information
     </th>
-    <th></th>
+    <th class="style2"></th>
     </tr>
 
     <tr>
@@ -26,14 +32,20 @@
     </th>
     <th>
     
+<<<<<<< HEAD
         <asp:TextBox ID="customerID_tb" runat="server" 
             ontextchanged="customerID_tb_TextChanged"></asp:TextBox>
+=======
+        <asp:TextBox ID="customerID_tb" runat="server" ></asp:TextBox>
+>>>>>>> 9805c386dc4f9aea1ef976bbe1ca1016af52cc7b
     
     </th>
     <th>
     
-        <asp:Button ID="Submit_btn" runat="server" Text="Submit" />
-&nbsp;<asp:Button ID="Clear_btn" runat="server" Text="Clear" />
+        <asp:Button ID="Submit_btn" runat="server" Text="Submit" 
+            onclick="Submit_btn_Click" />
+&nbsp;<asp:Button ID="Clear_btn" runat="server" Text="Clear" 
+            onclick="Clear_btn_Click" />
 &nbsp;&nbsp;
     
     </th>
