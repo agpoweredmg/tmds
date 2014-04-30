@@ -9,16 +9,7 @@
         {
             width: 180px;
         }
-        .style3
-        {
-            width: 180px;
-            height: 26px;
-        }
-        .style4
-        {
-            height: 26px;
-        }
-    </style>
+        </style>
 </head>
 
     <body>
@@ -37,8 +28,11 @@
                     <tr>
                         <td class="style2">
                         
-                            <asp:RadioButton ID="returningCustomer_rdo" runat="server" 
-                                Text="Returning Customer" Width="189px" />
+                            <asp:RadioButtonList ID="returned_Or_newCustomer_rd_group" runat="server" 
+                                onselectedindexchanged="returned_Or_newCustomer_rd_group_SelectedIndexChanged">
+                                <asp:ListItem Value="1">Returning Customer</asp:ListItem>
+                                <asp:ListItem Value="0">New Customer</asp:ListItem>
+                            </asp:RadioButtonList>
                         </td>
                         <td> &nbsp;Customer ID:</td>
                         <td><asp:TextBox
@@ -46,9 +40,6 @@
                                 ></asp:TextBox></td>
 
                         
-                    </tr>
-                    <tr>
-                        <td><asp:RadioButton ID="newCustomer_rdo" runat="server" Text="New Customer" /></td>
                     </tr>
                     
                     <tr>
@@ -92,8 +83,9 @@
                         <td><asp:TextBox ID="zip_txt" runat="server" Style="text-align: left" Width="200px"></asp:TextBox></td>
                     </tr>
                     <tr><td class="style2">Billing Adress:</td></tr>
-                    <tr><td> <asp:CheckBox ID="sameAsMailling_chk" runat="server" 
-                            Text="Same As Mailling Address" 
+                    <tr><td> 
+                        <asp:CheckBox ID="sameAsMailling_chk" runat="server" 
+                            Text="Same As Mailling Address" oncheckedchanged="sameAsMailling_chk_CheckedChanged" 
                              /></td></tr>
                     <tr>
                         <td class="style2"><b>Street:</b></td>
@@ -120,10 +112,6 @@
                 <asp:Button ID="clear_btn" runat="server" BorderColor="Black" BorderStyle="Double"
                     Height="38px" Style="text-align: center" Text="Clear" Width="69px" 
                     onclick="clear_btn_Click" />
-                &nbsp;&nbsp;
-                <asp:Button ID="back_btn" runat="server" BorderColor="Black" BorderStyle="Double"
-                    Height="38px" Style="text-align: center" Text="&lt;&lt;Back" Width="69px" 
-                    onclick="back_btn_Click" />
                 &nbsp;&nbsp;
                 <asp:Button ID="home_btn" runat="server" BorderColor="Black" BorderStyle="Double"
                     Height="38px" Style="text-align: center" Text="Home" Width="69px" 

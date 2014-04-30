@@ -26,13 +26,15 @@
     </th>
     <th>
     
-        <asp:TextBox ID="customerID_tb" runat="server" OnTextChanged="customerID_tb_TextChanged"></asp:TextBox>
+        <asp:TextBox ID="customerID_tb" runat="server" ></asp:TextBox>
     
     </th>
     <th>
     
-        <asp:Button ID="Submit_btn" runat="server" Text="Submit" />
-&nbsp;<asp:Button ID="Clear_btn" runat="server" Text="Clear" />
+        <asp:Button ID="Submit_btn" runat="server" Text="Submit" 
+            onclick="Submit_btn_Click" />
+&nbsp;<asp:Button ID="Clear_btn" runat="server" Text="Clear" 
+            onclick="Clear_btn_Click" />
 &nbsp;&nbsp;
     
     </th>
