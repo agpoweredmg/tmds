@@ -11,4 +11,20 @@ public partial class EditLostOrDamagedItems : System.Web.UI.Page
     {
 
     }
+    protected void logout_btn_Click(object sender, EventArgs e)
+    {
+
+    }
+    protected void home_btn_Click(object sender, EventArgs e)
+    {
+
+    }
+    protected void Submit_btn_Click(object sender, EventArgs e)
+    {
+
+    }
+    protected void Clear_btn_Click(object sender, EventArgs e)
+    {
+
+    }
 }

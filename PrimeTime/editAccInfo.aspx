@@ -45,11 +45,10 @@
                         <asp:DropDownList ID="actionToPerform_ddl" runat="server" 
                             onselectedindexchanged="actionToPerform_ddl_SelectedIndexChanged">
                             <asp:ListItem Value="0">Choose an Action</asp:ListItem>
-                            <asp:ListItem Value="1">Add New Account</asp:ListItem>
-                            <asp:ListItem Value="2">Update Account </asp:ListItem>
-                            <asp:ListItem Value="3">Search Account ID</asp:ListItem>
-                            <asp:ListItem Value="4">Delete Account</asp:ListItem>
-                        </asp:DropDownList>
+                            <asp:ListItem Value="1">Add Account</asp:ListItem>
+                            <asp:ListItem Value="2">Delete Account</asp:ListItem>
+                            <asp:ListItem Value="3">Update Account</asp:ListItem>
+                            </asp:DropDownList>
                     </th>
                 </tr>
                 <tr>

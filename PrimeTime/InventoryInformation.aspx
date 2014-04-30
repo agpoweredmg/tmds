@@ -48,10 +48,9 @@
                 Height="16px" Width="133px" 
                 onselectedindexchanged="chooseAction_SelectedIndexChanged">
                 <asp:ListItem Value="0">Choose an Action</asp:ListItem>
-                <asp:ListItem Value="1">Add Inventory</asp:ListItem>
-                <asp:ListItem Value="2">Delete Inventory</asp:ListItem>
-                <asp:ListItem Value="3">Update Inventory</asp:ListItem>
-                <asp:ListItem Value="4">Search Inventory</asp:ListItem>
+            <asp:ListItem Value="1">Add Inventory</asp:ListItem>
+            <asp:ListItem Value="2">Delete Inventory</asp:ListItem>
+            <asp:ListItem Value="3">Update Inventory</asp:ListItem>
             </asp:DropDownList>
             </td>
         </tr>
@@ -121,18 +120,12 @@
         </tr>
         
     </table>
-    </center>
-       
-        <br />
-       
-    <asp:Button ID="back_btn" runat="server" Text="&lt;&lt; Back" Width="68px" 
-            Height="38px" onclick="back_btn_Click" />
-&nbsp;&nbsp;&nbsp;
     <asp:Button ID="home_btn" runat="server" Text="Home" Width="68px" Height="38px" 
             onclick="home_btn_Click" />
 &nbsp;&nbsp;&nbsp;
     <asp:Button ID="logout_btn" runat="server" Text="Logout" Width="68px" Height="38px" 
             onclick="logout_btn_Click" />
+     </center>
      </div>
     
     </div>

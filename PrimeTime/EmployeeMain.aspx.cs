@@ -23,4 +23,12 @@ public partial class EmployeeMain : System.Web.UI.Page
     {
         Response.Redirect("CreateEvent1.aspx");
     }
+    protected void logout_btn_Click(object sender, EventArgs e)
+    {
+
+    }
+    protected void informationLookup_btn_Click(object sender, EventArgs e)
+    {
+
+    }
 }

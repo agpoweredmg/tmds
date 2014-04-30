@@ -26,7 +26,8 @@
     </th>
     <th>
     
-        <asp:TextBox ID="customerID_tb" runat="server" OnTextChanged="customerID_tb_TextChanged"></asp:TextBox>
+        <asp:TextBox ID="customerID_tb" runat="server" 
+            ontextchanged="customerID_tb_TextChanged"></asp:TextBox>
     
     </th>
     <th>
@@ -43,7 +44,8 @@
         First Name:</th>
     <th>
     
-        <asp:TextBox ID="FirstName_tb" runat="server"></asp:TextBox>
+        <asp:TextBox ID="FirstName_tb" runat="server" 
+            ontextchanged="FirstName_tb_TextChanged"></asp:TextBox>
         </th>
     <th>
     
@@ -51,10 +53,9 @@
             DataSourceID="SqlDataSource1" DataTextField="Customer_ID" 
             DataValueField="Customer_ID">
             <asp:ListItem Value="0">Choose an Action</asp:ListItem>
-            <asp:ListItem Value="1">Add New Customer</asp:ListItem>
-            <asp:ListItem Value="2">Update Customer</asp:ListItem>
-            <asp:ListItem Value="3">Search Customer</asp:ListItem>
-            <asp:ListItem Value="4">Delete Customer</asp:ListItem>
+            <asp:ListItem Value="1">Add Customer</asp:ListItem>
+            <asp:ListItem Value="2">Delete Customer</asp:ListItem>
+            <asp:ListItem Value="3">Update Customer</asp:ListItem>
         </asp:DropDownList>
         </th>
     </tr>
@@ -108,9 +109,6 @@
     </tr>
 
     </table>
-   
-    <asp:Button ID="back_btn" runat="server" Text="&lt;&lt;Back" Height="38px"
-        Width="68px" OnClick="back_btn_Click" />&nbsp;&nbsp;&nbsp;&nbsp;
     <asp:Button ID="home_btn" runat="server" Text="Home" Height="38px"
         Width="68px" OnClick="home_btn_Click" />&nbsp;&nbsp;&nbsp;&nbsp;
         <asp:Button ID="logout_btn" runat="server" Text="Logout" Height="38px"

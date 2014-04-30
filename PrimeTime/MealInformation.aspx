@@ -24,7 +24,7 @@
         </tr>
         <tr>
         <td>
-            <asp:Label ID="entree_lbl" runat="server" Text="Entree"></asp:Label>
+            Entree:
             </td>
         <td>
             <asp:SqlDataSource ID="SqlDataSource3" runat="server" 
@@ -45,7 +45,7 @@
 
         <tr>
         <td>
-            <asp:Label ID="sideOne_lbl" runat="server" Text="Side One"></asp:Label>
+            Side Item One:
             </td>
         <td>
     <asp:DropDownList ID="sideOne_ddl" runat="server" 
@@ -63,14 +63,13 @@
                 <asp:ListItem Value="1">Add Meal</asp:ListItem>
                 <asp:ListItem Value="2">Delete Meal</asp:ListItem>
                 <asp:ListItem Value="3">Update Meal</asp:ListItem>
-                <asp:ListItem Value="4">Search Meals</asp:ListItem>
             </asp:DropDownList>
             </td>
         </tr>
 
         <tr>
         <td>
-            <asp:Label ID="sideTwo_lbl" runat="server" Text="Side Two"></asp:Label>
+            Side Item Two:
             </td>
         <td>
     <asp:DropDownList ID="sideTwo_ddl" runat="server" 
@@ -83,7 +82,7 @@
 
         <tr>
         <td>
-        <asp:Label ID="numberOfMeals_lbl" runat="server" Text="Number of Meals"></asp:Label>
+        Number of Meals:
             </td>
         <td>
         <asp:TextBox ID="numberOfMeals_tb" runat="server" Width="80px"></asp:TextBox>
@@ -93,27 +92,21 @@
 
         <tr>
         <td>
-    <asp:Label ID="totalCost_lbl" runat="server" Text="Total Cost"></asp:Label>
+    Total Cost:
             </td>
         <td>
-            <asp:Label ID="totalCostOutput_lbl" runat="server"></asp:Label>
+            <asp:TextBox ID="totalCost_tb" runat="server"></asp:TextBox>
             </td>
         <td></td>
         </tr>
         
     </table>
-    </center>
-       
-        <br />
-       
-    <asp:Button ID="back_btn" runat="server" Text="&lt;&lt; Back" Width="68px" 
-            Height="38px" onclick="back_btn_Click" />
-&nbsp;&nbsp;&nbsp;
+
     <asp:Button ID="home_btn" runat="server" Text="Home" Width="68px" Height="38px" 
-            onclick="home_btn_Click" />
-&nbsp;&nbsp;&nbsp;
+            onclick="home_btn_Click" />&nbsp;&nbsp;&nbsp;
     <asp:Button ID="logout_btn" runat="server" Text="Logout" Width="68px" Height="38px" 
             onclick="logout_btn_Click" />
+      </center>
      </div>
     </form>
 </body>

@@ -47,10 +47,9 @@
                             <asp:DropDownList ID="actionToPerform_ddl" runat="server" 
                                 onselectedindexchanged="actionToPerform_ddl_SelectedIndexChanged">
                                 <asp:ListItem Value="0">Choose an Action</asp:ListItem>
-                                <asp:ListItem Value="1">Add New Contract</asp:ListItem>
-                                <asp:ListItem Value="2">Update Contract</asp:ListItem>
-                                <asp:ListItem Value="3">Search Contract ID</asp:ListItem>
-                                <asp:ListItem Value="4">Delete Contract</asp:ListItem>
+                            <asp:ListItem Value="1">Add Contract</asp:ListItem>
+                            <asp:ListItem Value="2">Delete Contract</asp:ListItem>
+                            <asp:ListItem Value="3">Update Contract</asp:ListItem>
                             </asp:DropDownList>
                         </th>
                     </tr>
@@ -91,8 +90,6 @@
             </center>
             <br />
             <br />
-            <asp:Button ID="back_btn" runat="server" Text="&lt;&lt;Back" Height="38px" 
-                Width="68px" onclick="back_btn_Click" />&nbsp;&nbsp;&nbsp;&nbsp;
             <asp:Button ID="home_btn" runat="server" Text="Home" Height="38px" Width="68px" 
                 onclick="home_btn_Click" />&nbsp;&nbsp;&nbsp;&nbsp;
             <asp:Button ID="logout_btn" runat="server" Text="Logout" Height="38px" 

@@ -11,4 +11,20 @@ public partial class EditCustomerInfo : System.Web.UI.Page
     {
 
     }
+    protected void home_btn_Click(object sender, EventArgs e)
+    {
+
+    }
+    protected void logout_btn_Click(object sender, EventArgs e)
+    {
+
+    }
+    protected void FirstName_tb_TextChanged(object sender, EventArgs e)
+    {
+
+    }
+    protected void customerID_tb_TextChanged(object sender, EventArgs e)
+    {
+
+    }
 }

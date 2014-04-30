@@ -23,7 +23,7 @@
             </div>
             <br />
             <asp:Panel ID="Panel1" runat="server" GroupingText="Please Login" 
-                Height="183px" Width="710px">
+                Height="247px" Width="710px">
                 <br/>
                     <table>
                         <tr>

@@ -80,7 +80,7 @@
                         &nbsp;
                     </td>
                     <td>
-&nbsp;<asp:Button ID="specialServices_btn" runat="server" Text="Special Services" 
+&nbsp;<asp:Button ID="specialServices_btn" runat="server" Text="Edit Special Services" 
                             Width="184px" onclick="specialServices_btn_Click" />
 &nbsp;</td>
                 </tr>

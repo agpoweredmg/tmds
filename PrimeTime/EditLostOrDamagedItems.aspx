@@ -30,9 +30,11 @@
         <asp:TextBox ID="LostDamageID_tb" runat="server"></asp:TextBox>
     </th>
     <th>
-        <asp:Button ID="Submit_btn" runat="server" Text="Submit" />
+        <asp:Button ID="Submit_btn" runat="server" Text="Submit" 
+            onclick="Submit_btn_Click" Width="61px" />
 &nbsp;
-        <asp:Button ID="Clear_btn" runat="server" Text="Clear" />
+        <asp:Button ID="Clear_btn" runat="server" Text="Clear" 
+            onclick="Clear_btn_Click" />
 &nbsp;</th>
     </tr>
 
@@ -45,11 +47,10 @@
     </th>
     <th>
         <asp:DropDownList ID="ChooseDamagedItemsActions_ddl" runat="server">
-            <asp:ListItem Value="0">Choose an action</asp:ListItem>
-            <asp:ListItem Value="1">Add New Item</asp:ListItem>
-            <asp:ListItem Value="2">Update Item</asp:ListItem>
-            <asp:ListItem Value="3">Search Item</asp:ListItem>
-            <asp:ListItem Value="4">Delete Item</asp:ListItem>
+            <asp:ListItem Value="0">Choose an Action</asp:ListItem>
+            <asp:ListItem Value="1">Add Items</asp:ListItem>
+            <asp:ListItem Value="2">Delete Items</asp:ListItem>
+            <asp:ListItem Value="3">Update Items</asp:ListItem>
         </asp:DropDownList>
     </th>
     </tr>
@@ -65,8 +66,7 @@
     </th>
     </tr>
     </table>
-    <asp:Button ID="back_btn" runat="server" Text="&lt;&lt;Back" Height="38px"
-        Width="68px" OnClick="back_btn_Click" />&nbsp;&nbsp;&nbsp;&nbsp;
+   
     <asp:Button ID="home_btn" runat="server" Text="Home" Height="38px"
         Width="68px" OnClick="home_btn_Click" />&nbsp;&nbsp;&nbsp;&nbsp;
         <asp:Button ID="logout_btn" runat="server" Text="Logout" Height="38px"
