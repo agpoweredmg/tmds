@@ -81,7 +81,7 @@
                 Visible="False">
             </asp:DropDownList>
             <asp:SqlDataSource ID="supplierLookup" runat="server" 
-                ConnectionString="<%$ ConnectionStrings:WebUserLookup %>" 
+                ConnectionString="<%$ ConnectionStrings:group3_6_WEBUSER %>" 
                 SelectCommand="SELECT [Supplier_ID], [Supplier_Name] FROM [Suppliers]" 
                 onselecting="supplierLookup_Selecting">
             </asp:SqlDataSource>

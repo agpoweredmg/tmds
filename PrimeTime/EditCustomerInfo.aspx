@@ -120,9 +120,37 @@
 
     </table>
     <asp:Button ID="home_btn" runat="server" Text="Home" Height="38px"
-        Width="68px" OnClick="home_btn_Click" />&nbsp;&nbsp;&nbsp;&nbsp;
-        <asp:Button ID="logout_btn" runat="server" Text="Logout" Height="38px"
+        Width="68px" OnClick="home_btn_Click" />&nbsp;&nbsp;&nbsp;&nbsp;<asp:Button ID="logout_btn" runat="server" Text="Logout" Height="38px"
         Width="68px" OnClick="logout_btn_Click" />
+        <br />
+        <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" 
+            ControlToValidate="Email_tb" ErrorMessage="Invalid Email Address" 
+            ForeColor="Maroon" SetFocusOnError="True" 
+            ValidationExpression="\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*" 
+            ValidationGroup="Text"></asp:RegularExpressionValidator>
+        <br />
+        <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" 
+            ControlToValidate="PhoneNumber_tb" 
+            ErrorMessage="Please Include the Area code for the Phone Number" 
+            ForeColor="Maroon" SetFocusOnError="True" 
+            ValidationExpression="^[01]?[- .]?(\([2-9]\d{2}\)|[2-9]\d{2})[- .]?\d{3}[- .]?\d{4}$" 
+            ValidationGroup="Text"></asp:RegularExpressionValidator>
+        <br />
+        <asp:RegularExpressionValidator ID="RegularExpressionValidator3" runat="server" 
+            ControlToValidate="AlternateNumber_tb" 
+            ErrorMessage="Please Include the Area code for the Alternate Phone" 
+            ForeColor="Maroon" SetFocusOnError="True" 
+            ValidationExpression="^[01]?[- .]?(\([2-9]\d{2}\)|[2-9]\d{2})[- .]?\d{3}[- .]?\d{4}$" 
+            ValidationGroup="Text"></asp:RegularExpressionValidator>
+        <br />
+        <asp:RegularExpressionValidator ID="RegularExpressionValidator4" runat="server" 
+            ControlToValidate="FirstName_tb" ErrorMessage="Invalid First Name" 
+            ForeColor="Maroon" SetFocusOnError="True" 
+            ValidationExpression="^[a-zA-Z''-'\s]{1,40}$" ValidationGroup="Text"></asp:RegularExpressionValidator>
+        <br />
+        <asp:RegularExpressionValidator ID="RegularExpressionValidator5" runat="server" 
+            ControlToValidate="LastName_tb" ErrorMessage="Invalid Last Name" 
+            ForeColor="Maroon"></asp:RegularExpressionValidator>
         </center>
     </div>
     </form>

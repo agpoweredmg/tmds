@@ -94,6 +94,11 @@
                 onclick="home_btn_Click" />&nbsp;&nbsp;&nbsp;&nbsp;
             <asp:Button ID="logout_btn" runat="server" Text="Logout" Height="38px" 
                 Width="68px" onclick="logout_btn_Click" />
+            <br />
+            <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" 
+                ControlToValidate="contractDate_tb" ErrorMessage="Invalid Contract Date " 
+                ForeColor="Maroon" ValidationGroup="Text"></asp:RegularExpressionValidator>
+            <br />
         </div>
     </div>
     </form>

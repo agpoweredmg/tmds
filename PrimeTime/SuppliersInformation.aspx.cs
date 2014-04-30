@@ -70,6 +70,7 @@ public partial class SuppliersInformation : System.Web.UI.Page
         state_tb.Text = "";
         zip_tb.Text = "";
         chooseAction_ddl.SelectedIndex = 0;
+        supplierLookup_ddl.SelectedIndex = 0;
     }
     protected void chooseAction_ddl_SelectedIndexChanged(object sender, EventArgs e)
     {
