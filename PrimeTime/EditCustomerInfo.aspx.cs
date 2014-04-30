@@ -11,46 +11,38 @@ public partial class EditCustomerInfo : System.Web.UI.Page
     {
 
     }
-<<<<<<< HEAD
-=======
-
-    protected void back_btn_Click(object sender, EventArgs e)
+        protected void home_btn_Click(object sender, EventArgs e)
     {
-
-    }
->>>>>>> 9805c386dc4f9aea1ef976bbe1ca1016af52cc7b
-    protected void home_btn_Click(object sender, EventArgs e)
-    {
-
+        Response.Redirect("mgmtTasks.aspx");
     }
     protected void logout_btn_Click(object sender, EventArgs e)
     {
-
+        Response.Redirect("login.aspx");
     }
-<<<<<<< HEAD
     protected void FirstName_tb_TextChanged(object sender, EventArgs e)
     {
 
     }
-=======
     protected void Submit_btn_Click(object sender, EventArgs e)
     {
 
     }
     protected void Clear_btn_Click(object sender, EventArgs e)
     {
-
+        customerID_tb.Text = "";
+        FirstName_tb.Text = "";
+        LastName_tb.Text = "";
+        PhoneNumber_tb.Text = "";
+        AlternateNumber_tb.Text = "";
+        Email_tb.Text = "";
+        ChooseCustomerActions_ddl.SelectedIndex = 0;
     }
 
 
->>>>>>> 9805c386dc4f9aea1ef976bbe1ca1016af52cc7b
     protected void customerID_tb_TextChanged(object sender, EventArgs e)
     {
 
     }
-<<<<<<< HEAD
-=======
 
 
->>>>>>> 9805c386dc4f9aea1ef976bbe1ca1016af52cc7b
 }

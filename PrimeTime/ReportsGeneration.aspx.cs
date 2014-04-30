@@ -11,4 +11,12 @@ public partial class ReportsGeneration : System.Web.UI.Page
     {
 
     }
+    protected void logout_btn_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("login.aspx");
+    }
+    protected void home_btn_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("mgmtTasks.aspx");
+    }
 }

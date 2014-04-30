@@ -32,12 +32,10 @@
     </th>
     <th>
     
-<<<<<<< HEAD
+
         <asp:TextBox ID="customerID_tb" runat="server" 
             ontextchanged="customerID_tb_TextChanged"></asp:TextBox>
-=======
-        <asp:TextBox ID="customerID_tb" runat="server" ></asp:TextBox>
->>>>>>> 9805c386dc4f9aea1ef976bbe1ca1016af52cc7b
+
     
     </th>
     <th>
@@ -62,7 +60,7 @@
     <th>
     
         <asp:DropDownList ID="ChooseCustomerActions_ddl" runat="server" 
-            DataSourceID="SqlDataSource1" DataTextField="Customer_ID" 
+            DataTextField="Customer_ID" 
             DataValueField="Customer_ID">
             <asp:ListItem Value="0">Choose an Action</asp:ListItem>
             <asp:ListItem Value="1">Add Customer</asp:ListItem>

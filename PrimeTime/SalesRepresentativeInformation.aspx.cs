@@ -17,7 +17,13 @@ public partial class SalesRepresentativeInformation : System.Web.UI.Page
     }
     protected void clear_btn_Click(object sender, EventArgs e)
     {
-
+        salesRepID_tb.Text = "";
+        firstName_tb.Text = "";
+        lastName_tb.Text = "";
+        phone_tb.Text = "";
+        altPhone_tb.Text = "";
+        email_tb.Text = "";
+        chooseAction_ddl.SelectedIndex = 0;
     }
     protected void chooseAction_ddl_SelectedIndexChanged(object sender, EventArgs e)
     {
@@ -29,10 +35,10 @@ public partial class SalesRepresentativeInformation : System.Web.UI.Page
     }
     protected void home_btn_Click(object sender, EventArgs e)
     {
-
+        Response.Redirect("mgmtTasks.aspx");
     }
     protected void logout_btn_Click(object sender, EventArgs e)
     {
-
+        Response.Redirect("login.aspx");
     }
 }

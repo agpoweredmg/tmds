@@ -71,7 +71,7 @@
         <td class="style6">
             ID:</td>
         <td width="174">
-            <asp:TextBox ID="id_tb" runat="server"></asp:TextBox>
+            <asp:TextBox ID="id_tb" runat="server" ontextchanged="id_tb_TextChanged"></asp:TextBox>
             </td>
         <td class="style10">
     &nbsp;&nbsp;&nbsp;&nbsp;</td>

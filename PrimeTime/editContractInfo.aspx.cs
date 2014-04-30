@@ -18,6 +18,7 @@ public partial class _Default : System.Web.UI.Page
         contractDate_tb.Text = "";
         depositAmount_tb.Text = "";
         discount_tb.Text = "";
+        actionToPerform_ddl.SelectedIndex = 0;
     }
     protected void submit_btn_Click(object sender, EventArgs e)
     {
@@ -33,10 +34,10 @@ public partial class _Default : System.Web.UI.Page
     }
     protected void home_btn_Click(object sender, EventArgs e)
     {
-
+        Response.Redirect("mgmtTasks.aspx");
     }
     protected void logout_btn_Click(object sender, EventArgs e)
     {
-
+        Response.Redirect("login.aspx");
     }
 }

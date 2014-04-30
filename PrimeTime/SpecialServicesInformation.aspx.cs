@@ -17,10 +17,17 @@ public partial class ServicesInformation : System.Web.UI.Page
     }
     protected void logout_btn_Click(object sender, EventArgs e)
     {
-
+        Response.Redirect("login.aspx");
     }
     protected void home_btn_Click(object sender, EventArgs e)
     {
-
+        Response.Redirect("mgmtTasks.aspx");
+    }
+    protected void Clear_btn_Click(object sender, EventArgs e)
+    {
+        ServiceID_tb.Text = "";
+        ServiceName_tb.Text = "";
+        ServicePrice_tb.Text = "";
+        ChooseSpecialServices_ddl.SelectedIndex = 0;
     }
 }

@@ -59,7 +59,17 @@ public partial class SuppliersInformation : System.Web.UI.Page
     }
     protected void clear_btn_Click(object sender, EventArgs e)
     {
-
+        id_tb.Text = "";
+        name_tb.Text = "";
+        phone_tb.Text = "";
+        email_tb.Text = "";
+        fax_tb.Text = "";
+        street_tb.Text = "";
+        suite_tb.Text = "";
+        city_tb.Text = "";
+        state_tb.Text = "";
+        zip_tb.Text = "";
+        chooseAction_ddl.SelectedIndex = 0;
     }
     protected void chooseAction_ddl_SelectedIndexChanged(object sender, EventArgs e)
     {
@@ -79,15 +89,19 @@ public partial class SuppliersInformation : System.Web.UI.Page
     }
     protected void home_btn_Click(object sender, EventArgs e)
     {
-
+        Response.Redirect("mgmtTasks.aspx");
     }
     protected void logout_btn_Click(object sender, EventArgs e)
     {
-
+        Response.Redirect("login.aspx");
     }
     protected void supplierLookup_ddl_SelectedIndexChanged(object sender, EventArgs e)
     {
         id_tb.Text = supplierLookup_ddl.SelectedValue;
+
+    }
+    protected void supplierLookup_Selecting(object sender, SqlDataSourceSelectingEventArgs e)
+    {
 
     }
 }

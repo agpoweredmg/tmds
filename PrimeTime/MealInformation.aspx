@@ -39,7 +39,7 @@
     <asp:Button ID="submit_btn" runat="server" Text="Submit" Width="61px" 
                 onclick="submit_btn_Click" />
     &nbsp;&nbsp;&nbsp;&nbsp;<asp:Button ID="Button3" runat="server" Text="Clear" 
-                Width="61px" onclick="clear_btn_Click" />
+                Width="61px" onclick="clear_btn_Click" style="height: 26px" />
             </td>
         </tr>
 

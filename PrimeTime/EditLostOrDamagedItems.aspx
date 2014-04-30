@@ -31,11 +31,8 @@
     </th>
     <th>
         <asp:Button ID="Submit_btn" runat="server" Text="Submit" 
-<<<<<<< HEAD
             onclick="Submit_btn_Click" Width="61px" />
-=======
-            onclick="Submit_btn_Click" />
->>>>>>> 9805c386dc4f9aea1ef976bbe1ca1016af52cc7b
+
 &nbsp;
         <asp:Button ID="Clear_btn" runat="server" Text="Clear" 
             onclick="Clear_btn_Click" />

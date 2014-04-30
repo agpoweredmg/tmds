@@ -11,39 +11,26 @@ public partial class EditLostOrDamagedItems : System.Web.UI.Page
     {
 
     }
-<<<<<<< HEAD
     protected void logout_btn_Click(object sender, EventArgs e)
     {
-
+        Response.Redirect("login.aspx");
     }
     protected void home_btn_Click(object sender, EventArgs e)
     {
-
+        Response.Redirect("mgmtTasks.aspx");
     }
     protected void Submit_btn_Click(object sender, EventArgs e)
     {
 
     }
     protected void Clear_btn_Click(object sender, EventArgs e)
-=======
-    protected void Submit_btn_Click(object sender, EventArgs e)
     {
-
-    }
-    protected void Clear_btn_Click(object sender, EventArgs e)
-    {
-
+        LostDamageID_tb.Text = "";
+        InventoryID_tb.Text = "";
+        QuantityLost_tb.Text = "";
+        ChooseDamagedItemsActions_ddl.SelectedIndex = 0;
     }
     protected void back_btn_Click(object sender, EventArgs e)
-    {
-
-    }
-    protected void home_btn_Click(object sender, EventArgs e)
-    {
-
-    }
-    protected void logout_btn_Click(object sender, EventArgs e)
->>>>>>> 9805c386dc4f9aea1ef976bbe1ca1016af52cc7b
     {
 
     }

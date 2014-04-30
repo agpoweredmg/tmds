@@ -19,16 +19,13 @@ public partial class InformationLookup : System.Web.UI.Page
     {
 
     }
-    protected void back_btn_Click(object sender, EventArgs e)
-    {
-
-    }
+    
     protected void home_btn_Click(object sender, EventArgs e)
     {
-
+        Response.Redirect("employeemain.aspx");
     }
     protected void logout_btn_Click(object sender, EventArgs e)
     {
-
+        Response.Redirect("login.aspx");
     }
 }

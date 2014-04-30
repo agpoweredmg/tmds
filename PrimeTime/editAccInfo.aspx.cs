@@ -17,6 +17,7 @@ public partial class editAccInfo : System.Web.UI.Page
         accountBalance_tb.Text = "";
         amountDue_tb.Text = "";
         dateDue_tb.Text = "";
+        actionToPerform_ddl.SelectedIndex = 0;
     }
 
     protected void accountID_tb_TextChanged(object sender, EventArgs e)
@@ -31,17 +32,13 @@ public partial class editAccInfo : System.Web.UI.Page
     {
 
     }
-    protected void back_btn_Click(object sender, EventArgs e)
-    {
-
-    }
     protected void home_btn_Click(object sender, EventArgs e)
     {
-
+        Response.Redirect("mgmtTasks.aspx");
     }
     protected void logout_btn_Click(object sender, EventArgs e)
     
     {
-
+        Response.Redirect("login.aspx");
     }
 }

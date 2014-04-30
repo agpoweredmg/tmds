@@ -31,7 +31,8 @@
         </td>
         <td>
             <asp:Button ID="Submit_btn" runat="server" Text="Submit" />
-            <asp:Button ID="Clear_btn" runat="server" Text="Clear" />
+            <asp:Button ID="Clear_btn" runat="server" Text="Clear" 
+                onclick="Clear_btn_Click" />
         </td>
         </tr>
 
