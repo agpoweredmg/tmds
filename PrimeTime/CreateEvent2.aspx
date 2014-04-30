@@ -157,7 +157,7 @@
         <tr>
         <td align="right">Deposit :</td>
         <td>
-                <asp:TextBox ID="deposite_txt" runat="server" Width="100px"></asp:TextBox>
+                <asp:TextBox ID="deposite_txt" runat="server" Width="100px" Height="23px"></asp:TextBox>
                 </td>
     </tr>
         <tr>

@@ -38,12 +38,24 @@
             </td>
         </tr>
         <tr>
+            <td>
+
+                Job Preformed</td>
+            <td>
+
+                <asp:DropDownList ID="DropDownList1" runat="server" DataSourceID="jobLookup" 
+                    DataTextField="Job_Desc" DataValueField="Job_ID">
+                </asp:DropDownList>
+                <asp:SqlDataSource ID="jobLookup" runat="server" 
+                    ConnectionString="<%$ ConnectionStrings:group3_6_WEBUSER %>" 
+                    SelectCommand="SELECT [Job_ID], [Job_Desc] FROM [Jobs]"></asp:SqlDataSource>
+
+            </td>
+        </tr>
+        <tr>
             <td>Hours Worked:</td>
             <td>
-    <b>
-                <asp:TextBox ID="hoursWorked_txt" runat="server" Style="text-align: left" 
-                    Width="200"></asp:TextBox>
-    </b>
+                <asp:Label ID="hoursWorked_lbl" runat="server"></asp:Label>
             </td>
         </tr>
     </table>
