@@ -11,7 +11,7 @@ public partial class EditCustomerInfo : System.Web.UI.Page
     {
 
     }
-<<<<<<< HEAD
+
     protected void back_btn_Click(object sender, EventArgs e)
     {
 
@@ -33,22 +33,11 @@ public partial class EditCustomerInfo : System.Web.UI.Page
 
     }
 
-=======
+
     protected void customerID_tb_TextChanged(object sender, EventArgs e)
     {
 
     }
-    protected void back_btn_Click(object sender, EventArgs e)
-    {
 
-    }
-    protected void home_btn_Click(object sender, EventArgs e)
-    {
 
-    }
-    protected void logout_btn_Click(object sender, EventArgs e)
-    {
-
-    }
->>>>>>> dbd66072e57a58ffe5a4b5880c37fd0aa853b354
 }
