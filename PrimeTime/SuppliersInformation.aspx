@@ -18,6 +18,21 @@
         {
             width: 159px;
         }
+        .style4
+        {
+            width: 71px;
+            height: 26px;
+        }
+        .style5
+        {
+            width: 159px;
+            height: 26px;
+        }
+        .style6
+        {
+            width: 151px;
+            height: 26px;
+        }
     </style>
 </head>
 <body>
@@ -67,7 +82,6 @@
                 <asp:ListItem Value="1">Add Supplier</asp:ListItem>
                 <asp:ListItem Value="2">Delete Supplier</asp:ListItem>
                 <asp:ListItem Value="3">Update Supplier</asp:ListItem>
-                <asp:ListItem Value="4">Search Suppliers</asp:ListItem>
             </asp:DropDownList>
             </td>
         </tr>
@@ -82,13 +96,23 @@
         </tr>
 
         <tr>
-        <td class="style2">
+        <td class="style4">
             Email: </td>
-        <td class="style3">
+        <td class="style5">
             <asp:TextBox ID="email_tb" runat="server"></asp:TextBox>
             </td>
-        <td class="style1">
-            &nbsp;</td>
+        <td class="style6">
+            <asp:DropDownList ID="supplierLookup_ddl" runat="server" AutoPostBack="True" 
+                DataSourceID="supplierLookup" DataTextField="Supplier_Name" 
+                DataValueField="Supplier_ID" 
+                onselectedindexchanged="supplierLookup_ddl_SelectedIndexChanged" 
+                Visible="False">
+            </asp:DropDownList>
+            <asp:SqlDataSource ID="supplierLookup" runat="server" 
+                ConnectionString="<%$ ConnectionStrings:WebUserLookup %>" 
+                SelectCommand="SELECT [Supplier_ID], [Supplier_Name] FROM [Suppliers]">
+            </asp:SqlDataSource>
+            </td>
         </tr>
 
         <tr>

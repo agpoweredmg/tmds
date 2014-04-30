@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data;
 using System.Data.SqlClient;
+using System.Drawing;
 
 public partial class SuppliersInformation : System.Web.UI.Page
 {
@@ -48,7 +49,15 @@ public partial class SuppliersInformation : System.Web.UI.Page
     }
     protected void chooseAction_ddl_SelectedIndexChanged(object sender, EventArgs e)
     {
+        if (chooseAction_ddl.SelectedIndex == 2 || chooseAction_ddl.SelectedIndex == 3)
+        {
+            supplierLookup_ddl.Visible = true;
+        }
 
+        if (chooseAction_ddl.SelectedIndex == 0 || chooseAction_ddl.SelectedIndex == 1)
+        {
+            supplierLookup_ddl.Visible = false;
+        }
     }
     protected void back_btn_Click(object sender, EventArgs e)
     {
@@ -61,5 +70,9 @@ public partial class SuppliersInformation : System.Web.UI.Page
     protected void logout_btn_Click(object sender, EventArgs e)
     {
 
+    }
+    protected void supplierLookup_ddl_SelectedIndexChanged(object sender, EventArgs e)
+    {
+        id_tb.Text = supplierLookup_ddl.SelectedValue;
     }
 }
