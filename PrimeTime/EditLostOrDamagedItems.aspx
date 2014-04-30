@@ -30,9 +30,11 @@
         <asp:TextBox ID="LostDamageID_tb" runat="server"></asp:TextBox>
     </th>
     <th>
-        <asp:Button ID="Submit_btn" runat="server" Text="Submit" />
+        <asp:Button ID="Submit_btn" runat="server" Text="Submit" 
+            onclick="Submit_btn_Click" />
 &nbsp;
-        <asp:Button ID="Clear_btn" runat="server" Text="Clear" />
+        <asp:Button ID="Clear_btn" runat="server" Text="Clear" 
+            onclick="Clear_btn_Click" />
 &nbsp;</th>
     </tr>
 
