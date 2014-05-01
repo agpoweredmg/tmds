@@ -99,6 +99,12 @@
             onclick="home_btn_Click" />&nbsp;&nbsp;&nbsp;
     <asp:Button ID="logout_btn" runat="server" Text="Logout" Width="68px" 
             Height="38px" onclick="logout_btn_Click" />
+            <br />
+            <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" 
+                ControlToValidate="email_tb" ErrorMessage="Invalid Email Address" 
+                ForeColor="Maroon" SetFocusOnError="True" 
+                ValidationExpression="\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*" 
+                ValidationGroup="Text">Invalid Email Address</asp:RegularExpressionValidator>
      </center>
      </div>
     
