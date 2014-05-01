@@ -3,7 +3,7 @@
 
 --create database PrimeTimeCatering;
 
-use group3_6
+use PrimeTimeCatering;
 
 create table Events(
 	Event_ID 		
@@ -30,8 +30,8 @@ create table Customers(
 	AS CAST('CU'+RIGHT('000000'+CAST(RowNum_CU AS VARCHAR(6)),6) AS VARCHAR(8)) PERSISTED PRIMARY KEY NOT NULL,
 	Cust_F_Name		varchar(25)				not null,
 	Cust_L_Name		varchar(25) 			not null,
-	Cust_Phone		varchar(10) 			not null,
-	Cust_Alt_Phone 	varchar(10)						,
+	Cust_Phone		varchar(13) 			not null,
+	Cust_Alt_Phone 	varchar(13)						,
 	Cust_Email		varchar(50)				not null,
 	RowNum_CU INT IDENTITY(1,1) CHECK (RowNum_CU <= 999))
 
@@ -62,11 +62,11 @@ create table Contracts(
 create table Employees(
 	Emp_ID			
 	AS CAST('EM'+RIGHT('000000'+CAST(RowNum_EM AS VARCHAR(6)),6) AS VARCHAR(8)) PERSISTED PRIMARY KEY NOT NULL,
-	Emp_SSN			varchar(9)	UNIQUE	not null,
+	Emp_SSN			varchar(11)	UNIQUE	not null,
 	Emp_F_Name		varchar(25)	not null,
 	Emp_L_Name		varchar(25) not null,
-	Emp_Phone		varchar(10) not null,
-	Emp_Alt_Phone	varchar(10) not null,
+	Emp_Phone		varchar(13) not null,
+	Emp_Alt_Phone	varchar(13) not null,
 	Emp_Hire_Date	date		not null,
 	Emp_End_Date	date,
 	Emp_Pass		varchar(15)	not null,
@@ -147,13 +147,13 @@ create table Lost_Damaged_Details(
 create table Entrees(
 	Entree_ID			
 	AS CAST('EN'+RIGHT('000000'+CAST(RowNum_EN AS VARCHAR(6)),6) AS VARCHAR(8)) PERSISTED PRIMARY KEY NOT NULL,
-	Prepared_Item_ID	varchar(8)	REFERENCES Prepared_Items(Prepared_Item_ID),
+	Unprepared_Item_ID	varchar(8)	REFERENCES Unprepared_Item(Unprepared_Item_ID),
 	RowNum_EN INT IDENTITY(1,1) CHECK (RowNum_EN <= 999))
 
 create table Sides(
 	Side_ID				
 	AS CAST('SI'+RIGHT('000000'+CAST(RowNum_SI AS VARCHAR(6)),6) AS VARCHAR(8)) PERSISTED PRIMARY KEY NOT NULL,
-	Prepared_Item_ID	varchar(8) REFERENCES Prepared_Items(Prepared_Item_ID),
+	Unprepared_Item_ID	varchar(8) REFERENCES Unprepared_Item(Unprepared_Item_ID),
 	RowNum_SI INT IDENTITY(1,1) CHECK (RowNum_SI <= 999))
 
 create table Meal_Detail(
@@ -179,7 +179,7 @@ create table Invoice(
 	
 create table Acct_Receivable(
 	Acct_ID		
-	AS CAST('AC'+RIGHT('000000'+CAST(RowNum_IN AS VARCHAR(6)),6) AS VARCHAR(8)) PERSISTED PRIMARY KEY NOT NULL,
+	AS CAST('AC'+RIGHT('000000'+CAST(RowNum_AC AS VARCHAR(6)),6) AS VARCHAR(8)) PERSISTED PRIMARY KEY NOT NULL,
 	Invoice_ID 	varchar(8) not null REFERENCES INVOICE(Invoice_ID),
 	RowNum_AC INT IDENTITY(1,1) CHECK (RowNum_AC <= 999))
 
@@ -208,8 +208,8 @@ create table Suppliers(
 	Supplier_ID				
 	AS CAST('SU'+RIGHT('000000'+CAST(RowNum_SU AS VARCHAR(6)),6) AS VARCHAR(8)) PERSISTED PRIMARY KEY NOT NULL,
 	Supplier_Name			varchar(50)	not null,
-	Supplier_Phone			varchar(10)	not null,
-	Supplier_Fax			varchar(10),
+	Supplier_Phone			varchar(13)	not null,
+	Supplier_Fax			varchar(13),
 	Supplier_Email			varchar(50)	not null,
 	Supplier_Street			varchar(30)	not null,
 	Supplier_Suite_Box_No	varchar(10),
@@ -223,8 +223,8 @@ create table Sales_Rep(
 	AS CAST('RP'+RIGHT('000000'+CAST(RowNum_RP AS VARCHAR(6)),6) AS VARCHAR(8)) PERSISTED PRIMARY KEY NOT NULL,
 	Rep_F_Name		varchar(25)	not null,
 	Rep_L_Name		varchar(25)	not null,
-	Rep_Phone		varchar(10)	not null,
-	Rep_Alt_Phone	varchar(10),
+	Rep_Phone		varchar(13)	not null,
+	Rep_Alt_Phone	varchar(13),
 	Rep_Email		varchar(50)	not null,
 	RowNum_RP INT IDENTITY(1,1) CHECK (RowNum_RP <= 999))
 
@@ -249,3 +249,23 @@ create table Accounts_Payable(
 	Date_Due			date			not null,
 	Amount_Due			decimal(8,2)	not null,
 	RowNum_AP INT IDENTITY(1,1) CHECK (RowNum_AP <= 999))
+
+CREATE TABLE Cancellation_Summary(
+	Cancellation_ID		varchar(8)		NOT NULL,
+	Refund_Amt			decimal(6,2)			,
+	Cancellation_Date	date			NOT NULL,
+	Event_ID			varchar(8)		NOT NULL,
+	Event_Name			varchar(50)		NOT NULL,
+	Contract_ID			varchar(8)		NOT NULL,
+	Contract_Date		date			NOT NULL,
+	Customer_ID			varchar(8)		NOT NULL,
+	Cust_F_Name			varchar(25)		NOT NULL,
+	Cust_L_Name			varchar(25)		NOT NULL,
+	Invoice_ID			varchar(8)		NOT NULL,
+	Acct_ID				varchar(8)		NOT NULL,
+	FOREIGN KEY (Cancellation_ID)	REFERENCES Cancellations(Cancellation_ID),
+	FOREIGN KEY (Event_ID)			REFERENCES Events(Event_ID),
+	FOREIGN KEY (Contract_ID)		REFERENCES Contracts(Contract_ID),
+	FOREIGN KEY (Customer_ID)		REFERENCES Customers(Customer_ID),
+	FOREIGN KEY (Invoice_ID)		REFERENCES Invoice(Invoice_ID),
+	FOREIGN KEY (Acct_ID)			REFERENCES Acct_Receivable(Acct_ID))
