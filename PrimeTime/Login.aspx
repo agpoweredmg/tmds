@@ -28,16 +28,20 @@
                     <table>
                         <tr>
                             <td>
-                                User Name:
-                            </td>
+                                User Name:<asp:RequiredFieldValidator ID="RequiredFieldValidator1" 
+                                    runat="server" ControlToValidate="userName_txt" 
+                                    ErrorMessage="Enter your user name" ForeColor="Red">*</asp:RequiredFieldValidator>
+&nbsp;</td>
                             <td>
                                 <asp:TextBox ID="userName_txt" runat="server" Style="text-align: left" Width="200"></asp:TextBox>
                             </td>
                         </tr>
                         <tr>
                             <td>
-                                Pass Word:
-                            </td>
+                                Pass Word:<asp:RequiredFieldValidator ID="RequiredFieldValidator2" 
+                                    runat="server" ControlToValidate="passWord_txt" 
+                                    ErrorMessage="Enter your Password" ForeColor="Red">*</asp:RequiredFieldValidator>
+&nbsp;</td>
                             <td>
                                 <asp:TextBox ID="passWord_txt" runat="server" Style="text-align: left" TextMode="Password"
                                     Width="200"></asp:TextBox>
