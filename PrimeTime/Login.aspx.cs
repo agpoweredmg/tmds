@@ -34,6 +34,13 @@ public partial class Login : System.Web.UI.Page
 
         //Label1.Text = Request.Cookies["cred"].Value;
 
-        Response.Redirect("mgmtTasks.aspx");
+        if (mgr)
+        {
+            Response.Redirect("mgmtTasks.aspx");
+        }
+        else
+        {
+            Response.Redirect("EmployeeMain.aspx");
+        }
     }
 }
