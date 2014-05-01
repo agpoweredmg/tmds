@@ -25,14 +25,14 @@ public partial class CreateEvent1 : System.Web.UI.Page
 
 
 
-        command.Parameters.AddWithValue("@customer_id", customerId_txt.Text.ToString());
+       // command.Parameters.AddWithValue("@customer_id", customerId_txt.Text.ToString());
         command.Parameters.AddWithValue("@first_name", firstName_txt.Text.ToString());
         command.Parameters.AddWithValue("@last_name", lastName_txt.Text.ToString());
         command.Parameters.AddWithValue("@phone1", phone1_txt.Text.ToString());
         command.Parameters.AddWithValue("@phone2", phone2_txt.Text.ToString());
         command.Parameters.AddWithValue("@email", email_txt.Text.ToString());
 
-        maillingComm.Parameters.AddWithValue("@customer_id", customerId_txt.Text.ToString());
+        //maillingComm.Parameters.AddWithValue("@customer_id", customerId_txt.Text.ToString());
         maillingComm.Parameters.AddWithValue("@street", street_txt.Text.ToString());
         maillingComm.Parameters.AddWithValue("@apt_suite", apt_suite_txt.Text.ToString());
         maillingComm.Parameters.AddWithValue("@city", city_txt.Text.ToString());
@@ -60,7 +60,7 @@ public partial class CreateEvent1 : System.Web.UI.Page
     }
     protected void clear_btn_Click(object sender, EventArgs e)
     {
-        customerId_txt.Text = " ";
+        //customerId_txt.Text = " ";
         firstName_txt.Text = " ";
         lastName_txt.Text = " ";
         phone1_txt.Text = " ";
@@ -101,7 +101,7 @@ public partial class CreateEvent1 : System.Web.UI.Page
             SqlCommand maillingComm = new SqlCommand("customer_billing", conn);
             maillingComm.CommandType = CommandType.StoredProcedure;
 
-            maillingComm.Parameters.AddWithValue("@customer_id", customerId_txt.Text.ToString());
+            //maillingComm.Parameters.AddWithValue("@customer_id", customerId_txt.Text.ToString());
             maillingComm.Parameters.AddWithValue("@street", street_txt.Text.ToString());
             maillingComm.Parameters.AddWithValue("@apt_suite", apt_suite_txt.Text.ToString());
             maillingComm.Parameters.AddWithValue("@city", city_txt.Text.ToString());
@@ -118,7 +118,7 @@ public partial class CreateEvent1 : System.Web.UI.Page
             SqlCommand billingComm = new SqlCommand("customer_billing", conn);
             billingComm.CommandType = CommandType.StoredProcedure;
 
-            billingComm.Parameters.AddWithValue("@customer_id", customerId_txt.Text.ToString());
+            //billingComm.Parameters.AddWithValue("@customer_id", customerId_txt.Text.ToString());
             billingComm.Parameters.AddWithValue("@street", billingStreet_txt.Text.ToString());
             billingComm.Parameters.AddWithValue("@apt_suite", billlingSuiteApt_txt.Text.ToString());
             billingComm.Parameters.AddWithValue("@city", billingCity_txt.Text.ToString());

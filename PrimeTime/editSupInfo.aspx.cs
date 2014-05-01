@@ -31,10 +31,6 @@ public partial class editSupInfo : System.Web.UI.Page
     {
 
     }
-    protected void back_btn_Click(object sender, EventArgs e)
-    {
-
-    }
     protected void home_btn_Click(object sender, EventArgs e)
     {
 
