@@ -60,6 +60,7 @@
                     </table>
                 <br/>
                 <br/>
+                <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
                 <br/>
                 <br/>
                 <br/>
