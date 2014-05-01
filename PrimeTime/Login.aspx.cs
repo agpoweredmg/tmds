@@ -15,7 +15,7 @@ public partial class Login : System.Web.UI.Page
 
     protected void Page_Load(object sender, EventArgs e)
     {
-
+        Label1.Visible = false;
     }
     protected void login_btn_Click(object sender, EventArgs e)
     {
@@ -27,7 +27,21 @@ public partial class Login : System.Web.UI.Page
 
         conn.Open();
         command.ExecuteNonQuery();
-        bool mgr = Convert.ToBoolean(command.Parameters["@mgr"].Value);
+
+        bool mgr;
+
+        if (command.Parameters["@mgr"].Value is DBNull)
+        {
+            Label1.ForeColor = System.Drawing.Color.Red;
+            Label1.Visible = true;
+            Label1.Text = "User ID or Password is INCORRECT.";
+            return;
+        }
+        else
+        {
+
+            mgr = Convert.ToBoolean(command.Parameters["@mgr"].Value);
+        }
         conn.Close();
 
         Response.Cookies["cred"]["mgr"] = mgr.ToString();
@@ -38,11 +52,7 @@ public partial class Login : System.Web.UI.Page
         //String two = Request.Cookies["cred"]["uname"];
         //Label1.Text = one + ", " + two;
 
-        if (mgr == null)
-        {
-            Response.Redirect("InvalidLoginCredentials.aspx");
-        }
-        else if (mgr)
+        if (mgr)
         {
             Response.Redirect("mgmtTasks.aspx");
         }

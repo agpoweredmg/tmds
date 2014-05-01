@@ -34,6 +34,9 @@
         DataSourceID="SqlDataSource3" DataTextField="Item_Name" 
         DataValueField="Item_Name" Width="85px">
     </asp:DropDownList>
+            <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" 
+                ControlToValidate="entree_ddl" 
+                ErrorMessage="Please select an Entree from dropdown">*</asp:RequiredFieldValidator>
             </td>
         <td>
     <asp:Button ID="submit_btn" runat="server" Text="Submit" Width="61px" 
@@ -52,7 +55,10 @@
         DataSourceID="SqlDataSource2" DataTextField="Item_Name" 
         DataValueField="Item_Name" Width="85px">
     </asp:DropDownList>
-    <asp:SqlDataSource ID="SqlDataSource2" runat="server" 
+            <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" 
+                ControlToValidate="sideTwo_ddl" 
+                ErrorMessage="Please select Side Item One from dropdown">*</asp:RequiredFieldValidator>
+&nbsp;<asp:SqlDataSource ID="SqlDataSource2" runat="server" 
         ConnectionString="<%$ ConnectionStrings:group3_6_WEBUSER %>" 
         SelectCommand="SELECT [Item_Name] FROM [SIDE_ITEMS]"></asp:SqlDataSource>
             </td>
@@ -76,6 +82,8 @@
         DataSourceID="SqlDataSource2" DataTextField="Item_Name" 
         DataValueField="Item_Name" Width="85px">
     </asp:DropDownList>
+            &nbsp;<asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" 
+                ControlToValidate="sideTwo_ddl" ErrorMessage="Please select a second side item">*</asp:RequiredFieldValidator>
             </td>
         <td></td>
         </tr>
@@ -86,6 +94,12 @@
             </td>
         <td>
         <asp:TextBox ID="numberOfMeals_tb" runat="server" Width="80px"></asp:TextBox>
+<<<<<<< HEAD
+=======
+            <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" 
+                ControlToValidate="numberOfMeals_tb" 
+                ErrorMessage="Please indicate how many meals">*</asp:RequiredFieldValidator>
+>>>>>>> 66569fd60322654f38633047ce9a05ba7467ac19
             </td>
         <td></td>
         </tr>
@@ -103,10 +117,16 @@
         
     </table>
 
+            <br />
+            <br />
+
     <asp:Button ID="home_btn" runat="server" Text="Home" Width="68px" Height="38px" 
             onclick="home_btn_Click" />&nbsp;&nbsp;&nbsp;
     <asp:Button ID="logout_btn" runat="server" Text="Logout" Width="68px" Height="38px" 
             onclick="logout_btn_Click" />
+            <br />
+            <asp:ValidationSummary ID="ValidationSummary1" runat="server" 
+                ForeColor="Maroon" HeaderText="You received the following Errors:" />
       </center>
      </div>
     </form>

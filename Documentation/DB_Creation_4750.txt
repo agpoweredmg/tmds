@@ -1,0 +1,200 @@
+--Group 3 PrimeTime Catering Table Creation Script
+--C. Edwards, C. Gooch, D. Moats, J. Northern, M. Saleh
+
+create database PrimeTimeCatering
+
+use PrimeTimeCatering
+
+create table Events(
+	Event_ID 		varchar(8) 		PRIMARY KEY	not null,
+	Event_Name 		varchar(50) 	   			not null,
+	Event_Location 	varchar(50) 	   			not null,
+	Event_Date 		date 				   		not null)
+	
+create table Special_Services(
+	Service_ID		varchar(8)	PRIMARY KEY not null,
+	Service_Name	varchar(50)				not null,
+	Service_Price	decimal(5,2)			not null)
+
+create table Event_Services(
+	Event_ID		varchar(8)	not null,
+	Services_ID		varchar(8)	not null,
+	PRIMARY KEY(Event_ID, Services_ID))
+	
+create table Customers(
+	Customer_ID		varchar(8)	PRIMARY KEY	not null,
+	Cust_F_Name		varchar(25)				not null,
+	Cust_L_Name		varchar(25) 			not null,
+	Cust_Phone		varchar(10) 			not null,
+	Cust_Alt_Phone 	varchar(10)						,
+	Cust_Email		varchar(50)				not null)
+
+create table Mailing_Address(
+	Customer_ID 		varchar(8) PRIMARY KEY 	not null,
+	Street				varchar(30)						,
+	Apt_Suite_Box_No	varchar(10) 			not null,
+	City				varchar(40)				not null,
+	State				varchar(2)				not null,
+	Zip					varchar(5)				not null,
+	Same_As_Billing_Y_N	bit						not null)
+
+create table Billing_Address(
+	Customer_ID 		varchar(8) PRIMARY KEY not null,
+	Street				varchar(30)					   ,
+	Apt_Suite_Box_No	varchar(10) 			not null,
+	City				varchar(40)				not null,
+	State				varchar(2)				not null,
+	Zip					varchar(5)				not null)
+	
+create table Contracts(
+	Contract_ID 	varchar(8) PRIMARY KEY,
+	Event_ID 		varchar(8) REFERENCES Events(Event_ID) 		 not null,
+	Customer_ID		varchar(8) REFERENCES Customers(Customer_ID) not null)
+	
+create table Employees(
+	Emp_ID			varchar(8)	PRIMARY KEY	not null,
+	Emp_SSN			varchar(9)	UNIQUE	not null,
+	Emp_F_Name		varchar(25)	not null,
+	Emp_L_Name		varchar(25) not null,
+	Emp_Phone		varchar(10) not null,
+	Emp_Alt_Phone	varchar(10) not null,
+	Emp_Hire_Date	date		not null,
+	Emp_Pass		varchar(15)	not null,
+	Emp_Manager_Y_N	bit			not null)
+
+create table Employee_Address(
+	Emp_ID				varchar(8)	PRIMARY KEY not null,
+	Street				varchar(30),
+	Apt_Suite_Box_No	varchar(10) not null,
+	City				varchar(40) not null,
+	State				varchar(2)	not null,
+	Zip					varchar(5)	not null)
+
+create table Jobs(
+	Job_ID			varchar(8)		PRIMARY KEY not null,
+	Job_Desc		varchar(50)		not null,
+	Job_Pay_Rate	decimal(5,2) 	not null)
+
+create table Pay_Schedule(
+	Emp_ID			varchar(8) 		not null,
+	Job_ID			varchar(8) 		not null,
+	Hours_Worked	decimal(4,2) 	not null,
+	PRIMARY KEY(Emp_ID, Job_ID))
+	
+create table Category(
+	Category_ID		varchar(8)	PRIMARY KEY not null,
+	Cateory			varchar(40)	not null)
+
+create table Unprepared_Item(
+	Unprepared_Item_ID	varchar(8)	PRIMARY KEY not null,
+	Category_ID			varchar(8)	REFERENCES Category(Category_ID) not null,
+	Item_Name			varchar(50)		not null,
+	Item_Price			decimal(5,2) 	not null)
+	
+create table Inventory(
+	Inventory_ID		varchar(8)	PRIMARY KEY	not null,
+	Unprepared_Item_ID	varchar(8)	REFERENCES	Unprepared_Item(Unprepared_Item_ID) not null,
+	QOH					integer		not null,
+	Min_Amt				integer		not null,
+	Max_Amt				integer		not null)
+	
+create table Lost_Damaged_Inventory(
+	Lost_Damaged_ID	varchar(8)	PRIMARY KEY not null,
+	Inventory_ID	varchar(8)	REFERENCES Inventory(Inventory_ID) not null,
+	Quant_Lost		integer)
+
+create table Lost_Damaged_Details(
+	Lost_Damaged_ID	varchar(8)	PRIMARY KEY	not null,
+	Loss_OR_Damage	bit						not null,
+	Notes			varchar(255)			 not null)
+	
+create table Prepared_Items(
+	Prepared_Item_ID	varchar(8)		PRIMARY KEY not null,
+	Unprepared_Item_ID	varchar(8)		REFERENCES Unprepared_Item(Unprepared_Item_ID) not null,
+	Serving_Size		decimal(4,2)	not null)
+	
+create table Entrees(
+	Entree_ID			varchar(8)	PRIMARY KEY not null,
+	Prepared_Item_ID	varchar(8)	REFERENCES Prepared_Items(Prepared_Item_ID))
+
+create table Sides(
+	Side_ID				varchar(8)	PRIMARY KEY not null,
+	Prepared_Item_ID	varchar(8) REFERENCES Prepared_Items(Prepared_Item_ID))
+
+create table Meal_Detail(
+	Meal_ID	varchar(8)	PRIMARY KEY not null,
+	Entree_ID	varchar(8)	REFERENCES Entrees(Entree_ID) not null,
+	Side_One	varchar(8)	REFERENCES Sides(Side_ID) not null,
+	Side_Two	varchar(8)	REFERENCES Sides(Side_ID) not null)
+
+create table Event_Meal(
+	Meal_ID 		varchar(8) 		not null,
+	Event_ID 		varchar(8) 		not null,
+	Price_Per_Meal	decimal(5,2)	not null,
+	PRIMARY KEY(Meal_ID, Event_ID))
+	
+create table Invoice(
+	Invoice_ID		varchar(8)	PRIMARY KEY not null,
+	Contract_ID 	varchar(8)	REFERENCES Contracts(Contract_ID),
+	Number_of_Meals	integer		not null)
+	
+create table Acct_Receivable(
+	Acct_ID		varchar(8) PRIMARY KEY not null,
+	Invoice_ID 	varchar(8) not null REFERENCES INVOICE(Invoice_ID))
+
+create table Acct_Rec_Detail(
+	Acct_ID 	varchar(8) 		PRIMARY KEY not null,
+	Acct_Bal 	decimal(8,2) 	not null,
+	Amt_Due		decimal(8,2)	not null,
+	Date_Due	date			not null)
+	
+create table Contract_Details(
+	Contract_ID 		varchar(8) 		PRIMARY KEY not null,
+	Acct_ID 			varchar(8) 		REFERENCES Acct_Receivable(Acct_ID) not null,
+	Contract_Date 		date 			not null,
+	Deposit_Amt			decimal(6, 2) 	not null,
+	Discount_Percentage	decimal(3,3))
+	
+create table Cancellations(
+	Cancellation_ID 	varchar(8) 	PRIMARY KEY not null,
+	Contract_ID 		varchar(8) 	REFERENCES Contracts(Contract_ID) not null,
+	Cancellation_Date	date		not null,
+	Refund_Y_N			bit			not null)
+
+create table Suppliers(
+	Supplier_ID				varchar(8)	PRIMARY KEY not null,
+	Supplier_Name			varchar(50)	not null,
+	Supplier_Phone			varchar(10)	not null,
+	Supplier_Fax			varchar(10),
+	Supplier_Email			varchar(50)	not null,
+	Supplier_Street			varchar(30)	not null,
+	Supplier_Suite_Box_No	varchar(10),
+	Supplier_City			varchar(40)	not null,
+	Supplier_State			varchar(2)	not null,
+	Supplier_Zip			varchar(5)	not null)
+
+create table Sales_Rep(
+	Sales_Rep_ID	varchar(8)	PRIMARY KEY	not null,
+	Rep_F_Name		varchar(25)	not null,
+	Rep_L_Name		varchar(25)	not null,
+	Rep_Phone		varchar(10)	not null,
+	Rep_Alt_Phone	varchar(10),
+	Rep_Email		varchar(50)	not null)
+
+create table Purchase_Orders(
+	Purchase_Order_ID	varchar(8)	PRIMARY KEY not null,
+	Rep_ID				varchar(8)	REFERENCES Sales_Rep(Sales_Rep_ID)	not null,
+	Supplier_ID			varchar(8)	REFERENCES Suppliers(Supplier_ID) not null,
+	Order_Date			date		not null)
+
+create table PO_Details(
+	Purchase_Order_ID	varchar(8)	not null,
+	Unprepared_Item_ID	varchar(8)	not null,
+	Quantity			integer		not null,
+	PRIMARY KEY(Purchase_Order_ID, Unprepared_Item_ID))
+
+create table Accounts_Payable(
+	Acct_Pay_ID			varchar(8)		PRIMARY KEY	not null,
+	Purchase_Order_ID	varchar(8)		REFERENCES Purchase_Orders(Purchase_Order_ID) not null,
+	Date_Due			date			not null,
+	Amount_Due			decimal(8,2)	not null)

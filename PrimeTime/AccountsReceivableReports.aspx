@@ -12,7 +12,8 @@
     
         <asp:GridView ID="GridView1" runat="server" AllowPaging="True" 
             AutoGenerateColumns="False" CellPadding="4" DataKeyNames="Acct_ID" 
-            DataSourceID="SqlDataSource1" ForeColor="#333333" GridLines="None">
+            DataSourceID="SqlDataSource1" ForeColor="#333333" GridLines="None" 
+            Caption="Accounts Receivable Report">
             <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
             <Columns>
                 <asp:BoundField DataField="Acct_ID" HeaderText="Account ID" ReadOnly="True" 

@@ -15,7 +15,7 @@
             <center>
             <form id="form1" runat="server">
             <div>
-                <asp:Image ID="Image1" runat="server" ImageUrl="~/untitled.png" Style="text-align: left" />
+                <asp:Image ID="Image1" runat="server" ImageUrl="untitled.png" Style="text-align: left" />
                 <br />
                 <div style="margin-left: 200px; font-family: sans-serif; font-size: 15.75px; font-weight: bold;
                     width: 396px; text-align: center;">
@@ -28,16 +28,20 @@
                     <table>
                         <tr>
                             <td>
-                                User Name:
-                            </td>
+                                User Name:<asp:RequiredFieldValidator ID="RequiredFieldValidator1" 
+                                    runat="server" ControlToValidate="userName_txt" 
+                                    ErrorMessage="Enter your user name" ForeColor="Red">*</asp:RequiredFieldValidator>
+&nbsp;</td>
                             <td>
                                 <asp:TextBox ID="userName_txt" runat="server" Style="text-align: left" Width="200"></asp:TextBox>
                             </td>
                         </tr>
                         <tr>
                             <td>
-                                Pass Word:
-                            </td>
+                                Pass Word:<asp:RequiredFieldValidator ID="RequiredFieldValidator2" 
+                                    runat="server" ControlToValidate="passWord_txt" 
+                                    ErrorMessage="Enter your Password" ForeColor="Red">*</asp:RequiredFieldValidator>
+&nbsp;</td>
                             <td>
                                 <asp:TextBox ID="passWord_txt" runat="server" Style="text-align: left" TextMode="Password"
                                     Width="200"></asp:TextBox>
@@ -60,7 +64,8 @@
                     </table>
                 <br/>
                 <br/>
-                <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
+                <asp:Label ID="Label1" runat="server" Text="Label" ForeColor="#CC3300" 
+                    Visible="False"></asp:Label>
                 <br/>
                 <br/>
                 <br/>
