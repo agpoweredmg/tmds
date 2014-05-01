@@ -9,39 +9,39 @@
     <form id="form1" runat="server">
     <div style="text-align: center">
         <center>
-            <asp:Image ID="Image1" runat="server" ImageUrl="~/untitled.png" />
+            <asp:Image ID="Image1" runat="server" ImageUrl="untitled.png" />
             <table>
                 <tr>
-                    <th>
-                    </th>
+                    <td>
+                    </td>
                     <th>
                         Edit Accounts Information
                     </th>
-                    <th>
-                    </th>
+                    <td>
+                    </td>
                 </tr>
                 <tr>
-                    <th>
+                    <td>
                         Account ID:
-                    </th>
-                    <th>
+                    </td>
+                    <td>
                         <asp:TextBox ID="accountID_tb" runat="server" 
                             ontextchanged="accountID_tb_TextChanged"></asp:TextBox>
-                    </th>
-                    <th>
+                    </td>
+                    <td>
                         <asp:Button ID="submit_btn" runat="server" Text="Submit" 
                             onclick="submit_btn_Click" />&nbsp;&nbsp;&nbsp;&nbsp;
                         <asp:Button ID="clear_btn" runat="server" Text="Clear" Width="61px" OnClick="clear_btn_Click" />
-                    </th>
+                    </td>
                 </tr>
                 <tr>
-                    <th>
+                    <td>
                         Account Balance:
-                    </th>
-                    <th>
+                    </td>
+                    <td>
                         <asp:TextBox ID="accountBalance_tb" runat="server"></asp:TextBox>
-                    </th>
-                    <th>
+                    </td>
+                    <td>
                         <asp:DropDownList ID="actionToPerform_ddl" runat="server" 
                             onselectedindexchanged="actionToPerform_ddl_SelectedIndexChanged">
                             <asp:ListItem Value="0">Choose an Action</asp:ListItem>
@@ -49,32 +49,37 @@
                             <asp:ListItem Value="2">Delete Account</asp:ListItem>
                             <asp:ListItem Value="3">Update Account</asp:ListItem>
                             </asp:DropDownList>
-                    </th>
+                    </td>
                 </tr>
                 <tr>
-                    <th>
+                    <td>
                         Amount Due:
-                    </th>
-                    <th>
+                    </td>
+                    <td>
                         <asp:TextBox ID="amountDue_tb" runat="server"></asp:TextBox>
-                    </th>
-                    <th>
+                    </td>
+                    <td>
                         &nbsp;
-                    </th>
+                    </td>
                 </tr>
                 <tr>
-                    <th>
+                    <td>
                         Date Due:
-                    </th>
-                    <th>
-                        <asp:TextBox ID="dateDue_tb" runat="server"></asp:TextBox>
-                    </th>
-                    <th>
+                    </td>
+                    <td>
+                        <asp:TextBox ID="dateDue_tb" runat="server" 
+                            ontextchanged="dateDue_tb_TextChanged"></asp:TextBox>
+                    </td>
+                    <td>
                         &nbsp;
-                    </th>
+                    </td>
                 </tr>
             </table>
         </center>
+        <asp:RangeValidator ID="dateDue_RV" runat="server" Type ="Date"
+            ControlToValidate="dateDue_tb" 
+            ErrorMessage="Date must be greater than or equal to current date" 
+            Display="Dynamic" MaximumValue="4/1/2025" MinimumValue="4/1/2014"></asp:RangeValidator>
         <br />
         <br />
         &nbsp;&nbsp;&nbsp;&nbsp;
@@ -82,6 +87,7 @@
             onclick="home_btn_Click" />&nbsp;&nbsp;&nbsp;&nbsp;
         <asp:Button ID="logout_btn" runat="server" Text="Logout" Height="38px" 
             Width="68px" onclick="logout_btn_Click" />
+        <br />
     </div>
     </form>
 </body>

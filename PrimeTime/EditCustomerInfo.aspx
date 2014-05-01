@@ -16,20 +16,20 @@
     <form id="form1" runat="server">
     <div>
     <center>
-        <asp:Image ID="Image1" runat="server" ImageUrl="~/untitled.png" />
+        <asp:Image ID="Image1" runat="server" ImageUrl="untitled.png" />
     <table>
     <tr>
-    <th class="style2"></th>
-    <th class="style2">
+    <td></td>
+    <th>
         Edit Customer Information
-    </th>
-    <th class="style2"></th>
+    </td>
+    <td></td>
     </tr>
 
     <tr>
-    <th>
+    <td>
     Customer ID:
-    </th>
+    </td>
     <th>
     
 
@@ -37,8 +37,8 @@
             ontextchanged="customerID_tb_TextChanged"></asp:TextBox>
 
     
-    </th>
-    <th>
+    </td>
+    <td>
     
         <asp:Button ID="Submit_btn" runat="server" Text="Submit" 
             onclick="Submit_btn_Click" />
@@ -46,18 +46,18 @@
             onclick="Clear_btn_Click" />
 &nbsp;&nbsp;
     
-    </th>
+    </td>
     </tr>
 
     <tr>
-    <th>
-        First Name:</th>
-    <th>
+    <td>
+        First Name:</td>
+    <td>
     
         <asp:TextBox ID="FirstName_tb" runat="server" 
             ontextchanged="FirstName_tb_TextChanged"></asp:TextBox>
-        </th>
-    <th>
+        </td>
+    <td>
     
         <asp:DropDownList ID="ChooseCustomerActions_ddl" runat="server" 
             DataTextField="Customer_ID" 
@@ -67,55 +67,55 @@
             <asp:ListItem Value="2">Delete Customer</asp:ListItem>
             <asp:ListItem Value="3">Update Customer</asp:ListItem>
         </asp:DropDownList>
-        </th>
+        </td>
     </tr>
 
     <tr>
-    <th>
-        Last Name:</th>
-    <th>
+    <td>
+        Last Name:</td>
+    <td>
     
         <asp:TextBox ID="LastName_tb" runat="server"></asp:TextBox>
-        </th>
-    <th>
+        </td>
+    <td>
     
-        &nbsp;</th>
+        &nbsp;</td>
     </tr>
 
     <tr>
-    <th>
-        Phone Number:</th>
-    <th>
+    <td>
+        Phone Number:</td>
+    <td>
     
         <asp:TextBox ID="PhoneNumber_tb" runat="server"></asp:TextBox>
-        </th>
-    <th>
+        </td>
+    <td>
     
-        &nbsp;</th>
+        &nbsp;</td>
     </tr>
 
     <tr>
-    <th>
-        Alternate Number:</th>
-    <th>
+    <td>
+        Alternate Number:</td>
+    <td>
     
         <asp:TextBox ID="AlternateNumber_tb" runat="server"></asp:TextBox>
-        </th>
-    <th>
+        </td>
+    <td>
     
-        &nbsp;</th>
+        &nbsp;</td>
     </tr>
 
     <tr>
-    <th>
-        Email:</th>
-    <th>
+    <td>
+        Email:</td>
+    <td>
     
         <asp:TextBox ID="Email_tb" runat="server"></asp:TextBox>
-        </th>
-    <th>
+        </td>
+    <td>
     
-        &nbsp;</th>
+        &nbsp;</td>
     </tr>
 
     </table>

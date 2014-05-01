@@ -9,7 +9,7 @@
     <form id="form1" runat="server">
     <div style="text-align: center">
         <center>
-            <asp:Image ID="Image1" runat="server" ImageUrl="~/untitled.png" />
+            <asp:Image ID="Image1" runat="server" ImageUrl="untitled.png" />
             <table>
                 <tr>
                     <th>

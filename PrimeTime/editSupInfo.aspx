@@ -16,7 +16,7 @@
     <div>
         <center>
             <h2 style="font-family: sans-serif; width: 1013px; text-align: center;">
-                <asp:Image ID="Image1" runat="server" ImageUrl="~/untitled.png" Style="text-align: center" />
+                <asp:Image ID="Image1" runat="server" ImageUrl="untitled.png" Style="text-align: center" />
             </h2>
             <table>
                 <tr>

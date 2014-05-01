@@ -17,7 +17,7 @@
     <div>
         <center>
             <h2 style="font-family: sans-serif; width: 1013px">
-                <asp:Image ID="Image1" runat="server" ImageUrl="~/untitled.png" />
+                <asp:Image ID="Image1" runat="server" ImageUrl="untitled.png" />
             </h2>
             <table>
                 <tr>
@@ -49,8 +49,8 @@
                             Width="184px" onclick="editSupplier_btn_Click" />
                     </td>
                     <td>
-                        <asp:Button ID="editPurchaseOrder_btn" runat="server" Text="Edit Purchase Order"
-                            Width="184px" />
+                        <asp:Button ID="editLostorDamagedItems_btn" runat="server" Text="Edit Lost or Damaged"
+                            Width="184px" onclick="editLostorDamagedItems_btn_Click" />
                     </td>
                     <td>
                         <asp:Button ID="editEmployeeDetails_btn" runat="server" Text="Edit Employee Details"
@@ -68,7 +68,7 @@
                     </td>
                     <td>
                         <asp:Button ID="editPayRollDetails_btn" runat="server" Text="Edit Pay Roll Details"
-                            Width="184px" />
+                            Width="184px" Height="26px" />
                     </td>
                 </tr>
                 <tr>

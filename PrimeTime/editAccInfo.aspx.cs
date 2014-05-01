@@ -7,6 +7,7 @@ using System.Web.UI.WebControls;
 
 public partial class editAccInfo : System.Web.UI.Page
 {
+
     protected void Page_Load(object sender, EventArgs e)
     {
 
@@ -40,5 +41,10 @@ public partial class editAccInfo : System.Web.UI.Page
     
     {
         Response.Redirect("login.aspx");
+    }
+
+    protected void dateDue_tb_TextChanged(object sender, EventArgs e)
+    {
+       
     }
 }

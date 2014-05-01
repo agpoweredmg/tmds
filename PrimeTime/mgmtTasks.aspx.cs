@@ -46,7 +46,7 @@ public partial class mgmtTasks : System.Web.UI.Page
 
     protected void specialServices_btn_Click(object sender, EventArgs e)
     {
-        Response.Redirect("ServiceInformation.aspx");
+        Response.Redirect("SpecialServicesInformation.aspx");
     }
    
     protected void  logout_btn_Click(object sender, EventArgs e)
@@ -55,6 +55,10 @@ public partial class mgmtTasks : System.Web.UI.Page
     }
     protected void editCustomer_btn_Click(object sender, EventArgs e)
     {
-
+        Response.Redirect("EditCustomerInfo.aspx");
+    }
+    protected void editLostorDamagedItems_btn_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("EditLostOrDamagedItems.aspx");
     }
 }
