@@ -19,4 +19,11 @@ public partial class ReportsGeneration : System.Web.UI.Page
     {
         Response.Redirect("mgmtTasks.aspx");
     }
+    protected void generateReport_btn_Click(object sender, EventArgs e)
+    {
+        if (customersReport_chk.Checked)
+        {
+            Response.Redirect("CustomerReport.aspx");
+        }
+    }
 }

@@ -15,17 +15,17 @@
             DataSourceID="SqlDataSource1" ForeColor="#333333" GridLines="None">
             <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
             <Columns>
-                <asp:BoundField DataField="Customer_ID" HeaderText="Customer_ID" 
+                <asp:BoundField DataField="Customer_ID" HeaderText="Customer ID" 
                     ReadOnly="True" SortExpression="Customer_ID" />
-                <asp:BoundField DataField="Cust_F_Name" HeaderText="Cust_F_Name" 
+                <asp:BoundField DataField="Cust_F_Name" HeaderText="First Name" 
                     SortExpression="Cust_F_Name" />
-                <asp:BoundField DataField="Cust_L_Name" HeaderText="Cust_L_Name" 
+                <asp:BoundField DataField="Cust_L_Name" HeaderText="Last Name" 
                     SortExpression="Cust_L_Name" />
-                <asp:BoundField DataField="Cust_Phone" HeaderText="Cust_Phone" 
+                <asp:BoundField DataField="Cust_Phone" HeaderText="Phone" 
                     SortExpression="Cust_Phone" />
-                <asp:BoundField DataField="Cust_Alt_Phone" HeaderText="Cust_Alt_Phone" 
+                <asp:BoundField DataField="Cust_Alt_Phone" HeaderText="Alt. Phone" 
                     SortExpression="Cust_Alt_Phone" />
-                <asp:BoundField DataField="Cust_Email" HeaderText="Cust_Email" 
+                <asp:BoundField DataField="Cust_Email" HeaderText="e-Mail" 
                     SortExpression="Cust_Email" />
             </Columns>
             <EditRowStyle BackColor="#999999" />

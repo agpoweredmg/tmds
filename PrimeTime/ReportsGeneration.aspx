@@ -204,7 +204,8 @@
             <p>
                 <b>
                     <asp:Button ID="generateReport_btn" runat="server" Height="38px" Text="Generate Report"
-                        Width="151px" Style="margin-left: 0px" />
+                        Width="151px" Style="margin-left: 0px" 
+                    onclick="generateReport_btn_Click" />
                 </b>
             </p>
             <p>
