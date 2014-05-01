@@ -170,13 +170,8 @@
                     onclick="home_btn_Click" CausesValidation="False" />
                 &nbsp;&nbsp;
                 <asp:Button ID="logout_btn" runat="server" BorderColor="Black" BorderStyle="Double"
-<<<<<<< HEAD
                     Height="38px" Style="text-align: center" Text="Logout" Width="69px" 
-                    CausesValidation="False" onclick="logout_btn_Click" 
-=======
-                    Height="38px" Style="text-align: center" Text="Logout" Width="69px" CausesValidation="False" 
->>>>>>> 905ac388bd0890f28645859866f716432f64ee6e
-                     />
+                    CausesValidation="False" onclick="logout_btn_Click" />
                 &nbsp;&nbsp;
                 <asp:Button ID="next_btn" runat="server" BorderColor="Black" BorderStyle="Double"
                     Height="38px" Style="text-align: center" Text="Next>>" Width="69px" 

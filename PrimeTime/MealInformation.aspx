@@ -97,6 +97,9 @@
             <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" 
                 ControlToValidate="numberOfMeals_tb" 
                 ErrorMessage="Please indicate how many meals">*</asp:RequiredFieldValidator>
+            <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" 
+                ControlToValidate="numberOfMeals_tb" ErrorMessage="RegularExpressionValidator" 
+                ValidationExpression="[0-9]">*</asp:RegularExpressionValidator>
             </td>
         <td></td>
         </tr>

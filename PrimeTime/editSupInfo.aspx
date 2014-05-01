@@ -40,7 +40,7 @@
                         <asp:TextBox ID="supplierID_tb" runat="server"></asp:TextBox>
                         <asp:RequiredFieldValidator ID="SupplierID_rf" runat="server" 
                             ControlToValidate="supplierID_tb" ErrorMessage="Supplier ID is required" 
-                            ForeColor="Maroon" ValidationGroup="SupplierID">*</asp:RequiredFieldValidator>
+                            ForeColor="Maroon">*</asp:RequiredFieldValidator>
                         <asp:CompareValidator ID="SupplierID_cv" runat="server" 
                             ControlToValidate="supplierID_tb" ErrorMessage="Supplier ID must be valid" 
                             ForeColor="Maroon" Operator="DataTypeCheck" Type="Integer">*</asp:CompareValidator>
@@ -61,8 +61,7 @@
                         <asp:TextBox ID="supplierName_tb" runat="server"></asp:TextBox>
                         <asp:RegularExpressionValidator ID="SupplierName_RegEx" runat="server" 
                             ControlToValidate="supplierName_tb" ErrorMessage="Invalid Supplier Name" 
-                            ForeColor="Maroon" ValidationExpression="^[a-zA-Z''-'\s]{1,40}$" 
-                            ValidationGroup="SupplierName">*</asp:RegularExpressionValidator>
+                            ForeColor="Maroon" ValidationExpression="^[a-zA-Z''-'\s]{1,40}$">*</asp:RegularExpressionValidator>
                         &nbsp;&nbsp;&nbsp;
                     </th>
                     <th>
@@ -85,8 +84,8 @@
                         <asp:RegularExpressionValidator ID="SupplierPhone_Regex" runat="server" 
                             ControlToValidate="supplierPhone_tb" ErrorMessage="Invalid Supplier Phone" 
                             ForeColor="Maroon" 
-                            ValidationExpression="^[01]?[- .]?(\([2-9]\d{2}\)|[2-9]\d{2})[- .]?\d{3}[- .]?\d{4}$" 
-                            ValidationGroup="SupplierPhone">*</asp:RegularExpressionValidator>
+                            
+                            ValidationExpression="^[01]?[- .]?(\([2-9]\d{2}\)|[2-9]\d{2})[- .]?\d{3}[- .]?\d{4}$">*</asp:RegularExpressionValidator>
                         &nbsp;&nbsp;&nbsp;
                     </th>
                     <th>
@@ -102,8 +101,8 @@
                         <asp:RegularExpressionValidator ID="SupplierFax_RegEx" runat="server" 
                             ControlToValidate="supplierFax_tb" ErrorMessage="RegularExpressionValidator" 
                             ForeColor="Maroon" 
-                            ValidationExpression="^[01]?[- .]?(\([2-9]\d{2}\)|[2-9]\d{2})[- .]?\d{3}[- .]?\d{4}$" 
-                            ValidationGroup="Supplier Fax">*</asp:RegularExpressionValidator>
+                            
+                            ValidationExpression="^[01]?[- .]?(\([2-9]\d{2}\)|[2-9]\d{2})[- .]?\d{3}[- .]?\d{4}$">*</asp:RegularExpressionValidator>
                     &nbsp;&nbsp;&nbsp;
                     </th>
                     <th>
@@ -119,8 +118,7 @@
                         <asp:RegularExpressionValidator ID="SupplierEmail_RegEx" runat="server" 
                             ControlToValidate="supplierEmail_tb" 
                             ErrorMessage="Email must be a valid format" ForeColor="Maroon" 
-                            ValidationExpression="\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*" 
-                            ValidationGroup="Supplier Email">*</asp:RegularExpressionValidator>
+                            ValidationExpression="\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*">*</asp:RegularExpressionValidator>
                     &nbsp;&nbsp;&nbsp;
                     </th>
                     <th>
@@ -135,8 +133,7 @@
                         <asp:TextBox ID="supplierStreet_tb" runat="server"></asp:TextBox>
                         <asp:RequiredFieldValidator ID="SupplierStreet_RegEx" runat="server" 
                             ControlToValidate="supplierStreet_tb" 
-                            ErrorMessage="Supplier Street is required" ForeColor="Maroon" 
-                            ValidationGroup="Supplier Street">*</asp:RequiredFieldValidator>
+                            ErrorMessage="Supplier Street is required" ForeColor="Maroon">*</asp:RequiredFieldValidator>
                     &nbsp;&nbsp;&nbsp;
                     </th>
                     <th>
@@ -166,8 +163,8 @@
                         <asp:TextBox ID="supplierState_tb" runat="server"></asp:TextBox>
                         <asp:RegularExpressionValidator ID="SupplierState_RegEx" runat="server" 
                             ControlToValidate="supplierState_tb" ErrorMessage="Invalid State Abbreviation" 
-                            ForeColor="Maroon"  
-                            ValidationGroup="Supplier State" 
+                            ForeColor="Maroon" 
+                            
                             
                             ValidationExpression="^(A[LKSZAEP]|C[AOT]|D[EC]|F[LM]|G[ANU]|HI|I[ADLN]|K[SY]|LA|M[ADEHINOPST]|N[CDEHJMVY]|O[HKR]|P[ARW]|RI|S[CD]|T[NX]|UT|V[AIT]|W[AIVY])$">*</asp:RegularExpressionValidator>
                     &nbsp;&nbsp;&nbsp;
@@ -205,8 +202,10 @@
     &nbsp;&nbsp;&nbsp;&nbsp;
     <br />
     <br />
-    <asp:ValidationSummary ID="SupplierIDValidationSummary1" runat="server" 
-        ForeColor="Maroon" ValidationGroup="SupplierID" />
+    <asp:ValidationSummary ID="editSupInfo_vs" runat="server" 
+        ForeColor="Maroon" DisplayMode="List" 
+        HeaderText="You received the following Errors:" EnableClientScript="False" 
+        EnableViewState="False" />
     <br />
     </form>
 </body>
