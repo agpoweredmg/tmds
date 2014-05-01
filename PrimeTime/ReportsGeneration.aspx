@@ -5,6 +5,16 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
+    <style type="text/css">
+        .style1
+        {
+            height: 26px;
+        }
+        .style2
+        {
+            height: 25px;
+        }
+    </style>
 </head>
         <body>
             <center>
@@ -135,12 +145,12 @@
                     </td>
                 </tr>
                 <tr>
-                    <td>
+                    <td class="style1">
                         <b>
                             <asp:CheckBox ID="payrollReport_chk" runat="server" Text="Payroll:" />
                             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </b>
                     </td>
-                    <td>
+                    <td class="style1">
                         <b>
                             <asp:DropDownList ID="payrollReport_ddl" runat="server" DataSourceID="employees" DataTextField="Emp_L_Name"
                                 DataValueField="Emp_L_Name" Width="150px">
@@ -173,6 +183,13 @@
                             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </b>
                     </td>
                     <td>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="style2">
+                        <asp:CheckBox ID="CheckBox1" runat="server" />
+                    </td>
+                    <td class="style2">
                     </td>
                 </tr>
             </table>

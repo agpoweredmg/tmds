@@ -25,5 +25,20 @@ public partial class ReportsGeneration : System.Web.UI.Page
         {
             Response.Redirect("CustomerReport.aspx");
         }
+
+
+        if (inventoryReport_chk0.Checked)
+        {
+            Response.Redirect("InventoryReports.aspx");
+        }
+
+        if (employeesReport_chk0.Checked)
+        {
+            Response.Redirect("EmployeesReport.aspx");
+        }
+        if (purchasesReport_chk.Checked)
+        {
+            Response.Redirect("PurchaseOrdersReport.aspx");
+        }
     }
 }
