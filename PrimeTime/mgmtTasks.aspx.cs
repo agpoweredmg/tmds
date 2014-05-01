@@ -9,7 +9,7 @@ public partial class mgmtTasks : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        if (!Convert.ToBoolean(Request.Cookies["cred"].Value))
+        if (!Convert.ToBoolean(Request.Cookies["cred"]["mgr"]))
         {
             Response.Redirect("InvalidLoginCredentials.aspx");
         }
@@ -63,5 +63,9 @@ public partial class mgmtTasks : System.Web.UI.Page
     protected void editLostorDamagedItems_btn_Click(object sender, EventArgs e)
     {
         Response.Redirect("EditLostOrDamagedItems.aspx");
+    }
+    protected void generateReports_btn_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("ReportsGeneration.aspx");
     }
 }
