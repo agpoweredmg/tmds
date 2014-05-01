@@ -99,8 +99,7 @@
         <br />
         <br />
         <br />
-        <asp:ValidationSummary ID="ValidationSummary1" runat="server" 
-            DisplayMode="List" HeaderText="You received the following errors:" 
+        <asp:ValidationSummary ID="editAccount_vs" runat="server" HeaderText="You received the following errors:" 
             Text="*" ForeColor="Maroon"/>
         <br />
         <br />
