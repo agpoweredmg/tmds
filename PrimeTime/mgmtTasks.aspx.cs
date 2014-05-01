@@ -9,7 +9,10 @@ public partial class mgmtTasks : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-
+        if (!Convert.ToBoolean(Request.Cookies["cred"].Value))
+        {
+            Response.Redirect("InvalidLoginCredentials.aspx");
+        }
     }
     protected void editEvent_btn_Click(object sender, EventArgs e)
     {
