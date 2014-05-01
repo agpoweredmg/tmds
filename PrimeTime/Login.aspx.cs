@@ -52,11 +52,7 @@ public partial class Login : System.Web.UI.Page
         //String two = Request.Cookies["cred"]["uname"];
         //Label1.Text = one + ", " + two;
 
-        if (mgr == null)
-        {
-            Response.Redirect("InvalidLoginCredentials.aspx");
-        }
-        else if (mgr)
+        if (mgr)
         {
             Response.Redirect("mgmtTasks.aspx");
         }
