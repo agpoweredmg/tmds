@@ -11,39 +11,39 @@
     <div>
         <div style="text-align: center">
             <center>
-                <asp:Image ID="Image1" runat="server" ImageUrl="~/untitled.png" />
+                <asp:Image ID="Image1" runat="server" ImageUrl="untitled.png" />
                 <table>
                     <tr>
-                        <th>
-                        </th>
+                        <td>
+                        </td>
                         <th>
                             Edit Contracts Information
                         </th>
-                        <th>
-                        </th>
+                        <td>
+                        </td>
                     </tr>
                     <tr>
-                        <th>
+                        <td>
                             Contract ID:
-                        </th>
-                        <th>
+                        </td>
+                        <td>
                             <asp:TextBox ID="contractID_tb" runat="server"></asp:TextBox>
-                        </th>
-                        <th>
+                        </td>
+                        <td>
                             <asp:Button ID="submit_btn" runat="server" Text="Submit" 
                                 onclick="submit_btn_Click" />&nbsp;&nbsp;&nbsp;&nbsp;
                             <asp:Button ID="clear_btn" runat="server" Text="Clear" Width="61px" 
                                 onclick="clear_btn_Click" />
-                        </th>
+                        </td>
                     </tr>
                     <tr>
-                        <th>
+                        <td>
                             Account ID:
-                        </th>
-                        <th>
+                        </td>
+                        <td>
                             <asp:TextBox ID="accountID_tb" runat="server"></asp:TextBox>
-                        </th>
-                        <th>
+                        </td>
+                        <td>
                             <asp:DropDownList ID="actionToPerform_ddl" runat="server" 
                                 onselectedindexchanged="actionToPerform_ddl_SelectedIndexChanged">
                                 <asp:ListItem Value="0">Choose an Action</asp:ListItem>
@@ -51,40 +51,40 @@
                             <asp:ListItem Value="2">Delete Contract</asp:ListItem>
                             <asp:ListItem Value="3">Update Contract</asp:ListItem>
                             </asp:DropDownList>
-                        </th>
+                        </td>
                     </tr>
                     <tr>
-                        <th>
+                        <td>
                             Contract Date:
-                        </th>
-                        <th>
+                        </td>
+                        <td>
                             <asp:TextBox ID="contractDate_tb" runat="server"></asp:TextBox>
-                        </th>
-                        <th>
+                        </td>
+                        <td>
                             &nbsp;
-                        </th>
+                        </td>
                     </tr>
                     <tr>
-                        <th>
+                        <td>
                             Deposit Amount:
-                        </th>
-                        <th>
+                        </td>
+                        <td>
                             <asp:TextBox ID="depositAmount_tb" runat="server"></asp:TextBox>
-                        </th>
-                        <th>
+                        </td>
+                        <td>
                             &nbsp;
-                        </th>
+                        </td>
                     </tr>
                     <tr>
-                        <th>
+                        <td>
                             Discount:
-                        </th>
-                        <th>
+                        </td>
+                        <td>
                             <asp:TextBox ID="discount_tb" runat="server"></asp:TextBox>
-                        </th>
-                        <th>
+                        </td>
+                        <td>
                             &nbsp;
-                        </th>
+                        <td>
                     </tr>
                 </table>
             </center>
