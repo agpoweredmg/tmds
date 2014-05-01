@@ -86,9 +86,6 @@
             </td>
         <td>
         <asp:TextBox ID="numberOfMeals_tb" runat="server" Width="80px"></asp:TextBox>
-            <asp:RangeValidator ID="RangeValidator1" runat="server" 
-                ControlToValidate="numberOfMeals_tb" ErrorMessage="RangeValidator" 
-                MaximumValue="0" MinimumValue="5" ValidationGroup="group1"></asp:RangeValidator>
             </td>
         <td></td>
         </tr>
@@ -101,9 +98,7 @@
             <asp:TextBox ID="totalCost_tb" runat="server"></asp:TextBox>
             </td>
         <td>
-            <asp:ValidationSummary ID="ValidationSummary1" runat="server" 
-                ValidationGroup="group1" />
-            </td>
+            &nbsp;</td>
         </tr>
         
     </table>
