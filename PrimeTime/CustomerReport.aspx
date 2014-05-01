@@ -12,7 +12,8 @@
     
         <asp:GridView ID="GridView1" runat="server" AllowPaging="True" 
             AutoGenerateColumns="False" CellPadding="4" DataKeyNames="Customer_ID" 
-            DataSourceID="SqlDataSource1" ForeColor="#333333" GridLines="None">
+            DataSourceID="SqlDataSource1" ForeColor="#333333" GridLines="None" 
+            Caption="Customers Report" Width="541px">
             <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
             <Columns>
                 <asp:BoundField DataField="Customer_ID" HeaderText="Customer ID" 
@@ -25,7 +26,7 @@
                     SortExpression="Cust_Phone" />
                 <asp:BoundField DataField="Cust_Alt_Phone" HeaderText="Alt. Phone" 
                     SortExpression="Cust_Alt_Phone" />
-                <asp:BoundField DataField="Cust_Email" HeaderText="e-Mail" 
+                <asp:BoundField DataField="Cust_Email" HeaderText="E-Mail" 
                     SortExpression="Cust_Email" />
             </Columns>
             <EditRowStyle BackColor="#999999" />

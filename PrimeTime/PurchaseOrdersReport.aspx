@@ -13,7 +13,8 @@
         <asp:GridView ID="GridView1" runat="server" AllowPaging="True" 
             AutoGenerateColumns="False" CellPadding="4" 
             DataKeyNames="Purchase_Order_ID,Unprepared_Item_ID" 
-            DataSourceID="SqlDataSource1" ForeColor="#333333" GridLines="None">
+            DataSourceID="SqlDataSource1" ForeColor="#333333" GridLines="None" 
+            Caption="Purchase Orders Report">
             <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
             <Columns>
                 <asp:BoundField DataField="Purchase_Order_ID" HeaderText="Purchase Order ID" 

@@ -21,24 +21,47 @@ public partial class ReportsGeneration : System.Web.UI.Page
     }
     protected void generateReport_btn_Click(object sender, EventArgs e)
     {
-        if (customersReport_chk.Checked)
+        if (chooseReport_ddl.SelectedIndex == 0)
         {
-            Response.Redirect("CustomerReport.aspx");
+            Response.Redirect("AccountsPayableReports.aspx");
         }
 
+        if (chooseReport_ddl.SelectedIndex == 1)
 
-        if (inventoryReport_chk0.Checked)
+            Response.Redirect("AccountsReceivableReports.aspx");
+
         {
-            Response.Redirect("InventoryReports.aspx");
+            if (chooseReport_ddl.SelectedIndex == 2)
+
+                Response.Redirect("CustomerReport.aspx");
         }
 
-        if (employeesReport_chk0.Checked)
         {
-            Response.Redirect("EmployeesReport.aspx");
+            if (chooseReport_ddl.SelectedIndex == 3)
+
+                Response.Redirect("InventoryReports.aspx");
         }
-        if (purchasesReport_chk.Checked)
         {
-            Response.Redirect("PurchaseOrdersReport.aspx");
+            if (chooseReport_ddl.SelectedIndex == 4)
+
+                Response.Redirect("PayrollReports.aspx");
         }
+
+        {
+            if (chooseReport_ddl.SelectedIndex == 5)
+
+                Response.Redirect("PurchaseOrdersReport.aspx");
+        }
+        {
+            if (chooseReport_ddl.SelectedIndex == 6)
+
+                Response.Redirect("EmployeesReport.aspx");
+        }
+    }
+       
+
+    protected void chooseReport_ddl_SelectedIndexChanged(object sender, EventArgs e)
+    {
+
     }
 }
