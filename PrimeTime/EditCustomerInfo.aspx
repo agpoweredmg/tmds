@@ -33,7 +33,7 @@
     
     </td>
         <asp:RequiredFieldValidator ID="CustomerID_RegEx" runat="server" 
-            ControlToValidate="customerID_tb" ErrorMessage="RequiredFieldValidator" 
+            ControlToValidate="customerID_tb" ErrorMessage="Customer ID is required." 
             ForeColor="Maroon">*</asp:RequiredFieldValidator>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     <td>
@@ -80,7 +80,7 @@
         <asp:TextBox ID="LastName_tb" runat="server"></asp:TextBox>
         <asp:RegularExpressionValidator ID="LastName_RegEx" runat="server" 
             ControlToValidate="LastName_tb" ErrorMessage="Invalid Last Name" 
-            ForeColor="Maroon">*</asp:RegularExpressionValidator>
+            ForeColor="Maroon" ValidationExpression="^[a-zA-Z''-'\s]{1,40}$">*</asp:RegularExpressionValidator>
         </td>
     <td>
     
@@ -95,11 +95,10 @@
         <asp:TextBox ID="PhoneNumber_tb" runat="server"></asp:TextBox>
         <asp:RegularExpressionValidator ID="PhoneNumber_RegEx" runat="server" 
             ControlToValidate="PhoneNumber_tb" 
-            ErrorMessage="Please Include the Area code for the Phone Number" 
+            ErrorMessage="Invalid format.  Phone number must be (***)***-**** format." 
             ForeColor="Maroon" 
             
-            
-            ValidationExpression="^[01]?[- .]?(\([2-9]\d{2}\)|[2-9]\d{2})[- .]?\d{3}[- .]?\d{4}$">*</asp:RegularExpressionValidator>
+            ValidationExpression="[(][0-9]{3}[)][0-9]{3}-[0-9]{4}">*</asp:RegularExpressionValidator>
         </td>
     <td>
     
@@ -114,11 +113,10 @@
         <asp:TextBox ID="AlternateNumber_tb" runat="server"></asp:TextBox>
         <asp:RegularExpressionValidator ID="AlternateNumber_RegEx" runat="server" 
             ControlToValidate="AlternateNumber_tb" 
-            ErrorMessage="Please Include the Area code for the Alternate Phone" 
+            ErrorMessage="Invalid format.  Alternate number must be (***)***-**** format." 
             ForeColor="Maroon" 
             
-            
-            ValidationExpression="^[01]?[- .]?(\([2-9]\d{2}\)|[2-9]\d{2})[- .]?\d{3}[- .]?\d{4}$">*</asp:RegularExpressionValidator>
+            ValidationExpression="[(][0-9]{3}[)][0-9]{3}-[0-9]{4}">*</asp:RegularExpressionValidator>
         </td>
     <td>
     
@@ -147,7 +145,7 @@
             ID="logout_btn" runat="server" Text="Logout" Height="38px"
         Width="68px" OnClick="logout_btn_Click" CausesValidation="False" />
         <br />
-        <asp:ValidationSummary ID="ValidationSummary1" runat="server" 
+        <asp:ValidationSummary ID="EditCustomerInfo_vs" runat="server" 
             ForeColor="Maroon" />
         <br />
         <br />

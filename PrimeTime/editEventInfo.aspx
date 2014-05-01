@@ -42,7 +42,9 @@
                     </th>
                     <th>
                         <asp:TextBox ID="eventName_tb" runat="server"></asp:TextBox>
-                    &nbsp;
+                        <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" 
+                            ControlToValidate="eventName_tb" ErrorMessage="Name has to be a Valid Name" 
+                            ValidationExpression="^[a-zA-Z''-''\s]{1,40}$">*</asp:RegularExpressionValidator>
                     </th>
                     <th>
                         <asp:DropDownList ID="actionToPerform_ddl" runat="server" 
