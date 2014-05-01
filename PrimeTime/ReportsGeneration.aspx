@@ -16,8 +16,15 @@
                 <asp:Label ID="Label1" runat="server" Text="Reports Generation"></asp:Label>
             </p>
             <br />
-            <asp:DropDownList ID="DropDownList1" runat="server">
-                <asp:ListItem Value="Choose a Report Type"></asp:ListItem>
+            <asp:DropDownList ID="chooseReport_ddl" runat="server" 
+                onselectedindexchanged="chooseReport_ddl_SelectedIndexChanged">
+                <asp:ListItem Value="0">Accounts Payable</asp:ListItem>
+                <asp:ListItem Value="1">Accounts Receivable</asp:ListItem>
+                <asp:ListItem Value="2">Customers</asp:ListItem>
+                <asp:ListItem Value="3">Inventory</asp:ListItem>
+                <asp:ListItem Value="4">Payroll</asp:ListItem>
+                <asp:ListItem Value="5">Purchase Orders</asp:ListItem>
+                <asp:ListItem Value="6">Employees</asp:ListItem>
             </asp:DropDownList>
             <br />
             <table>

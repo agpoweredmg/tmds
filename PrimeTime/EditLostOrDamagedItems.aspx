@@ -28,6 +28,13 @@
     </th>
     <th>
         <asp:TextBox ID="LostDamageID_tb" runat="server"></asp:TextBox>
+        <asp:CompareValidator ID="LostDamageID_cv" runat="server" 
+            ErrorMessage="Lost Damage ID must be valid." 
+            ControlToValidate="LostDamageID_tb" ForeColor="Maroon" Operator="DataTypeCheck" 
+            Type="Integer">*</asp:CompareValidator>
+        <asp:RequiredFieldValidator ID="LostDamageID_rf" runat="server" 
+            ErrorMessage="Lost Damage ID is required." 
+            ControlToValidate="LostDamageID_tb" ForeColor="Maroon">*</asp:RequiredFieldValidator>
     </th>
     <th>
         <asp:Button ID="Submit_btn" runat="server" Text="Submit" 
@@ -35,7 +42,7 @@
 
 &nbsp;
         <asp:Button ID="Clear_btn" runat="server" Text="Clear" 
-            onclick="Clear_btn_Click" />
+            onclick="Clear_btn_Click" CausesValidation="False" />
 &nbsp;</th>
     </tr>
 
@@ -45,6 +52,12 @@
     </th>
     <th>
         <asp:TextBox ID="InventoryID_tb" runat="server"></asp:TextBox>
+        <asp:CompareValidator ID="InventoryID_cv" runat="server" 
+            ErrorMessage="CompareValidator" ControlToValidate="LostDamageID_tb" 
+            ForeColor="Maroon" Operator="DataTypeCheck" Type="Integer">*</asp:CompareValidator>
+        <asp:RequiredFieldValidator ID="InventoryID_rf" runat="server" 
+            ErrorMessage="Inventory ID " ControlToValidate="InventoryID_tb" 
+            ForeColor="Maroon">*</asp:RequiredFieldValidator>
     </th>
     <th>
         <asp:DropDownList ID="ChooseDamagedItemsActions_ddl" runat="server">
@@ -62,6 +75,7 @@
     </th>
     <th>
         <asp:TextBox ID="QuantityLost_tb" runat="server"></asp:TextBox>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     </th>
     <th>
     </th>
@@ -69,9 +83,11 @@
     </table>
    
     <asp:Button ID="home_btn" runat="server" Text="Home" Height="38px"
-        Width="68px" OnClick="home_btn_Click" />&nbsp;&nbsp;&nbsp;&nbsp;
+        Width="68px" OnClick="home_btn_Click" CausesValidation="False" />&nbsp;&nbsp;&nbsp;&nbsp;
         <asp:Button ID="logout_btn" runat="server" Text="Logout" Height="38px"
-        Width="68px" OnClick="logout_btn_Click" />
+        Width="68px" OnClick="logout_btn_Click" CausesValidation="False" />
+        <asp:ValidationSummary ID="ValidationSummary1" runat="server" 
+            ForeColor="Maroon" />
     </center>
     </div>
     </form>
