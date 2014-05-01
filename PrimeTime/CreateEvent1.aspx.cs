@@ -90,7 +90,8 @@ public partial class CreateEvent1 : System.Web.UI.Page
 
         }
         else
-            ;
+        {
+        }
     }
 
     protected void sameAsMailling_chk_CheckedChanged(object sender, EventArgs e)
