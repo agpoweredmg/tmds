@@ -15,7 +15,7 @@
             <center>
             <form id="form1" runat="server">
             <div>
-                <asp:Image ID="Image1" runat="server" ImageUrl="~/untitled.png" Style="text-align: left" />
+                <asp:Image ID="Image1" runat="server" ImageUrl="untitled.png" Style="text-align: left" />
                 <br />
                 <div style="margin-left: 200px; font-family: sans-serif; font-size: 15.75px; font-weight: bold;
                     width: 396px; text-align: center;">
@@ -60,7 +60,8 @@
                     </table>
                 <br/>
                 <br/>
-                <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
+                <asp:Label ID="Label1" runat="server" Text="Label" ForeColor="#CC3300" 
+                    Visible="False"></asp:Label>
                 <br/>
                 <br/>
                 <br/>

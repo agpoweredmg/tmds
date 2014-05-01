@@ -12,7 +12,7 @@
     
         <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" 
             CellPadding="4" DataKeyNames="Acct_Pay_ID" DataSourceID="SqlDataSource1" 
-            ForeColor="#333333" GridLines="None">
+            ForeColor="#333333" GridLines="None" Caption="Accounts Payable Report">
             <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
             <Columns>
                 <asp:BoundField DataField="Acct_Pay_ID" HeaderText="Accounts Payable ID" 
