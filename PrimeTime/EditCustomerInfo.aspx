@@ -5,13 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
-    <style type="text/css">
-        .style2
-        {
-            height: 21px;
-        }
-    </style>
-</head>
+    </head>
 <body>
     <form id="form1" runat="server">
     <div>
@@ -34,16 +28,20 @@
     
 
         <asp:TextBox ID="customerID_tb" runat="server" 
-            ontextchanged="customerID_tb_TextChanged"></asp:TextBox>
+            ontextchanged="customerID_tb_TextChanged" Height="22px"></asp:TextBox>
 
     
     </td>
+        <asp:RequiredFieldValidator ID="CustomerID_RegEx" runat="server" 
+            ControlToValidate="customerID_tb" ErrorMessage="RequiredFieldValidator" 
+            ForeColor="Maroon">*</asp:RequiredFieldValidator>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     <td>
     
         <asp:Button ID="Submit_btn" runat="server" Text="Submit" 
             onclick="Submit_btn_Click" />
 &nbsp;<asp:Button ID="Clear_btn" runat="server" Text="Clear" 
-            onclick="Clear_btn_Click" />
+            onclick="Clear_btn_Click" CausesValidation="False" />
 &nbsp;&nbsp;
     
     </td>
@@ -56,6 +54,10 @@
     
         <asp:TextBox ID="FirstName_tb" runat="server" 
             ontextchanged="FirstName_tb_TextChanged"></asp:TextBox>
+        <asp:RegularExpressionValidator ID="FirstName_RegEx" runat="server" 
+            ControlToValidate="FirstName_tb" ErrorMessage="Invalid First Name" 
+            ForeColor="Maroon" 
+            ValidationExpression="^[a-zA-Z''-'\s]{1,40}$">*</asp:RegularExpressionValidator>
         </td>
     <td>
     
@@ -76,6 +78,9 @@
     <td>
     
         <asp:TextBox ID="LastName_tb" runat="server"></asp:TextBox>
+        <asp:RegularExpressionValidator ID="LastName_RegEx" runat="server" 
+            ControlToValidate="LastName_tb" ErrorMessage="Invalid Last Name" 
+            ForeColor="Maroon">*</asp:RegularExpressionValidator>
         </td>
     <td>
     
@@ -88,6 +93,13 @@
     <td>
     
         <asp:TextBox ID="PhoneNumber_tb" runat="server"></asp:TextBox>
+        <asp:RegularExpressionValidator ID="PhoneNumber_RegEx" runat="server" 
+            ControlToValidate="PhoneNumber_tb" 
+            ErrorMessage="Please Include the Area code for the Phone Number" 
+            ForeColor="Maroon" 
+            
+            
+            ValidationExpression="^[01]?[- .]?(\([2-9]\d{2}\)|[2-9]\d{2})[- .]?\d{3}[- .]?\d{4}$">*</asp:RegularExpressionValidator>
         </td>
     <td>
     
@@ -100,6 +112,13 @@
     <td>
     
         <asp:TextBox ID="AlternateNumber_tb" runat="server"></asp:TextBox>
+        <asp:RegularExpressionValidator ID="AlternateNumber_RegEx" runat="server" 
+            ControlToValidate="AlternateNumber_tb" 
+            ErrorMessage="Please Include the Area code for the Alternate Phone" 
+            ForeColor="Maroon" 
+            
+            
+            ValidationExpression="^[01]?[- .]?(\([2-9]\d{2}\)|[2-9]\d{2})[- .]?\d{3}[- .]?\d{4}$">*</asp:RegularExpressionValidator>
         </td>
     <td>
     
@@ -112,6 +131,10 @@
     <td>
     
         <asp:TextBox ID="Email_tb" runat="server"></asp:TextBox>
+        <asp:RegularExpressionValidator ID="Email_RegEx" runat="server" 
+            ControlToValidate="Email_tb" ErrorMessage="Invalid Email Address" 
+            ForeColor="Maroon" 
+            ValidationExpression="\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*">*</asp:RegularExpressionValidator>
         </td>
     <td>
     
@@ -120,37 +143,17 @@
 
     </table>
     <asp:Button ID="home_btn" runat="server" Text="Home" Height="38px"
-        Width="68px" OnClick="home_btn_Click" />&nbsp;&nbsp;&nbsp;&nbsp;<asp:Button ID="logout_btn" runat="server" Text="Logout" Height="38px"
-        Width="68px" OnClick="logout_btn_Click" />
+        Width="68px" OnClick="home_btn_Click" CausesValidation="False" />&nbsp;&nbsp;&nbsp;&nbsp;<asp:Button 
+            ID="logout_btn" runat="server" Text="Logout" Height="38px"
+        Width="68px" OnClick="logout_btn_Click" CausesValidation="False" />
         <br />
-        <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" 
-            ControlToValidate="Email_tb" ErrorMessage="Invalid Email Address" 
-            ForeColor="Maroon" SetFocusOnError="True" 
-            ValidationExpression="\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*" 
-            ValidationGroup="Text"></asp:RegularExpressionValidator>
+        <asp:ValidationSummary ID="ValidationSummary1" runat="server" 
+            ForeColor="Maroon" />
         <br />
-        <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" 
-            ControlToValidate="PhoneNumber_tb" 
-            ErrorMessage="Please Include the Area code for the Phone Number" 
-            ForeColor="Maroon" SetFocusOnError="True" 
-            ValidationExpression="^[01]?[- .]?(\([2-9]\d{2}\)|[2-9]\d{2})[- .]?\d{3}[- .]?\d{4}$" 
-            ValidationGroup="Text"></asp:RegularExpressionValidator>
         <br />
-        <asp:RegularExpressionValidator ID="RegularExpressionValidator3" runat="server" 
-            ControlToValidate="AlternateNumber_tb" 
-            ErrorMessage="Please Include the Area code for the Alternate Phone" 
-            ForeColor="Maroon" SetFocusOnError="True" 
-            ValidationExpression="^[01]?[- .]?(\([2-9]\d{2}\)|[2-9]\d{2})[- .]?\d{3}[- .]?\d{4}$" 
-            ValidationGroup="Text"></asp:RegularExpressionValidator>
         <br />
-        <asp:RegularExpressionValidator ID="RegularExpressionValidator4" runat="server" 
-            ControlToValidate="FirstName_tb" ErrorMessage="Invalid First Name" 
-            ForeColor="Maroon" SetFocusOnError="True" 
-            ValidationExpression="^[a-zA-Z''-'\s]{1,40}$" ValidationGroup="Text"></asp:RegularExpressionValidator>
         <br />
-        <asp:RegularExpressionValidator ID="RegularExpressionValidator5" runat="server" 
-            ControlToValidate="LastName_tb" ErrorMessage="Invalid Last Name" 
-            ForeColor="Maroon"></asp:RegularExpressionValidator>
+        <br />
         </center>
     </div>
     </form>
