@@ -27,11 +27,14 @@
                     <td>
                         <asp:TextBox ID="accountID_tb" runat="server" 
                             ontextchanged="accountID_tb_TextChanged"></asp:TextBox>
+        <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" 
+            ControlToValidate="accountID_tb" ErrorMessage="The Account ID is required">*</asp:RequiredFieldValidator>
                     </td>
                     <td>
                         <asp:Button ID="submit_btn" runat="server" Text="Submit" 
                             onclick="submit_btn_Click" />&nbsp;&nbsp;&nbsp;&nbsp;
-                        <asp:Button ID="clear_btn" runat="server" Text="Clear" Width="61px" OnClick="clear_btn_Click" />
+                        <asp:Button ID="clear_btn" runat="server" Text="Clear" Width="61px" 
+                            OnClick="clear_btn_Click" CausesValidation="False" />
                     </td>
                 </tr>
                 <tr>
@@ -57,6 +60,10 @@
                     </td>
                     <td>
                         <asp:TextBox ID="amountDue_tb" runat="server"></asp:TextBox>
+        <asp:RangeValidator ID="RangeValidator1" runat="server" 
+            ControlToValidate="amountDue_tb" 
+            ErrorMessage="Amount due must be greater than 0" MaximumValue="100000" 
+            MinimumValue="0">*</asp:RangeValidator>
                     </td>
                     <td>
                         &nbsp;
@@ -69,6 +76,12 @@
                     <td>
                         <asp:TextBox ID="dateDue_tb" runat="server" 
                             ontextchanged="dateDue_tb_TextChanged"></asp:TextBox>
+        <asp:RangeValidator ID="dateDue_RV" runat="server" Type ="Date"
+            ControlToValidate="dateDue_tb" 
+            ErrorMessage="Date must be greater than or equal to current date" 
+            Display="Dynamic" MaximumValue="4/1/2025" MinimumValue="4/1/2014">*</asp:RangeValidator>
+        <asp:RegularExpressionValidator ID="dateDue_RegEx" runat="server" 
+            ControlToValidate="dateDue_tb" ErrorMessage="The Date Due must be in MM/DD/YYYY format" ValidationExpression="[0-9]{2}/[0-9]{2}/[0-9]{4}">*</asp:RegularExpressionValidator>
                     </td>
                     <td>
                         &nbsp;
@@ -76,17 +89,20 @@
                 </tr>
             </table>
         </center>
-        <asp:RangeValidator ID="dateDue_RV" runat="server" Type ="Date"
-            ControlToValidate="dateDue_tb" 
-            ErrorMessage="Date must be greater than or equal to current date" 
-            Display="Dynamic" MaximumValue="4/1/2025" MinimumValue="4/1/2014"></asp:RangeValidator>
         <br />
         <br />
         &nbsp;&nbsp;&nbsp;&nbsp;
         <asp:Button ID="home_btn" runat="server" Text="Home" Height="38px" Width="68px" 
-            onclick="home_btn_Click" />&nbsp;&nbsp;&nbsp;&nbsp;
+            onclick="home_btn_Click" CausesValidation="False" />&nbsp;&nbsp;&nbsp;&nbsp;
         <asp:Button ID="logout_btn" runat="server" Text="Logout" Height="38px" 
-            Width="68px" onclick="logout_btn_Click" />
+            Width="68px" onclick="logout_btn_Click" CausesValidation="False" />
+        <br />
+        <br />
+        <br />
+        <asp:ValidationSummary ID="ValidationSummary1" runat="server" 
+            DisplayMode="List" HeaderText="You received the following errors:" 
+            Text="*" ForeColor="Maroon"/>
+        <br />
         <br />
     </div>
     </form>
