@@ -77,7 +77,8 @@
                             Width="184px" onclick="editContract_btn_Click" />
                     </td>
                     <td>
-                        &nbsp;
+                        <asp:Button ID="generateReports_btn" runat="server" Text="Generate Reports" 
+                            Width="184px" onclick="generateReports_btn_Click" />
                     </td>
                     <td>
 &nbsp;<asp:Button ID="specialServices_btn" runat="server" Text="Edit Special Services" 

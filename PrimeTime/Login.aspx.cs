@@ -12,6 +12,7 @@ public partial class Login : System.Web.UI.Page
     private SqlConnection conn = new SqlConnection("Data Source=apcxcs3.apsu.edu;Initial Catalog=group3_6;Persist Security Info=True;User ID=webuser3_6;Password=webuser3_6abc");
     private SqlCommand command;
 
+
     protected void Page_Load(object sender, EventArgs e)
     {
 
@@ -29,18 +30,26 @@ public partial class Login : System.Web.UI.Page
         bool mgr = Convert.ToBoolean(command.Parameters["@mgr"].Value);
         conn.Close();
 
-        Response.Cookies["cred"].Value = mgr.ToString();
+        Response.Cookies["cred"]["mgr"] = mgr.ToString();
+        Response.Cookies["cred"]["uname"]= userName_txt.Text.ToString();
         Response.Cookies["cred"].Expires = DateTime.Now.AddHours(1);
 
-        //Label1.Text = Request.Cookies["cred"].Value;
+        //String one = Request.Cookies["cred"]["mgr"];
+        //String two = Request.Cookies["cred"]["uname"];
+        //Label1.Text = one + ", " + two;
 
-        if (mgr)
+        if (mgr == null)
+        {
+            Response.Redirect("InvalidLoginCredentials.aspx");
+        }
+        else if (mgr)
         {
             Response.Redirect("mgmtTasks.aspx");
         }
-        else
+        else if (!mgr)
         {
             Response.Redirect("EmployeeMain.aspx");
         }
+            
     }
 }

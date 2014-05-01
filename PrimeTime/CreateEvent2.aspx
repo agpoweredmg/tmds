@@ -24,13 +24,29 @@
                 <br />
                 <table>
                 <tr>
-                    <td>Event Name:</td>
+                    <td>Event Name:<asp:RequiredFieldValidator ID="RequiredFieldValidator1" 
+                            runat="server" ControlToValidate="eventName_txt" 
+                            ErrorMessage="Event Name is required" ForeColor="Red">*</asp:RequiredFieldValidator>
+                    </td>
                     <td><asp:TextBox ID="eventName_txt" runat="server" Width="225px"></asp:TextBox></td>
-                    <td>Event Date:</td>
-                    <td><asp:TextBox ID="eventDate" runat="server" Width="225px"></asp:TextBox></td>
+                    <td>Event Date:<asp:RequiredFieldValidator ID="RequiredFieldValidator2" 
+                            runat="server" ControlToValidate="eventDate" 
+                            ErrorMessage="Event Date is required" ForeColor="Red">*</asp:RequiredFieldValidator>
+                    </td>
+                    <td>
+                        <asp:RangeValidator ID="RangeValidator1" runat="server" 
+                            ControlToValidate="eventDate" ErrorMessage="Invalid date range" ForeColor="Red" 
+                            MaximumValue="05/02/2025" MinimumValue="05/02/2014">*</asp:RangeValidator>
+                        <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" 
+                            ControlToValidate="eventDate" ErrorMessage="Invalid Date formate" 
+                            ForeColor="Red" ValidationExpression="[0-9]{2}/[0-9]{2}/[0-9]{4}">*</asp:RegularExpressionValidator>
+                        <asp:TextBox ID="eventDate" runat="server" Width="225px"></asp:TextBox></td>
                 </tr>
                 <tr>
-                    <td>Event Location:</td>
+                    <td>Event Location:<asp:RequiredFieldValidator ID="RequiredFieldValidator3" 
+                            runat="server" ControlToValidate="eventLocation_txt" 
+                            ErrorMessage="Event location" ForeColor="Red">*</asp:RequiredFieldValidator>
+                    </td>
                     <td><asp:TextBox ID="eventLocation_txt" runat="server"></asp:TextBox></td>
                 </tr>
                 </table>
@@ -54,7 +70,10 @@
                                 ConnectionString="<%$ ConnectionStrings:group3_6_WEBUSER %>" 
                                 SelectCommand="SELECT [Item_Name] FROM [ENTREE_ITEMS]"></asp:SqlDataSource>
                         </td>
-                        <td>Qtn.:</td>
+                        <td>Qtn.:<asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" 
+                                ControlToValidate="entreeQtn_txt" 
+                                ErrorMessage="The number of entrees is required" ForeColor="Red">*</asp:RequiredFieldValidator>
+                        </td>
                         <td>
                             <asp:TextBox ID="entreeQtn_txt" runat="server" Width="100px"></asp:TextBox>
                         </td>
@@ -167,7 +186,9 @@
                 </td>
     </tr>
     </table>
-        &nbsp;<br />
+        &nbsp;<asp:ValidationSummary 
+        ID="ValidationSummary1" runat="server" ForeColor="Red" />
+    <br />
                 
     <br />
     <br />
@@ -177,7 +198,7 @@
                 <b>
                 <asp:Button ID="clear_btn" runat="server" BorderColor="Black" BorderStyle="Double"
                     Height="38px" Style="text-align: center" Text="Clear" Width="69px" 
-                    onclick="clear_btn_Click" />
+                    onclick="clear_btn_Click" CausesValidation="False" />
                 </b>
 
      &nbsp;&nbsp;
@@ -192,20 +213,20 @@
 
         <asp:Button ID="back_btn" runat="server" BorderColor="Black" 
         BorderStyle="Double" Height="38px" style="text-align: center" Text="&lt;&lt;Back" 
-        Width="69px" onclick="back_btn_Click" />
+        Width="69px" onclick="back_btn_Click" CausesValidation="False" />
     &nbsp;&nbsp;
 
 
 
         <asp:Button ID="home_btn" runat="server" BorderColor="Black" 
         BorderStyle="Double" Height="38px" style="text-align: center" Text="Home" 
-        Width="69px" onclick="home_btn_Click" />
+        Width="69px" onclick="home_btn_Click" CausesValidation="False" />
 
     &nbsp;&nbsp;
 
         <asp:Button ID="logout_btn" runat="server" BorderColor="Black" 
         BorderStyle="Double" Height="38px" style="text-align: center" Text="Logout" 
-        Width="69px" onclick="logout_btn_Click" />
+        Width="69px" onclick="logout_btn_Click" CausesValidation="False" />
 
     </form>
     </center>

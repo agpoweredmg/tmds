@@ -21,24 +21,6 @@ public partial class ReportsGeneration : System.Web.UI.Page
     }
     protected void generateReport_btn_Click(object sender, EventArgs e)
     {
-        if (customersReport_chk.Checked)
-        {
-            Response.Redirect("CustomerReport.aspx");
-        }
-
-
-        if (inventoryReport_chk0.Checked)
-        {
-            Response.Redirect("InventoryReports.aspx");
-        }
-
-        if (employeesReport_chk0.Checked)
-        {
-            Response.Redirect("EmployeesReport.aspx");
-        }
-        if (purchasesReport_chk.Checked)
-        {
-            Response.Redirect("PurchaseOrdersReport.aspx");
-        }
+        
     }
 }
