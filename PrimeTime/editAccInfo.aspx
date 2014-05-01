@@ -77,7 +77,9 @@
             </table>
         </center>
         <asp:RangeValidator ID="dateDue_RV" runat="server" Type ="Date"
-            ControlToValidate="dateDue_tb" ErrorMessage="Date must be greater than or equal to current date"></asp:RangeValidator>
+            ControlToValidate="dateDue_tb" 
+            ErrorMessage="Date must be greater than or equal to current date" 
+            Display="Dynamic" MaximumValue="4/1/2025" MinimumValue="4/1/2014"></asp:RangeValidator>
         <br />
         <br />
         &nbsp;&nbsp;&nbsp;&nbsp;

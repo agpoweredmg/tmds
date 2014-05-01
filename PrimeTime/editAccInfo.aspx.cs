@@ -45,7 +45,6 @@ public partial class editAccInfo : System.Web.UI.Page
 
     protected void dateDue_tb_TextChanged(object sender, EventArgs e)
     {
-        dateDue_RV.MinimumValue = System.DateTime.Now.ToString("MM/dd/yyyy");
-        dateDue_RV.MaximumValue = System.DateTime.Now.AddYears(25).ToString("MM/dd/yyyy");
+       
     }
 }
