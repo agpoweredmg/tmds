@@ -64,4 +64,8 @@ public partial class mgmtTasks : System.Web.UI.Page
     {
         Response.Redirect("EditLostOrDamagedItems.aspx");
     }
+    protected void generateReports_btn_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("ReportsGeneration.aspx");
+    }
 }
