@@ -28,6 +28,9 @@
                         </td>
                         <td>
                             <asp:TextBox ID="contractID_tb" runat="server"></asp:TextBox>
+                            <asp:RequiredFieldValidator ID="ContractID_rf" runat="server" 
+                                ErrorMessage="Contract ID is required." ControlToValidate="contractID_tb" 
+                                ForeColor="Maroon">*</asp:RequiredFieldValidator>
                         </td>
                         <td>
                             <asp:Button ID="submit_btn" runat="server" Text="Submit" 
@@ -42,6 +45,9 @@
                         </td>
                         <td>
                             <asp:TextBox ID="accountID_tb" runat="server"></asp:TextBox>
+                            <asp:RequiredFieldValidator ID="AccountID_rf" runat="server" 
+                                ErrorMessage="Account ID is required." ControlToValidate="accountID_tb" 
+                                ForeColor="Maroon">*</asp:RequiredFieldValidator>
                         </td>
                         <td>
                             <asp:DropDownList ID="actionToPerform_ddl" runat="server" 
@@ -59,6 +65,14 @@
                         </td>
                         <td>
                             <asp:TextBox ID="contractDate_tb" runat="server"></asp:TextBox>
+            <asp:RangeValidator ID="ContractDateValidator1" runat="server" 
+                ControlToValidate="contractDate_tb" 
+                ErrorMessage="Date must be after today's date." MaximumValue="4/1/2025" 
+                MinimumValue="5/2/2014" Type="Date" ForeColor="Maroon">*</asp:RangeValidator>
+            <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" 
+                ControlToValidate="contractdate_tb" 
+                ErrorMessage="The contract date must in MM/DD/YYYY format."  
+                ValidationExpression="[0-9]{2}/[0-9]{2}/[0-9]{4}" ForeColor="Maroon">*</asp:RegularExpressionValidator>
                         </td>
                         <td>
                             &nbsp;
@@ -95,9 +109,9 @@
             <asp:Button ID="logout_btn" runat="server" Text="Logout" Height="38px" 
                 Width="68px" onclick="logout_btn_Click" />
             <br />
-            <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" 
-                ControlToValidate="contractDate_tb" ErrorMessage="Invalid Contract Date " 
-                ForeColor="Maroon" ValidationGroup="Text"></asp:RegularExpressionValidator>
+            <br />
+            <asp:ValidationSummary ID="ValidationSummary1" runat="server" 
+                ForeColor="Maroon" />
             <br />
         </div>
     </div>
