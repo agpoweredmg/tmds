@@ -140,7 +140,7 @@
                             Text="Same As Mailling Address" oncheckedchanged="sameAsMailling_chk_CheckedChanged" 
                              /></td></tr>
                     <tr>
-                        <td class="style2"><b>Street:</b></td>
+                        <td class="style2">Street:</td>
                         <td><asp:TextBox ID="billingStreet_txt" runat="server" Width="200px"></asp:TextBox></td>
                         <td>Apt./Suite:</td>
                         <td><asp:TextBox ID="billlingSuiteApt_txt"
