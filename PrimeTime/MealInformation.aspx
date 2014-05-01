@@ -94,12 +94,18 @@
             </td>
         <td>
         <asp:TextBox ID="numberOfMeals_tb" runat="server" Width="80px"></asp:TextBox>
+<<<<<<< HEAD
+=======
             <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" 
                 ControlToValidate="numberOfMeals_tb" 
                 ErrorMessage="Please indicate how many meals">*</asp:RequiredFieldValidator>
+<<<<<<< HEAD
             <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" 
                 ControlToValidate="numberOfMeals_tb" ErrorMessage="RegularExpressionValidator" 
                 ValidationExpression="[0-9]">*</asp:RegularExpressionValidator>
+=======
+>>>>>>> 66569fd60322654f38633047ce9a05ba7467ac19
+>>>>>>> ab72c431cb4e00739dd09b672fa86ec0a6b38513
             </td>
         <td></td>
         </tr>

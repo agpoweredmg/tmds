@@ -18,7 +18,7 @@ public partial class EmployeeInformation : System.Web.UI.Page
     protected void clear_btn_Click(object sender, EventArgs e)
     {
         id_tb.Text = "";
-        name_tb.Text = "";
+        FirstName_tb.Text = "";
         lastName_tb.Text = "";
         ssn_tb.Text = "";
         hireDate_tb.Text = "";

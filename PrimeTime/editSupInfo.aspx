@@ -13,6 +13,15 @@
         {
             height: 30px;
         }
+        .style2
+        {
+            width: 177px;
+        }
+        .style3
+        {
+            height: 30px;
+            width: 177px;
+        }
     </style>
 </head>
 <body>
@@ -26,7 +35,7 @@
                 <tr>
                     <th>
                     </th>
-                    <th>
+                    <th class="style2">
                         Edit Supplier Information
                     </th>
                     <th>
@@ -36,7 +45,7 @@
                     <th>
                         SupplierID:
                     </th>
-                    <th>
+                    <th class="style2">
                         <asp:TextBox ID="supplierID_tb" runat="server"></asp:TextBox>
                         <asp:RequiredFieldValidator ID="SupplierID_rf" runat="server" 
                             ControlToValidate="supplierID_tb" ErrorMessage="Supplier ID is required" 
@@ -57,10 +66,14 @@
                     <th>
                         Supplier Name:
                     </th>
-                    <th>
+                    <th class="style2">
                         <asp:TextBox ID="supplierName_tb" runat="server"></asp:TextBox>
                         <asp:RegularExpressionValidator ID="SupplierName_RegEx" runat="server" 
+<<<<<<< HEAD
                             ControlToValidate="supplierName_tb" ErrorMessage="Invalid Supplier Name" 
+=======
+                            ControlToValidate="supplierName_tb" ErrorMessage="Supplier Name must be between 1-40 characters in length." 
+>>>>>>> ab72c431cb4e00739dd09b672fa86ec0a6b38513
                             ForeColor="Maroon" ValidationExpression="^[a-zA-Z''-'\s]{1,40}$">*</asp:RegularExpressionValidator>
                         &nbsp;&nbsp;&nbsp;
                     </th>
@@ -79,13 +92,22 @@
                     <th>
                         Supplier Phone:
                     </th>
-                    <th>
+                    <th class="style2">
                         <asp:TextBox ID="supplierPhone_tb" runat="server"></asp:TextBox>
+<<<<<<< HEAD
                         <asp:RegularExpressionValidator ID="SupplierPhone_Regex" runat="server" 
                             ControlToValidate="supplierPhone_tb" ErrorMessage="Invalid Supplier Phone" 
                             ForeColor="Maroon" 
                             
                             ValidationExpression="^[01]?[- .]?(\([2-9]\d{2}\)|[2-9]\d{2})[- .]?\d{3}[- .]?\d{4}$">*</asp:RegularExpressionValidator>
+=======
+        <asp:RegularExpressionValidator ID="SupplierPhone_RegEx" runat="server" 
+            ControlToValidate="supplierPhone_tb" 
+            ErrorMessage="Invalid format.  Phone number must be (***)***-**** format." 
+            ForeColor="Maroon" 
+            
+            ValidationExpression="[(][0-9]{3}[)][0-9]{3}-[0-9]{4}">*</asp:RegularExpressionValidator>
+>>>>>>> ab72c431cb4e00739dd09b672fa86ec0a6b38513
                         &nbsp;&nbsp;&nbsp;
                     </th>
                     <th>
@@ -96,7 +118,7 @@
                     <th>
                         Supplier Fax:
                     </th>
-                    <th>
+                    <th class="style2">
                         <asp:TextBox ID="supplierFax_tb" runat="server"></asp:TextBox>
                         <asp:RegularExpressionValidator ID="SupplierFax_RegEx" runat="server" 
                             ControlToValidate="supplierFax_tb" ErrorMessage="RegularExpressionValidator" 
@@ -113,7 +135,7 @@
                     <th>
                         Supplier Email:
                     </th>
-                    <th>
+                    <th class="style2">
                         <asp:TextBox ID="supplierEmail_tb" runat="server"></asp:TextBox>
                         <asp:RegularExpressionValidator ID="SupplierEmail_RegEx" runat="server" 
                             ControlToValidate="supplierEmail_tb" 
@@ -129,11 +151,17 @@
                     <th>
                         Supplier Street:
                     </th>
-                    <th>
+                    <th class="style2">
                         <asp:TextBox ID="supplierStreet_tb" runat="server"></asp:TextBox>
+<<<<<<< HEAD
                         <asp:RequiredFieldValidator ID="SupplierStreet_RegEx" runat="server" 
                             ControlToValidate="supplierStreet_tb" 
                             ErrorMessage="Supplier Street is required" ForeColor="Maroon">*</asp:RequiredFieldValidator>
+=======
+                        <asp:RequiredFieldValidator ID="SupplierStreet_rf" runat="server" 
+                            ControlToValidate="supplierStreet_tb" ErrorMessage="Invalid Street Address" 
+                            ForeColor="Maroon">*</asp:RequiredFieldValidator>
+>>>>>>> ab72c431cb4e00739dd09b672fa86ec0a6b38513
                     &nbsp;&nbsp;&nbsp;
                     </th>
                     <th>
@@ -144,11 +172,11 @@
                     <th>
                         Supplier City:
                     </th>
-                    <th>
+                    <th class="style2">
                         <asp:TextBox ID="supplierCity_tb" runat="server"></asp:TextBox>
-                        <asp:CompareValidator ID="SupplierCity_RegEx" runat="server" 
-                            ControlToValidate="supplierCity_tb" ErrorMessage="CompareValidator" 
-                            ForeColor="Maroon" Operator="DataTypeCheck">*</asp:CompareValidator>
+                        <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" 
+                            ControlToValidate="supplierCity_tb" ErrorMessage="RegularExpressionValidator" 
+                            ForeColor="Maroon" ValidationExpression="[a-zA-Z._^%$#!~@,-]+.">*</asp:RegularExpressionValidator>
                     &nbsp;&nbsp;&nbsp;
                     </th>
                     <th>
@@ -159,7 +187,7 @@
                     <th>
                         Supplier State:
                     </th>
-                    <th>
+                    <th class="style2">
                         <asp:TextBox ID="supplierState_tb" runat="server"></asp:TextBox>
                         <asp:RegularExpressionValidator ID="SupplierState_RegEx" runat="server" 
                             ControlToValidate="supplierState_tb" ErrorMessage="Invalid State Abbreviation" 
@@ -177,7 +205,7 @@
                     <th class="style1">
                         Supplier Zip:
                     </th>
-                    <th class="style1">
+                    <th class="style3">
                         <asp:TextBox ID="supplierZip_tb" runat="server"></asp:TextBox>
                         <asp:RegularExpressionValidator ID="SupplierZip_RegEx" runat="server" 
                             ControlToValidate="supplierZip_tb" ErrorMessage="Invalid Zip Code" 
@@ -202,10 +230,15 @@
     &nbsp;&nbsp;&nbsp;&nbsp;
     <br />
     <br />
+<<<<<<< HEAD
     <asp:ValidationSummary ID="editSupInfo_vs" runat="server" 
         ForeColor="Maroon" DisplayMode="List" 
         HeaderText="You received the following Errors:" EnableClientScript="False" 
         EnableViewState="False" />
+=======
+    <asp:ValidationSummary ID="EditSupInfo_vs" runat="server" 
+        ForeColor="Maroon" />
+>>>>>>> ab72c431cb4e00739dd09b672fa86ec0a6b38513
     <br />
     </form>
 </body>
