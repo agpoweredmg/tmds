@@ -9,6 +9,15 @@
         {
             width: 180px;
         }
+        .style3
+        {
+            width: 180px;
+            height: 45px;
+        }
+        .style4
+        {
+            height: 45px;
+        }
         </style>
 </head>
 
@@ -47,40 +56,68 @@
                             First Name:
                         </td>
                         <td>
-                            <asp:TextBox ID="firstName_txt" runat="server" width = 200 Style="text-align: left"></asp:TextBox>
+                            <asp:TextBox ID="firstName_txt" runat="server" width = 200 
+                                Style="text-align: left" ontextchanged="firstName_txt_TextChanged"></asp:TextBox>
+                                <asp:RequiredFieldValidator
+                                    ID="RequiredFieldValidator1" runat="server" 
+                                ErrorMessage="First Name is Required" ControlToValidate="firstName_txt" 
+                                ForeColor="Red">*</asp:RequiredFieldValidator>
                         </td>
                         <td>Last Name:</td>
                         <td>               
                             <asp:TextBox ID="lastName_txt" runat="server" Style="text-align: left" 
                                 Width="200px"></asp:TextBox>
+                                <asp:RequiredFieldValidator
+                                    ID="RequiredFieldValidator2" runat="server" 
+                                ErrorMessage="Last Name is Required" ControlToValidate="lastName_txt" 
+                                ForeColor="Red">*</asp:RequiredFieldValidator>
                 </td>
                     </tr>
                     <tr>
                     <td class="style2">Phone 1:</td>
                     <td><asp:TextBox ID="phone1_txt" runat="server" Style="text-align: left" 
-                            Width="200px"></asp:TextBox></td>
+                            Width="200px"></asp:TextBox>
+                            <asp:RegularExpressionValidator ID="RegularExpressionValidator1"
+                                runat="server" ErrorMessage="RegularExpressionValidator" 
+                            ControlToValidate="phone1_txt" ForeColor="Red" 
+                            ValidationExpression="[0-9]{10}">*</asp:RegularExpressionValidator></td>
                     <td>Phone 2:</td>
                     <td><asp:TextBox
                     ID="phone2_txt" runat="server" Style="text-align: left" Width="200px"></asp:TextBox></td>
                     <td>Email:</td>
                     <td><asp:TextBox
-                    ID="email_txt" runat="server" Style="text-align: left" Width="200px"></asp:TextBox></td>
+                    ID="email_txt" runat="server" Style="text-align: left" Width="200px"></asp:TextBox>
+                    <asp:RequiredFieldValidator
+                                    ID="RequiredFieldValidator3" runat="server" 
+                                ErrorMessage="Email is Required" ControlToValidate="email_txt" 
+                                ForeColor="Red">*</asp:RequiredFieldValidator></td>
                     </tr>
                     <tr>
-                        <td class="style2"><b>Street:</b></td>
-                        <td><asp:TextBox ID="street_txt" runat="server" Width="200px"></asp:TextBox></td>
-                        <td>Apt./Suite:</td>
-                        <td><asp:TextBox ID="apt_suite_txt"
+                        <td class="style3"><b>Street:</b></td>
+                        <td class="style4"><asp:TextBox ID="street_txt" runat="server" Width="200px"></asp:TextBox>
+                        <asp:RequiredFieldValidator
+                                ID="RequiredFieldValidator4" runat="server" 
+                                ErrorMessage="Street is Required" ControlToValidate="street_txt" 
+                                ForeColor="Red">*</asp:RequiredFieldValidator></td>
+                        <td class="style4">Apt./Suite:</td>
+                        <td class="style4"><asp:TextBox ID="apt_suite_txt"
                     runat="server" Style="text-align: left" Width="200px"></asp:TextBox></td>
-                    <td>City:</td>
-                    <td><asp:TextBox ID="city_txt" runat="server" Style="text-align: left" 
-                            Width="200px"></asp:TextBox></td>
+                    <td class="style4">City:</td>
+                    <td class="style4"><asp:TextBox ID="city_txt" runat="server" Style="text-align: left" 
+                            Width="200px"></asp:TextBox>
+                            <asp:RequiredFieldValidator ID="RequiredFieldValidator5"
+                                runat="server" ErrorMessage="City is Required" ForeColor="Red" 
+                            ControlToValidate="city_txt">*</asp:RequiredFieldValidator></td>
                     </tr>
                     <tr>
                         <td class="style2">State:</td>
                         <td><asp:TextBox ID="state_txt" runat="server" Width="200px"></asp:TextBox></td>
                         <td>Zip Code:</td>
-                        <td><asp:TextBox ID="zip_txt" runat="server" Style="text-align: left" Width="200px"></asp:TextBox></td>
+                        <td><asp:TextBox ID="zip_txt" runat="server" Style="text-align: left" Width="200px"></asp:TextBox>
+                        <asp:RegularExpressionValidator
+                                ID="RegularExpressionValidator2" runat="server" 
+                                ErrorMessage="Zip Code Required" ControlToValidate="zip_txt" ForeColor="Red" 
+                                ValidationExpression="[0-9]{5}">*</asp:RegularExpressionValidator></td>
                     </tr>
                     <tr><td class="style2">Billing Adress:</td></tr>
                     <tr><td> 
@@ -128,6 +165,7 @@
             </asp:Panel>
             <br />
             <br />
+            <asp:ValidationSummary ID="ValidationSummary1" runat="server" ForeColor="Red" />
             <br />
         </div>
         </form>

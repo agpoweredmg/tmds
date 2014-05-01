@@ -131,4 +131,8 @@ public partial class CreateEvent1 : System.Web.UI.Page
         }
     }
 
+    protected void firstName_txt_TextChanged(object sender, EventArgs e)
+    {
+
+    }
 }
