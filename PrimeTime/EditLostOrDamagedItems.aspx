@@ -35,6 +35,7 @@
         <asp:RequiredFieldValidator ID="LostDamageID_rf" runat="server" 
             ErrorMessage="Lost Damage ID is required." 
             ControlToValidate="LostDamageID_tb" ForeColor="Maroon">*</asp:RequiredFieldValidator>
+        <asp:Label ID="LostDamageID_lbl" runat="server" Text="Label"></asp:Label>
     </th>
     <th>
         <asp:Button ID="Submit_btn" runat="server" Text="Submit" 
@@ -58,9 +59,12 @@
         <asp:RequiredFieldValidator ID="InventoryID_rf" runat="server" 
             ErrorMessage="Inventory ID is required. " ControlToValidate="InventoryID_tb" 
             ForeColor="Maroon">*</asp:RequiredFieldValidator>
+        <asp:Label ID="InventoryID_lbl" runat="server" Text="Label"></asp:Label>
     </th>
     <th>
-        <asp:DropDownList ID="ChooseDamagedItemsActions_ddl" runat="server">
+        <asp:DropDownList ID="ChooseDamagedItemsActions_ddl" runat="server" 
+            AutoPostBack="True" 
+            onselectedindexchanged="ChooseDamagedItemsActions_ddl_SelectedIndexChanged">
             <asp:ListItem Value="0">Choose an Action</asp:ListItem>
             <asp:ListItem Value="1">Add Items</asp:ListItem>
             <asp:ListItem Value="2">Delete Items</asp:ListItem>
@@ -85,6 +89,12 @@
             ForeColor="Maroon" Operator="GreaterThanEqual" ValueToCompare="0">*</asp:CompareValidator>
     </th>
     <th>
+        <asp:DropDownList ID="LostDamageID_ddl" runat="server" AutoPostBack="True" 
+            DataSourceID="SqlDataSource1" DataTextField="Lost_Damaged_ID" 
+            DataValueField="Inventory_ID" 
+            onselectedindexchanged="LostDamageID_ddl_SelectedIndexChanged" Visible="False">
+            <asp:ListItem>Choose Account:</asp:ListItem>
+        </asp:DropDownList>
     </th>
     </tr>
     </table>
@@ -98,6 +108,9 @@
             ForeColor="Maroon" HeaderText="You recieved the following Errors:" />
     </center>
     </div>
+    <asp:SqlDataSource ID="SqlDataSource1" runat="server" 
+        ConnectionString="<%$ ConnectionStrings:group3_6_WEBUSER %>" 
+        SelectCommand="SELECT * FROM [Lost_Damaged_Inventory]"></asp:SqlDataSource>
     </form>
 </body>
 </html>

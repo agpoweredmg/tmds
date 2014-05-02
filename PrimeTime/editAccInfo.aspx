@@ -30,6 +30,7 @@
         <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" 
             ControlToValidate="accountID_tb" ErrorMessage="The Account ID is required" 
                             ForeColor="Maroon">*</asp:RequiredFieldValidator>
+                        <asp:Label ID="AccountID_lbl" runat="server" Text="Label"></asp:Label>
                     </td>
                     <td>
                         <asp:Button ID="submit_btn" runat="server" Text="Submit" 
@@ -47,7 +48,8 @@
                     </td>
                     <td>
                         <asp:DropDownList ID="actionToPerform_ddl" runat="server" 
-                            onselectedindexchanged="actionToPerform_ddl_SelectedIndexChanged">
+                            onselectedindexchanged="actionToPerform_ddl_SelectedIndexChanged" 
+                            AutoPostBack="True">
                             <asp:ListItem Value="0">Choose an Action</asp:ListItem>
                             <asp:ListItem Value="1">Add Account</asp:ListItem>
                             <asp:ListItem Value="2">Delete Account</asp:ListItem>
@@ -68,6 +70,10 @@
                     </td>
                     <td>
                         &nbsp;
+                        <asp:DropDownList ID="AccountID_ddl" runat="server" AutoPostBack="True" 
+                            DataSourceID="SqlDataSource1" DataTextField="Acct_ID" DataValueField="Acct_ID" 
+                            onselectedindexchanged="AccountID_ddl_SelectedIndexChanged" Visible="False">
+                        </asp:DropDownList>
                     </td>
                 </tr>
                 <tr>
@@ -103,6 +109,9 @@
         <br />
         <asp:ValidationSummary ID="editAccount_vs" runat="server" HeaderText="You received the following Errors:" 
             Text="*" ForeColor="Maroon"/>
+        <asp:SqlDataSource ID="SqlDataSource1" runat="server" 
+            ConnectionString="<%$ ConnectionStrings:group3_6_WEBUSER %>" 
+            SelectCommand="SELECT * FROM [Acct_Rec_Detail]"></asp:SqlDataSource>
         <br />
         <br />
     </div>

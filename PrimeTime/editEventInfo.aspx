@@ -84,7 +84,7 @@
                             DataSourceID="SqlDataSource1" DataTextField="Event_Name" 
                             DataValueField="Event_ID" 
                             onselectedindexchanged="EventName_ddl_SelectedIndexChanged" Visible="False">
-                            <asp:ListItem Value="Choose the Event ID:"></asp:ListItem>
+                            <asp:ListItem Value="0">Choose the event:</asp:ListItem>
                         </asp:DropDownList>
                     </th>
                 </tr>

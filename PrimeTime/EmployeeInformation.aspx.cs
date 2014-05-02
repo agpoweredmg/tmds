@@ -93,10 +93,17 @@ public partial class EmployeeInformation : System.Web.UI.Page
         password_tb.Text = "";
         manager_chkbx.Checked = false;
         chooseAction_ddl.SelectedIndex = 0;
+        chooseemployee_ddl.Visible = false;
+        ID_lbl.Visible = false;
+        LastName_lbl.Visible = false;
+        id_tb.Visible = true;
+        lastName_tb.Visible = true;
+
     }
     protected void chooseAction_ddl_SelectedIndexChanged(object sender, EventArgs e)
     {
-   
+        if (chooseAction_ddl.SelectedIndex == 2 || chooseAction_ddl.SelectedIndex == 3)
+            chooseemployee_ddl.Visible = true;
     }
     protected void manager_chkbx_CheckedChanged(object sender, EventArgs e)
     {
@@ -112,6 +119,16 @@ public partial class EmployeeInformation : System.Web.UI.Page
     }
     protected void id_tb_TextChanged(object sender, EventArgs e)
     {
+
+    }
+    protected void chooseemployee_ddl_SelectedIndexChanged(object sender, EventArgs e)
+    {
+        ID_lbl.Text = chooseemployee_ddl.SelectedValue.ToString();
+        LastName_lbl.Text = chooseemployee_ddl.SelectedItem.ToString();
+        ID_lbl.Visible = true;
+        LastName_lbl.Visible = true;
+        id_tb.Visible = false;
+        lastName_tb.Visible = false;
 
     }
 }

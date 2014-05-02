@@ -51,6 +51,7 @@
                             ControlToValidate="supplierID_tb" ErrorMessage="Supplier ID is required" 
                             ForeColor="Maroon">*</asp:RequiredFieldValidator>
                         &nbsp;&nbsp;&nbsp;
+                        <asp:Label ID="SupplierID_lbl" runat="server" Text="Label"></asp:Label>
                     </th>
                     <th>
                         <asp:Button ID="submit_btn" runat="server" Text="Submit" 
@@ -74,7 +75,8 @@
                     </th>
                     <th>
                         <asp:DropDownList ID="actionToPerform_ddl" runat="server" 
-                            onselectedindexchanged="actionToPerform_ddl_SelectedIndexChanged">
+                            onselectedindexchanged="actionToPerform_ddl_SelectedIndexChanged" 
+                            AutoPostBack="True">
                             <asp:ListItem Value="0">Choose an Action</asp:ListItem>
                             <asp:ListItem Value="1">Add New Supplier</asp:ListItem>
                             <asp:ListItem Value="2">Update Supplier </asp:ListItem>
@@ -100,6 +102,9 @@
 
                     </th>
                     <th>
+                        <asp:DropDownList ID="choosesupplierid_ddl" runat="server" AutoPostBack="True" 
+                            Visible="False">
+                        </asp:DropDownList>
                         &nbsp;
                     </th>
                 </tr>
@@ -225,6 +230,9 @@
         ForeColor="Maroon" HeaderText="You received the following Errors:" />
 
     <br />
+    <asp:SqlDataSource ID="SqlDataSource1" runat="server" 
+        ConnectionString="<%$ ConnectionStrings:group3_6_WEBUSER %>" 
+        SelectCommand="SELECT * FROM [Suppliers]"></asp:SqlDataSource>
     </form>
 </body>
 </html>
