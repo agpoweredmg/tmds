@@ -21,10 +21,7 @@ public partial class ReportsGeneration : System.Web.UI.Page
     }
     protected void generateReport_btn_Click(object sender, EventArgs e)
     {
-<<<<<<< HEAD
-=======
 
->>>>>>> 5ca132964b19b933c18e1eb21a7b67ed88479418
         if (chooseReport_ddl.SelectedIndex == 0)
         {
             Response.Redirect("AccountsPayableReports.aspx");
@@ -73,18 +70,9 @@ public partial class ReportsGeneration : System.Web.UI.Page
 
     }
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 5ca132964b19b933c18e1eb21a7b67ed88479418
     protected void eventLookup_ddl_SelectedIndexChanged(object sender, EventArgs e)
     {
 
         Response.Cookies["evid"].Value = eventLookup_ddl.SelectedValue.ToString();
-<<<<<<< HEAD
-        Label1.Text = Request.Cookies["evid"].Value.ToString();
-=======
-
->>>>>>> 5ca132964b19b933c18e1eb21a7b67ed88479418
     }
 }

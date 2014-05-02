@@ -14,7 +14,6 @@
                 <div style="font-size: x-large">
                     Reports Generation</div>
             </div>
-            <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
             <br />
             <table>
                 <tr>
