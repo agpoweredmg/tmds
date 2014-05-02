@@ -52,7 +52,7 @@
                     DataTextField="Job_Desc" DataValueField="Job_ID">
                 </asp:DropDownList>
                 <asp:SqlDataSource ID="jobPerformed" runat="server" 
-                    ConnectionString="<%$ ConnectionStrings:WebUserConnectionString %>" 
+                    ConnectionString="<%$ ConnectionStrings:group3_6_WEBUSER %>" 
                     SelectCommand="SELECT [Job_ID], [Job_Desc] FROM [Jobs]"></asp:SqlDataSource>
 
             </td>

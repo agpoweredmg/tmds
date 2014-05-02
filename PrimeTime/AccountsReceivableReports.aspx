@@ -50,6 +50,8 @@
 FROM Acct_Receivable, Acct_Rec_Detail
 WHERE Acct_Receivable.Acct_ID = Acct_Rec_Detail.Acct_ID
 ORDER BY Acct_Receivable.Acct_ID"></asp:SqlDataSource>
+    <asp:Button ID="Button1" runat="server" BorderColor="Black" 
+        BorderStyle="Double" onclick="Button1_Click" Text="Back" />
     </form>
 </body>
 </html>

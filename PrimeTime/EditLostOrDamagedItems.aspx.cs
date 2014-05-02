@@ -9,7 +9,10 @@ public partial class EditLostOrDamagedItems : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-
+        if (!Convert.ToBoolean(Request.Cookies["cred"]["mgr"]))
+        {
+            Response.Redirect("InvalidLoginCredentials.aspx");
+        }
     }
     protected void logout_btn_Click(object sender, EventArgs e)
     {

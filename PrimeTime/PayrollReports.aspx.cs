@@ -11,4 +11,12 @@ public partial class Payroll : System.Web.UI.Page
     {
 
     }
+    protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
+    {
+
+    }
+    protected void Button1_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("ReportsGeneration.aspx");
+    }
 }

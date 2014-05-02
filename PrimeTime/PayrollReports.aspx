@@ -11,15 +11,16 @@
     <div>
     
         <asp:GridView ID="GridView1" runat="server" AllowPaging="True" 
-            AutoGenerateColumns="False" CellPadding="4" DataKeyNames="Emp_ID" 
-            DataSourceID="SqlDataSource1" ForeColor="#333333" GridLines="None">
+            AutoGenerateColumns="False" CellPadding="4" 
+            DataSourceID="SqlDataSource1" ForeColor="#333333" GridLines="None" 
+            onselectedindexchanged="GridView1_SelectedIndexChanged">
             <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
             <Columns>
-                <asp:BoundField DataField="Emp_ID" HeaderText="Employee ID" ReadOnly="True" 
+                <asp:BoundField DataField="Emp_ID" HeaderText="Emp_ID" ReadOnly="True" 
                     SortExpression="Emp_ID" />
-                <asp:BoundField DataField="Emp_F_Name" HeaderText="Employee First Name" 
+                <asp:BoundField DataField="Emp_F_Name" HeaderText="Emp_F_Name" 
                     SortExpression="Emp_F_Name" />
-                <asp:BoundField DataField="Emp_L_Name" HeaderText="Employee Last Name" 
+                <asp:BoundField DataField="Emp_L_Name" HeaderText="Emp_L_Name" 
                     SortExpression="Emp_L_Name" />
                 <asp:BoundField DataField="Wages" HeaderText="Wages" ReadOnly="True" 
                     SortExpression="Wages" />
@@ -38,17 +39,24 @@
     
     </div>
     <asp:SqlDataSource ID="SqlDataSource1" runat="server" 
-        ConnectionString="<%$ ConnectionStrings:group3_6_WEBUSER %>" SelectCommand="SELECT
+        ConnectionString="<%$ ConnectionStrings:WebUserConnectionString %>" SelectCommand="SELECT
 	e.Emp_ID,
 	e.Emp_F_Name,
 	e.Emp_L_Name,
 	SUM(j.Job_Pay_Rate * ps.Hours_Worked) AS Wages
 FROM Employees e, Event_Staff es, Jobs j, Pay_Schedule ps
-WHERE e.Emp_ID = es.emp_id
+WHERE e.Emp_ID = ps.emp_id
      AND ps.Job_ID = es.Job_ID
      AND es.Job_ID = j.Job_ID
+     AND es.Event_ID = @evid
 GROUP BY e.Emp_ID, e.Emp_F_Name, e.Emp_L_Name
-ORDER BY e.Emp_L_Name"></asp:SqlDataSource>
+ORDER BY e.Emp_L_Name">
+        <SelectParameters>
+            <asp:CookieParameter CookieName="evid" Name="evid" />
+        </SelectParameters>
+    </asp:SqlDataSource>
+    <asp:Button ID="Button1" runat="server" BorderColor="Black" 
+        BorderStyle="Double" onclick="Button1_Click" Text="Back" />
     </form>
 </body>
 </html>

@@ -25,7 +25,7 @@
                 <tr>
                     <td>
             <asp:DropDownList ID="chooseReport_ddl" runat="server" 
-                onselectedindexchanged="chooseReport_ddl_SelectedIndexChanged">
+                onselectedindexchanged="chooseReport_ddl_SelectedIndexChanged" AutoPostBack="True">
                 <asp:ListItem Value="0">Accounts Payable</asp:ListItem>
                 <asp:ListItem Value="1">Accounts Receivable</asp:ListItem>
                 <asp:ListItem Value="2">Customers</asp:ListItem>
@@ -36,7 +36,16 @@
             </asp:DropDownList>
                     </td>
                     <td>
-                        &nbsp;</td>
+                        <asp:DropDownList ID="eventLookup_ddl" runat="server" 
+                            DataSourceID="eventLookup" DataTextField="Event_Name" DataValueField="Event_ID" 
+                            onselectedindexchanged="eventLookup_ddl_SelectedIndexChanged" 
+                            AutoPostBack="True">
+                        </asp:DropDownList>
+                        <asp:SqlDataSource ID="eventLookup" runat="server" 
+                            ConnectionString="<%$ ConnectionStrings:group3_6_WEBUSER %>" 
+                            SelectCommand="SELECT [Event_ID], [Event_Name] FROM [Events]">
+                        </asp:SqlDataSource>
+                    </td>
                 </tr>
             </table>
             <p>

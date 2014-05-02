@@ -67,6 +67,7 @@
                     <th class="style2">
                         <asp:TextBox ID="supplierName_tb" runat="server"></asp:TextBox>
                         <asp:RegularExpressionValidator ID="SupplierName_RegEx" runat="server" 
+
                             ControlToValidate="supplierName_tb" ErrorMessage="Supplier Name must be between 1-40 characters in length." 
                             ForeColor="Maroon" ValidationExpression="^[a-zA-Z''-'\s]{1,40}$">*</asp:RegularExpressionValidator>
                         &nbsp;&nbsp;&nbsp;
@@ -88,12 +89,15 @@
                     </th>
                     <th class="style2">
                         <asp:TextBox ID="supplierPhone_tb" runat="server"></asp:TextBox>
-                        <asp:RegularExpressionValidator ID="SupplierPhone_RegEx" runat="server" 
+
+        <asp:RegularExpressionValidator ID="SupplierPhone_RegEx" runat="server" 
+
             ControlToValidate="supplierPhone_tb" 
             ErrorMessage="Invalid format.  Phone number must be (***)***-**** format." 
             ForeColor="Maroon" 
             ValidationExpression="[(][0-9]{3}[)][0-9]{3}-[0-9]{4}">*</asp:RegularExpressionValidator>
-&nbsp;&nbsp;&nbsp;
+                        &nbsp;&nbsp;&nbsp;
+
                     </th>
                     <th>
                         &nbsp;
@@ -138,6 +142,7 @@
                     </th>
                     <th class="style2">
                         <asp:TextBox ID="supplierStreet_tb" runat="server"></asp:TextBox>
+
                         <asp:RequiredFieldValidator ID="SupplierStreet_RegEx" runat="server" 
                             ControlToValidate="supplierStreet_tb" 
                             ErrorMessage="Supplier Street is required" ForeColor="Maroon">*</asp:RequiredFieldValidator>
@@ -145,6 +150,7 @@
                             ControlToValidate="supplierStreet_tb" ErrorMessage="Invalid Street Address" 
                             ForeColor="Maroon">*</asp:RequiredFieldValidator>
 &nbsp;</th>
+
                     <th>
                         &nbsp;
                     </th>
@@ -211,6 +217,7 @@
         Width="68px" onclick="logout_btn_Click" CausesValidation="False" />
     &nbsp;&nbsp;&nbsp;&nbsp;
     <br />
+
     <br />
 
         <asp:ValidationSummary ID="EditSupInfo_vs" runat="server" 

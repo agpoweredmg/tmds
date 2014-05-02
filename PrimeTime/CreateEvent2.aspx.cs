@@ -4,9 +4,12 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Data;
+using System.Data.SqlClient;
 
 public partial class CreateEvent2 : System.Web.UI.Page
 {
+    SqlConnection conn = new SqlConnection("Data Source=apcxcs3.apsu.edu;Initial Catalog=group3_6;Persist Security Info=True;User ID=webuser3_6;Password=webuser3_6abc");
     protected void Page_Load(object sender, EventArgs e)
     {
 
@@ -34,6 +37,18 @@ public partial class CreateEvent2 : System.Web.UI.Page
     }
     protected void submit_btn_Click(object sender, EventArgs e)
     {
+        
+        SqlCommand command = new SqlCommand("new_event", conn);
+        command.CommandType = CommandType.StoredProcedure;
+        command.Parameters.AddWithValue("@event_name", eventName_txt.Text.ToString());
+        command.Parameters.AddWithValue("@event_location",eventLocation_txt.ToString());
+        command.Parameters.AddWithValue("@event_date", eventDate.Text.ToString());
+
+
+
+        conn.Open();
+        command.ExecuteNonQuery();
+        conn.Close();
 
     }
     protected void home_btn_Click(object sender, EventArgs e)

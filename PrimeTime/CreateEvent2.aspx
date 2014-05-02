@@ -68,7 +68,8 @@
                             </asp:DropDownList>
                             <asp:SqlDataSource ID="SqlDataSource_Entree" runat="server" 
                                 ConnectionString="<%$ ConnectionStrings:group3_6_WEBUSER %>" 
-                                SelectCommand="SELECT [Item_Name] FROM [ENTREE_ITEMS]"></asp:SqlDataSource>
+                                
+                                SelectCommand="SELECT [Unprepared_Item_ID], [Item_Name] FROM [Unprepared_Item]"></asp:SqlDataSource>
                         </td>
                         <td>Qtn.:<asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" 
                                 ControlToValidate="entreeQtn_txt" 
@@ -91,7 +92,8 @@
                             </asp:DropDownList>
                             <asp:SqlDataSource ID="SqlDataSource_Sides" runat="server" 
                                 ConnectionString="<%$ ConnectionStrings:group3_6_WEBUSER %>" 
-                                SelectCommand="SELECT [Item_Name] FROM [SIDE_ITEMS]"></asp:SqlDataSource>
+                                
+                                SelectCommand="SELECT [Unprepared_Item_ID], [Item_Name] FROM [Unprepared_Item]"></asp:SqlDataSource>
                         </td>
                         <td>Side2:</td>
                         <td>
@@ -158,7 +160,7 @@
     <tr>
         <td align="right">Sub Total :</td>
         <td>
-                <asp:TextBox ID="subTotal_chk" runat="server" Width="100px"></asp:TextBox>
+                <asp:TextBox ID="subTotal_txt" runat="server" Width="100px"></asp:TextBox>
                 </td>
     </tr>
         <tr>

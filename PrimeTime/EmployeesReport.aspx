@@ -51,6 +51,8 @@
         ConnectionString="<%$ ConnectionStrings:group3_6_WEBUSER %>" 
         SelectCommand="SELECT [Emp_ID], [Emp_SSN], [Emp_F_Name], [Emp_L_Name], [Emp_Phone], [Emp_Alt_Phone], [Emp_Hire_Date], [Emp_End_Date], [Emp_Manager_Y_N] FROM [Employees]">
     </asp:SqlDataSource>
+    <asp:Button ID="Button1" runat="server" BorderColor="Black" 
+        BorderStyle="Double" onclick="Button1_Click" Text="Back" />
     </form>
 </body>
 </html>
