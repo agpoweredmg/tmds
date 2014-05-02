@@ -23,7 +23,8 @@ public partial class CreateEvent1 : System.Web.UI.Page
         SqlCommand maillingComm = new SqlCommand("customer_mailing", conn);
         maillingComm.CommandType = CommandType.StoredProcedure;
 
-
+        SqlCommand billingComm = new SqlCommand("billing_Address", conn);
+        billingComm.CommandType = CommandType.StoredProcedure;
 
        // command.Parameters.AddWithValue("@customer_id", customerId_txt.Text.ToString());
         command.Parameters.AddWithValue("@first_name", firstName_txt.Text.ToString());
@@ -42,6 +43,13 @@ public partial class CreateEvent1 : System.Web.UI.Page
         if (sameAsMailling_chk.Checked == true)
         {
             maillingComm.Parameters.AddWithValue("@same_as_billing", 1);
+
+            billingComm.Parameters.AddWithValue("@street", street_txt.Text.ToString());
+            billingComm.Parameters.AddWithValue("@apt_suite", apt_suite_txt.Text.ToString());
+            billingComm.Parameters.AddWithValue("@city", city_txt.Text.ToString());
+            billingComm.Parameters.AddWithValue("@state", state_txt.Text.ToString());
+            billingComm.Parameters.AddWithValue("@zip", zip_txt.Text.ToString());
+
         }
         else
         {
@@ -52,6 +60,7 @@ public partial class CreateEvent1 : System.Web.UI.Page
 
         command.ExecuteNonQuery();
         maillingComm.ExecuteNonQuery();
+        billingComm.ExecuteNonQuery();
 
         conn.Close();
 

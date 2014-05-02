@@ -65,6 +65,9 @@
                             <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" 
                                 ControlToValidate="firstName_txt" ErrorMessage="First Name is Required" 
                                 ForeColor="Red">*</asp:RequiredFieldValidator>
+                            <asp:RegularExpressionValidator ID="RegularExpressionValidator3" runat="server" 
+                                ControlToValidate="firstName_txt" ErrorMessage="Invalid name format" 
+                                ForeColor="Red" ValidationExpression="^[a-zA-Z''-'\s]{1,40}$">*</asp:RegularExpressionValidator>
                         </td>
                         <td>
                             <asp:TextBox ID="firstName_txt" runat="server" width = 200 
@@ -73,6 +76,9 @@
                         <td>Last Name:<asp:RequiredFieldValidator ID="RequiredFieldValidator2" 
                                 runat="server" ControlToValidate="lastName_txt" 
                                 ErrorMessage="Last Name is Required" ForeColor="Red">*</asp:RequiredFieldValidator>
+                            <asp:RegularExpressionValidator ID="RegularExpressionValidator4" runat="server" 
+                                ControlToValidate="lastName_txt" ErrorMessage="Invalid last name format" 
+                                ForeColor="Red" ValidationExpression="^[a-zA-Z''-'\s]{1,40}$">*</asp:RegularExpressionValidator>
                         </td>
                         <td>               
                             <asp:TextBox ID="lastName_txt" runat="server" Style="text-align: left" 
@@ -83,7 +89,7 @@
                     <td class="style2">Phone 1:<asp:RegularExpressionValidator 
                             ID="RegularExpressionValidator1" runat="server" ControlToValidate="phone1_txt" 
                             ErrorMessage="Invalid phone number format" ForeColor="Red" 
-                            ValidationExpression="[0-9]{10}">*</asp:RegularExpressionValidator>
+                            ValidationExpression="[(][0-9]{3}[)][0-9]{3}-[0-9]{4}">*</asp:RegularExpressionValidator>
                         <asp:RequiredFieldValidator ID="RequiredFieldValidator7" runat="server" 
                             ControlToValidate="phone1_txt" ErrorMessage="Phone number is required" 
                             ForeColor="Red">*</asp:RequiredFieldValidator>
@@ -91,13 +97,22 @@
                     <td><asp:TextBox ID="phone1_txt" runat="server" Style="text-align: left" 
                             Width="200px"></asp:TextBox>
                             </td>
-                    <td>Phone 2:</td>
+                    <td>Phone 2:<asp:RegularExpressionValidator ID="RegularExpressionValidator5" 
+                            runat="server" ControlToValidate="phone2_txt" 
+                            ErrorMessage=" Invalid phone number" ForeColor="Red" 
+                            ValidationExpression="[(][0-9]{3}[)][0-9]{3}-[0-9]{4}">*</asp:RegularExpressionValidator>
+                        </td>
                     <td><asp:TextBox
                     ID="phone2_txt" runat="server" Style="text-align: left" Width="200px"></asp:TextBox></td>
                     <td>Email:<asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" 
                             ControlToValidate="email_txt" ErrorMessage="Email is Required" ForeColor="Red">*</asp:RequiredFieldValidator>
                         </td>
-                    <td><asp:TextBox
+                    <td>
+                        <asp:RegularExpressionValidator ID="RegularExpressionValidator8" runat="server" 
+                            ControlToValidate="email_txt" EnableTheming="True" ErrorMessage="Invalid email" 
+                            ForeColor="Red" 
+                            ValidationExpression="\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*">*</asp:RegularExpressionValidator>
+                        <asp:TextBox
                     ID="email_txt" runat="server" Style="text-align: left" Width="200px"></asp:TextBox>
                         </td>
                     </tr>
@@ -114,6 +129,9 @@
                     <td class="style4">City:<asp:RequiredFieldValidator ID="RequiredFieldValidator5" 
                             runat="server" ControlToValidate="city_txt" ErrorMessage="City is Required" 
                             ForeColor="Red">*</asp:RequiredFieldValidator>
+                        <asp:RegularExpressionValidator ID="RegularExpressionValidator7" runat="server" 
+                            ControlToValidate="city_txt" ErrorMessage="Invalid city name" ForeColor="Red" 
+                            ValidationExpression="[a-zA-Z._^%$#!~@,-]+.">*</asp:RegularExpressionValidator>
                         </td>
                     <td class="style4"><asp:TextBox ID="city_txt" runat="server" Style="text-align: left" 
                             Width="200px"></asp:TextBox>
@@ -123,6 +141,9 @@
                         <td class="style2">State:<asp:RequiredFieldValidator ID="RequiredFieldValidator6" 
                                 runat="server" ControlToValidate="state_txt" ErrorMessage="State is required" 
                                 ForeColor="Red">*</asp:RequiredFieldValidator>
+                            <asp:RegularExpressionValidator ID="RegularExpressionValidator6" runat="server" 
+                                ControlToValidate="state_txt" ErrorMessage="Invalid State" ForeColor="Red" 
+                                ValidationExpression="^(A[LKSZAEP]|C[AOT]|D[EC]|F[LM]|G[ANU]|HI|I[ADLN]|K[SY]|LA|M[ADEHINOPST]|N[CDEHJMVY]|O[HKR]|P[ARW]|RI|S[CD]|T[NX]|UT|V[AIT]|W[AIVY])$">*</asp:RegularExpressionValidator>
                         </td>
                         <td><asp:TextBox ID="state_txt" runat="server" Width="200px"></asp:TextBox></td>
                         <td>Zip Code:<asp:RegularExpressionValidator ID="RegularExpressionValidator2" 
@@ -140,20 +161,43 @@
                             Text="Same As Mailling Address" oncheckedchanged="sameAsMailling_chk_CheckedChanged" 
                              /></td></tr>
                     <tr>
-                        <td class="style2">Street:</td>
+                        <td class="style2">Street:<asp:RequiredFieldValidator ID="RequiredFieldValidator9" 
+                                runat="server" ControlToValidate="billingStreet_txt" 
+                                ErrorMessage="Billing street is required" ForeColor="Red">*</asp:RequiredFieldValidator>
+                        </td>
                         <td><asp:TextBox ID="billingStreet_txt" runat="server" Width="200px"></asp:TextBox></td>
                         <td>Apt./Suite:</td>
                         <td><asp:TextBox ID="billlingSuiteApt_txt"
                     runat="server" Style="text-align: left" Width="200px" 
                                 ></asp:TextBox></td>
-                    <td>City:</td>
+                    <td>City:<asp:RequiredFieldValidator ID="RequiredFieldValidator10" runat="server" 
+                            ControlToValidate="billingCity_txt" ErrorMessage="city is required" 
+                            ForeColor="Red">*</asp:RequiredFieldValidator>
+                        <asp:RegularExpressionValidator ID="RegularExpressionValidator9" runat="server" 
+                            ControlToValidate="billingCity_txt" ErrorMessage="Invalid city name" 
+                            ForeColor="Red" ValidationExpression="[a-zA-Z._^%$#!~@,-]+.">*</asp:RegularExpressionValidator>
+                        </td>
                     <td><asp:TextBox ID="billingCity_txt" runat="server" Style="text-align: left" 
                             Width="200px"></asp:TextBox></td>
                     </tr>
                     <tr>
-                        <td class="style2">State:</td>
+                        <td class="style2">State:<asp:RequiredFieldValidator ID="RequiredFieldValidator11" 
+                                runat="server" ControlToValidate="billingState_txt" 
+                                ErrorMessage="billing state is required" ForeColor="Red">*</asp:RequiredFieldValidator>
+                            <asp:RegularExpressionValidator ID="RegularExpressionValidator10" 
+                                runat="server" ControlToValidate="billingState_txt" 
+                                ErrorMessage="Invalid state" ForeColor="Red" 
+                                ValidationExpression="^(A[LKSZAEP]|C[AOT]|D[EC]|F[LM]|G[ANU]|HI|I[ADLN]|K[SY]|LA|M[ADEHINOPST]|N[CDEHJMVY]|O[HKR]|P[ARW]|RI|S[CD]|T[NX]|UT|V[AIT]|W[AIVY])$">*</asp:RegularExpressionValidator>
+                        </td>
                         <td><asp:TextBox ID="billingState_txt" runat="server" Width="200px"></asp:TextBox></td>
-                        <td>Zip Code:</td>
+                        <td>Zip Code:<asp:RegularExpressionValidator ID="RegularExpressionValidator11" 
+                                runat="server" ControlToValidate="billingZip_txt" 
+                                ErrorMessage="Invalid billing zipcode" ForeColor="Red" 
+                                ValidationExpression="[0-9]{5}">*</asp:RegularExpressionValidator>
+                            <asp:RequiredFieldValidator ID="RequiredFieldValidator12" runat="server" 
+                                ControlToValidate="billingZip_txt" ErrorMessage="Billing zipcode is required" 
+                                ForeColor="Red">*</asp:RequiredFieldValidator>
+                        </td>
                         <td><asp:TextBox ID="billingZip_txt" runat="server" Style="text-align: left" 
                                 Width="200px"></asp:TextBox></td>
                     </tr>
@@ -169,7 +213,8 @@
                     Height="38px" Style="text-align: center" Text="Home" Width="69px" 
                     onclick="home_btn_Click" CausesValidation="False" />
                 &nbsp;&nbsp;
-                <asp:Button ID="logout_btn" runat="server" BorderColor="Black" BorderStyle="Double"/>
+                <asp:Button ID="logout_btn" runat="server" BorderColor="Black" 
+                    BorderStyle="Double" Height="38px" Text="Logout" Width="71px"/>
                 &nbsp;&nbsp;
                 <asp:Button ID="next_btn" runat="server" BorderColor="Black" BorderStyle="Double"
                     Height="38px" Style="text-align: center" Text="Next>>" Width="69px" 
