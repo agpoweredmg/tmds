@@ -10,6 +10,7 @@ public partial class ReportsGeneration : System.Web.UI.Page
     protected void Page_Load(object sender, EventArgs e)
     {
         eventLookup_ddl.Visible = false;
+        Response.Cookies["evid"].Value = eventLookup_ddl.SelectedValue.ToString();
         if (!Convert.ToBoolean(Request.Cookies["cred"]["mgr"]))
         {
             Response.Redirect("InvalidLoginCredentials.aspx");

@@ -43,7 +43,8 @@
                         </asp:DropDownList>
                         <asp:SqlDataSource ID="eventLookup" runat="server" 
                             ConnectionString="<%$ ConnectionStrings:group3_6_WEBUSER %>" 
-                            SelectCommand="SELECT [Event_ID], [Event_Name] FROM [Events]">
+                            SelectCommand="SELECT [Event_ID], [Event_Name] FROM [Events]" 
+                            ProviderName="System.Data.SqlClient">
                         </asp:SqlDataSource>
                     </td>
                 </tr>

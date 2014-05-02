@@ -43,7 +43,7 @@
 	e.Emp_ID,
 	e.Emp_F_Name,
 	e.Emp_L_Name,
-	SUM(j.Job_Pay_Rate * ps.Hours_Worked) AS Wages
+	CAST(SUM(j.Job_Pay_Rate * ps.Hours_Worked) AS DECIMAL(5,2)) AS Wages
 FROM Employees e, Event_Staff es, Jobs j, Pay_Schedule ps
 WHERE e.Emp_ID = ps.emp_id
      AND ps.Job_ID = es.Job_ID
