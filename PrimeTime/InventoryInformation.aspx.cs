@@ -4,6 +4,9 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Data;
+using System.Data.SqlClient;
+using System.Drawing;
 
 public partial class InventoryInformation : System.Web.UI.Page
 {
@@ -33,7 +36,21 @@ public partial class InventoryInformation : System.Web.UI.Page
     }
     protected void submit_btn_Click(object sender, EventArgs e)
     {
+         if (chooseAction_ddl.SelectedIndex == 1)
+        {
+            SqlCommand command = new SqlCommand("new_special_service", conn);
 
+            command.CommandType = CommandType.StoredProcedure;
+
+            command.Parameters.AddWithValue("@srvice_name", ServiceName_tb.Text.ToString());
+            command.Parameters.AddWithValue("@service_price", ServicePrice_tb.Text.ToString());
+
+
+            conn.Open();
+
+            command.ExecuteNonQuery();
+
+            conn.Close();
     }
     protected void home_btn_Click(object sender, EventArgs e)
     {
