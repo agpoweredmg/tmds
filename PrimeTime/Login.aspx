@@ -29,11 +29,17 @@
                         <tr>
                             <td>
                                 User Name:<asp:RequiredFieldValidator ID="RequiredFieldValidator1" 
-                                    runat="server" ControlToValidate="userName_txt" 
-                                    ErrorMessage="Enter your user name" ForeColor="Red">*</asp:RequiredFieldValidator>
+                                    runat="server" ControlToValidate="userName_ddl" 
+                                    ErrorMessage="Choose your user name" ForeColor="Red">*</asp:RequiredFieldValidator>
 &nbsp;</td>
                             <td>
-                                <asp:TextBox ID="userName_txt" runat="server" Style="text-align: left" Width="200"></asp:TextBox>
+                                <asp:DropDownList ID="userName_ddl" runat="server" 
+                                    DataSourceID="usernameLookup" DataTextField="UserName" DataValueField="Emp_ID">
+                                </asp:DropDownList>
+                                <asp:SqlDataSource ID="usernameLookup" runat="server" 
+                                    ConnectionString="<%$ ConnectionStrings:WebUserConnectionString %>" SelectCommand="SELECT Emp_ID, (Emp_F_Name + ' ' + Emp_L_Name) AS UserName
+FROM Employees
+"></asp:SqlDataSource>
                             </td>
                         </tr>
                         <tr>
