@@ -116,10 +116,10 @@
         <td>
             <asp:TextBox ID="quantityOnHand_tb" runat="server"></asp:TextBox>
             <asp:CompareValidator ID="QuantityOnHand_cv" runat="server" 
-                ControlToValidate="quantityOnHand_tb" ErrorMessage="CompareValidator" 
+                ControlToValidate="quantityOnHand_tb" ErrorMessage="Quantity On Hand must be numeric." 
                 ForeColor="Maroon" Operator="DataTypeCheck" Type="Integer">*</asp:CompareValidator>
             <asp:CompareValidator ID="QuantityOnHand2_cv" runat="server" 
-                ControlToValidate="quantityOnHand_tb" ErrorMessage="CompareValidator" 
+                ControlToValidate="quantityOnHand_tb" ErrorMessage="Quantity must be greater than or equal to zero." 
                 ForeColor="Maroon" Operator="GreaterThanEqual" ValueToCompare="0">*</asp:CompareValidator>
             </td>
         <td>&nbsp;</td>
@@ -131,14 +131,11 @@
         <td>
             <asp:TextBox ID="minimum_tb" runat="server"></asp:TextBox>
             <asp:CompareValidator ID="Minimum_cv" runat="server" 
-                ControlToValidate="minimum_tb" ErrorMessage="CompareValidator" 
+                ControlToValidate="minimum_tb" ErrorMessage="Minimum must be greater than or equal to zero." 
                 ForeColor="Maroon" Operator="DataTypeCheck" Type="Integer">*</asp:CompareValidator>
             <asp:CompareValidator ID="Minimum2_cv" runat="server" 
-                ControlToValidate="minimum_tb" ErrorMessage="CompareValidator" 
-                ForeColor="Maroon" Operator="GreaterThanEqual" ValueToCompare="0">*</asp:CompareValidator>
-            <asp:CompareValidator ID="Minimum3_cv" runat="server" 
-                ControlToValidate="minimum_tb" ErrorMessage="Minimum must be zero or greater." 
-                ForeColor="Maroon" Operator="DataTypeCheck" Type="Integer">*</asp:CompareValidator>
+                ControlToValidate="minimum_tb" ErrorMessage="Minimum must be greater or equal than five." 
+                ForeColor="Maroon" Operator="GreaterThanEqual" ValueToCompare="5">*</asp:CompareValidator>
             </td>
         <td></td>
         </tr>
@@ -148,9 +145,15 @@
             Maximum:</td>
         <td>
             <asp:TextBox ID="maximum_tb" runat="server"></asp:TextBox>
-            <asp:CompareValidator ID="Maximum_cv" runat="server" 
-                ControlToValidate="maximum_tb" ErrorMessage="Maximum must be zero or greater." 
+            <asp:CompareValidator ID="Maximum_cv0" runat="server" 
+                ControlToValidate="maximum_tb" ErrorMessage="Maximum must be greater than or equal to zero." 
                 ForeColor="Maroon" Operator="DataTypeCheck" Type="Integer">*</asp:CompareValidator>
+            <asp:CompareValidator ID="Maximum2_cv" runat="server" 
+                ControlToValidate="maximum_tb" ErrorMessage="Maximum must be less than 500. " 
+                ForeColor="Maroon" Operator="LessThanEqual" ValueToCompare="500">*</asp:CompareValidator>
+            <asp:CompareValidator ID="CompareValidator2" runat="server" 
+                ControlToValidate="maximum_tb" ErrorMessage="Maximum must be greater than 5." 
+                ForeColor="Maroon" Type="Integer" ValueToCompare="5">*</asp:CompareValidator>
             </td>
         <td></td>
         </tr>
@@ -170,7 +173,7 @@
     <asp:Button ID="logout_btn" runat="server" Text="Logout" Width="68px" Height="38px" 
             onclick="logout_btn_Click" CausesValidation="False" />
             <asp:ValidationSummary ID="InventoryInformation_vs" runat="server" 
-                ForeColor="Maroon" />
+                ForeColor="Maroon" HeaderText="You received the following Errors:" />
      </center>
      </div>
     

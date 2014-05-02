@@ -28,10 +28,9 @@
             </td>
         <td>
     <asp:DropDownList ID="entree_ddl" runat="server" 
-        DataSourceID="SqlDataSource3" DataTextField="Item_Name" 
+        DataSourceID="SqlDataSource1" DataTextField="Item_Name" 
         DataValueField="Item_Name" Width="85px">
     </asp:DropDownList>
-            <asp:SqlDataSource ID="SqlDataSource1" runat="server"></asp:SqlDataSource>
             <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" 
                 ControlToValidate="entree_ddl" 
                 ErrorMessage="Please select an Entree from dropdown">*</asp:RequiredFieldValidator>
@@ -92,17 +91,6 @@
             <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" 
                 ControlToValidate="numberOfMeals_tb" 
                 ErrorMessage="Please indicate how many meals">*</asp:RequiredFieldValidator>
-<<<<<<< HEAD
-
-=======
-<<<<<<< HEAD
-            <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" 
-                ControlToValidate="numberOfMeals_tb" ErrorMessage="RegularExpressionValidator" 
-                ValidationExpression="[0-9]">*</asp:RegularExpressionValidator>
-=======
->>>>>>> 66569fd60322654f38633047ce9a05ba7467ac19
->>>>>>> ab72c431cb4e00739dd09b672fa86ec0a6b38513
->>>>>>> 6bb83aab11c0bd966dd7f33160615f23969ebbce
             </td>
         <td></td>
         </tr>
@@ -121,6 +109,9 @@
     </table>
 
             <br />
+            <asp:SqlDataSource ID="SqlDataSource1" runat="server" 
+                ConnectionString="<%$ ConnectionStrings:group3_6_WEBUSER %>" 
+                SelectCommand="SELECT [Item_Name] FROM [ENTREE_ITEMS]"></asp:SqlDataSource>
             <br />
 
     <asp:Button ID="home_btn" runat="server" Text="Home" Width="68px" Height="38px" 
@@ -128,6 +119,9 @@
     <asp:Button ID="logout_btn" runat="server" Text="Logout" Width="68px" Height="38px" 
             onclick="logout_btn_Click" />
             <br />
+            <asp:SqlDataSource ID="SqlDataSource2" runat="server" 
+                ConnectionString="<%$ ConnectionStrings:group3_6_WEBUSER %>" 
+                SelectCommand="SELECT [Item_Name] FROM [SIDE_ITEMS]"></asp:SqlDataSource>
             <asp:ValidationSummary ID="ValidationSummary1" runat="server" 
                 ForeColor="Maroon" HeaderText="You received the following Errors:" />
       </center>

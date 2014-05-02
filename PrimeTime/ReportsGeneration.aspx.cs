@@ -21,10 +21,6 @@ public partial class ReportsGeneration : System.Web.UI.Page
     }
     protected void generateReport_btn_Click(object sender, EventArgs e)
     {
-<<<<<<< HEAD
-=======
-
->>>>>>> 6bb83aab11c0bd966dd7f33160615f23969ebbce
         if (chooseReport_ddl.SelectedIndex == 0)
         {
             Response.Redirect("AccountsPayableReports.aspx");
