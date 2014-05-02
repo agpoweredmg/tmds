@@ -16,6 +16,7 @@ public partial class CreateEvent1 : System.Web.UI.Page
     }
     protected void next_btn_Click(object sender, EventArgs e)
     {
+        String custId;
 
         SqlCommand command = new SqlCommand("new_customer", conn);
         command.CommandType = CommandType.StoredProcedure;
@@ -23,8 +24,12 @@ public partial class CreateEvent1 : System.Web.UI.Page
         SqlCommand maillingComm = new SqlCommand("customer_mailing", conn);
         maillingComm.CommandType = CommandType.StoredProcedure;
 
-        SqlCommand billingComm = new SqlCommand("billing_Address", conn);
+        SqlCommand billingComm = new SqlCommand("customer_billing", conn);
         billingComm.CommandType = CommandType.StoredProcedure;
+
+        
+
+       
 
        // command.Parameters.AddWithValue("@customer_id", customerId_txt.Text.ToString());
         command.Parameters.AddWithValue("@first_name", firstName_txt.Text.ToString());
@@ -32,8 +37,18 @@ public partial class CreateEvent1 : System.Web.UI.Page
         command.Parameters.AddWithValue("@phone1", phone1_txt.Text.ToString());
         command.Parameters.AddWithValue("@phone2", phone2_txt.Text.ToString());
         command.Parameters.AddWithValue("@email", email_txt.Text.ToString());
+        conn.Open();
+        command.ExecuteNonQuery();
+        conn.Close();
 
-        //maillingComm.Parameters.AddWithValue("@customer_id", customerId_txt.Text.ToString());
+        SqlCommand getLastId = new SqlCommand("getLastCust_Id", conn);
+        getLastId.CommandType = CommandType.StoredProcedure;
+
+        conn.Open();
+        custId = getLastId.ExecuteScalar().ToString();
+        
+
+        maillingComm.Parameters.AddWithValue("@customer_id", custId);
         maillingComm.Parameters.AddWithValue("@street", street_txt.Text.ToString());
         maillingComm.Parameters.AddWithValue("@apt_suite", apt_suite_txt.Text.ToString());
         maillingComm.Parameters.AddWithValue("@city", city_txt.Text.ToString());
@@ -43,7 +58,7 @@ public partial class CreateEvent1 : System.Web.UI.Page
         if (sameAsMailling_chk.Checked == true)
         {
             maillingComm.Parameters.AddWithValue("@same_as_billing", 1);
-
+            billingComm.Parameters.AddWithValue("@customer_id", custId);
             billingComm.Parameters.AddWithValue("@street", street_txt.Text.ToString());
             billingComm.Parameters.AddWithValue("@apt_suite", apt_suite_txt.Text.ToString());
             billingComm.Parameters.AddWithValue("@city", city_txt.Text.ToString());
@@ -54,11 +69,15 @@ public partial class CreateEvent1 : System.Web.UI.Page
         else
         {
             maillingComm.Parameters.AddWithValue("@same_as_billing", 0);
+            billingComm.Parameters.AddWithValue("@customer_id", custId);
+            billingComm.Parameters.AddWithValue("@street", billingStreet_txt.Text.ToString());
+            billingComm.Parameters.AddWithValue("@apt_suite", billlingSuiteApt_txt.Text.ToString());
+            billingComm.Parameters.AddWithValue("@city", billingCity_txt.Text.ToString());
+            billingComm.Parameters.AddWithValue("@state", billingState_txt.Text.ToString());
+            billingComm.Parameters.AddWithValue("@zip", billingZip_txt.Text.ToString());
         }
 
-        conn.Open();
 
-        command.ExecuteNonQuery();
         maillingComm.ExecuteNonQuery();
         billingComm.ExecuteNonQuery();
 
@@ -107,17 +126,31 @@ public partial class CreateEvent1 : System.Web.UI.Page
     {
         if (sameAsMailling_chk.Checked == true)
         {
+            billingStreet_txt.Text = street_txt.Text;
+            billlingSuiteApt_txt.Text = apt_suite_txt.Text;
+            billingCity_txt.Text = city_txt.Text;
+            billingState_txt.Text = state_txt.Text;
+            billingZip_txt.Text = zip_txt.Text;
+
             SqlCommand maillingComm = new SqlCommand("customer_billing", conn);
             maillingComm.CommandType = CommandType.StoredProcedure;
 
-            //maillingComm.Parameters.AddWithValue("@customer_id", customerId_txt.Text.ToString());
+            SqlCommand getLastId = new SqlCommand("getLastCust_Id", conn);
+            getLastId.CommandType = CommandType.StoredProcedure;
+
+            String custId;
+        
+            conn.Open();
+            custId = getLastId.ExecuteScalar().ToString();
+
+            maillingComm.Parameters.AddWithValue("@customer_id", custId);
             maillingComm.Parameters.AddWithValue("@street", street_txt.Text.ToString());
             maillingComm.Parameters.AddWithValue("@apt_suite", apt_suite_txt.Text.ToString());
             maillingComm.Parameters.AddWithValue("@city", city_txt.Text.ToString());
             maillingComm.Parameters.AddWithValue("@state", state_txt.Text.ToString());
             maillingComm.Parameters.AddWithValue("@zip", zip_txt.Text.ToString());
 
-            conn.Open();
+            
             maillingComm.ExecuteNonQuery();
 
             conn.Close();

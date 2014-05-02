@@ -79,6 +79,7 @@
         <td class="style11">
             <asp:TextBox ID="id_tb" runat="server" ontextchanged="id_tb_TextChanged" 
                 CausesValidation="True"></asp:TextBox>
+            <asp:Label ID="ID_lbl" runat="server" Text="Label" Visible="False"></asp:Label>
             </td>
         <td class="style10">
     &nbsp;&nbsp;&nbsp;&nbsp;</td>
@@ -107,13 +108,15 @@
             Last Name:</td>
         <td class="style11">
             <asp:TextBox ID="lastName_tb" runat="server"></asp:TextBox>
+            <asp:Label ID="LastName_lbl" runat="server" Text="Label" Visible="False"></asp:Label>
             <asp:RegularExpressionValidator ID="LastName_RegEx" runat="server" 
                 ControlToValidate="lastName_tb" ErrorMessage="Last Name is not valid." 
                 ForeColor="Maroon" ValidationExpression="^[a-zA-Z''-'\s]{1,40}$">*</asp:RegularExpressionValidator>
             </td>
         <td class="style10">
             <asp:DropDownList ID="chooseAction_ddl" runat="server" 
-                onselectedindexchanged="chooseAction_ddl_SelectedIndexChanged">
+                onselectedindexchanged="chooseAction_ddl_SelectedIndexChanged" 
+                AutoPostBack="True">
                 <asp:ListItem Value="0">Choose an Action</asp:ListItem>
             <asp:ListItem Value="1">Add Employee</asp:ListItem>
             <asp:ListItem Value="2">Delete Employee</asp:ListItem>
@@ -134,6 +137,12 @@
             </td>
         <td class="style10">
             &nbsp;&nbsp;&nbsp;
+            <asp:DropDownList ID="chooseemployee_ddl" runat="server" AutoPostBack="True" 
+                DataSourceID="SqlDataSource1" DataTextField="Emp_L_Name" 
+                DataValueField="Emp_ID" 
+                onselectedindexchanged="chooseemployee_ddl_SelectedIndexChanged" 
+                Visible="False">
+            </asp:DropDownList>
             </td>
         </tr>
 
@@ -241,6 +250,9 @@
     <asp:Button ID="logout_btn" runat="server" Text="Logout" Width="68px" Height="38px" 
             onclick="logout_btn_Click" CausesValidation="False" />
             <br />
+            <asp:SqlDataSource ID="SqlDataSource1" runat="server" 
+                ConnectionString="<%$ ConnectionStrings:group3_6_WEBUSER %>" 
+                SelectCommand="SELECT * FROM [Employees]"></asp:SqlDataSource>
             <asp:ValidationSummary ID="ValidationSummary1" runat="server" 
                 ForeColor="Maroon" HeaderText="You received the following Errors:" />
      </center>

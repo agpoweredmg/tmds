@@ -33,9 +33,6 @@
                     <th class="style1">
                         <asp:TextBox ID="eventID_tb" runat="server"></asp:TextBox>
                         <asp:Label ID="EventID_lbl" runat="server" Text="Event ID" Visible="False"></asp:Label>
-                        <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" 
-                            ErrorMessage="The Event ID is required" ControlToValidate="eventID_tb" 
-                            ForeColor="Maroon">*</asp:RequiredFieldValidator>
                     </th>
                     <th>
                         <asp:Button ID="submit_btn" runat="server" Text="Submit" 
@@ -84,7 +81,7 @@
                             DataSourceID="SqlDataSource1" DataTextField="Event_Name" 
                             DataValueField="Event_ID" 
                             onselectedindexchanged="EventName_ddl_SelectedIndexChanged" Visible="False">
-                            <asp:ListItem Value="Choose the Event ID:"></asp:ListItem>
+                            <asp:ListItem Value="0">Choose the event:</asp:ListItem>
                         </asp:DropDownList>
                     </th>
                 </tr>
