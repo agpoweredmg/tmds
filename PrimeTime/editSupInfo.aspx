@@ -15,12 +15,12 @@
         }
         .style2
         {
-            width: 177px;
+            width: 190px;
         }
         .style3
         {
             height: 30px;
-            width: 177px;
+            width: 190px;
         }
     </style>
 </head>
@@ -50,16 +50,14 @@
                         <asp:RequiredFieldValidator ID="SupplierID_rf" runat="server" 
                             ControlToValidate="supplierID_tb" ErrorMessage="Supplier ID is required" 
                             ForeColor="Maroon">*</asp:RequiredFieldValidator>
-                        <asp:CompareValidator ID="SupplierID_cv" runat="server" 
-                            ControlToValidate="supplierID_tb" ErrorMessage="Supplier ID must be valid" 
-                            ForeColor="Maroon" Operator="DataTypeCheck" Type="Integer">*</asp:CompareValidator>
+                        &nbsp;&nbsp;&nbsp;
                     </th>
                     <th>
                         <asp:Button ID="submit_btn" runat="server" Text="Submit" 
                             onclick="submit_btn_Click" />
                         &nbsp;&nbsp;&nbsp;&nbsp;
                         <asp:Button ID="clear_btn" runat="server" Text="Clear" Width="61px" 
-                            onclick="clear_btn_Click" />
+                            onclick="clear_btn_Click" CausesValidation="False" />
                     </th>
                 </tr>
                 <tr>
@@ -141,10 +139,7 @@
                     </th>
                     <th class="style2">
                         <asp:TextBox ID="supplierStreet_tb" runat="server"></asp:TextBox>
-                        <asp:RequiredFieldValidator ID="SupplierStreet_rf" runat="server" 
-                            ControlToValidate="supplierStreet_tb" ErrorMessage="Invalid Street Address" 
-                            ForeColor="Maroon">*</asp:RequiredFieldValidator>
-                    &nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     </th>
                     <th>
                         &nbsp;
@@ -172,8 +167,9 @@
                     <th class="style2">
                         <asp:TextBox ID="supplierState_tb" runat="server"></asp:TextBox>
                         <asp:RegularExpressionValidator ID="SupplierState_RegEx" runat="server" 
-                            ControlToValidate="supplierState_tb" ErrorMessage="Invalid State Abbreviation" 
+                            ControlToValidate="supplierState_tb" ErrorMessage="State must be abbreviated to 2 capital letters.  (ex. VA)" 
                             ForeColor="Maroon" 
+                            
                             
                             
                             ValidationExpression="^(A[LKSZAEP]|C[AOT]|D[EC]|F[LM]|G[ANU]|HI|I[ADLN]|K[SY]|LA|M[ADEHINOPST]|N[CDEHJMVY]|O[HKR]|P[ARW]|RI|S[CD]|T[NX]|UT|V[AIT]|W[AIVY])$">*</asp:RegularExpressionValidator>
@@ -213,7 +209,7 @@
     <br />
     <br />
     <asp:ValidationSummary ID="EditSupInfo_vs" runat="server" 
-        ForeColor="Maroon" />
+        ForeColor="Maroon" HeaderText="You received the following Errors:" />
     <br />
     </form>
 </body>

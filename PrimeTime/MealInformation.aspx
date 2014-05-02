@@ -27,13 +27,11 @@
             Entree:
             </td>
         <td>
-            <asp:SqlDataSource ID="SqlDataSource3" runat="server" 
-                ConnectionString="<%$ ConnectionStrings:group3_6_WEBUSER %>" 
-                SelectCommand="SELECT [Item_Name] FROM [ENTREE_ITEMS]"></asp:SqlDataSource>
     <asp:DropDownList ID="entree_ddl" runat="server" 
         DataSourceID="SqlDataSource3" DataTextField="Item_Name" 
         DataValueField="Item_Name" Width="85px">
     </asp:DropDownList>
+            <asp:SqlDataSource ID="SqlDataSource1" runat="server"></asp:SqlDataSource>
             <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" 
                 ControlToValidate="entree_ddl" 
                 ErrorMessage="Please select an Entree from dropdown">*</asp:RequiredFieldValidator>
@@ -58,10 +56,7 @@
             <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" 
                 ControlToValidate="sideTwo_ddl" 
                 ErrorMessage="Please select Side Item One from dropdown">*</asp:RequiredFieldValidator>
-&nbsp;<asp:SqlDataSource ID="SqlDataSource2" runat="server" 
-        ConnectionString="<%$ ConnectionStrings:group3_6_WEBUSER %>" 
-        SelectCommand="SELECT [Item_Name] FROM [SIDE_ITEMS]"></asp:SqlDataSource>
-            </td>
+&nbsp;</td>
         <td>
             <asp:DropDownList ID="chooseAction_ddl" runat="server" 
                 onselectedindexchanged="chooseAction_ddl_SelectedIndexChanged">
@@ -94,12 +89,10 @@
             </td>
         <td>
         <asp:TextBox ID="numberOfMeals_tb" runat="server" Width="80px"></asp:TextBox>
-<<<<<<< HEAD
-=======
             <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" 
                 ControlToValidate="numberOfMeals_tb" 
                 ErrorMessage="Please indicate how many meals">*</asp:RequiredFieldValidator>
->>>>>>> 66569fd60322654f38633047ce9a05ba7467ac19
+
             </td>
         <td></td>
         </tr>

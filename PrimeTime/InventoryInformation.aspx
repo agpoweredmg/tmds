@@ -32,7 +32,7 @@
                 ErrorMessage="CompareValidator" ForeColor="Maroon" Operator="DataTypeCheck" 
                 Type="Integer">*</asp:CompareValidator>
             <asp:RequiredFieldValidator ID="ID_rf" runat="server" ControlToValidate="id_tb" 
-                ErrorMessage="RequiredFieldValidator" ForeColor="Maroon">*</asp:RequiredFieldValidator>
+                ErrorMessage="ID is required." ForeColor="Maroon">*</asp:RequiredFieldValidator>
             </td>
         <td>
     &nbsp;<asp:Button ID="submit_btn" runat="server" Text="Submit" Width="61px" 

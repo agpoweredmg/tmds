@@ -146,7 +146,7 @@
         Width="68px" OnClick="logout_btn_Click" CausesValidation="False" />
         <br />
         <asp:ValidationSummary ID="EditCustomerInfo_vs" runat="server" 
-            ForeColor="Maroon" />
+            ForeColor="Maroon" HeaderText="You received the following Errors:" />
         <br />
         <br />
         <br />

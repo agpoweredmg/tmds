@@ -131,7 +131,7 @@
             <br />
             <br />
             <asp:ValidationSummary ID="EditContractInfo_vs" runat="server" 
-                ForeColor="Maroon" />
+                ForeColor="Maroon" HeaderText="You received the following Errors:" />
             <br />
         </div>
     </div>
