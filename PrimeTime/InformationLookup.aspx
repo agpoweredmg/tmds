@@ -10,90 +10,67 @@
 <body>
 <center>
     <form id="form1" runat="server">
-    <asp:Image ID="Image1" runat="server" ImageUrl="~/untitled.png" Style="text-align: left" />
+    <asp:Image ID="Image1" runat="server" ImageUrl="untitled.png" Style="text-align: left" />
     <div>
-        <br />
-        <div style="margin-left: 200px; font-family: sans-serif; font-size: 15.75px; font-weight: bold;
-            width: 209px; text-align: center;">
-            Information Lookup
-        </div>
         <br />
     </div>
     <br />
     <table>
+        <th colspan="2">
+           Information Lookup
+        </th>
         <tr>
-            <td>Account Number :</td>
+            <td>Account Information :</td>
             <td>
     <asp:DropDownList ID="accountsDetails_ddl" runat="server" Height="25px" Width="181px" 
                     DataSourceID="SqlDataSource2" DataTextField="Acct_ID" DataValueField="Acct_ID">
     </asp:DropDownList>
             </td>
-            <td>
-    <asp:CheckBox ID="allAccount_chk" runat="server" Text="Show All Records" />
-            </td>
         </tr>
         <tr>
-            <td>Supplier&nbsp;:</td>
+            <td>Supplier Information&nbsp;:</td>
             <td>
     <asp:DropDownList ID="suppliers_ddl" runat="server" Height="25px" Width="181px" 
                     DataSourceID="SqlDataSource3" DataTextField="Supplier_Name" 
                     DataValueField="Supplier_Name">
     </asp:DropDownList>
             </td>
-            <td>
-    <asp:CheckBox ID="allSuppliers_chk" runat="server" Text="Show All Records" />
-            </td>
         </tr>
         <tr>
-            <td>Event : </td>
+            <td>Events : </td>
             <td>
     <asp:DropDownList ID="eventsDetails_ddl" runat="server" Height="25px" Width="181px" 
                     DataSourceID="SqlDataSource4" DataTextField="Event_Name" 
                     DataValueField="Event_Name">
     </asp:DropDownList>
             </td>
-            <td>
-    <asp:CheckBox ID="eventDetails_chk" runat="server" Text="Show All Records" />
-            </td>
         </tr>
         <tr>
-            <td>Contract&nbsp;:</td>
+            <td>Contracts&nbsp;:</td>
             <td>
     <asp:DropDownList ID="contracts_ddl" runat="server" Height="25px" Width="181px" 
                     DataSourceID="SqlDataSource5" DataTextField="Contract_ID" 
                     DataValueField="Contract_ID">
     </asp:DropDownList>
             </td>
-            <td>
-    <asp:CheckBox ID="allContracts_chk" runat="server" Text="Show All Records" 
-                     />
-            </td>
-        </tr>
         <tr>
-            <td>Customer&nbsp;:</td>
+            <td>Customer Information&nbsp;:</td>
             <td>
     <asp:DropDownList ID="customers_ddl" runat="server" Height="25px" Width="181px" 
-                    DataSourceID="SqlDataSource1" DataTextField="Cust_F_Name" 
-                    DataValueField="Cust_F_Name">
+                    DataSourceID="SqlDataSource1" DataTextField="Customer Name" 
+                    DataValueField="Customer_ID">
     </asp:DropDownList>
-            </td>
-            <td>
-    <asp:CheckBox ID="allCustomers_chk" runat="server" Text="Show All Records" />
             </td>
         </tr>
         
         
         <tr>
-            <td>Service&nbsp;:</td>
+            <td>Special Services&nbsp;:</td>
             <td>
     <asp:DropDownList ID="services_ddl" runat="server" Height="25px" Width="181px" 
                     DataSourceID="SqlDataSource6" DataTextField="Service_Name" DataValueField="Service_Name" 
                     >
     </asp:DropDownList>
-            </td>
-            <td>
-    <asp:CheckBox ID="services_chk" runat="server" Text="Show All Records" 
-                    />
             </td>
         </tr>
         <tr>
@@ -105,20 +82,13 @@
     </asp:DropDownList>
             </td>
             <td>
-    <asp:CheckBox ID="allInventory_chk" runat="server" Text="Show All Records" />
-            </td>
-        </tr>
         <tr>
-            <td>Purchase&nbsp;: </td>
+            <td>Purchase Orders&nbsp;: </td>
             <td>
     <asp:DropDownList ID="purchases_ddl" runat="server" Height="25px" Width="181px" 
                     DataSourceID="SqlDataSource8" DataTextField="Purchase_Order_ID" DataValueField="Purchase_Order_ID" 
                     >
     </asp:DropDownList>
-            </td>
-            <td>
-    <asp:CheckBox ID="allPurchases_chk" runat="server" Text="Show All Records" 
-                     />
             </td>
         </tr>
 
@@ -152,8 +122,9 @@
     </table>
     <br />
     <asp:SqlDataSource ID="SqlDataSource1" runat="server" 
-        ConnectionString="<%$ ConnectionStrings:group3_6_WEBUSER %>" 
-        SelectCommand="SELECT [Cust_F_Name], [Cust_L_Name] FROM [Customers]">
+        ConnectionString="<%$ ConnectionStrings:WebUserConnectionString %>" 
+        
+        SelectCommand="SELECT ([Cust_F_Name] + ' ' + [Cust_L_Name]) AS [Customer Name], Customer_ID FROM [Customers]">
     </asp:SqlDataSource>
     <asp:SqlDataSource ID="SqlDataSource4" runat="server" 
         ConnectionString="<%$ ConnectionStrings:group3_6_WEBUSER %>" 
