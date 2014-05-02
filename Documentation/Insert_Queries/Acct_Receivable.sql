@@ -1,6 +1,6 @@
-INSERT into Acct_Receivable(Acct_ID, Invoice_ID)
-values('00000001','00000001'),
-('00000002','00000002'),
-('00000003','00000003'),
-('00000004','00000004'),
-('00000005','00000005')
+INSERT into Acct_Receivable(Invoice_ID)
+values	('IN000001'),
+		('IN000002'),
+		('IN000003'),
+		('IN000004'),
+		('IN000005')

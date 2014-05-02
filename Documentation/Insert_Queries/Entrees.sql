@@ -1,6 +1,6 @@
-INSERT INTO Entrees(Entree_ID, Prepared_Item_ID)
-values('00000001','00000001'),
-('00000002','00000002'),
-('00000003','00000003'),
-('00000004','00000004'),
-('00000005','00000005')
+INSERT INTO Entrees(Entree_ID, Unprepared_Item_ID)
+values	('UP000002'),
+		('UP000003'),
+		('UP000004'),
+		('UP000005'),
+		('UP000006')

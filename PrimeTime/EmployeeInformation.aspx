@@ -81,7 +81,7 @@
             <asp:RequiredFieldValidator ID="ID_rf" runat="server" ControlToValidate="id_tb" 
                 ErrorMessage="ID is required." ForeColor="Maroon">*</asp:RequiredFieldValidator>
             <asp:CompareValidator ID="CompareValidator1" runat="server" 
-                ControlToValidate="id_tb" ErrorMessage="CompareValidator" ForeColor="Maroon" 
+                ControlToValidate="id_tb" ErrorMessage="ID must be numeric." ForeColor="Maroon" 
                 Operator="DataTypeCheck" Type="Integer">*</asp:CompareValidator>
             </td>
         <td class="style10">
@@ -133,7 +133,7 @@
         <td class="style11">
             <asp:TextBox ID="ssn_tb" runat="server"></asp:TextBox>
             <asp:RegularExpressionValidator ID="SSN_RegEx" runat="server" 
-                ControlToValidate="ssn_tb" ErrorMessage="SSN is not in a valid format." 
+                ControlToValidate="ssn_tb" ErrorMessage="SSN must be in ***-**-**** format." 
                 ForeColor="Maroon" ValidationExpression="\d{3}-\d{2}-\d{4}">*</asp:RegularExpressionValidator>
             </td>
         <td class="style10">
@@ -198,7 +198,7 @@
             <asp:TextBox ID="altPhone_tb" runat="server"></asp:TextBox>
         <asp:RegularExpressionValidator ID="AltPhone_RegEx" runat="server" 
             ControlToValidate="altPhone_tb" 
-            ErrorMessage="Invalid format.  Phone number must be (***)***-**** format." 
+            ErrorMessage="Invalid format.  Alternate phone number must be (***)***-**** format." 
             ForeColor="Maroon" 
             
             ValidationExpression="[(][0-9]{3}[)][0-9]{3}-[0-9]{4}">*</asp:RegularExpressionValidator>
@@ -211,10 +211,10 @@
             Password:</td>
         <td class="style2">
             <asp:TextBox ID="password_tb" runat="server"></asp:TextBox>
-            <asp:RegularExpressionValidator ID="RegularExpressionValidator5" runat="server" 
-                ControlToValidate="password_tb" ErrorMessage="RegularExpressionValidator" 
-                ForeColor="Maroon" 
-                ValidationExpression="([a-z]|[A-Z]|[0-9]|[!()@#$%^&lt;&gt;&amp;*.+=_|~-])*">*</asp:RegularExpressionValidator>
+            <asp:RegularExpressionValidator ID="RegularExpressionValidator3" runat="server" 
+                ControlToValidate="password_tb" 
+                ErrorMessage="Password must be between 6 and 15 characters long." 
+                ForeColor="Maroon" ValidationExpression="^[a-zA-Z0-9'@&amp;#.\s]{6,15}$">*</asp:RegularExpressionValidator>
             </td>
         <td class="style4"></td>
         </tr>
@@ -244,8 +244,9 @@
 &nbsp;&nbsp;&nbsp;
     <asp:Button ID="logout_btn" runat="server" Text="Logout" Width="68px" Height="38px" 
             onclick="logout_btn_Click" />
+            <br />
             <asp:ValidationSummary ID="ValidationSummary1" runat="server" 
-                ForeColor="Maroon" />
+                ForeColor="Maroon" HeaderText="You received the following Errors:" />
      </center>
      </div>
     

@@ -11,25 +11,27 @@
     <div>
     
         <asp:GridView ID="GridView1" runat="server" AllowPaging="True" 
-            AutoGenerateColumns="False" CellPadding="4" DataKeyNames="Inventory_ID" 
+            AutoGenerateColumns="False" CellPadding="4" 
             DataSourceID="SqlDataSource1" ForeColor="#333333" GridLines="None" 
             Caption="Inventory Report">
             <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
             <Columns>
-                <asp:BoundField DataField="Inventory_ID" HeaderText="Inventory ID" 
+                <asp:BoundField DataField="Inventory_ID" HeaderText="Inventory_ID" 
                     ReadOnly="True" SortExpression="Inventory_ID" />
-                <asp:BoundField DataField="Unprepared_Item_ID" HeaderText="Unprepared Item ID" 
+                <asp:BoundField DataField="Unprepared_Item_ID" HeaderText="Unprepared_Item_ID" 
                     SortExpression="Unprepared_Item_ID" />
-                <asp:BoundField DataField="QOH" HeaderText=" Quantity on Hand" 
+                <asp:BoundField DataField="QOH" HeaderText="QOH" 
                     SortExpression="QOH" />
-                <asp:BoundField DataField="Min_Amt" HeaderText=" Minimum Amount" 
+                <asp:BoundField DataField="Min_Amt" HeaderText="Min_Amt" 
                     SortExpression="Min_Amt" />
-                <asp:BoundField DataField="Max_Amt" HeaderText=" Maximum Amount" 
+                <asp:BoundField DataField="Max_Amt" HeaderText="Max_Amt" 
                     SortExpression="Max_Amt" />
-                <asp:BoundField DataField="Process_Date" HeaderText="Process Date" 
+                <asp:BoundField DataField="Process_Date" HeaderText="Process_Date" 
                     SortExpression="Process_Date" />
-                <asp:BoundField DataField="Expiry_Date" HeaderText="Expiry Date" 
+                <asp:BoundField DataField="Expiry_Date" HeaderText="Expiry_Date" 
                     SortExpression="Expiry_Date" />
+                <asp:BoundField DataField="RowNum_IN" HeaderText="RowNum_IN" 
+                    InsertVisible="False" ReadOnly="True" SortExpression="RowNum_IN" />
             </Columns>
             <EditRowStyle BackColor="#999999" />
             <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />

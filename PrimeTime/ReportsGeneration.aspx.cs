@@ -9,7 +9,7 @@ public partial class ReportsGeneration : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-
+        eventLookup_ddl.Visible = false;
     }
     protected void logout_btn_Click(object sender, EventArgs e)
     {
@@ -21,7 +21,10 @@ public partial class ReportsGeneration : System.Web.UI.Page
     }
     protected void generateReport_btn_Click(object sender, EventArgs e)
     {
+<<<<<<< HEAD
 
+=======
+>>>>>>> 6a19afe15a5508f80790b6713470b864dcb86cf4
         if (chooseReport_ddl.SelectedIndex == 0)
         {
             Response.Redirect("AccountsPayableReports.aspx");
@@ -59,11 +62,23 @@ public partial class ReportsGeneration : System.Web.UI.Page
                 Response.Redirect("EmployeesReport.aspx");
         }
     }
-       
+
 
     protected void chooseReport_ddl_SelectedIndexChanged(object sender, EventArgs e)
     {
+        if (chooseReport_ddl.SelectedIndex == 4)
+        {
+            eventLookup_ddl.Visible = true;
+        }
 
+    }
 
+<<<<<<< HEAD
+
+=======
+    protected void eventLookup_ddl_SelectedIndexChanged(object sender, EventArgs e)
+    {
+        Response.Cookies["evid"].Value = eventLookup_ddl.SelectedValue.ToString();
+>>>>>>> 6a19afe15a5508f80790b6713470b864dcb86cf4
     }
 }
