@@ -38,7 +38,7 @@
                                     Width="200px">
                                 </asp:DropDownList>
                                 <asp:SqlDataSource ID="usernameLookup" runat="server" 
-                                    ConnectionString="<%$ ConnectionStrings:WebUserConnectionString %>" SelectCommand="SELECT Emp_ID, (Emp_F_Name + ' ' + Emp_L_Name) AS UserName
+                                    ConnectionString="<%$ ConnectionStrings:group3_6_WEBUSER %>" SelectCommand="SELECT Emp_ID, (Emp_F_Name + ' ' + Emp_L_Name) AS UserName
 FROM Employees
 "></asp:SqlDataSource>
                             </td>

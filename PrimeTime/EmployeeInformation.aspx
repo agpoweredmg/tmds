@@ -77,12 +77,8 @@
         <td class="style6">
             ID:</td>
         <td class="style11">
-            <asp:TextBox ID="id_tb" runat="server" ontextchanged="id_tb_TextChanged"></asp:TextBox>
-            <asp:RequiredFieldValidator ID="ID_rf" runat="server" ControlToValidate="id_tb" 
-                ErrorMessage="ID is required." ForeColor="Maroon">*</asp:RequiredFieldValidator>
-            <asp:CompareValidator ID="CompareValidator1" runat="server" 
-                ControlToValidate="id_tb" ErrorMessage="ID must be numeric." ForeColor="Maroon" 
-                Operator="DataTypeCheck" Type="Integer">*</asp:CompareValidator>
+            <asp:TextBox ID="id_tb" runat="server" ontextchanged="id_tb_TextChanged" 
+                CausesValidation="True"></asp:TextBox>
             </td>
         <td class="style10">
     &nbsp;&nbsp;&nbsp;&nbsp;</td>
