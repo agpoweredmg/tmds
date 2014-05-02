@@ -15,7 +15,6 @@ public partial class TimeManagment : System.Web.UI.Page
     double timeOutMin;
     double hoursWorked;
 
-    String empid;
 
     private SqlConnection conn = new SqlConnection("Data Source=apcxcs3.apsu.edu;Initial Catalog=group3_6;Persist Security Info=True;User ID=webuser3_6;Password=webuser3_6abc");
     private SqlCommand command;

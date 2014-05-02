@@ -28,6 +28,11 @@
             ID:</td>
         <td>
             <asp:TextBox ID="id_tb" runat="server"></asp:TextBox>
+            <asp:CompareValidator ID="ID_cv" runat="server" ControlToValidate="id_tb" 
+                ErrorMessage="CompareValidator" ForeColor="Maroon" Operator="DataTypeCheck" 
+                Type="Integer">*</asp:CompareValidator>
+            <asp:RequiredFieldValidator ID="ID_rf" runat="server" ControlToValidate="id_tb" 
+                ErrorMessage="ID is required." ForeColor="Maroon">*</asp:RequiredFieldValidator>
             </td>
         <td>
     &nbsp;<asp:Button ID="submit_btn" runat="server" Text="Submit" Width="61px" 
@@ -42,6 +47,9 @@
             Name:</td>
         <td>
             <asp:TextBox ID="name_tb" runat="server"></asp:TextBox>
+            <asp:RegularExpressionValidator ID="Name_RegEx" runat="server" 
+                ControlToValidate="name_tb" ErrorMessage="RegularExpressionValidator" 
+                ForeColor="Maroon" ValidationExpression="^[a-zA-Z''-'\s]{1,40}$">*</asp:RegularExpressionValidator>
             </td>
         <td>
             &nbsp;<asp:DropDownList ID="chooseAction_ddl" runat="server" 
@@ -60,6 +68,9 @@
             Category:</td>
         <td>
             <asp:TextBox ID="category_tb" runat="server"></asp:TextBox>
+            <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" 
+                ControlToValidate="category_tb" ErrorMessage="Category Name is invalid." 
+                ForeColor="Maroon" ValidationExpression="^[a-zA-Z''-'\s]{1,40}$">*</asp:RegularExpressionValidator>
             </td>
         <td>&nbsp;</td>
         </tr>
@@ -69,6 +80,13 @@
             Cost: </td>
         <td>
             <asp:TextBox ID="cost_tb" runat="server"></asp:TextBox>
+            <asp:CompareValidator ID="Cost_cv" runat="server" ControlToValidate="cost_tb" 
+                ErrorMessage="CompareValidator" ForeColor="Maroon" Operator="DataTypeCheck" 
+                Type="Double">*</asp:CompareValidator>
+            <asp:CompareValidator ID="CompareValidator1" runat="server" 
+                ControlToValidate="cost_tb" 
+                ErrorMessage="Cost must be greater than or equal to zero." ForeColor="Maroon" 
+                Operator="GreaterThanEqual" ValueToCompare="0">*</asp:CompareValidator>
             </td>
         <td>
             &nbsp;</td>
@@ -79,6 +97,14 @@
             Expiration Date:</td>
         <td>
             <asp:TextBox ID="expirationDate_tb" runat="server"></asp:TextBox>
+            <asp:RegularExpressionValidator ID="ExpirationDate_RegEx" runat="server" 
+                ControlToValidate="expirationDate_tb" 
+                ErrorMessage="The contract date must in MM/DD/YYYY format." ForeColor="Maroon" 
+                ValidationExpression="[0-9]{2}/[0-9]{2}/[0-9]{4}">*</asp:RegularExpressionValidator>
+            <asp:RangeValidator ID="ExpirationDate_cv" runat="server" 
+                ControlToValidate="expirationDate_tb" 
+                ErrorMessage="Date must be between today's date and 4/1/2025. " MaximumValue="4/1/2025" 
+                MinimumValue="5/2/2014" Type="Date" ForeColor="Maroon">*</asp:RangeValidator>
             </td>
         <td>
             &nbsp;</td>
@@ -89,6 +115,12 @@
             Quantity On Hand:</td>
         <td>
             <asp:TextBox ID="quantityOnHand_tb" runat="server"></asp:TextBox>
+            <asp:CompareValidator ID="QuantityOnHand_cv" runat="server" 
+                ControlToValidate="quantityOnHand_tb" ErrorMessage="CompareValidator" 
+                ForeColor="Maroon" Operator="DataTypeCheck" Type="Integer">*</asp:CompareValidator>
+            <asp:CompareValidator ID="QuantityOnHand2_cv" runat="server" 
+                ControlToValidate="quantityOnHand_tb" ErrorMessage="CompareValidator" 
+                ForeColor="Maroon" Operator="GreaterThanEqual" ValueToCompare="0">*</asp:CompareValidator>
             </td>
         <td>&nbsp;</td>
         </tr>
@@ -98,6 +130,15 @@
             Minimum:</td>
         <td>
             <asp:TextBox ID="minimum_tb" runat="server"></asp:TextBox>
+            <asp:CompareValidator ID="Minimum_cv" runat="server" 
+                ControlToValidate="minimum_tb" ErrorMessage="CompareValidator" 
+                ForeColor="Maroon" Operator="DataTypeCheck" Type="Integer">*</asp:CompareValidator>
+            <asp:CompareValidator ID="Minimum2_cv" runat="server" 
+                ControlToValidate="minimum_tb" ErrorMessage="CompareValidator" 
+                ForeColor="Maroon" Operator="GreaterThanEqual" ValueToCompare="0">*</asp:CompareValidator>
+            <asp:CompareValidator ID="Minimum3_cv" runat="server" 
+                ControlToValidate="minimum_tb" ErrorMessage="Minimum must be zero or greater." 
+                ForeColor="Maroon" Operator="DataTypeCheck" Type="Integer">*</asp:CompareValidator>
             </td>
         <td></td>
         </tr>
@@ -107,6 +148,9 @@
             Maximum:</td>
         <td>
             <asp:TextBox ID="maximum_tb" runat="server"></asp:TextBox>
+            <asp:CompareValidator ID="Maximum_cv" runat="server" 
+                ControlToValidate="maximum_tb" ErrorMessage="Maximum must be zero or greater." 
+                ForeColor="Maroon" Operator="DataTypeCheck" Type="Integer">*</asp:CompareValidator>
             </td>
         <td></td>
         </tr>
@@ -121,10 +165,12 @@
         
     </table>
     <asp:Button ID="home_btn" runat="server" Text="Home" Width="68px" Height="38px" 
-            onclick="home_btn_Click" />
+            onclick="home_btn_Click" CausesValidation="False" />
 &nbsp;&nbsp;&nbsp;
     <asp:Button ID="logout_btn" runat="server" Text="Logout" Width="68px" Height="38px" 
-            onclick="logout_btn_Click" />
+            onclick="logout_btn_Click" CausesValidation="False" />
+            <asp:ValidationSummary ID="InventoryInformation_vs" runat="server" 
+                ForeColor="Maroon" />
      </center>
      </div>
     

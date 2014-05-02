@@ -48,6 +48,10 @@
                             <asp:RequiredFieldValidator ID="AccountID_rf" runat="server" 
                                 ErrorMessage="Account ID is required." ControlToValidate="accountID_tb" 
                                 ForeColor="Maroon">*</asp:RequiredFieldValidator>
+                            <asp:CompareValidator ID="AccountID_cv" runat="server" 
+                                ControlToValidate="accountID_tb" 
+                                ErrorMessage="Account ID must be numeric only." ForeColor="Maroon" 
+                                Operator="DataTypeCheck" Type="Integer">*</asp:CompareValidator>
                         </td>
                         <td>
                             <asp:DropDownList ID="actionToPerform_ddl" runat="server" 
@@ -65,11 +69,11 @@
                         </td>
                         <td>
                             <asp:TextBox ID="contractDate_tb" runat="server"></asp:TextBox>
-            <asp:RangeValidator ID="ContractDateValidator1" runat="server" 
+            <asp:RangeValidator ID="ContractDate_rv" runat="server" 
                 ControlToValidate="contractDate_tb" 
-                ErrorMessage="Date must be after today's date." MaximumValue="4/1/2025" 
+                ErrorMessage="Date must be between today's date and 4/1/2025. " MaximumValue="4/1/2025" 
                 MinimumValue="5/2/2014" Type="Date" ForeColor="Maroon">*</asp:RangeValidator>
-            <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" 
+            <asp:RegularExpressionValidator ID="ContractDate_RegEx" runat="server" 
                 ControlToValidate="contractdate_tb" 
                 ErrorMessage="The contract date must in MM/DD/YYYY format."  
                 ValidationExpression="[0-9]{2}/[0-9]{2}/[0-9]{4}" ForeColor="Maroon">*</asp:RegularExpressionValidator>
@@ -84,6 +88,14 @@
                         </td>
                         <td>
                             <asp:TextBox ID="depositAmount_tb" runat="server"></asp:TextBox>
+                            <asp:CompareValidator ID="DepositAmount_cv" runat="server" 
+                                ControlToValidate="depositAmount_tb" 
+                                ErrorMessage="Deposit must be greater than zero." ForeColor="Maroon" 
+                                Operator="GreaterThanEqual" ValueToCompare="0">*</asp:CompareValidator>
+                            <asp:CompareValidator ID="DepositAmount2_cv" runat="server" 
+                                ControlToValidate="depositAmount_tb" 
+                                ErrorMessage="Deposit Amount must be numeric." ForeColor="Maroon" 
+                                Operator="DataTypeCheck" Type="Double">*</asp:CompareValidator>
                         </td>
                         <td>
                             &nbsp;
@@ -95,6 +107,14 @@
                         </td>
                         <td>
                             <asp:TextBox ID="discount_tb" runat="server"></asp:TextBox>
+                            <asp:CompareValidator ID="Discount_cv" runat="server" 
+                                ControlToValidate="discount_tb" 
+                                ErrorMessage="Discount cannot be greater than 25 or less than 0." 
+                                ForeColor="Maroon" Operator="GreaterThanEqual" ValueToCompare="0">*</asp:CompareValidator>
+                            <asp:CompareValidator ID="Discount2_cv" runat="server" 
+                                ControlToValidate="discount_tb" 
+                                ErrorMessage="Discount cannot be greater than 25 or less than 0." 
+                                ForeColor="Maroon" Operator="LessThanEqual" ValueToCompare="25">*</asp:CompareValidator>
                         </td>
                         <td>
                             &nbsp;
@@ -110,8 +130,8 @@
                 Width="68px" onclick="logout_btn_Click" />
             <br />
             <br />
-            <asp:ValidationSummary ID="ValidationSummary1" runat="server" 
-                ForeColor="Maroon" />
+            <asp:ValidationSummary ID="EditContractInfo_vs" runat="server" 
+                ForeColor="Maroon" HeaderText="You received the following Errors:" />
             <br />
         </div>
     </div>

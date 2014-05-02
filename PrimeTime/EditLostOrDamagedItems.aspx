@@ -56,7 +56,7 @@
             ErrorMessage="CompareValidator" ControlToValidate="LostDamageID_tb" 
             ForeColor="Maroon" Operator="DataTypeCheck" Type="Integer">*</asp:CompareValidator>
         <asp:RequiredFieldValidator ID="InventoryID_rf" runat="server" 
-            ErrorMessage="Inventory ID " ControlToValidate="InventoryID_tb" 
+            ErrorMessage="Inventory ID is required. " ControlToValidate="InventoryID_tb" 
             ForeColor="Maroon">*</asp:RequiredFieldValidator>
     </th>
     <th>
@@ -75,7 +75,14 @@
     </th>
     <th>
         <asp:TextBox ID="QuantityLost_tb" runat="server"></asp:TextBox>
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <asp:CompareValidator ID="QuantityLost2_cv" runat="server" 
+            ControlToValidate="QuantityLost_tb" 
+            ErrorMessage="Quantity Lost must be numeric." ForeColor="Maroon" 
+            Operator="DataTypeCheck" Type="Integer">*</asp:CompareValidator>
+        <asp:CompareValidator ID="QuantityLost_cv" runat="server" 
+            ControlToValidate="QuantityLost_tb" 
+            ErrorMessage="Quantity must be greater than or equal to zero." 
+            ForeColor="Maroon" Operator="GreaterThanEqual" ValueToCompare="0">*</asp:CompareValidator>
     </th>
     <th>
     </th>
@@ -86,8 +93,9 @@
         Width="68px" OnClick="home_btn_Click" CausesValidation="False" />&nbsp;&nbsp;&nbsp;&nbsp;
         <asp:Button ID="logout_btn" runat="server" Text="Logout" Height="38px"
         Width="68px" OnClick="logout_btn_Click" CausesValidation="False" />
-        <asp:ValidationSummary ID="ValidationSummary1" runat="server" 
-            ForeColor="Maroon" />
+        <br />
+        <asp:ValidationSummary ID="EditLostOrDamagedItems_vs" runat="server" 
+            ForeColor="Maroon" HeaderText="You recieved the following Errors:" />
     </center>
     </div>
     </form>
