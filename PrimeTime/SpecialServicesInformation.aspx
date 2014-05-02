@@ -4,6 +4,12 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
+    <style type="text/css">
+        .style1
+        {
+            width: 187px;
+        }
+    </style>
  </head>
 <body>
     <form id="form1" runat="server">
@@ -15,7 +21,7 @@
         <tr>
             <th>
             </th>
-            <th>
+            <th class="style1">
             Services Information
             </th>
             <th>   
@@ -26,8 +32,14 @@
         <td>
             Service ID:
         </td>
-        <td>
+        <td class="style1">
             <asp:TextBox ID="ServiceID_tb" runat="server"></asp:TextBox>
+            <asp:RequiredFieldValidator ID="ServiceID_rf" runat="server" 
+                ControlToValidate="ServiceID_tb" ErrorMessage="Service ID is required." 
+                ForeColor="Maroon">*</asp:RequiredFieldValidator>
+            <asp:CompareValidator ID="ServiceID_cv" runat="server" 
+                ControlToValidate="ServiceID_tb" ErrorMessage="Service ID must be numeric." 
+                ForeColor="Maroon" Operator="DataTypeCheck" Type="Integer">*</asp:CompareValidator>
         </td>
         <td>
             <asp:Button ID="Submit_btn" runat="server" Text="Submit" />
@@ -40,8 +52,12 @@
         <td>
         Service Name:
         </td>
-        <td>
+        <td class="style1">
             <asp:TextBox ID="ServiceName_tb" runat="server"></asp:TextBox>
+            <asp:RegularExpressionValidator ID="ServiceName_RegEx" runat="server" 
+                ControlToValidate="ServiceName_tb" 
+                ErrorMessage="Service Name must be between 1-40 characters." ForeColor="Maroon" 
+                ValidationExpression="^[a-zA-Z''-'\s]{1,40}$">*</asp:RegularExpressionValidator>
         </td>
         <td>
             <asp:DropDownList ID="ChooseSpecialServices_ddl" runat="server">
@@ -57,8 +73,12 @@
         <td>
             Service Price:
         </td>
-        <td>
+        <td class="style1">
             <asp:TextBox ID="ServicePrice_tb" runat="server"></asp:TextBox>
+            <asp:RangeValidator ID="ServicePrice2_rv" runat="server" 
+                ControlToValidate="ServicePrice_tb" 
+                ErrorMessage="Service Price must be between zero and 100,000." 
+                ForeColor="Maroon" MaximumValue="100000" MinimumValue="0">*</asp:RangeValidator>
         </td>
         <td>
         </td>
@@ -70,6 +90,9 @@
 &nbsp;&nbsp;&nbsp;
     <asp:Button ID="logout_btn" runat="server" Text="Logout" Width="68px" 
             Height="38px" onclick="logout_btn_Click" />
+        <asp:ValidationSummary ID="ServicesInformation_vs" runat="server" 
+            ForeColor="Maroon" HeaderText="You recieved the following Errors:" />
+        <br />
       </center>
      </div>
     </form>

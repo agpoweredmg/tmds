@@ -28,7 +28,8 @@
                         <asp:TextBox ID="accountID_tb" runat="server" 
                             ontextchanged="accountID_tb_TextChanged"></asp:TextBox>
         <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" 
-            ControlToValidate="accountID_tb" ErrorMessage="The Account ID is required">*</asp:RequiredFieldValidator>
+            ControlToValidate="accountID_tb" ErrorMessage="The Account ID is required" 
+                            ForeColor="Maroon">*</asp:RequiredFieldValidator>
                     </td>
                     <td>
                         <asp:Button ID="submit_btn" runat="server" Text="Submit" 
@@ -63,7 +64,7 @@
         <asp:RangeValidator ID="RangeValidator1" runat="server" 
             ControlToValidate="amountDue_tb" 
             ErrorMessage="Amount due must be greater than 0" MaximumValue="100000" 
-            MinimumValue="0">*</asp:RangeValidator>
+            MinimumValue="0" ForeColor="Maroon">*</asp:RangeValidator>
                     </td>
                     <td>
                         &nbsp;
@@ -79,9 +80,10 @@
         <asp:RangeValidator ID="dateDue_RV" runat="server" Type ="Date"
             ControlToValidate="dateDue_tb" 
             ErrorMessage="Date must be greater than or equal to current date" 
-            Display="Dynamic" MaximumValue="4/1/2025" MinimumValue="4/1/2014">*</asp:RangeValidator>
+            Display="Dynamic" MaximumValue="4/1/2025" MinimumValue="4/1/2014" ForeColor="Maroon">*</asp:RangeValidator>
         <asp:RegularExpressionValidator ID="dateDue_RegEx" runat="server" 
-            ControlToValidate="dateDue_tb" ErrorMessage="The Date Due must be in MM/DD/YYYY format" ValidationExpression="[0-9]{2}/[0-9]{2}/[0-9]{4}">*</asp:RegularExpressionValidator>
+            ControlToValidate="dateDue_tb" ErrorMessage="The Date Due must be in MM/DD/YYYY format" 
+                            ValidationExpression="[0-9]{2}/[0-9]{2}/[0-9]{4}" ForeColor="Maroon">*</asp:RegularExpressionValidator>
                     </td>
                     <td>
                         &nbsp;
@@ -99,7 +101,7 @@
         <br />
         <br />
         <br />
-        <asp:ValidationSummary ID="editAccount_vs" runat="server" HeaderText="You received the following errors:" 
+        <asp:ValidationSummary ID="editAccount_vs" runat="server" HeaderText="You received the following Errors:" 
             Text="*" ForeColor="Maroon"/>
         <br />
         <br />

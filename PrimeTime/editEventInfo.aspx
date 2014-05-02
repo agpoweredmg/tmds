@@ -4,6 +4,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
+    <style type="text/css">
+        .style1
+        {
+            width: 186px;
+        }
+    </style>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -14,7 +20,7 @@
                 <tr>
                     <th>
                     </th>
-                    <th>
+                    <th class="style1">
                         Edit Events Information
                     </th>
                     <th>
@@ -24,10 +30,11 @@
                     <th>
                         Event ID:
                     </th>
-                    <th>
+                    <th class="style1">
                         <asp:TextBox ID="eventID_tb" runat="server"></asp:TextBox>
                         <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" 
-                            ErrorMessage="The Event ID is required" ControlToValidate="eventID_tb">*</asp:RequiredFieldValidator>
+                            ErrorMessage="The Event ID is required" ControlToValidate="eventID_tb" 
+                            ForeColor="Maroon">*</asp:RequiredFieldValidator>
                     </th>
                     <th>
                         <asp:Button ID="submit_btn" runat="server" Text="Submit" 
@@ -40,11 +47,17 @@
                     <th>
                         Event Name:
                     </th>
-                    <th>
+                    <th class="style1">
                         <asp:TextBox ID="eventName_tb" runat="server"></asp:TextBox>
+<<<<<<< HEAD
+                        &nbsp;<asp:RegularExpressionValidator ID="EventName_vb" runat="server" 
+                            ControlToValidate="eventName_tb" ErrorMessage="Event Name needs to be between 1-50 characters long." 
+                            ForeColor="Maroon" ValidationExpression="^[a-zA-Z''-'\s]{1,50}$">*</asp:RegularExpressionValidator>
+=======
                         <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" 
                             ControlToValidate="eventName_tb" ErrorMessage="Name has to be a Valid Name" 
                             ValidationExpression="^[a-zA-Z''-''\s]{1,40}$">*</asp:RegularExpressionValidator>
+>>>>>>> 6bb83aab11c0bd966dd7f33160615f23969ebbce
                     </th>
                     <th>
                         <asp:DropDownList ID="actionToPerform_ddl" runat="server" 
@@ -60,9 +73,9 @@
                     <th>
                         Event Location:
                     </th>
-                    <th>
+                    <th class="style1">
                         <asp:TextBox ID="eventLocation_tb" runat="server"></asp:TextBox>
-                    &nbsp;
+                    &nbsp;&nbsp;
                     </th>
                     <th>
                         &nbsp;
@@ -72,11 +85,12 @@
                     <th>
                         Event Date:
                     </th>
-                    <th>
+                    <th class="style1">
                         <asp:TextBox ID="eventDate_tb" runat="server"></asp:TextBox>
         <asp:RegularExpressionValidator ID="eventDate_RegEx" runat="server" 
             ErrorMessage="The Date Due must be in MM/DD/YYYY format" 
-            ControlToValidate="eventDate_tb" ValidationExpression="[0-9]{2}/[0-9]{2}/[0-9]{4}">*</asp:RegularExpressionValidator>
+            ControlToValidate="eventDate_tb" ValidationExpression="[0-9]{2}/[0-9]{2}/[0-9]{4}" 
+                            ForeColor="Maroon">*</asp:RegularExpressionValidator>
                     </th>
                     <th>
                         &nbsp;
@@ -93,7 +107,7 @@
             Width="68px" onclick="logout_btn_Click" />
         <br />
         <asp:ValidationSummary ID="ValidationSummary1" runat="server" 
-            ForeColor="Maroon" HeaderText="You received the following errors:" />
+            ForeColor="Maroon" HeaderText="You received the following Errors:" />
         <br />
     </div>
     </form>
