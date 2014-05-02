@@ -213,11 +213,22 @@
                     Height="38px" Style="text-align: center" Text="Home" Width="69px" 
                     onclick="home_btn_Click" CausesValidation="False" />
                 &nbsp;&nbsp;
+<<<<<<< HEAD
+=======
+
+                <asp:Button ID="createEventlogout_btn" runat="server" BorderColor="Black" 
+                    BorderStyle="Double" Height="38px" Text="Logout" Width="71px"/>
+
+>>>>>>> 5ca132964b19b933c18e1eb21a7b67ed88479418
 
                 <asp:Button ID="logout_btn" runat="server" BorderColor="Black" BorderStyle="Double"
                     Height="38px" Style="text-align: center" Text="Logout" Width="69px" 
                     CausesValidation="False" onclick="logout_btn_Click" />
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 5ca132964b19b933c18e1eb21a7b67ed88479418
                 &nbsp;&nbsp;
                 <asp:Button ID="next_btn" runat="server" BorderColor="Black" BorderStyle="Double"
                     Height="38px" Style="text-align: center" Text="Next>>" Width="69px" 
