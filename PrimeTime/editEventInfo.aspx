@@ -49,9 +49,15 @@
                     </th>
                     <th class="style1">
                         <asp:TextBox ID="eventName_tb" runat="server"></asp:TextBox>
+<<<<<<< HEAD
                         &nbsp;<asp:RegularExpressionValidator ID="EventName_vb" runat="server" 
                             ControlToValidate="eventName_tb" ErrorMessage="Event Name needs to be between 1-50 characters long." 
                             ForeColor="Maroon" ValidationExpression="^[a-zA-Z''-'\s]{1,50}$">*</asp:RegularExpressionValidator>
+=======
+                        <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" 
+                            ControlToValidate="eventName_tb" ErrorMessage="Name has to be a Valid Name" 
+                            ValidationExpression="^[a-zA-Z''-''\s]{1,40}$">*</asp:RegularExpressionValidator>
+>>>>>>> 6bb83aab11c0bd966dd7f33160615f23969ebbce
                     </th>
                     <th>
                         <asp:DropDownList ID="actionToPerform_ddl" runat="server" 
