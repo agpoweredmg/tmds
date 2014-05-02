@@ -39,20 +39,20 @@
     
     </div>
     <asp:SqlDataSource ID="SqlDataSource1" runat="server" 
-        ConnectionString="<%$ ConnectionStrings:group3_6_WEBUSER %>" SelectCommand="SELECT
+        ConnectionString="<%$ ConnectionStrings:WebUserConnectionString %>" SelectCommand="SELECT
 	e.Emp_ID,
 	e.Emp_F_Name,
 	e.Emp_L_Name,
 	SUM(j.Job_Pay_Rate * ps.Hours_Worked) AS Wages
 FROM Employees e, Event_Staff es, Jobs j, Pay_Schedule ps
-WHERE e.Emp_ID = es.emp_id
+WHERE e.Emp_ID = ps.emp_id
      AND ps.Job_ID = es.Job_ID
      AND es.Job_ID = j.Job_ID
      AND es.Event_ID = @evid
 GROUP BY e.Emp_ID, e.Emp_F_Name, e.Emp_L_Name
 ORDER BY e.Emp_L_Name">
         <SelectParameters>
-            <asp:CookieParameter CookieName="[&quot;evid&quot;" Name="evid" />
+            <asp:CookieParameter CookieName="evid" Name="evid" />
         </SelectParameters>
     </asp:SqlDataSource>
     </form>

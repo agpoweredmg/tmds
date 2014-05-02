@@ -14,6 +14,7 @@
                 <div style="font-size: x-large">
                     Reports Generation</div>
             </div>
+            <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
             <br />
             <table>
                 <tr>
@@ -25,7 +26,7 @@
                 <tr>
                     <td>
             <asp:DropDownList ID="chooseReport_ddl" runat="server" 
-                onselectedindexchanged="chooseReport_ddl_SelectedIndexChanged">
+                onselectedindexchanged="chooseReport_ddl_SelectedIndexChanged" AutoPostBack="True">
                 <asp:ListItem Value="0">Accounts Payable</asp:ListItem>
                 <asp:ListItem Value="1">Accounts Receivable</asp:ListItem>
                 <asp:ListItem Value="2">Customers</asp:ListItem>
@@ -38,7 +39,8 @@
                     <td>
                         <asp:DropDownList ID="eventLookup_ddl" runat="server" 
                             DataSourceID="eventLookup" DataTextField="Event_Name" DataValueField="Event_ID" 
-                            onselectedindexchanged="eventLookup_ddl_SelectedIndexChanged">
+                            onselectedindexchanged="eventLookup_ddl_SelectedIndexChanged" 
+                            AutoPostBack="True">
                         </asp:DropDownList>
                         <asp:SqlDataSource ID="eventLookup" runat="server" 
                             ConnectionString="<%$ ConnectionStrings:group3_6_WEBUSER %>" 
