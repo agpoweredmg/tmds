@@ -67,8 +67,8 @@
                             Width="184px" onclick="editMealDetails_btn_Click" />
                     </td>
                     <td>
-                        <asp:Button ID="editPayRollDetails_btn" runat="server" Text="Edit Pay Roll Details"
-                            Width="184px" Height="26px" />
+                        <asp:Button ID="specialServices_btn" runat="server" Text="Edit Special Services" 
+                            Width="184px" onclick="specialServices_btn_Click" />
                     </td>
                 </tr>
                 <tr>
@@ -77,13 +77,11 @@
                             Width="184px" onclick="editContract_btn_Click" />
                     </td>
                     <td>
+                        &nbsp;</td>
+                    <td>
                         <asp:Button ID="generateReports_btn" runat="server" Text="Generate Reports" 
                             Width="184px" onclick="generateReports_btn_Click" />
-                    </td>
-                    <td>
-&nbsp;<asp:Button ID="specialServices_btn" runat="server" Text="Edit Special Services" 
-                            Width="184px" onclick="specialServices_btn_Click" />
-&nbsp;</td>
+&nbsp;&nbsp;</td>
                 </tr>
             </table>
             <br />

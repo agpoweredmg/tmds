@@ -125,9 +125,9 @@
             <br />
             <br />
             <asp:Button ID="home_btn" runat="server" Text="Home" Height="38px" Width="68px" 
-                onclick="home_btn_Click" />&nbsp;&nbsp;&nbsp;&nbsp;
+                onclick="home_btn_Click" CausesValidation="False" />&nbsp;&nbsp;&nbsp;&nbsp;
             <asp:Button ID="logout_btn" runat="server" Text="Logout" Height="38px" 
-                Width="68px" onclick="logout_btn_Click" />
+                Width="68px" onclick="logout_btn_Click" CausesValidation="False" />
             <br />
             <br />
             <asp:ValidationSummary ID="EditContractInfo_vs" runat="server" 

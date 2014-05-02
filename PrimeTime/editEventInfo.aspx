@@ -7,7 +7,7 @@
     <style type="text/css">
         .style1
         {
-            width: 186px;
+            width: 209px;
         }
     </style>
 </head>
@@ -32,6 +32,7 @@
                     </th>
                     <th class="style1">
                         <asp:TextBox ID="eventID_tb" runat="server"></asp:TextBox>
+                        <asp:Label ID="EventID_lbl" runat="server" Text="Event ID" Visible="False"></asp:Label>
                         <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" 
                             ErrorMessage="The Event ID is required" ControlToValidate="eventID_tb" 
                             ForeColor="Maroon">*</asp:RequiredFieldValidator>
@@ -48,20 +49,20 @@
                         Event Name:
                     </th>
                     <th class="style1">
+                        &nbsp;&nbsp;
                         <asp:TextBox ID="eventName_tb" runat="server"></asp:TextBox>
-<<<<<<< HEAD
-                        &nbsp;<asp:RegularExpressionValidator ID="EventName_vb" runat="server" 
+                        <asp:Label ID="EventName_lbl" runat="server" Text="Event Name" Visible="False"></asp:Label>
+                        <asp:RegularExpressionValidator ID="EventName_vb" runat="server" 
                             ControlToValidate="eventName_tb" ErrorMessage="Event Name needs to be between 1-50 characters long." 
                             ForeColor="Maroon" ValidationExpression="^[a-zA-Z''-'\s]{1,50}$">*</asp:RegularExpressionValidator>
-=======
                         <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" 
                             ControlToValidate="eventName_tb" ErrorMessage="Name has to be a Valid Name" 
-                            ValidationExpression="^[a-zA-Z''-''\s]{1,40}$">*</asp:RegularExpressionValidator>
->>>>>>> 6bb83aab11c0bd966dd7f33160615f23969ebbce
+                            ValidationExpression="^[a-zA-Z''-''\s]{1,40}$" ForeColor="Maroon">*</asp:RegularExpressionValidator>
                     </th>
                     <th>
                         <asp:DropDownList ID="actionToPerform_ddl" runat="server" 
-                            onselectedindexchanged="actionToPerform_ddl_SelectedIndexChanged">
+                            onselectedindexchanged="actionToPerform_ddl_SelectedIndexChanged" 
+                            AutoPostBack="True">
                             <asp:ListItem Value="0">Choose an Action</asp:ListItem>
                             <asp:ListItem Value="1">Add Event</asp:ListItem>
                             <asp:ListItem Value="2">Delete Event</asp:ListItem>
@@ -79,6 +80,12 @@
                     </th>
                     <th>
                         &nbsp;
+                        <asp:DropDownList ID="EventID_ddl" runat="server" AutoPostBack="True" 
+                            DataSourceID="SqlDataSource1" DataTextField="Event_Name" 
+                            DataValueField="Event_ID" 
+                            onselectedindexchanged="EventName_ddl_SelectedIndexChanged" Visible="False">
+                            <asp:ListItem Value="Choose the Event ID:"></asp:ListItem>
+                        </asp:DropDownList>
                     </th>
                 </tr>
                 <tr>
@@ -104,10 +111,13 @@
         <asp:Button ID="home_btn" runat="server" Text="Home" Height="38px" Width="68px" 
             onclick="home_btn_Click" CausesValidation="False" />&nbsp;&nbsp;&nbsp;&nbsp;
         <asp:Button ID="logout_btn" runat="server" Text="Logout" Height="38px" 
-            Width="68px" onclick="logout_btn_Click" />
+            Width="68px" onclick="logout_btn_Click" CausesValidation="False" />
         <br />
         <asp:ValidationSummary ID="ValidationSummary1" runat="server" 
             ForeColor="Maroon" HeaderText="You received the following Errors:" />
+        <asp:SqlDataSource ID="SqlDataSource1" runat="server" 
+            ConnectionString="<%$ ConnectionStrings:group3_6_WEBUSER %>" 
+            SelectCommand="SELECT * FROM [Events]"></asp:SqlDataSource>
         <br />
     </div>
     </form>

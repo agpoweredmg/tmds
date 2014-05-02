@@ -86,10 +86,10 @@
         
     </table>       
     <asp:Button ID="home_btn" runat="server" Text="Home" Width="68px" Height="38px" 
-            onclick="home_btn_Click" />
+            onclick="home_btn_Click" CausesValidation="False" />
 &nbsp;&nbsp;&nbsp;
     <asp:Button ID="logout_btn" runat="server" Text="Logout" Width="68px" 
-            Height="38px" onclick="logout_btn_Click" />
+            Height="38px" onclick="logout_btn_Click" CausesValidation="False" />
         <asp:ValidationSummary ID="ServicesInformation_vs" runat="server" 
             ForeColor="Maroon" HeaderText="You recieved the following Errors:" />
         <br />

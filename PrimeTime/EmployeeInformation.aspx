@@ -240,10 +240,10 @@
         
     </table>
     <asp:Button ID="home_btn" runat="server" Text="Home" Width="68px" Height="38px" 
-            onclick="home_btn_Click" />
+            onclick="home_btn_Click" CausesValidation="False" />
 &nbsp;&nbsp;&nbsp;
     <asp:Button ID="logout_btn" runat="server" Text="Logout" Width="68px" Height="38px" 
-            onclick="logout_btn_Click" />
+            onclick="logout_btn_Click" CausesValidation="False" />
             <br />
             <asp:ValidationSummary ID="ValidationSummary1" runat="server" 
                 ForeColor="Maroon" HeaderText="You received the following Errors:" />
