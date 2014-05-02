@@ -32,9 +32,6 @@
 
     
     </td>
-        <asp:RequiredFieldValidator ID="CustomerID_RegEx" runat="server" 
-            ControlToValidate="customerID_tb" ErrorMessage="Customer ID is required." 
-            ForeColor="Maroon">*</asp:RequiredFieldValidator>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     <td>
     
