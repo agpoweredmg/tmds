@@ -146,10 +146,7 @@
                                 ValidationExpression="^(A[LKSZAEP]|C[AOT]|D[EC]|F[LM]|G[ANU]|HI|I[ADLN]|K[SY]|LA|M[ADEHINOPST]|N[CDEHJMVY]|O[HKR]|P[ARW]|RI|S[CD]|T[NX]|UT|V[AIT]|W[AIVY])$">*</asp:RegularExpressionValidator>
                         </td>
                         <td><asp:TextBox ID="state_txt" runat="server" Width="200px"></asp:TextBox></td>
-                        <td>Zip Code:<asp:RegularExpressionValidator ID="RegularExpressionValidator2" 
-                                runat="server" ControlToValidate="zip_txt" ErrorMessage="Zip Code Required" 
-                                ForeColor="Red" ValidationExpression="[0-9]{5}">*</asp:RegularExpressionValidator>
-                            <asp:RequiredFieldValidator ID="RequiredFieldValidator8" runat="server" 
+                        <td>Zip Code:<asp:RequiredFieldValidator ID="RequiredFieldValidator8" runat="server" 
                                 ControlToValidate="zip_txt" ErrorMessage="Zip Code is required" ForeColor="Red">*</asp:RequiredFieldValidator>
                         </td>
                         <td><asp:TextBox ID="zip_txt" runat="server" Style="text-align: left" Width="200px"></asp:TextBox>
@@ -158,7 +155,8 @@
                     <tr><td class="style2">Billing Adress:</td></tr>
                     <tr><td> 
                         <asp:CheckBox ID="sameAsMailling_chk" runat="server" 
-                            Text="Same As Mailling Address" oncheckedchanged="sameAsMailling_chk_CheckedChanged" 
+                            Text="Same As Mailling Address" 
+                            oncheckedchanged="sameAsMailling_chk_CheckedChanged" AutoPostBack="True" 
                              /></td></tr>
                     <tr>
                         <td class="style2">Street:<asp:RequiredFieldValidator ID="RequiredFieldValidator9" 
@@ -213,22 +211,18 @@
                     Height="38px" Style="text-align: center" Text="Home" Width="69px" 
                     onclick="home_btn_Click" CausesValidation="False" />
                 &nbsp;&nbsp;
-<<<<<<< HEAD
-=======
+
 
                 <asp:Button ID="createEventlogout_btn" runat="server" BorderColor="Black" 
                     BorderStyle="Double" Height="38px" Text="Logout" Width="71px"/>
 
->>>>>>> 5ca132964b19b933c18e1eb21a7b67ed88479418
+
 
                 <asp:Button ID="logout_btn" runat="server" BorderColor="Black" BorderStyle="Double"
                     Height="38px" Style="text-align: center" Text="Logout" Width="69px" 
                     CausesValidation="False" onclick="logout_btn_Click" />
 
-<<<<<<< HEAD
-=======
 
->>>>>>> 5ca132964b19b933c18e1eb21a7b67ed88479418
                 &nbsp;&nbsp;
                 <asp:Button ID="next_btn" runat="server" BorderColor="Black" BorderStyle="Double"
                     Height="38px" Style="text-align: center" Text="Next>>" Width="69px" 
