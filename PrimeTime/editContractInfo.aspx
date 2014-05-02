@@ -31,6 +31,7 @@
                             <asp:RequiredFieldValidator ID="ContractID_rf" runat="server" 
                                 ErrorMessage="Contract ID is required." ControlToValidate="contractID_tb" 
                                 ForeColor="Maroon">*</asp:RequiredFieldValidator>
+                            <asp:Label ID="ContractID_lbl" runat="server" Text="Contract ID:"></asp:Label>
                         </td>
                         <td>
                             <asp:Button ID="submit_btn" runat="server" Text="Submit" 
@@ -52,10 +53,12 @@
                                 ControlToValidate="accountID_tb" 
                                 ErrorMessage="Account ID must be numeric only." ForeColor="Maroon" 
                                 Operator="DataTypeCheck" Type="Integer">*</asp:CompareValidator>
+                            <asp:Label ID="AccountID_lbl" runat="server" Text="Account ID:"></asp:Label>
                         </td>
                         <td>
                             <asp:DropDownList ID="actionToPerform_ddl" runat="server" 
-                                onselectedindexchanged="actionToPerform_ddl_SelectedIndexChanged">
+                                onselectedindexchanged="actionToPerform_ddl_SelectedIndexChanged" 
+                                AutoPostBack="True">
                                 <asp:ListItem Value="0">Choose an Action</asp:ListItem>
                             <asp:ListItem Value="1">Add Contract</asp:ListItem>
                             <asp:ListItem Value="2">Delete Contract</asp:ListItem>
@@ -80,6 +83,12 @@
                         </td>
                         <td>
                             &nbsp;
+                            <asp:DropDownList ID="chooseContract_ddl" runat="server" AutoPostBack="True" 
+                                DataSourceID="SqlDataSource1" DataTextField="Contract_ID" 
+                                DataValueField="Acct_ID" 
+                                onselectedindexchanged="chooseContract_ddl_SelectedIndexChanged">
+                                <asp:ListItem Value="0">Choose Contract:</asp:ListItem>
+                            </asp:DropDownList>
                         </td>
                     </tr>
                     <tr>
@@ -130,6 +139,9 @@
                 Width="68px" onclick="logout_btn_Click" CausesValidation="False" />
             <br />
             <br />
+            <asp:SqlDataSource ID="SqlDataSource1" runat="server" 
+                ConnectionString="<%$ ConnectionStrings:group3_6_WEBUSER %>" 
+                SelectCommand="SELECT * FROM [Contract_Details]"></asp:SqlDataSource>
             <asp:ValidationSummary ID="EditContractInfo_vs" runat="server" 
                 ForeColor="Maroon" HeaderText="You received the following Errors:" />
             <br />
