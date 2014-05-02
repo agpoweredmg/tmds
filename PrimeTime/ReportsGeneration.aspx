@@ -36,7 +36,15 @@
             </asp:DropDownList>
                     </td>
                     <td>
-                        &nbsp;</td>
+                        <asp:DropDownList ID="eventLookup_ddl" runat="server" 
+                            DataSourceID="eventLookup" DataTextField="Event_Name" DataValueField="Event_ID" 
+                            onselectedindexchanged="eventLookup_ddl_SelectedIndexChanged">
+                        </asp:DropDownList>
+                        <asp:SqlDataSource ID="eventLookup" runat="server" 
+                            ConnectionString="<%$ ConnectionStrings:group3_6_WEBUSER %>" 
+                            SelectCommand="SELECT [Event_ID], [Event_Name] FROM [Events]">
+                        </asp:SqlDataSource>
+                    </td>
                 </tr>
             </table>
             <p>

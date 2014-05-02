@@ -69,11 +69,9 @@
                     <th class="style2">
                         <asp:TextBox ID="supplierName_tb" runat="server"></asp:TextBox>
                         <asp:RegularExpressionValidator ID="SupplierName_RegEx" runat="server" 
-<<<<<<< HEAD
-                            ControlToValidate="supplierName_tb" ErrorMessage="Invalid Supplier Name" 
-=======
+
                             ControlToValidate="supplierName_tb" ErrorMessage="Supplier Name must be between 1-40 characters in length." 
->>>>>>> ab72c431cb4e00739dd09b672fa86ec0a6b38513
+
                             ForeColor="Maroon" ValidationExpression="^[a-zA-Z''-'\s]{1,40}$">*</asp:RegularExpressionValidator>
                         &nbsp;&nbsp;&nbsp;
                     </th>
@@ -94,20 +92,13 @@
                     </th>
                     <th class="style2">
                         <asp:TextBox ID="supplierPhone_tb" runat="server"></asp:TextBox>
-<<<<<<< HEAD
-                        <asp:RegularExpressionValidator ID="SupplierPhone_Regex" runat="server" 
-                            ControlToValidate="supplierPhone_tb" ErrorMessage="Invalid Supplier Phone" 
-                            ForeColor="Maroon" 
-                            
-                            ValidationExpression="^[01]?[- .]?(\([2-9]\d{2}\)|[2-9]\d{2})[- .]?\d{3}[- .]?\d{4}$">*</asp:RegularExpressionValidator>
-=======
+
         <asp:RegularExpressionValidator ID="SupplierPhone_RegEx" runat="server" 
             ControlToValidate="supplierPhone_tb" 
             ErrorMessage="Invalid format.  Phone number must be (***)***-**** format." 
             ForeColor="Maroon" 
             
             ValidationExpression="[(][0-9]{3}[)][0-9]{3}-[0-9]{4}">*</asp:RegularExpressionValidator>
->>>>>>> ab72c431cb4e00739dd09b672fa86ec0a6b38513
                         &nbsp;&nbsp;&nbsp;
                     </th>
                     <th>
@@ -153,15 +144,15 @@
                     </th>
                     <th class="style2">
                         <asp:TextBox ID="supplierStreet_tb" runat="server"></asp:TextBox>
-<<<<<<< HEAD
+
                         <asp:RequiredFieldValidator ID="SupplierStreet_RegEx" runat="server" 
                             ControlToValidate="supplierStreet_tb" 
                             ErrorMessage="Supplier Street is required" ForeColor="Maroon">*</asp:RequiredFieldValidator>
-=======
+
                         <asp:RequiredFieldValidator ID="SupplierStreet_rf" runat="server" 
                             ControlToValidate="supplierStreet_tb" ErrorMessage="Invalid Street Address" 
                             ForeColor="Maroon">*</asp:RequiredFieldValidator>
->>>>>>> ab72c431cb4e00739dd09b672fa86ec0a6b38513
+
                     &nbsp;&nbsp;&nbsp;
                     </th>
                     <th>
@@ -229,16 +220,11 @@
         Width="68px" onclick="logout_btn_Click" CausesValidation="False" />
     &nbsp;&nbsp;&nbsp;&nbsp;
     <br />
-    <br />
-<<<<<<< HEAD
+
     <asp:ValidationSummary ID="editSupInfo_vs" runat="server" 
         ForeColor="Maroon" DisplayMode="List" 
         HeaderText="You received the following Errors:" EnableClientScript="False" 
         EnableViewState="False" />
-=======
-    <asp:ValidationSummary ID="EditSupInfo_vs" runat="server" 
-        ForeColor="Maroon" />
->>>>>>> ab72c431cb4e00739dd09b672fa86ec0a6b38513
     <br />
     </form>
 </body>
