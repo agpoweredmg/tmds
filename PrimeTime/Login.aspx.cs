@@ -21,7 +21,7 @@ public partial class Login : System.Web.UI.Page
     {
         command = new SqlCommand("check_for_mgr", conn);
         command.CommandType = CommandType.StoredProcedure;
-        command.Parameters.AddWithValue("@empid", userName_txt.Text.ToString());
+        command.Parameters.AddWithValue("@empid", userName_ddl.SelectedValue.ToString());
         command.Parameters.AddWithValue("@emppass", passWord_txt.Text.ToString());
         command.Parameters.Add("@mgr", SqlDbType.Bit).Direction = ParameterDirection.Output;
 
@@ -34,7 +34,7 @@ public partial class Login : System.Web.UI.Page
         {
             Label1.ForeColor = System.Drawing.Color.Red;
             Label1.Visible = true;
-            Label1.Text = "User ID or Password is INCORRECT.";
+            Label1.Text = "User name and password DO NOT match.";
             return;
         }
         else
@@ -45,7 +45,7 @@ public partial class Login : System.Web.UI.Page
         conn.Close();
 
         Response.Cookies["cred"]["mgr"] = mgr.ToString();
-        Response.Cookies["cred"]["uname"]= userName_txt.Text.ToString();
+        Response.Cookies["cred"]["uname"]= userName_ddl.SelectedValue.ToString();
         Response.Cookies["cred"].Expires = DateTime.Now.AddHours(1);
 
         //String one = Request.Cookies["cred"]["mgr"];
