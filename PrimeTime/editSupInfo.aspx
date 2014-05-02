@@ -51,7 +51,7 @@
                             ControlToValidate="supplierID_tb" ErrorMessage="Supplier ID is required" 
                             ForeColor="Maroon">*</asp:RequiredFieldValidator>
                         &nbsp;&nbsp;&nbsp;
-                        <asp:Label ID="SupplierID_lbl" runat="server" Text="Label"></asp:Label>
+                        <asp:Label ID="SupplierID_lbl" runat="server" Text="Label" Visible="False"></asp:Label>
                     </th>
                     <th>
                         <asp:Button ID="submit_btn" runat="server" Text="Submit" 
@@ -72,6 +72,7 @@
                             ControlToValidate="supplierName_tb" ErrorMessage="Supplier Name must be between 1-40 characters in length." 
                             ForeColor="Maroon" ValidationExpression="^[a-zA-Z''-'\s]{1,40}$">*</asp:RegularExpressionValidator>
                         &nbsp;&nbsp;&nbsp;
+                        <asp:Label ID="SupplierName_lbl" runat="server" Text="Label" Visible="False"></asp:Label>
                     </th>
                     <th>
                         <asp:DropDownList ID="actionToPerform_ddl" runat="server" 
@@ -80,8 +81,7 @@
                             <asp:ListItem Value="0">Choose an Action</asp:ListItem>
                             <asp:ListItem Value="1">Add New Supplier</asp:ListItem>
                             <asp:ListItem Value="2">Update Supplier </asp:ListItem>
-                            <asp:ListItem Value="3">Search Supplier ID</asp:ListItem>
-                            <asp:ListItem Value="4">Delete Supplier</asp:ListItem>
+                            <asp:ListItem Value="3">Delete Supplier</asp:ListItem>
                         </asp:DropDownList>
                     </th>
                 </tr>
@@ -103,7 +103,9 @@
                     </th>
                     <th>
                         <asp:DropDownList ID="choosesupplierid_ddl" runat="server" AutoPostBack="True" 
-                            Visible="False">
+                            Visible="False" DataSourceID="SqlDataSource1" 
+                            DataTextField="Supplier_Name" DataValueField="Supplier_ID" 
+                            onselectedindexchanged="choosesupplierid_ddl_SelectedIndexChanged">
                         </asp:DropDownList>
                         &nbsp;
                     </th>

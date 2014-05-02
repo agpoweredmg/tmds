@@ -40,11 +40,12 @@
             <asp:CompareValidator ID="ServiceID_cv" runat="server" 
                 ControlToValidate="ServiceID_tb" ErrorMessage="Service ID must be numeric." 
                 ForeColor="Maroon" Operator="DataTypeCheck" Type="Integer">*</asp:CompareValidator>
+            <asp:Label ID="ServiceID_lbl" runat="server" Text="Label" Visible="False"></asp:Label>
         </td>
         <td>
             <asp:Button ID="Submit_btn" runat="server" Text="Submit" />
             <asp:Button ID="Clear_btn" runat="server" Text="Clear" 
-                onclick="Clear_btn_Click" />
+                onclick="Clear_btn_Click" CausesValidation="False" />
         </td>
         </tr>
 
@@ -58,9 +59,12 @@
                 ControlToValidate="ServiceName_tb" 
                 ErrorMessage="Service Name must be between 1-40 characters." ForeColor="Maroon" 
                 ValidationExpression="^[a-zA-Z''-'\s]{1,40}$">*</asp:RegularExpressionValidator>
+            <asp:Label ID="ServiceName_lbl" runat="server" Text="Label" Visible="False"></asp:Label>
         </td>
         <td>
-            <asp:DropDownList ID="ChooseSpecialServices_ddl" runat="server">
+            <asp:DropDownList ID="ChooseSpecialServices_ddl" runat="server" 
+                AutoPostBack="True" 
+                onselectedindexchanged="ChooseSpecialServices_ddl_SelectedIndexChanged">
                 <asp:ListItem Value="0">Choose an Action</asp:ListItem>
                 <asp:ListItem Value="1">Add Special Service</asp:ListItem>
                 <asp:ListItem Value="2">Delete Special Service</asp:ListItem>
@@ -78,9 +82,16 @@
             <asp:RangeValidator ID="ServicePrice2_rv" runat="server" 
                 ControlToValidate="ServicePrice_tb" 
                 ErrorMessage="Service Price must be between zero and 100,000." 
-                ForeColor="Maroon" MaximumValue="100000" MinimumValue="0">*</asp:RangeValidator>
+                ForeColor="Maroon" MaximumValue="50000" MinimumValue="0">*</asp:RangeValidator>
         </td>
         <td>
+            <asp:DropDownList ID="SelectServiceID_ddl" runat="server" AutoPostBack="True" 
+                DataSourceID="SqlDataSource1" DataTextField="Service_Name" 
+                DataValueField="Service_ID" 
+                onselectedindexchanged="SelectServiceID_ddl_SelectedIndexChanged" 
+                Visible="False">
+                <asp:ListItem>Choose Service ID:</asp:ListItem>
+            </asp:DropDownList>
         </td>
         </tr>
         
@@ -95,6 +106,9 @@
         <br />
       </center>
      </div>
+    <asp:SqlDataSource ID="SqlDataSource1" runat="server" 
+        ConnectionString="<%$ ConnectionStrings:group3_6_WEBUSER %>" 
+        SelectCommand="SELECT * FROM [Special_Services]"></asp:SqlDataSource>
     </form>
 </body>
 </html>

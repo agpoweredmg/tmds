@@ -33,12 +33,13 @@
                 Type="Integer">*</asp:CompareValidator>
             <asp:RequiredFieldValidator ID="ID_rf" runat="server" ControlToValidate="id_tb" 
                 ErrorMessage="ID is required." ForeColor="Maroon">*</asp:RequiredFieldValidator>
+            <asp:Label ID="ID_lbl" runat="server" Text="Label" Visible="False"></asp:Label>
             </td>
         <td>
     &nbsp;<asp:Button ID="submit_btn" runat="server" Text="Submit" Width="61px" 
                 onclick="submit_btn_Click" />
     &nbsp;&nbsp;<asp:Button ID="clear_btn" runat="server" Text="Clear" Width="61px" 
-                onclick="clear_btn_Click" />
+                onclick="clear_btn_Click" CausesValidation="False" />
             &nbsp;&nbsp;</td>
         </tr>
 
@@ -50,11 +51,13 @@
             <asp:RegularExpressionValidator ID="Name_RegEx" runat="server" 
                 ControlToValidate="name_tb" ErrorMessage="RegularExpressionValidator" 
                 ForeColor="Maroon" ValidationExpression="^[a-zA-Z''-'\s]{1,40}$">*</asp:RegularExpressionValidator>
+            <asp:Label ID="Name_lbl" runat="server" Text="Label" Visible="False"></asp:Label>
             </td>
         <td>
             &nbsp;<asp:DropDownList ID="chooseAction_ddl" runat="server" 
                 Height="16px" Width="133px" 
-                onselectedindexchanged="chooseAction_SelectedIndexChanged">
+                onselectedindexchanged="chooseAction_SelectedIndexChanged" 
+                AutoPostBack="True">
                 <asp:ListItem Value="0">Choose an Action</asp:ListItem>
             <asp:ListItem Value="1">Add Inventory</asp:ListItem>
             <asp:ListItem Value="2">Delete Inventory</asp:ListItem>
@@ -72,7 +75,14 @@
                 ControlToValidate="category_tb" ErrorMessage="Category Name is invalid." 
                 ForeColor="Maroon" ValidationExpression="^[a-zA-Z''-'\s]{1,40}$">*</asp:RegularExpressionValidator>
             </td>
-        <td>&nbsp;</td>
+        <td>
+            <asp:DropDownList ID="ChooseInventoryID_ddl" runat="server" AutoPostBack="True" 
+                DataSourceID="SqlDataSource1" DataTextField="Inventory_ID" 
+                DataValueField="Item_Name" 
+                onselectedindexchanged="ChooseInventoryID_ddl_SelectedIndexChanged" 
+                Visible="False">
+            </asp:DropDownList>
+            </td>
         </tr>
 
         <tr>
@@ -178,6 +188,10 @@
      </div>
     
     </div>
+    <asp:SqlDataSource ID="SqlDataSource1" runat="server" 
+        ConnectionString="<%$ ConnectionStrings:group3_6_WEBUSER %>" SelectCommand="SELECT *
+FROM [Inventory] I, Unprepared_Item UI
+WHERE I.Unprepared_Item_ID = UI.Unprepared_Item_ID"></asp:SqlDataSource>
     </form>
 </body>
 </html>

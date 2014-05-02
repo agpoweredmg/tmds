@@ -13,7 +13,16 @@ public partial class InventoryInformation : System.Web.UI.Page
     }
     protected void chooseAction_SelectedIndexChanged(object sender, EventArgs e)
     {
-
+        if (chooseAction_ddl.SelectedIndex == 2 || chooseAction_ddl.SelectedIndex == 3)
+            ChooseInventoryID_ddl.Visible = true;
+        else
+        {
+            id_tb.Visible = true;
+            ID_lbl.Visible = false;
+            name_tb.Visible = true;
+            Name_lbl.Visible = false;
+            ChooseInventoryID_ddl.Visible = false;
+        }
     }
     protected void clear_btn_Click(object sender, EventArgs e)
     {
@@ -26,6 +35,12 @@ public partial class InventoryInformation : System.Web.UI.Page
         minimum_tb.Text = "";
         maximum_tb.Text = "";
         chooseAction_ddl.SelectedIndex = 0;
+        ChooseInventoryID_ddl.Visible = false;
+        ChooseInventoryID_ddl.SelectedIndex = 0;
+        ID_lbl.Visible = false;
+        id_tb.Visible = true;
+        name_tb.Visible = true;
+        Name_lbl.Visible = false;
     }
     protected void back_btn_Click(object sender, EventArgs e)
     {
@@ -42,5 +57,14 @@ public partial class InventoryInformation : System.Web.UI.Page
     protected void logout_btn_Click(object sender, EventArgs e)
     {
         Response.Redirect("login.aspx");
+    }
+    protected void ChooseInventoryID_ddl_SelectedIndexChanged(object sender, EventArgs e)
+    {
+        ID_lbl.Text = ChooseInventoryID_ddl.SelectedItem.ToString();
+        Name_lbl.Text = ChooseInventoryID_ddl.SelectedValue.ToString();
+        ID_lbl.Visible = true;
+        id_tb.Visible = false;
+        name_tb.Visible = false;
+        Name_lbl.Visible = true;
     }
 }

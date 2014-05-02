@@ -29,5 +29,32 @@ public partial class ServicesInformation : System.Web.UI.Page
         ServiceName_tb.Text = "";
         ServicePrice_tb.Text = "";
         ChooseSpecialServices_ddl.SelectedIndex = 0;
+        SelectServiceID_ddl.Visible = false;
+        ServiceID_lbl.Visible = false;
+        ServiceName_lbl.Visible = false;
+        ServiceName_tb.Visible = true;
+        ServiceID_tb.Visible = true;
+    }
+    protected void ChooseSpecialServices_ddl_SelectedIndexChanged(object sender, EventArgs e)
+    {
+        if (ChooseSpecialServices_ddl.SelectedIndex == 2 || ChooseSpecialServices_ddl.SelectedIndex == 3)
+            SelectServiceID_ddl.Visible = true;
+        else
+        {
+            SelectServiceID_ddl.Visible = false;
+            ServiceID_lbl.Visible = false;
+            ServiceName_lbl.Visible = false;
+            ServiceName_tb.Visible = true;
+            ServiceID_tb.Visible = true;
+        }
+    }
+    protected void SelectServiceID_ddl_SelectedIndexChanged(object sender, EventArgs e)
+    {
+        ServiceName_lbl.Text = SelectServiceID_ddl.SelectedItem.ToString();
+        ServiceID_lbl.Text = SelectServiceID_ddl.SelectedValue.ToString();
+        ServiceID_lbl.Visible = true;
+        ServiceName_lbl.Visible = true;
+        ServiceID_tb.Visible = false;
+        ServiceName_tb.Visible = false;
     }
 }
