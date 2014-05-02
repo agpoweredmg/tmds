@@ -55,6 +55,8 @@ ORDER BY e.Emp_L_Name">
             <asp:CookieParameter CookieName="evid" Name="evid" />
         </SelectParameters>
     </asp:SqlDataSource>
+    <asp:Button ID="Button1" runat="server" BorderColor="Black" 
+        BorderStyle="Double" onclick="Button1_Click" Text="Back" />
     </form>
 </body>
 </html>

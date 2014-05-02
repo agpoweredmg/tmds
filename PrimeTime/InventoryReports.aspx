@@ -49,6 +49,8 @@
     <asp:SqlDataSource ID="SqlDataSource1" runat="server" 
         ConnectionString="<%$ ConnectionStrings:group3_6_WEBUSER %>" 
         SelectCommand="SELECT * FROM [Inventory]"></asp:SqlDataSource>
+    <asp:Button ID="Button1" runat="server" BorderColor="Black" 
+        BorderStyle="Double" onclick="Button1_Click" Text="Back" />
     </form>
 </body>
 </html>

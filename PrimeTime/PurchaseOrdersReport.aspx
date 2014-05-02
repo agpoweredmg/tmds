@@ -54,6 +54,8 @@
 FROM Purchase_Orders, PO_Details
 WHERE Purchase_Orders.Purchase_Order_ID = PO_Details.Purchase_Order_ID
 ORDER BY PO_Details.Purchase_Order_ID"></asp:SqlDataSource>
+    <asp:Button ID="Button1" runat="server" BorderColor="Black" 
+        BorderStyle="Double" onclick="Button1_Click" Text="Back" />
     </form>
 </body>
 </html>
