@@ -24,7 +24,7 @@
     <body>
         <center>
         <form id="form1" runat="server">
-        <asp:Image ID="Image1" runat="server" ImageUrl="~/untitled.png" Style="text-align: left" />
+        <asp:Image ID="Image1" runat="server" ImageUrl="untitled.png" Style="text-align: left" />
         <div>
             <div style="margin-left: 200px; font-family: sans-serif; font-size: 15.75px; font-weight: bold;
                 width: 209px; text-align: center;">
@@ -211,24 +211,13 @@
                     Height="38px" Style="text-align: center" Text="Home" Width="69px" 
                     onclick="home_btn_Click" CausesValidation="False" />
                 &nbsp;&nbsp;
-<<<<<<< HEAD
-=======
-
->>>>>>> 76b2f4e1bf1880e851b38ebb73605f31e637803b
-
-                <asp:Button ID="createEventlogout_btn" runat="server" BorderColor="Black" 
-                    BorderStyle="Double" Height="38px" Text="Logout" Width="71px"/>
-
-<<<<<<< HEAD
-=======
-
 
                 <asp:Button ID="logout_btn" runat="server" BorderColor="Black" BorderStyle="Double"
                     Height="38px" Style="text-align: center" Text="Logout" Width="69px" 
                     CausesValidation="False" onclick="logout_btn_Click" />
 
 
->>>>>>> 76b2f4e1bf1880e851b38ebb73605f31e637803b
+
                 &nbsp;&nbsp;
                 <asp:Button ID="next_btn" runat="server" BorderColor="Black" BorderStyle="Double"
                     Height="38px" Style="text-align: center" Text="Next>>" Width="69px" 

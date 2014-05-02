@@ -10,6 +10,8 @@ using System.Drawing;
 
 public partial class InventoryInformation : System.Web.UI.Page
 {
+    private SqlConnection conn = new SqlConnection("Data Source=apcxcs3.apsu.edu;Initial Catalog=group3_6;Persist Security Info=True;User ID=webuser3_6;Password=webuser3_6abc");
+
     protected void Page_Load(object sender, EventArgs e)
     {
 
@@ -51,21 +53,22 @@ public partial class InventoryInformation : System.Web.UI.Page
     }
     protected void submit_btn_Click(object sender, EventArgs e)
     {
-         if (chooseAction_ddl.SelectedIndex == 1)
+        if (chooseAction_ddl.SelectedIndex == 1)
         {
-            SqlCommand command = new SqlCommand("new_special_service", conn);
+            //SqlCommand command = new SqlCommand("new_special_service", conn);
 
-            command.CommandType = CommandType.StoredProcedure;
+            //command.CommandType = CommandType.StoredProcedure;
 
-            command.Parameters.AddWithValue("@srvice_name", ServiceName_tb.Text.ToString());
-            command.Parameters.AddWithValue("@service_price", ServicePrice_tb.Text.ToString());
+            //command.Parameters.AddWithValue("@srvice_name", ServiceName_tb.Text.ToString());
+            //command.Parameters.AddWithValue("@service_price", ServicePrice_tb.Text.ToString());
 
 
-            conn.Open();
+            //conn.Open();
 
-            command.ExecuteNonQuery();
+            //command.ExecuteNonQuery();
 
-            conn.Close();
+            //conn.Close();
+        }
     }
     protected void home_btn_Click(object sender, EventArgs e)
     {
