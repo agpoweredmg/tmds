@@ -34,9 +34,6 @@
                             ErrorMessage="Event Date is required" ForeColor="Red">*</asp:RequiredFieldValidator>
                     </td>
                     <td>
-                        <asp:RangeValidator ID="RangeValidator1" runat="server" 
-                            ControlToValidate="eventDate" ErrorMessage="Invalid date range" ForeColor="Red" 
-                            MaximumValue="05/02/2025" MinimumValue="05/02/2014">*</asp:RangeValidator>
                         <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" 
                             ControlToValidate="eventDate" ErrorMessage="Invalid Date formate" 
                             ForeColor="Red" ValidationExpression="[0-9]{2}/[0-9]{2}/[0-9]{4}">*</asp:RegularExpressionValidator>
