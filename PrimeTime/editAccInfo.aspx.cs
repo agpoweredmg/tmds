@@ -10,7 +10,10 @@ public partial class editAccInfo : System.Web.UI.Page
 
     protected void Page_Load(object sender, EventArgs e)
     {
-
+        if (!Convert.ToBoolean(Request.Cookies["cred"]["mgr"]))
+        {
+            Response.Redirect("InvalidLoginCredentials.aspx");
+        }
     }
     protected void clear_btn_Click(object sender, EventArgs e)
     {
