@@ -34,7 +34,8 @@
 &nbsp;</td>
                             <td>
                                 <asp:DropDownList ID="userName_ddl" runat="server" 
-                                    DataSourceID="usernameLookup" DataTextField="UserName" DataValueField="Emp_ID">
+                                    DataSourceID="usernameLookup" DataTextField="UserName" DataValueField="Emp_ID" 
+                                    Width="200px">
                                 </asp:DropDownList>
                                 <asp:SqlDataSource ID="usernameLookup" runat="server" 
                                     ConnectionString="<%$ ConnectionStrings:WebUserConnectionString %>" SelectCommand="SELECT Emp_ID, (Emp_F_Name + ' ' + Emp_L_Name) AS UserName

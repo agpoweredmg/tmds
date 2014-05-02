@@ -34,7 +34,7 @@ public partial class Login : System.Web.UI.Page
         {
             Label1.ForeColor = System.Drawing.Color.Red;
             Label1.Visible = true;
-            Label1.Text = "User ID or Password is INCORRECT.";
+            Label1.Text = "User name and password DO NOT match.";
             return;
         }
         else
