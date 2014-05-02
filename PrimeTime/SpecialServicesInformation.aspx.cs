@@ -4,9 +4,15 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Data;
+using System.Data.SqlClient;
+using System.Drawing;
 
 public partial class ServicesInformation : System.Web.UI.Page
 {
+    private SqlConnection conn = new SqlConnection("Data Source=apcxcs3.apsu.edu;Initial Catalog=group3_6;Persist Security Info=True;User ID=webuser3_6;Password=webuser3_6abc");
+    private SqlCommand command;
+
     protected void Page_Load(object sender, EventArgs e)
     {
 
@@ -56,5 +62,24 @@ public partial class ServicesInformation : System.Web.UI.Page
         ServiceName_lbl.Visible = true;
         ServiceID_tb.Visible = false;
         ServiceName_tb.Visible = false;
+    }
+    protected void Submit_btn_Click(object sender, EventArgs e)
+    {
+        if (ChooseSpecialServices_ddl.SelectedIndex == 1)
+        {
+            SqlCommand command = new SqlCommand("new_special_service", conn);
+
+            command.CommandType = CommandType.StoredProcedure;
+
+            command.Parameters.AddWithValue("@srvice_name", ServiceName_tb.Text.ToString());
+            command.Parameters.AddWithValue("@service_price", ServicePrice_tb.Text.ToString());
+
+
+            conn.Open();
+
+            command.ExecuteNonQuery();
+
+            conn.Close();
+        }
     }
 }

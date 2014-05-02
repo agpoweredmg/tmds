@@ -34,6 +34,7 @@
         </td>
         <td class="style1">
             <asp:TextBox ID="ServiceID_tb" runat="server"></asp:TextBox>
+<<<<<<< HEAD
             <asp:RequiredFieldValidator ID="ServiceID_rf" runat="server" 
                 ControlToValidate="ServiceID_tb" ErrorMessage="Service ID is required." 
                 ForeColor="Maroon">*</asp:RequiredFieldValidator>
@@ -41,9 +42,12 @@
                 ControlToValidate="ServiceID_tb" ErrorMessage="Service ID must be numeric." 
                 ForeColor="Maroon" Operator="DataTypeCheck" Type="Integer">*</asp:CompareValidator>
             <asp:Label ID="ServiceID_lbl" runat="server" Text="Label" Visible="False"></asp:Label>
+=======
+>>>>>>> 1ca6cfb5cc18784278058e7eb5c04b5cfbb4829a
         </td>
         <td>
-            <asp:Button ID="Submit_btn" runat="server" Text="Submit" />
+            <asp:Button ID="Submit_btn" runat="server" Text="Submit" 
+                onclick="Submit_btn_Click" />
             <asp:Button ID="Clear_btn" runat="server" Text="Clear" 
                 onclick="Clear_btn_Click" CausesValidation="False" />
         </td>
@@ -79,10 +83,13 @@
         </td>
         <td class="style1">
             <asp:TextBox ID="ServicePrice_tb" runat="server"></asp:TextBox>
+<<<<<<< HEAD
             <asp:RangeValidator ID="ServicePrice2_rv" runat="server" 
                 ControlToValidate="ServicePrice_tb" 
                 ErrorMessage="Service Price must be between zero and 100,000." 
                 ForeColor="Maroon" MaximumValue="50000" MinimumValue="0">*</asp:RangeValidator>
+=======
+>>>>>>> 1ca6cfb5cc18784278058e7eb5c04b5cfbb4829a
         </td>
         <td>
             <asp:DropDownList ID="SelectServiceID_ddl" runat="server" AutoPostBack="True" 
