@@ -61,7 +61,7 @@
                         <td>
                             <asp:DropDownList ID="mealDetails_ddl" runat="server" Height="16px" Width="183px" 
                                 DataSourceID="SqlDataSource_Entree" DataTextField="Item_Name" 
-                                DataValueField="Item_Name">
+                                DataValueField="Item_Name" AutoPostBack="True">
                             </asp:DropDownList>
                             <asp:SqlDataSource ID="SqlDataSource_Entree" runat="server" 
                                 ConnectionString="<%$ ConnectionStrings:group3_6_WEBUSER %>" 
@@ -85,7 +85,7 @@
                         <td>
                             <asp:DropDownList ID="side1_ddl" runat="server" Height="16px" Width="183px" 
                                 DataSourceID="SqlDataSource_Sides" DataTextField="Item_Name" 
-                                DataValueField="Item_Name">
+                                DataValueField="Item_Name" AutoPostBack="True">
                             </asp:DropDownList>
                             <asp:SqlDataSource ID="SqlDataSource_Sides" runat="server" 
                                 ConnectionString="<%$ ConnectionStrings:group3_6_WEBUSER %>" 
@@ -96,35 +96,11 @@
                         <td>
                             <asp:DropDownList ID="side2_ddl" runat="server" Height="16px" Width="183px" 
                                 DataSourceID="SqlDataSource_Sides" DataTextField="Item_Name" 
-                                DataValueField="Item_Name">
+                                DataValueField="Item_Name" AutoPostBack="True">
                             </asp:DropDownList>
-                        </td>
-                        <td>Qtn:</td>
-                        <td>
-                            <asp:TextBox ID="side1_2Qtn_txt" runat="server"  
-                                Width="100px"></asp:TextBox>
                         </td>
                     </tr>
-                    <tr>
-                        <td>Alter Side1:</td>
-                        <td>
-                            <asp:DropDownList ID="alterSide1_ddl" runat="server" Height="16px" Width="183px" 
-                                DataSourceID="SqlDataSource_Sides" DataTextField="Item_Name" 
-                                DataValueField="Item_Name">
-                            </asp:DropDownList>
-                        </td>
-                        <td>Alter. Side2:&nbsp;</td>
-                        <td>
-                            <asp:DropDownList ID="alterSide2_ddl" runat="server" Height="16px" Width="183px" 
-                                DataSourceID="SqlDataSource_Sides" DataTextField="Item_Name" 
-                                DataValueField="Item_Name">
-                            </asp:DropDownList>
-                        </td>
-                        <td>&nbsp;Qtn:</td>
-                        <td>
-                            <asp:TextBox ID="altrSide1_2Qtn" runat="server" Width="100px"></asp:TextBox>
-                        </td>
-                    </tr>
+
                 </table>
                 <br />
                 <br />
@@ -132,7 +108,8 @@
                
                 <b>
                 <asp:ListBox ID="services_listBox" runat="server" DataSourceID="services" 
-                    DataTextField="Service_Name" DataValueField="Service_Name" Width="201px">
+                    DataTextField="Service_Name" DataValueField="Service_Name" Width="201px" 
+                    SelectionMode="Multiple">
                 </asp:ListBox>
                 <asp:SqlDataSource ID="services" runat="server" 
                     ConnectionString="<%$ ConnectionStrings:group3_6_WEBUSER %>" 

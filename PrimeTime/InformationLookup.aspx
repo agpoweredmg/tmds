@@ -32,7 +32,7 @@
             <td>
     <asp:DropDownList ID="suppliers_ddl" runat="server" Height="25px" Width="181px" 
                     DataSourceID="SqlDataSource3" DataTextField="Supplier_Name" 
-                    DataValueField="Supplier_Name">
+                    DataValueField="Supplier_ID">
     </asp:DropDownList>
             </td>
         </tr>
@@ -116,13 +116,14 @@
             </asp:SqlDataSource>
             <asp:SqlDataSource ID="SqlDataSource3" runat="server" 
                 ConnectionString="<%$ ConnectionStrings:group3_6_WEBUSER %>" 
-                SelectCommand="SELECT [Supplier_Name] FROM [Suppliers]"></asp:SqlDataSource>
+                SelectCommand="SELECT [Supplier_Name], [Supplier_ID] FROM [Suppliers]"></asp:SqlDataSource>
             </td>
         </tr>
     </table>
     <br />
     <asp:SqlDataSource ID="SqlDataSource1" runat="server" 
-        ConnectionString="<%$ ConnectionStrings:WebUserConnectionString %>" 
+        ConnectionString="<%$ ConnectionStrings:group3_6_WEBUSER %>" 
+        
         
         SelectCommand="SELECT ([Cust_F_Name] + ' ' + [Cust_L_Name]) AS [Customer Name], Customer_ID FROM [Customers]">
     </asp:SqlDataSource>

@@ -37,18 +37,16 @@
                     <tr>
                         <td class="style2">
                         
-                            <asp:RadioButtonList ID="returned_Or_newCustomer_rd_group" runat="server" 
-                                onselectedindexchanged="returned_Or_newCustomer_rd_group_SelectedIndexChanged">
-                                <asp:ListItem Value="1">Returning Customer</asp:ListItem>
-                                <asp:ListItem Value="0">New Customer</asp:ListItem>
-                            </asp:RadioButtonList>
+                            <asp:CheckBox ID="returningCust_chk" runat="server" AutoPostBack="True" 
+                                Text="Returning Customer" />
                         </td>
                         <td> 
-                            <asp:Label ID="newCustomer_lbl" runat="server" Text="Customer ID:"></asp:Label>
+                            <asp:Label ID="newCustomer_lbl" runat="server" Text="Customer Last Name:"></asp:Label>
                         </td>
                         <td>
                             <asp:DropDownList ID="custId_ddl" runat="server" DataSourceID="SqlDataSource1" 
-                                DataTextField="Cust_L_Name" DataValueField="Customer_ID">
+                                DataTextField="Cust_L_Name" DataValueField="Customer_ID" 
+                                AutoPostBack="True" onselectedindexchanged="custId_ddl_SelectedIndexChanged">
                             </asp:DropDownList>
                             <asp:SqlDataSource ID="SqlDataSource1" runat="server" 
                                 ConnectionString="<%$ ConnectionStrings:group3_6_WEBUSER %>" 
