@@ -82,13 +82,10 @@
         </td>
         <td class="style1">
             <asp:TextBox ID="ServicePrice_tb" runat="server"></asp:TextBox>
-<<<<<<< HEAD
             <asp:RangeValidator ID="ServicePrice2_rv" runat="server" 
                 ControlToValidate="ServicePrice_tb" 
-                ErrorMessage="Service Price must be between zero and 100,000." 
+                ErrorMessage="Service Price must be between zero and 50,000." 
                 ForeColor="Maroon" MaximumValue="50000" MinimumValue="0">*</asp:RangeValidator>
-=======
->>>>>>> 1ca6cfb5cc18784278058e7eb5c04b5cfbb4829a
         </td>
         <td>
             <asp:DropDownList ID="SelectServiceID_ddl" runat="server" AutoPostBack="True" 
