@@ -31,49 +31,49 @@
                 </tr>
                 <tr>
                     <td>
-                        <asp:Button ID="editAccount_btn" runat="server" Text="Edit Account" 
+                        <asp:Button ID="editAccount_btn" runat="server" Text="Account Details" 
                             Width="184px" onclick="editAccount_btn_Click" />
                     </td>
                     <td>
-                        <asp:Button ID="editCustomer_btn" runat="server" Text="Edit Customer" Style="text-align: center"
+                        <asp:Button ID="editCustomer_btn" runat="server" Text="Customer Details" Style="text-align: center"
                             Width="184px" onclick="editCustomer_btn_Click" />
                     </td>
                     <td>
-                        <asp:Button ID="editInventoryDetails_btn" runat="server" Text="Edit Inventory Details"
+                        <asp:Button ID="editInventoryDetails_btn" runat="server" Text="Inventory Details"
                             Width="184px" onclick="editInventoryDetails_btn_Click" />
                     </td>
                 </tr>
                 <tr>
                     <td>
-                        <asp:Button ID="editSupplier_btn" runat="server" Text="Edit Supplier" 
+                        <asp:Button ID="editSupplier_btn" runat="server" Text="Supplier Details" 
                             Width="184px" onclick="editSupplier_btn_Click" />
                     </td>
                     <td>
-                        <asp:Button ID="editLostorDamagedItems_btn" runat="server" Text="Edit Lost or Damaged"
+                        <asp:Button ID="editLostorDamagedItems_btn" runat="server" Text="Lost or Damaged Details"
                             Width="184px" onclick="editLostorDamagedItems_btn_Click" />
                     </td>
                     <td>
-                        <asp:Button ID="editEmployeeDetails_btn" runat="server" Text="Edit Employee Details"
+                        <asp:Button ID="editEmployeeDetails_btn" runat="server" Text="Employee Details"
                             Width="184px" onclick="editEmployeeDetails_btn_Click" />
                     </td>
                 </tr>
                 <tr>
                     <td>
-                        <asp:Button ID="editEvent_btn" runat="server" Text="Edit Event" Width="184px" 
+                        <asp:Button ID="editEvent_btn" runat="server" Text="Event Details" Width="184px" 
                             onclick="editEvent_btn_Click" />
                     </td>
                     <td>
-                        <asp:Button ID="editMealDetails_btn" runat="server" Text="Edit Meal Details" 
+                        <asp:Button ID="editMealDetails_btn" runat="server" Text="Meal Details" 
                             Width="184px" onclick="editMealDetails_btn_Click" />
                     </td>
                     <td>
-                        <asp:Button ID="specialServices_btn" runat="server" Text="Edit Special Services" 
+                        <asp:Button ID="specialServices_btn" runat="server" Text="Special Services" 
                             Width="184px" onclick="specialServices_btn_Click" />
                     </td>
                 </tr>
                 <tr>
                     <td>
-                        <asp:Button ID="editContract_btn" runat="server" Text="Edit Contract" 
+                        <asp:Button ID="editContract_btn" runat="server" Text="Contract Details" 
                             Width="184px" onclick="editContract_btn_Click" />
                     </td>
                     <td>
