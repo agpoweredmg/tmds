@@ -17,7 +17,7 @@
         <tr>
             <th></th>
             <th>
-        <asp:Label ID="Label1" runat="server" Text="Meal Information"></asp:Label>
+        <asp:Label ID="Label1" runat="server" Text="Meal Information Details"></asp:Label>
             </th>
             <th></th>
 

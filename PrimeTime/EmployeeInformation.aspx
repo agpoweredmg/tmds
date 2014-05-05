@@ -9,12 +9,12 @@
         .style1
         {
             height: 16px;
-            width: 191px;
+            width: 304px;
         }
         .style2
         {
             height: 23px;
-            width: 191px;
+            width: 304px;
         }
         .style4
         {
@@ -50,7 +50,7 @@
         }
         .style11
         {
-            width: 191px;
+            width: 304px;
         }
     </style>
 </head>
@@ -67,7 +67,7 @@
         <tr>
             <th class="style6"></th>
             <th class="style11">
-        <asp:Label ID="Label1" runat="server" Text="Employee Information"></asp:Label>
+        <asp:Label ID="Label1" runat="server" Text="Employee Information Details"></asp:Label>
             </th>
             <th class="style10">
                 <br />

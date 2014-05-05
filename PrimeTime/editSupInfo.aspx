@@ -36,7 +36,7 @@
                     <th>
                     </th>
                     <th class="style2">
-                        Edit Supplier Information
+                        Supplier Information Details
                     </th>
                     <th>
                     </th>
@@ -226,15 +226,17 @@
                 </tr>
             </table>
         </center>
-    </div>
+  
     <br />
     <asp:Button ID="home_btn" runat="server" Height="38px" Text="Home" Width="68px" 
         onclick="home_btn_Click" CausesValidation="False" />
     &nbsp;&nbsp;&nbsp;&nbsp;
     <asp:Button ID="logout_btn" runat="server" Height="38px" Text="Logout" 
         Width="68px" onclick="logout_btn_Click" CausesValidation="False" />
-    &nbsp;&nbsp;&nbsp;&nbsp;
-    <br />
+    &nbsp;&nbsp;<asp:SqlDataSource ID="SqlDataSource1" runat="server" 
+        ConnectionString="<%$ ConnectionStrings:group3_6_WEBUSER %>" 
+        SelectCommand="SELECT * FROM [Suppliers]"></asp:SqlDataSource>
+        &nbsp;&nbsp;
 
     <br />
 
@@ -242,10 +244,9 @@
 
         ForeColor="Maroon" HeaderText="You received the following Errors:" />
 
-    <br />
-    <asp:SqlDataSource ID="SqlDataSource1" runat="server" 
-        ConnectionString="<%$ ConnectionStrings:group3_6_WEBUSER %>" 
-        SelectCommand="SELECT * FROM [Suppliers]"></asp:SqlDataSource>
+   
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    </div>
     </form>
 </body>
 </html>

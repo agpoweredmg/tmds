@@ -7,7 +7,7 @@
     <style type="text/css">
         .style1
         {
-            width: 187px;
+            width: 225px;
         }
     </style>
  </head>
@@ -22,6 +22,7 @@
             <th>
             </th>
             <th class="style1">
+                Special
             Services Information
             </th>
             <th>   

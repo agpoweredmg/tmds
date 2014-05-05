@@ -84,4 +84,10 @@ public partial class EditCustomerInfo : System.Web.UI.Page
     }
 
 
+
+   
+    protected void ChooseCustomerActions_ddl_SelectedIndexChanged(object sender, EventArgs e)
+    {
+
+    }
 }
