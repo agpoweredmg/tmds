@@ -7,7 +7,7 @@
     <style type="text/css">
         .style1
         {
-            width: 187px;
+            width: 225px;
         }
     </style>
  </head>
@@ -22,6 +22,7 @@
             <th>
             </th>
             <th class="style1">
+                Special
             Services Information
             </th>
             <th>   
@@ -82,13 +83,10 @@
         </td>
         <td class="style1">
             <asp:TextBox ID="ServicePrice_tb" runat="server"></asp:TextBox>
-<<<<<<< HEAD
             <asp:RangeValidator ID="ServicePrice2_rv" runat="server" 
                 ControlToValidate="ServicePrice_tb" 
                 ErrorMessage="Service Price must be between zero and 100,000." 
                 ForeColor="Maroon" MaximumValue="50000" MinimumValue="0">*</asp:RangeValidator>
-=======
->>>>>>> 1ca6cfb5cc18784278058e7eb5c04b5cfbb4829a
         </td>
         <td>
             <asp:DropDownList ID="SelectServiceID_ddl" runat="server" AutoPostBack="True" 

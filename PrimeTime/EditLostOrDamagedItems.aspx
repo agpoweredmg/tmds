@@ -16,7 +16,7 @@
     <th>
     </th>
     <th>
-    Edit Lost or Damaged Items
+        Lost or Damaged Items Details
     </th>
     <th>
     </th>

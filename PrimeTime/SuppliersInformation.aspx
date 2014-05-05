@@ -62,6 +62,12 @@
             <asp:TextBox ID="phone_tb" runat="server"></asp:TextBox>
             </td>
         <td>
+            <asp:DropDownList ID="supplierLookup_ddl" runat="server" AutoPostBack="True" 
+                DataSourceID="supplierLookup" DataTextField="Supplier_Name" 
+                DataValueField="Supplier_ID" 
+                onselectedindexchanged="supplierLookup_ddl_SelectedIndexChanged" 
+                Visible="False">
+            </asp:DropDownList>
         </td>
         </tr>
 
@@ -74,19 +80,7 @@
         <td>
             
 <td class="style6">
-            <asp:DropDownList ID="supplierLookup_ddl" runat="server" AutoPostBack="True" 
-                DataSourceID="supplierLookup" DataTextField="Supplier_Name" 
-                DataValueField="Supplier_ID" 
-                onselectedindexchanged="supplierLookup_ddl_SelectedIndexChanged" 
-                Visible="False">
-            </asp:DropDownList>
-            <asp:SqlDataSource ID="supplierLookup" runat="server" 
-                ConnectionString="<%$ ConnectionStrings:group3_6_WEBUSER %>" 
-                SelectCommand="SELECT [Supplier_ID], [Supplier_Name] FROM [Suppliers]" 
-                onselecting="supplierLookup_Selecting">
-            </asp:SqlDataSource>
-
-            </td>
+            &nbsp;</td>
         </tr>
 
         <tr>
@@ -152,6 +146,13 @@
 &nbsp;&nbsp;&nbsp;
     <asp:Button ID="logout_btn" runat="server" Text="Logout" Width="68px" Height="38px" 
             onclick="logout_btn_Click" />
+        <br />
+            <asp:SqlDataSource ID="supplierLookup" runat="server" 
+                ConnectionString="<%$ ConnectionStrings:group3_6_WEBUSER %>" 
+                SelectCommand="SELECT [Supplier_ID], [Supplier_Name] FROM [Suppliers]" 
+                onselecting="supplierLookup_Selecting">
+            </asp:SqlDataSource>
+
     </center>
      </div>
     

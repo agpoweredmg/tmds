@@ -19,7 +19,7 @@
         <tr>
             <th></th>
             <th>
-        <asp:Label ID="Label1" runat="server" Text="Inventory Information"></asp:Label>
+        <asp:Label ID="Label1" runat="server" Text="Inventory Information Details"></asp:Label>
             </th>
             <th></th>
         </tr>
