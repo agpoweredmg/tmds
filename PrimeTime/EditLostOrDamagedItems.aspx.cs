@@ -48,7 +48,8 @@ public partial class EditLostOrDamagedItems : System.Web.UI.Page
         if (ChooseDamagedItemsActions_ddl.SelectedIndex == 2 || ChooseDamagedItemsActions_ddl.SelectedIndex == 3)
         {
             LostDamageID_ddl.Visible = true;
-            
+            LostDamageID_tb.Visible = false;
+        
         }
         else if (ChooseDamagedItemsActions_ddl.SelectedIndex == 0 || ChooseDamagedItemsActions_ddl.SelectedIndex == 1)
             LostDamageID_lbl.Visible = false;

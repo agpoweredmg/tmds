@@ -88,6 +88,43 @@ public partial class EditCustomerInfo : System.Web.UI.Page
    
     protected void ChooseCustomerActions_ddl_SelectedIndexChanged(object sender, EventArgs e)
     {
-
+        if (ChooseCustomerActions_ddl.SelectedIndex == 2 || ChooseCustomerActions_ddl.SelectedIndex == 3)
+            ChooseCustomerID_ddl.Visible = true;
+        CustomerID_lbl.Visible = true;
+        customerID_tb.Visible = false;
+        FirstName_lbl.Visible = true;
+        FirstName_tb.Visible = false;
     }
-}
+    protected void ChooseCustomerID_ddl_SelectedIndexChanged(object sender, EventArgs e)
+    {
+        CustomerID_lbl.Text = ChooseCustomerID_ddl.SelectedValue.ToString();
+        FirstName_lbl.Text = ChooseCustomerID_ddl.SelectedItem.ToString();
+        string ID = ChooseCustomerID_ddl.SelectedValue.ToString();
+        string oString = "Select * from Customers where Customer_ID = @id";
+        SqlCommand oCmd = new SqlCommand(oString, conn);
+        oCmd.Parameters.AddWithValue("@id", ID);
+        SqlDataReader oReader;
+        try
+        {
+
+            conn.Open();
+            oReader = oCmd.ExecuteReader();
+
+            while (oReader.Read())
+            {
+                CustomerID_lbl.Text = oReader["Customer_ID"].ToString();
+                FirstName_lbl.Text = oReader["Cust_F_Name"].ToString();
+                LastName_tb.Text = oReader["Cust_L_Name"].ToString();
+                PhoneNumber_tb.Text = oReader["Cust_Phone"].ToString();
+                AlternateNumber_tb.Text = oReader["Cust_Alt_Phone"].ToString();
+                Email_tb.Text = oReader["Cust_Email"].ToString();
+            }
+
+        }
+        catch (Exception ex)
+        {
+
+
+        }
+    }
+} 

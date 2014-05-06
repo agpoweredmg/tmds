@@ -63,6 +63,9 @@ public partial class editAccInfo : System.Web.UI.Page
     {
         if (actionToPerform_ddl.SelectedIndex == 2 || actionToPerform_ddl.SelectedIndex == 3)
             AccountID_ddl.Visible = true;
+        AccountID_lbl.Visible = true;
+        accountID_tb.Visible = false;
+        AccountID_lbl.Text = AccountID_ddl.SelectedIndex.ToString();
 
     }
     protected void home_btn_Click(object sender, EventArgs e)
@@ -93,7 +96,7 @@ public partial class editAccInfo : System.Web.UI.Page
 
             while (oReader.Read())
             {
-
+                AccountID_lbl.Text = oReader["Acct_ID"].ToString();
                 accountBalance_tb.Text = oReader["Acct_Bal"].ToString();
                 amountDue_tb.Text = oReader["Amt_Due"].ToString();
                 dateDue_tb.Text = oReader["Date_Due"].ToString();

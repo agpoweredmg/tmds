@@ -29,6 +29,7 @@ public partial class editSupInfo : System.Web.UI.Page
         supplierEmail_tb.Text = "";
         supplierStreet_tb.Text = "";
         supplierCity_tb.Text = "";
+        SupplierSuiteNo_tb.Text = "";
         supplierState_tb.Text = "";
         supplierZip_tb.Text = "";
         supplierID_tb.Visible = true;
@@ -82,7 +83,12 @@ public partial class editSupInfo : System.Web.UI.Page
     protected void actionToPerform_ddl_SelectedIndexChanged(object sender, EventArgs e)
     {
         if (actionToPerform_ddl.SelectedIndex == 2 || actionToPerform_ddl.SelectedIndex == 3)
+        {
             choosesupplierid_ddl.Visible = true;
+            SupplierID_lbl.Text = choosesupplierid_ddl.SelectedValue.ToString();
+            SupplierID_lbl.Visible = true;
+            supplierID_tb.Visible = false;
+        }
         else
         {
             supplierName_tb.Visible = true;
@@ -117,7 +123,7 @@ public partial class editSupInfo : System.Web.UI.Page
 
             while (oReader.Read())
             {
-
+                SupplierID_lbl.Text = oReader["Supplier_ID"].ToString();
                 supplierName_tb.Text = oReader["Supplier_Name"].ToString();
                 supplierPhone_tb.Text = oReader["Supplier_Phone"].ToString();
                 supplierFax_tb.Text = oReader["Supplier_Fax"].ToString();

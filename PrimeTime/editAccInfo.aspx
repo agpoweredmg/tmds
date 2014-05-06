@@ -26,7 +26,7 @@
                     <td>
                         <asp:TextBox ID="accountID_tb" runat="server" 
                             ontextchanged="accountID_tb_TextChanged"></asp:TextBox>
-                        <asp:Label ID="AccountID_lbl" runat="server" Text="Label" Visible="False"></asp:Label>
+                        <asp:Label ID="AccountID_lbl" runat="server" Text="Account_ID" Visible="False"></asp:Label>
                     </td>
                     <td>
                         <asp:Button ID="submit_btn" runat="server" Text="Submit" 

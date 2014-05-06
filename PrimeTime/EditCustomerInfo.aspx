@@ -38,7 +38,9 @@
 
     
     </td>
-       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; <td>
+       &nbsp;<asp:Label ID="CustomerID_lbl" runat="server" Text="Customer ID" 
+            Visible="False"></asp:Label>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; <td>
     
         <asp:Button ID="Submit_btn" runat="server" Text="Submit" 
             onclick="Submit_btn_Click" />
@@ -60,13 +62,16 @@
             ControlToValidate="FirstName_tb" ErrorMessage="Invalid First Name" 
             ForeColor="Maroon" 
             ValidationExpression="^[a-zA-Z''-'\s]{1,40}$">*</asp:RegularExpressionValidator>
+        <asp:Label ID="FirstName_lbl" runat="server" style="font-weight: 700" 
+            Text="First Name" Visible="False"></asp:Label>
         </td>
     <td>
     
         <asp:DropDownList ID="ChooseCustomerActions_ddl" runat="server" 
             DataTextField="Customer_ID" 
             DataValueField="Customer_ID" 
-            onselectedindexchanged="ChooseCustomerActions_ddl_SelectedIndexChanged">
+            onselectedindexchanged="ChooseCustomerActions_ddl_SelectedIndexChanged" 
+            AutoPostBack="True">
             <asp:ListItem Value="0">Choose an Action</asp:ListItem>
             <asp:ListItem Value="1">Add Customer</asp:ListItem>
             <asp:ListItem Value="2">Delete Customer</asp:ListItem>
@@ -87,7 +92,13 @@
         </td>
     <td>
     
-        &nbsp;</td>
+        <asp:DropDownList ID="ChooseCustomerID_ddl" runat="server" AutoPostBack="True" 
+            DataSourceID="SqlDataSource1" DataTextField="Cust_F_Name" 
+            DataValueField="Customer_ID" 
+            onselectedindexchanged="ChooseCustomerID_ddl_SelectedIndexChanged" 
+            Visible="False">
+        </asp:DropDownList>
+        </td>
     </tr>
 
     <tr>
@@ -150,6 +161,9 @@
         <br />
         <br />
         <br />
+        <asp:SqlDataSource ID="SqlDataSource1" runat="server" 
+            ConnectionString="<%$ ConnectionStrings:group3_6_WEBUSER %>" 
+            SelectCommand="SELECT * FROM [Customers]"></asp:SqlDataSource>
         <asp:ValidationSummary ID="EditCustomerInfo_vs" runat="server" 
             ForeColor="Maroon" HeaderText="You received the following Errors:" />
         <br />
