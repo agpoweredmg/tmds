@@ -68,4 +68,8 @@ public partial class mgmtTasks : System.Web.UI.Page
     {
         Response.Redirect("ReportsGeneration.aspx");
     }
+    protected void employee_btn_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("EmployeeMain.aspx");
+    }
 }
