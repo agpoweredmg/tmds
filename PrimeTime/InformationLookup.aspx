@@ -23,7 +23,9 @@
             <td>Account Information :</td>
             <td>
     <asp:DropDownList ID="accountsDetails_ddl" runat="server" Height="25px" Width="181px" 
-                    DataSourceID="SqlDataSource2" DataTextField="Acct_ID" DataValueField="Acct_ID">
+                    DataSourceID="SqlDataSource2" DataTextField="Acct_ID" 
+                    DataValueField="Acct_ID" AutoPostBack="True" 
+                    onselectedindexchanged="accountsDetails_ddl_SelectedIndexChanged">
     </asp:DropDownList>
             </td>
         </tr>
@@ -32,7 +34,8 @@
             <td>
     <asp:DropDownList ID="suppliers_ddl" runat="server" Height="25px" Width="181px" 
                     DataSourceID="SqlDataSource3" DataTextField="Supplier_Name" 
-                    DataValueField="Supplier_ID">
+                    DataValueField="Supplier_ID" AutoPostBack="True" 
+                    onselectedindexchanged="suppliers_ddl_SelectedIndexChanged">
     </asp:DropDownList>
             </td>
         </tr>
@@ -41,7 +44,8 @@
             <td>
     <asp:DropDownList ID="eventsDetails_ddl" runat="server" Height="25px" Width="181px" 
                     DataSourceID="SqlDataSource4" DataTextField="Event_Name" 
-                    DataValueField="Event_Name">
+                    DataValueField="Event_ID" AutoPostBack="True" 
+                    onselectedindexchanged="eventsDetails_ddl_SelectedIndexChanged">
     </asp:DropDownList>
             </td>
         </tr>
@@ -50,7 +54,8 @@
             <td>
     <asp:DropDownList ID="contracts_ddl" runat="server" Height="25px" Width="181px" 
                     DataSourceID="SqlDataSource5" DataTextField="Contract_ID" 
-                    DataValueField="Contract_ID">
+                    DataValueField="Contract_ID" AutoPostBack="True" 
+                    onselectedindexchanged="contracts_ddl_SelectedIndexChanged">
     </asp:DropDownList>
             </td>
         <tr>
@@ -58,7 +63,8 @@
             <td>
     <asp:DropDownList ID="customers_ddl" runat="server" Height="25px" Width="181px" 
                     DataSourceID="SqlDataSource1" DataTextField="Customer Name" 
-                    DataValueField="Customer_ID">
+                    DataValueField="Customer_ID" AutoPostBack="True" 
+                    onselectedindexchanged="customers_ddl_SelectedIndexChanged">
     </asp:DropDownList>
             </td>
         </tr>
@@ -68,7 +74,8 @@
             <td>Special Services&nbsp;:</td>
             <td>
     <asp:DropDownList ID="services_ddl" runat="server" Height="25px" Width="181px" 
-                    DataSourceID="SqlDataSource6" DataTextField="Service_Name" DataValueField="Service_Name" 
+                    DataSourceID="SqlDataSource6" DataTextField="Service_Name" 
+                    DataValueField="Service_ID" AutoPostBack="True" onselectedindexchanged="services_ddl_SelectedIndexChanged" 
                     >
     </asp:DropDownList>
             </td>
@@ -78,7 +85,8 @@
             <td>
     <asp:DropDownList ID="inventoryDetails_ddl" runat="server" Height="25px" Width="181px" 
                     DataSourceID="SqlDataSource7" DataTextField="Inventory_ID" 
-                    DataValueField="Inventory_ID">
+                    DataValueField="Inventory_ID" AutoPostBack="True" 
+                    onselectedindexchanged="inventoryDetails_ddl_SelectedIndexChanged">
     </asp:DropDownList>
             </td>
             <td>
@@ -86,7 +94,8 @@
             <td>Purchase Orders&nbsp;: </td>
             <td>
     <asp:DropDownList ID="purchases_ddl" runat="server" Height="25px" Width="181px" 
-                    DataSourceID="SqlDataSource8" DataTextField="Purchase_Order_ID" DataValueField="Purchase_Order_ID" 
+                    DataSourceID="SqlDataSource8" DataTextField="Purchase_Order_ID" 
+                    DataValueField="Purchase_Order_ID" AutoPostBack="True" onselectedindexchanged="purchases_ddl_SelectedIndexChanged" 
                     >
     </asp:DropDownList>
             </td>
@@ -96,8 +105,8 @@
     <table>
         <tr>
         <td>
-            <asp:TextBox ID="outInformationTextBox_txt" runat="server" Height="230px" Width="434px" 
-                TextMode="MultiLine"></asp:TextBox>
+            <asp:TextBox ID="outInformationTextBox_txt" runat="server" Height="145px" Width="434px" 
+                TextMode="MultiLine" AutoPostBack="True"></asp:TextBox>
             <br />
             <asp:SqlDataSource ID="SqlDataSource2" runat="server" 
                 ConnectionString="<%$ ConnectionStrings:group3_6_WEBUSER %>" 
@@ -108,7 +117,8 @@
             </asp:SqlDataSource>
             <asp:SqlDataSource ID="SqlDataSource6" runat="server" 
                 ConnectionString="<%$ ConnectionStrings:group3_6_WEBUSER %>" 
-                SelectCommand="SELECT [Service_Name] FROM [Special_Services]">
+                
+                SelectCommand="SELECT [Service_Name], [Service_ID] FROM [Special_Services]">
             </asp:SqlDataSource>
             <asp:SqlDataSource ID="SqlDataSource5" runat="server" 
                 ConnectionString="<%$ ConnectionStrings:group3_6_WEBUSER %>" 
@@ -129,20 +139,12 @@
     </asp:SqlDataSource>
     <asp:SqlDataSource ID="SqlDataSource4" runat="server" 
         ConnectionString="<%$ ConnectionStrings:group3_6_WEBUSER %>" 
-        SelectCommand="SELECT [Event_Name] FROM [Events]"></asp:SqlDataSource>
+        SelectCommand="SELECT [Event_Name], [Event_ID] FROM [Events]"></asp:SqlDataSource>
     <asp:SqlDataSource ID="SqlDataSource7" runat="server" 
         ConnectionString="<%$ ConnectionStrings:group3_6_WEBUSER %>" 
         SelectCommand="SELECT [Inventory_ID] FROM [Inventory]"></asp:SqlDataSource>
     <br />
-    <asp:Button ID="lookup_btn" runat="server" Height="38px" Text="Lookup" 
-        Width="151px" style="margin-left: 0px" onclick="lookup_btn_Click"  />
     <br />
-    <br />
-    <br />
-    <br />
-    <asp:Button ID="submmit_btn" runat="server" BorderColor="Black" BorderStyle="Double"
-        Height="38px" Style="text-align: center" Text="Submit" Width="69px" 
-        onclick="submmit_btn_Click" />
     &nbsp;&nbsp;
     <asp:Button ID="home_btn" runat="server" BorderColor="Black" BorderStyle="Double"
         Height="38px" Style="text-align: center" Text="Home" Width="69px" 
