@@ -8,6 +8,8 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 
+
+
 public partial class EmployeeInformation : System.Web.UI.Page
 {
     private SqlConnection conn = new SqlConnection("Data Source=apcxcs3.apsu.edu;Initial Catalog=group3_6;Persist Security Info=True;User ID=webuser3_6;Password=webuser3_6abc");
@@ -22,6 +24,7 @@ public partial class EmployeeInformation : System.Web.UI.Page
     }
     protected void submit_btn_Click(object sender, EventArgs e)
     {
+        
         if (chooseAction_ddl.SelectedIndex == 1)
         {
             SqlCommand command = new SqlCommand("new_employee", conn);
@@ -37,12 +40,13 @@ public partial class EmployeeInformation : System.Web.UI.Page
             command.Parameters.AddWithValue("@emp_end_date", endDate_tb.Text.ToString());
             command.Parameters.AddWithValue("@emp_pass", password_tb.Text.ToString());
             command.Parameters.AddWithValue("@emp_manager_y_n", manager_chkbx.Text.ToString());
-
+        
             conn.Open();
 
             command.ExecuteNonQuery();
 
             conn.Close();
+           
         }
         if (chooseAction_ddl.SelectedIndex == 3)
         {
@@ -50,7 +54,7 @@ public partial class EmployeeInformation : System.Web.UI.Page
 
             command.CommandType = CommandType.StoredProcedure;
 
-            command.Parameters.AddWithValue("@emp_id", ssn_tb.Text.ToString());
+            command.Parameters.AddWithValue("@emp_id", ID_lbl.Text.ToString());
             command.Parameters.AddWithValue("@emp_ssn", ssn_tb.Text.ToString());
             command.Parameters.AddWithValue("@emp_f_name", FirstName_tb.Text.ToString());
             command.Parameters.AddWithValue("@emp_l_name", lastName_tb.Text.ToString());
@@ -73,11 +77,13 @@ public partial class EmployeeInformation : System.Web.UI.Page
 
             command.CommandType = CommandType.StoredProcedure;
             command.Parameters.AddWithValue("@emp_id", id_tb.Text.ToString());
+            
             conn.Open();
 
             command.ExecuteNonQuery();
 
             conn.Close();
+            
         }
     }
     protected void clear_btn_Click(object sender, EventArgs e)
@@ -104,7 +110,9 @@ public partial class EmployeeInformation : System.Web.UI.Page
     {
         if (chooseAction_ddl.SelectedIndex == 2 || chooseAction_ddl.SelectedIndex == 3)
             chooseemployee_ddl.Visible = true;
+
     }
+
     protected void manager_chkbx_CheckedChanged(object sender, EventArgs e)
     {
 
@@ -123,12 +131,46 @@ public partial class EmployeeInformation : System.Web.UI.Page
     }
     protected void chooseemployee_ddl_SelectedIndexChanged(object sender, EventArgs e)
     {
-        ID_lbl.Text = chooseemployee_ddl.SelectedValue.ToString();
-        LastName_lbl.Text = chooseemployee_ddl.SelectedItem.ToString();
-        ID_lbl.Visible = true;
-        LastName_lbl.Visible = true;
-        id_tb.Visible = false;
-        lastName_tb.Visible = false;
+
+        string ID = chooseemployee_ddl.SelectedValue.ToString();
+        string oString = "Select * from Employees where Emp_ID = @id";
+        SqlCommand oCmd = new SqlCommand(oString, conn);
+        oCmd.Parameters.AddWithValue("@id", ID);
+        SqlDataReader oReader;
+        try
+        {
+
+            conn.Open();
+            oReader = oCmd.ExecuteReader();
+
+            while (oReader.Read())
+            {
+
+                FirstName_tb.Text = oReader["Emp_F_Name"].ToString();
+                lastName_tb.Text = oReader["Emp_L_Name"].ToString();
+                ssn_tb.Text = oReader["Emp_SSN"].ToString();
+                hireDate_tb.Text = oReader["Emp_Hire_Date"].ToString();
+                endDate_tb.Text = oReader["Emp_End_Date"].ToString();
+                phone_tb.Text = oReader["Emp_Phone"].ToString();
+                altPhone_tb.Text = oReader["Emp_Alt_Phone"].ToString();
+                password_tb.Text = oReader["Emp_Pass"].ToString();
+                manager_chkbx.Text = oReader["Emp_Manger_Y_N"].ToString();
+
+            }
+
+        }
+        catch (Exception ex)
+        {
+            
+            ID_lbl.Text = chooseemployee_ddl.SelectedValue.ToString();
+            LastName_lbl.Text = chooseemployee_ddl.SelectedItem.ToString();
+            ID_lbl.Visible = true;
+            LastName_lbl.Visible = true;
+            id_tb.Visible = false;
+            lastName_tb.Visible = false;
+            
+        }
 
     }
+    
 }
