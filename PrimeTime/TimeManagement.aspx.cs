@@ -98,4 +98,8 @@ public partial class TimeManagment : System.Web.UI.Page
     {
         Response.Redirect("Login.aspx");
     }
+    protected void back_btn_Click(object sender, EventArgs e)
+    {
+
+    }
 }

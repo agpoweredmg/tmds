@@ -9,12 +9,12 @@
         .style1
         {
             height: 16px;
-            width: 191px;
+            width: 304px;
         }
         .style2
         {
             height: 23px;
-            width: 191px;
+            width: 304px;
         }
         .style4
         {
@@ -50,7 +50,22 @@
         }
         .style11
         {
+            width: 304px;
+        }
+        .style12
+        {
+            width: 117px;
+            height: 30px;
+        }
+        .style13
+        {
             width: 191px;
+            height: 30px;
+        }
+        .style14
+        {
+            width: 142px;
+            height: 30px;
         }
     </style>
 </head>
@@ -67,7 +82,7 @@
         <tr>
             <th class="style6"></th>
             <th class="style11">
-        <asp:Label ID="Label1" runat="server" Text="Employee Information"></asp:Label>
+        <asp:Label ID="Label1" runat="server" Text="Employee Information Details"></asp:Label>
             </th>
             <th class="style10">
                 <br />
@@ -99,21 +114,21 @@
             <asp:Button ID="submit_btn" runat="server" Text="Submit" Width="61px" 
                 onclick="submit_btn_Click" />
             &nbsp;<asp:Button ID="clear_btn" runat="server" Text="Clear" Width="61px" 
-                style="height: 26px" onclick="clear_btn_Click" />
+                style="height: 26px" onclick="clear_btn_Click" CausesValidation="False" />
             </td>
         </tr>
 
         <tr>
-        <td class="style6">
+        <td class="style12">
             Last Name:</td>
-        <td class="style11">
+        <td class="style13">
             <asp:TextBox ID="lastName_tb" runat="server"></asp:TextBox>
             <asp:Label ID="LastName_lbl" runat="server" Text="Label" Visible="False"></asp:Label>
             <asp:RegularExpressionValidator ID="LastName_RegEx" runat="server" 
                 ControlToValidate="lastName_tb" ErrorMessage="Last Name is not valid." 
                 ForeColor="Maroon" ValidationExpression="^[a-zA-Z''-'\s]{1,40}$">*</asp:RegularExpressionValidator>
             </td>
-        <td class="style10">
+        <td class="style14">
             <asp:DropDownList ID="chooseAction_ddl" runat="server" 
                 onselectedindexchanged="chooseAction_ddl_SelectedIndexChanged" 
                 AutoPostBack="True">

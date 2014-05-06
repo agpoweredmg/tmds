@@ -87,7 +87,7 @@ public partial class editEventInfo : System.Web.UI.Page
             eventName_tb.Visible = false;
             EventID_lbl.Visible = true;
             EventName_lbl.Visible = true;
-           
+
         }
         else
             if (actionToPerform_ddl.SelectedIndex == 0 || actionToPerform_ddl.SelectedIndex == 1)
@@ -98,15 +98,42 @@ public partial class editEventInfo : System.Web.UI.Page
                 eventID_tb.Visible = true;
                 eventName_tb.Visible = true;
             }
-           
+
     }
     protected void EventName_ddl_SelectedIndexChanged(object sender, EventArgs e)
     {
-        eventID_tb.Visible = false;
-        EventID_lbl.Text = EventID_ddl.SelectedValue.ToString();
-        EventID_lbl.Visible = true;
-        EventName_lbl.Text = EventID_ddl.SelectedItem.ToString();
-        EventName_lbl.Visible = true;
-        eventName_tb.Visible = false;
+
+        string ID = EventID_ddl.SelectedValue.ToString();
+        string oString = "Select * from Events where Event_ID = @id";
+        SqlCommand oCmd = new SqlCommand(oString, conn);
+        oCmd.Parameters.AddWithValue("@id", ID);
+        SqlDataReader oReader;
+        try
+        {
+
+            conn.Open();
+            oReader = oCmd.ExecuteReader();
+
+            while (oReader.Read())
+            {
+
+                eventLocation_tb.Text = oReader["Event_Location"].ToString();
+                eventDate_tb.Text = oReader["Event_Date"].ToString();
+
+
+            }
+
+        }
+        catch (Exception ex)
+        {
+
+
+            eventID_tb.Visible = false;
+            EventID_lbl.Text = EventID_ddl.SelectedValue.ToString();
+            EventID_lbl.Visible = true;
+            EventName_lbl.Text = EventID_ddl.SelectedItem.ToString();
+            EventName_lbl.Visible = true;
+            eventName_tb.Visible = false;
+        }
     }
 }

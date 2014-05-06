@@ -15,8 +15,7 @@
                     <td>
                     </td>
                     <th>
-                        Edit Accounts Information
-                    </th>
+                        Accounts Information Details</th>
                     <td>
                     </td>
                 </tr>
@@ -30,7 +29,7 @@
         <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" 
             ControlToValidate="accountID_tb" ErrorMessage="The Account ID is required" 
                             ForeColor="Maroon">*</asp:RequiredFieldValidator>
-                        <asp:Label ID="AccountID_lbl" runat="server" Text="Label"></asp:Label>
+                        <asp:Label ID="AccountID_lbl" runat="server" Text="Label" Visible="False"></asp:Label>
                     </td>
                     <td>
                         <asp:Button ID="submit_btn" runat="server" Text="Submit" 
