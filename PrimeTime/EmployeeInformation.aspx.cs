@@ -53,7 +53,11 @@ public partial class EmployeeInformation : System.Web.UI.Page
             SqlCommand command = new SqlCommand("update_employee", conn);
 
             command.CommandType = CommandType.StoredProcedure;
-
+            int num = 0;
+            if (manager_chkbx.Checked == true)
+            {
+                num = 1;
+            }
             command.Parameters.AddWithValue("@emp_id", ID_lbl.Text.ToString());
             command.Parameters.AddWithValue("@emp_ssn", ssn_tb.Text.ToString());
             command.Parameters.AddWithValue("@emp_f_name", FirstName_tb.Text.ToString());
@@ -63,7 +67,7 @@ public partial class EmployeeInformation : System.Web.UI.Page
             command.Parameters.AddWithValue("@emp_hir_date", hireDate_tb.Text.ToString());
             command.Parameters.AddWithValue("@emp_end_date", endDate_tb.Text.ToString());
             command.Parameters.AddWithValue("@emp_pass", password_tb.Text.ToString());
-            command.Parameters.AddWithValue("@emp_manager_y_n", manager_chkbx.Text.ToString());
+            command.Parameters.AddWithValue("@emp_manager_y_n", num);
 
             conn.Open();
 
@@ -76,7 +80,7 @@ public partial class EmployeeInformation : System.Web.UI.Page
             SqlCommand command = new SqlCommand("delete_employee", conn);
 
             command.CommandType = CommandType.StoredProcedure;
-            command.Parameters.AddWithValue("@emp_id", id_tb.Text.ToString());
+            command.Parameters.AddWithValue("@emp_id", chooseemployee_ddl.SelectedValue.ToString());
             
             conn.Open();
 

@@ -47,9 +47,6 @@
                     </th>
                     <th class="style2">
                         <asp:TextBox ID="supplierID_tb" runat="server"></asp:TextBox>
-                        <asp:RequiredFieldValidator ID="SupplierID_rf" runat="server" 
-                            ControlToValidate="supplierID_tb" ErrorMessage="Supplier ID is required" 
-                            ForeColor="Maroon">*</asp:RequiredFieldValidator>
                         &nbsp;&nbsp;&nbsp;
                         <asp:Label ID="SupplierID_lbl" runat="server" Text="Label" Visible="False"></asp:Label>
                     </th>
@@ -115,7 +112,7 @@
                         Supplier Fax:
                     </th>
                     <th class="style2">
-                        <asp:TextBox ID="supplierFax_tb" runat="server"></asp:TextBox>
+                        <asp:TextBox ID="supplierFax_tb" runat="server" Height="22px"></asp:TextBox>
                         <asp:RegularExpressionValidator ID="SupplierFax_RegEx" runat="server" 
                             ControlToValidate="supplierFax_tb" ErrorMessage="RegularExpressionValidator" 
                             ForeColor="Maroon" 
@@ -168,9 +165,6 @@
                     <th class="style2">
                     &nbsp;&nbsp;&nbsp;
                         <asp:TextBox ID="SupplierSuiteNo_tb" runat="server"></asp:TextBox>
-                        <asp:CompareValidator ID="SupplierSuiteNo_cv" runat="server" 
-                            ControlToValidate="SupplierSuiteNo_tb" ErrorMessage="Suite No must be numeric." 
-                            Operator="DataTypeCheck" Type="Integer">*</asp:CompareValidator>
                     </th>
                     <th>
                         &nbsp;
