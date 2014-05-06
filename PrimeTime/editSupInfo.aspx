@@ -47,9 +47,6 @@
                     </th>
                     <th class="style2">
                         <asp:TextBox ID="supplierID_tb" runat="server"></asp:TextBox>
-                        <asp:RequiredFieldValidator ID="SupplierID_rf" runat="server" 
-                            ControlToValidate="supplierID_tb" ErrorMessage="Supplier ID is required" 
-                            ForeColor="Maroon">*</asp:RequiredFieldValidator>
                         &nbsp;&nbsp;&nbsp;
                         <asp:Label ID="SupplierID_lbl" runat="server" Text="Label" Visible="False"></asp:Label>
                     </th>
@@ -102,7 +99,7 @@
 
                     </th>
                     <th>
-                        <asp:DropDownList ID="choosesupplierid_ddl" runat="server" AutoPostBack="True" 
+                        <asp:DropDownList ID="choosesupplierid_ddl" runat="server" 
                             Visible="False" DataSourceID="SqlDataSource1" 
                             DataTextField="Supplier_Name" DataValueField="Supplier_ID" 
                             onselectedindexchanged="choosesupplierid_ddl_SelectedIndexChanged">
@@ -115,7 +112,7 @@
                         Supplier Fax:
                     </th>
                     <th class="style2">
-                        <asp:TextBox ID="supplierFax_tb" runat="server"></asp:TextBox>
+                        <asp:TextBox ID="supplierFax_tb" runat="server" Height="22px"></asp:TextBox>
                         <asp:RegularExpressionValidator ID="SupplierFax_RegEx" runat="server" 
                             ControlToValidate="supplierFax_tb" ErrorMessage="RegularExpressionValidator" 
                             ForeColor="Maroon" 
@@ -164,14 +161,10 @@
                 </tr>
                 <tr>
                     <th>
-                        Supplier City:
-                    </th>
+                        &nbsp;Supplier Suite No:</th>
                     <th class="style2">
-                        <asp:TextBox ID="supplierCity_tb" runat="server"></asp:TextBox>
-                        <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" 
-                            ControlToValidate="supplierCity_tb" ErrorMessage="RegularExpressionValidator" 
-                            ForeColor="Maroon" ValidationExpression="[a-zA-Z._^%$#!~@,-]+.">*</asp:RegularExpressionValidator>
                     &nbsp;&nbsp;&nbsp;
+                        <asp:TextBox ID="SupplierSuiteNo_tb" runat="server"></asp:TextBox>
                     </th>
                     <th>
                         &nbsp;
@@ -179,39 +172,51 @@
                 </tr>
                 <tr>
                     <th>
-                        Supplier State:
-                    </th>
+                        &nbsp;Supplier City:</th>
                     <th class="style2">
+                    &nbsp;<asp:TextBox ID="supplierCity_tb" runat="server"></asp:TextBox>
+                        <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" 
+                            ControlToValidate="supplierCity_tb" ErrorMessage="RegularExpressionValidator" 
+                            ForeColor="Maroon" ValidationExpression="[a-zA-Z._^%$#!~@,-]+.">*</asp:RegularExpressionValidator>
+                        &nbsp;
+                    </th>
+                    <th>
+                        &nbsp;
+                    </th>
+                </tr>
+                <tr>
+                    <th class="style1">
+                        Supplier State:</th>
+                    <th class="style3">
                         <asp:TextBox ID="supplierState_tb" runat="server"></asp:TextBox>
-                        <asp:RegularExpressionValidator ID="SupplierState_RegEx" runat="server" 
+&nbsp;<asp:RegularExpressionValidator ID="SupplierState_RegEx" runat="server" 
                             ControlToValidate="supplierState_tb" ErrorMessage="State must be abbreviated to 2 capital letters.  (ex. VA)" 
                             ForeColor="Maroon" 
                             
                             
                             
                             ValidationExpression="^(A[LKSZAEP]|C[AOT]|D[EC]|F[LM]|G[ANU]|HI|I[ADLN]|K[SY]|LA|M[ADEHINOPST]|N[CDEHJMVY]|O[HKR]|P[ARW]|RI|S[CD]|T[NX]|UT|V[AIT]|W[AIVY])$">*</asp:RegularExpressionValidator>
-                    &nbsp;&nbsp;&nbsp;
+                        &nbsp;&nbsp;
                     </th>
-                    <th>
+                    <th class="style1">
                         &nbsp;
                     </th>
                 </tr>
+
                 <tr>
-                    <th class="style1">
-                        Supplier Zip:
-                    </th>
-                    <th class="style3">
+                <td>
+                    <strong>Supplier Zip:</strong>
+                </td>
+                <td>
                         <asp:TextBox ID="supplierZip_tb" runat="server"></asp:TextBox>
                         <asp:RegularExpressionValidator ID="SupplierZip_RegEx" runat="server" 
                             ControlToValidate="supplierZip_tb" ErrorMessage="Invalid Zip Code" 
                             ForeColor="Maroon" 
                             
                             ValidationExpression="^(\d{5}-\d{4}|\d{5}|\d{9})$|^([a-zA-Z]\d[a-zA-Z] \d[a-zA-Z]\d)$">*</asp:RegularExpressionValidator>
-&nbsp;&nbsp;&nbsp;
-                    </th>
-                    <th class="style1">
-                        &nbsp;
-                    </th>
+                </td>
+                <td>
+                </td>
                 </tr>
             </table>
         </center>

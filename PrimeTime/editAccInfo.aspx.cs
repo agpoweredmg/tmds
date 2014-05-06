@@ -40,6 +40,24 @@ public partial class editAccInfo : System.Web.UI.Page
     protected void submit_btn_Click(object sender, EventArgs e)
     {
 
+        if (actionToPerform_ddl.SelectedIndex == 1)
+        {
+            SqlCommand command = new SqlCommand("new_acct", conn);
+
+            command.CommandType = CommandType.StoredProcedure;
+
+            command.Parameters.AddWithValue("@Acct_Bal", accountBalance_tb.Text.ToString());
+            command.Parameters.AddWithValue("@Amt_Due", amountDue_tb.Text.ToString());
+            command.Parameters.AddWithValue("@Date_Due", dateDue_tb.Text.ToString());
+
+
+            conn.Open();
+
+            command.ExecuteNonQuery();
+
+            conn.Close();
+        }
+      
     }
     protected void actionToPerform_ddl_SelectedIndexChanged(object sender, EventArgs e)
     {

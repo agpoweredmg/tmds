@@ -26,9 +26,6 @@
                     <td>
                         <asp:TextBox ID="accountID_tb" runat="server" 
                             ontextchanged="accountID_tb_TextChanged"></asp:TextBox>
-        <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" 
-            ControlToValidate="accountID_tb" ErrorMessage="The Account ID is required" 
-                            ForeColor="Maroon">*</asp:RequiredFieldValidator>
                         <asp:Label ID="AccountID_lbl" runat="server" Text="Label" Visible="False"></asp:Label>
                     </td>
                     <td>
@@ -62,10 +59,6 @@
                     </td>
                     <td>
                         <asp:TextBox ID="amountDue_tb" runat="server"></asp:TextBox>
-        <asp:RangeValidator ID="RangeValidator1" runat="server" 
-            ControlToValidate="amountDue_tb" 
-            ErrorMessage="Amount due must be greater than 0" MaximumValue="100000" 
-            MinimumValue="0" ForeColor="Maroon">*</asp:RangeValidator>
                     </td>
                     <td>
                         &nbsp;

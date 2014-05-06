@@ -56,13 +56,42 @@ public partial class ServicesInformation : System.Web.UI.Page
     }
     protected void SelectServiceID_ddl_SelectedIndexChanged(object sender, EventArgs e)
     {
-        ServiceName_lbl.Text = SelectServiceID_ddl.SelectedItem.ToString();
-        ServiceID_lbl.Text = SelectServiceID_ddl.SelectedValue.ToString();
-        ServiceID_lbl.Visible = true;
-        ServiceName_lbl.Visible = true;
-        ServiceID_tb.Visible = false;
-        ServiceName_tb.Visible = false;
+        string ID = SelectServiceID_ddl.SelectedValue.ToString();
+        string oString = "Select * from Special_Services where Service_ID = @id";
+        SqlCommand oCmd = new SqlCommand(oString, conn);
+        oCmd.Parameters.AddWithValue("@id", ID);
+        SqlDataReader oReader;
+        try
+        {
+
+            conn.Open();
+            oReader = oCmd.ExecuteReader();
+
+            while (oReader.Read())
+            {
+
+                ServiceID_tb.Text = oReader["Service_ID"].ToString();
+                ServiceName_tb.Text = oReader["Service_Name"].ToString();
+                ServicePrice_tb.Text = oReader["Service_Price"].ToString();
+
+
+            }
+
+        }
+        catch (Exception ex)
+        {
+
+
+            ServiceName_lbl.Text = SelectServiceID_ddl.SelectedItem.ToString();
+            ServiceID_lbl.Text = SelectServiceID_ddl.SelectedValue.ToString();
+            ServiceID_lbl.Visible = true;
+            ServiceName_lbl.Visible = true;
+            ServiceID_tb.Visible = false;
+            ServiceName_tb.Visible = false;
+        }
     }
+
+
     protected void Submit_btn_Click(object sender, EventArgs e)
     {
 
@@ -72,9 +101,8 @@ public partial class ServicesInformation : System.Web.UI.Page
 
             command.CommandType = CommandType.StoredProcedure;
 
-            command.Parameters.AddWithValue("@srvice_name", ServiceName_tb.Text.ToString());
-            command.Parameters.AddWithValue("@service_price", ServicePrice_tb.Text.ToString());
-
+            command.Parameters.AddWithValue("@Srvice_Name", ServiceName_tb.Text.ToString());
+            command.Parameters.AddWithValue("@Service_Price", ServicePrice_tb.Text.ToString());
 
             conn.Open();
 
@@ -82,13 +110,16 @@ public partial class ServicesInformation : System.Web.UI.Page
 
             conn.Close();
         }
+
         if (ChooseSpecialServices_ddl.SelectedIndex == 2)
         {
-            SqlCommand command = new SqlCommand("delete_Special_Services", conn);
+            SqlCommand command = new SqlCommand("delete_special_services", conn);
 
             command.CommandType = CommandType.StoredProcedure;
+            command.Parameters.AddWithValue("@Service_ID", SelectServiceID_ddl.SelectedValue.ToString());
 
-            command.Parameters.AddWithValue("@Service_ID", ServiceID_lbl.Text.ToString());
+
+
 
 
 
@@ -99,5 +130,6 @@ public partial class ServicesInformation : System.Web.UI.Page
             conn.Close();
         }
     }
+    }
 
-}
+
