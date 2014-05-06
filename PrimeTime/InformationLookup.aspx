@@ -145,14 +145,12 @@
         SelectCommand="SELECT [Inventory_ID] FROM [Inventory]"></asp:SqlDataSource>
     <br />
     <br />
-<<<<<<< HEAD
-=======
+
     <br />
     <br />
     <asp:Button ID="submmit_btn" runat="server" BorderColor="Black" BorderStyle="Double"
         Height="38px" Style="text-align: center" Text="Submit" Width="69px" 
         onclick="submmit_btn_Click" />
->>>>>>> 0c370192a178321f1374e16a2a0d061070f6ca79
     &nbsp;&nbsp;
     <asp:Button ID="home_btn" runat="server" BorderColor="Black" BorderStyle="Double"
         Height="38px" Style="text-align: center" Text="Home" Width="69px" 

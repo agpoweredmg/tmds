@@ -290,4 +290,8 @@ public partial class InformationLookup : System.Web.UI.Page
             conn.Close();
         }
     }
+    protected void submmit_btn_Click(object sender, EventArgs e)
+    {
+
+    }
 }
