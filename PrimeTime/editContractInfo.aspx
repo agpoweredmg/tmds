@@ -17,8 +17,7 @@
                         <td>
                         </td>
                         <th>
-                            Edit Contracts Information
-                        </th>
+                            Contracts Information Details</th>
                         <td>
                         </td>
                     </tr>
@@ -37,7 +36,7 @@
                             <asp:Button ID="submit_btn" runat="server" Text="Submit" 
                                 onclick="submit_btn_Click" />&nbsp;&nbsp;&nbsp;&nbsp;
                             <asp:Button ID="clear_btn" runat="server" Text="Clear" Width="61px" 
-                                onclick="clear_btn_Click" />
+                                onclick="clear_btn_Click" CausesValidation="False" />
                         </td>
                     </tr>
                     <tr>
@@ -86,7 +85,8 @@
                             <asp:DropDownList ID="chooseContract_ddl" runat="server" AutoPostBack="True" 
                                 DataSourceID="SqlDataSource1" DataTextField="Contract_ID" 
                                 DataValueField="Acct_ID" 
-                                onselectedindexchanged="chooseContract_ddl_SelectedIndexChanged">
+                                onselectedindexchanged="chooseContract_ddl_SelectedIndexChanged" 
+                                Visible="False">
                                 <asp:ListItem Value="0">Choose Contract:</asp:ListItem>
                             </asp:DropDownList>
                         </td>
@@ -137,8 +137,6 @@
                 onclick="home_btn_Click" CausesValidation="False" />&nbsp;&nbsp;&nbsp;&nbsp;
             <asp:Button ID="logout_btn" runat="server" Text="Logout" Height="38px" 
                 Width="68px" onclick="logout_btn_Click" CausesValidation="False" />
-            <br />
-            <br />
             <asp:SqlDataSource ID="SqlDataSource1" runat="server" 
                 ConnectionString="<%$ ConnectionStrings:group3_6_WEBUSER %>" 
                 SelectCommand="SELECT * FROM [Contract_Details]"></asp:SqlDataSource>

@@ -21,7 +21,7 @@
                     <th>
                     </th>
                     <th class="style1">
-                        Edit Events Information
+                        Events Information Details
                     </th>
                     <th>
                     </th>

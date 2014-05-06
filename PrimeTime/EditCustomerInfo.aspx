@@ -5,6 +5,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
+    <style type="text/css">
+        .style1
+        {
+            width: 363px;
+        }
+    </style>
     </head>
 <body>
     <form id="form1" runat="server">
@@ -14,8 +20,8 @@
     <table>
     <tr>
     <td></td>
-    <th>
-        Edit Customer Information
+    <th class="style1">
+        Customer Information Details
     </td>
     <td></td>
     </tr>
@@ -24,16 +30,15 @@
     <td>
     Customer ID:
     </td>
-    <th>
+    <th class="style1">
     
 
-        <asp:TextBox ID="customerID_tb" runat="server" 
+        &nbsp;<asp:TextBox ID="customerID_tb" runat="server" 
             ontextchanged="customerID_tb_TextChanged" Height="22px"></asp:TextBox>
 
     
     </td>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    <td>
+       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; <td>
     
         <asp:Button ID="Submit_btn" runat="server" Text="Submit" 
             onclick="Submit_btn_Click" />
@@ -47,7 +52,7 @@
     <tr>
     <td>
         First Name:</td>
-    <td>
+    <td class="style1">
     
         <asp:TextBox ID="FirstName_tb" runat="server" 
             ontextchanged="FirstName_tb_TextChanged"></asp:TextBox>
@@ -60,7 +65,8 @@
     
         <asp:DropDownList ID="ChooseCustomerActions_ddl" runat="server" 
             DataTextField="Customer_ID" 
-            DataValueField="Customer_ID">
+            DataValueField="Customer_ID" 
+            onselectedindexchanged="ChooseCustomerActions_ddl_SelectedIndexChanged">
             <asp:ListItem Value="0">Choose an Action</asp:ListItem>
             <asp:ListItem Value="1">Add Customer</asp:ListItem>
             <asp:ListItem Value="2">Delete Customer</asp:ListItem>
@@ -72,7 +78,7 @@
     <tr>
     <td>
         Last Name:</td>
-    <td>
+    <td class="style1">
     
         <asp:TextBox ID="LastName_tb" runat="server"></asp:TextBox>
         <asp:RegularExpressionValidator ID="LastName_RegEx" runat="server" 
@@ -87,7 +93,7 @@
     <tr>
     <td>
         Phone Number:</td>
-    <td>
+    <td class="style1">
     
         <asp:TextBox ID="PhoneNumber_tb" runat="server"></asp:TextBox>
         <asp:RegularExpressionValidator ID="PhoneNumber_RegEx" runat="server" 
@@ -105,7 +111,7 @@
     <tr>
     <td>
         Alternate Number:</td>
-    <td>
+    <td class="style1">
     
         <asp:TextBox ID="AlternateNumber_tb" runat="server"></asp:TextBox>
         <asp:RegularExpressionValidator ID="AlternateNumber_RegEx" runat="server" 
@@ -123,7 +129,7 @@
     <tr>
     <td>
         Email:</td>
-    <td>
+    <td class="style1">
     
         <asp:TextBox ID="Email_tb" runat="server"></asp:TextBox>
         <asp:RegularExpressionValidator ID="Email_RegEx" runat="server" 
@@ -141,6 +147,8 @@
         Width="68px" OnClick="home_btn_Click" CausesValidation="False" />&nbsp;&nbsp;&nbsp;&nbsp;<asp:Button 
             ID="logout_btn" runat="server" Text="Logout" Height="38px"
         Width="68px" OnClick="logout_btn_Click" CausesValidation="False" />
+        <br />
+        <br />
         <br />
         <asp:ValidationSummary ID="EditCustomerInfo_vs" runat="server" 
             ForeColor="Maroon" HeaderText="You received the following Errors:" />

@@ -162,16 +162,11 @@
                 </td>
     </tr>
     </table>
-        &nbsp;<asp:ValidationSummary 
+        <asp:ValidationSummary 
         ID="ValidationSummary1" runat="server" ForeColor="Red" />
     <br />
                 
-    <br />
-    <br />
-
-   
-
-                <b>
+    <b>
                 <asp:Button ID="clear_btn" runat="server" BorderColor="Black" BorderStyle="Double"
                     Height="38px" Style="text-align: center" Text="Clear" Width="69px" 
                     onclick="clear_btn_Click" CausesValidation="False" />
