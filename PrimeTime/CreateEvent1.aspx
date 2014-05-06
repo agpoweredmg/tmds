@@ -31,7 +31,7 @@
                 Create Customer</div>
 
             <asp:Panel ID="Panel1" runat="server" BorderColor="Black" Font-Size="Medium" GroupingText="Customers Information"
-                Height="539px" Style="text-align: justify" Width="1112px">
+                Height="407px" Style="text-align: justify" Width="1112px">
                 <br />
                 <table>
                     <tr>

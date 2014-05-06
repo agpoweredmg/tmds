@@ -155,7 +155,7 @@ public partial class CreateEvent1 : System.Web.UI.Page
     }
     protected void logout_btn_Click(object sender, EventArgs e)
     {
-
+        Response.Redirect("login.aspx");
     }
     protected void custId_ddl_SelectedIndexChanged(object sender, EventArgs e)
     {
