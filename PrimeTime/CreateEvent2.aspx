@@ -61,12 +61,13 @@
                         <td>
                             <asp:DropDownList ID="mealDetails_ddl" runat="server" Height="16px" Width="183px" 
                                 DataSourceID="SqlDataSource_Entree" DataTextField="Item_Name" 
-                                DataValueField="Item_Name" AutoPostBack="True">
+                                DataValueField="Entree_ID" AutoPostBack="True" 
+                                onselectedindexchanged="mealDetails_ddl_SelectedIndexChanged">
                             </asp:DropDownList>
                             <asp:SqlDataSource ID="SqlDataSource_Entree" runat="server" 
                                 ConnectionString="<%$ ConnectionStrings:group3_6_WEBUSER %>" 
                                 
-                                SelectCommand="SELECT [Unprepared_Item_ID], [Item_Name] FROM [Unprepared_Item]"></asp:SqlDataSource>
+                                SelectCommand="SELECT * FROM [ENTREE_ITEMS]"></asp:SqlDataSource>
                         </td>
                         <td>Qtn.:<asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" 
                                 ControlToValidate="entreeQtn_txt" 
@@ -85,18 +86,18 @@
                         <td>
                             <asp:DropDownList ID="side1_ddl" runat="server" Height="16px" Width="183px" 
                                 DataSourceID="SqlDataSource_Sides" DataTextField="Item_Name" 
-                                DataValueField="Item_Name" AutoPostBack="True">
+                                DataValueField="Side_ID" AutoPostBack="True">
                             </asp:DropDownList>
                             <asp:SqlDataSource ID="SqlDataSource_Sides" runat="server" 
                                 ConnectionString="<%$ ConnectionStrings:group3_6_WEBUSER %>" 
                                 
-                                SelectCommand="SELECT [Unprepared_Item_ID], [Item_Name] FROM [Unprepared_Item]"></asp:SqlDataSource>
+                                SelectCommand="SELECT * FROM [SIDE_ITEMS]"></asp:SqlDataSource>
                         </td>
                         <td>Side2:</td>
                         <td>
                             <asp:DropDownList ID="side2_ddl" runat="server" Height="16px" Width="183px" 
                                 DataSourceID="SqlDataSource_Sides" DataTextField="Item_Name" 
-                                DataValueField="Item_Name" AutoPostBack="True">
+                                DataValueField="Side_ID" AutoPostBack="True">
                             </asp:DropDownList>
                         </td>
                     </tr>
@@ -108,12 +109,13 @@
                
                 <b>
                 <asp:ListBox ID="services_listBox" runat="server" DataSourceID="services" 
-                    DataTextField="Service_Name" DataValueField="Service_Name" Width="201px" 
+                    DataTextField="Service_Name" DataValueField="Service_ID" Width="201px" 
                     SelectionMode="Multiple">
                 </asp:ListBox>
                 <asp:SqlDataSource ID="services" runat="server" 
                     ConnectionString="<%$ ConnectionStrings:group3_6_WEBUSER %>" 
-                    SelectCommand="SELECT [Service_Name] FROM [Special_Services]">
+                    
+                    SelectCommand="SELECT [Service_ID], [Service_Name] FROM [Special_Services]">
                 </asp:SqlDataSource>
                 </b>
                
@@ -178,13 +180,6 @@
         BorderStyle="Double" Height="38px" style="text-align: center" Text="Submit" 
         Width="69px" onclick="submit_btn_Click" />
 
-   &nbsp;&nbsp;
-
-
-
-        <asp:Button ID="back_btn" runat="server" BorderColor="Black" 
-        BorderStyle="Double" Height="38px" style="text-align: center" Text="&lt;&lt;Back" 
-        Width="69px" onclick="back_btn_Click" CausesValidation="False" />
     &nbsp;&nbsp;
 
 

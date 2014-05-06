@@ -120,6 +120,8 @@ public partial class editEventInfo : System.Web.UI.Page
                 EventName_lbl.Text = oReader["Event_Name"].ToString();
                 eventLocation_tb.Text = oReader["Event_Location"].ToString();
                 eventDate_tb.Text = oReader["Event_Date"].ToString();
+                EventID_lbl.Text = oReader["Event_ID"].ToString();
+
 
 
             }

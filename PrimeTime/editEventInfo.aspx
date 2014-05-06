@@ -91,10 +91,6 @@
                     </th>
                     <th class="style1">
                         <asp:TextBox ID="eventDate_tb" runat="server"></asp:TextBox>
-        <asp:RegularExpressionValidator ID="eventDate_RegEx" runat="server" 
-            ErrorMessage="The Date Due must be in MM/DD/YYYY format" 
-            ControlToValidate="eventDate_tb" ValidationExpression="[0-9]{2}/[0-9]{2}/[0-9]{4}" 
-                            ForeColor="Maroon">*</asp:RegularExpressionValidator>
                     </th>
                     <th>
                         &nbsp;

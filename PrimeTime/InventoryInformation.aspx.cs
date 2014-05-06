@@ -80,11 +80,44 @@ public partial class InventoryInformation : System.Web.UI.Page
     }
     protected void ChooseInventoryID_ddl_SelectedIndexChanged(object sender, EventArgs e)
     {
-        ID_lbl.Text = ChooseInventoryID_ddl.SelectedItem.ToString();
-        Name_lbl.Text = ChooseInventoryID_ddl.SelectedValue.ToString();
-        ID_lbl.Visible = true;
-        id_tb.Visible = false;
-        name_tb.Visible = false;
-        Name_lbl.Visible = true;
+
+       string ID = ChooseInventoryID_ddl.SelectedValue.ToString();
+        string oString = "Select * from Inventory where Inventory_ID = @id";
+        SqlCommand oCmd = new SqlCommand(oString, conn);
+        oCmd.Parameters.AddWithValue("@id", ID);
+        SqlDataReader oReader;
+        try
+        {
+
+            conn.Open();
+            oReader = oCmd.ExecuteReader();
+
+            while (oReader.Read())
+            {
+
+                id_tb.Text = oReader["Inventory_ID"].ToString();
+                name_tb.Text = oReader["Item_Name"].ToString();
+               category_tb.Text = oReader["Emp_SSN"].ToString();
+                cost_tb.Text = oReader["Emp_Hire_Date"].ToString();
+                expirationDate_tb.Text = oReader["Expiry_Date"].ToString();
+                quantityOnHand_tb.Text = oReader["QOH"].ToString();
+                minimum_tb.Text = oReader["Min_Amt"].ToString();
+                maximum_tb.Text = oReader["Max_Amt"].ToString();
+
+
+            }
+
+        }
+        catch (Exception ex)
+        {
+
+
+            ID_lbl.Text = ChooseInventoryID_ddl.SelectedItem.ToString();
+            Name_lbl.Text = ChooseInventoryID_ddl.SelectedValue.ToString();
+            ID_lbl.Visible = true;
+            id_tb.Visible = false;
+            name_tb.Visible = false;
+            Name_lbl.Visible = true;
+        }
     }
 }

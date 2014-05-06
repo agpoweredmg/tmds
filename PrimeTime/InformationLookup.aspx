@@ -145,13 +145,29 @@
         SelectCommand="SELECT [Inventory_ID] FROM [Inventory]"></asp:SqlDataSource>
     <br />
     <br />
+<<<<<<< HEAD
+=======
+
+>>>>>>> 6bcadf3550486304c15d03ae2a90ae3063a1502c
     <br />
     <br />
     <asp:Button ID="submit_btn" runat="server" BorderColor="Black" BorderStyle="Double"
         Height="38px" Style="text-align: center" Text="Submit" Width="69px" 
         onclick="submmit_btn_Click" />
+<<<<<<< HEAD
+
+=======
+=======
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> ca7923aa915c1fc234246a83180487faae49ceaa
+        onclick="submit_btn_Click" />
+>>>>>>> 6bcadf3550486304c15d03ae2a90ae3063a1502c
+
+
+>>>>>>> 1f58e9ffd3be0e8a1537373e14645b225dd2557d
     &nbsp;&nbsp;
     <asp:Button ID="home_btn" runat="server" BorderColor="Black" BorderStyle="Double"
         Height="38px" Style="text-align: center" Text="Home" Width="69px" 
