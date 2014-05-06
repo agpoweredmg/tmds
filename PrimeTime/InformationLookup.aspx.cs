@@ -301,4 +301,8 @@ public partial class InformationLookup : System.Web.UI.Page
     {
 
     }
+    protected void submit_btn_Click(object sender, EventArgs e)
+    {
+
+    }
 }
