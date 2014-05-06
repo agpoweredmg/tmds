@@ -12,7 +12,8 @@
     
         <asp:GridView ID="GridView1" runat="server" AllowPaging="True" 
             AutoGenerateColumns="False" CellPadding="4" DataKeyNames="Emp_ID" 
-            DataSourceID="SqlDataSource1" ForeColor="#333333" GridLines="None">
+            DataSourceID="SqlDataSource1" ForeColor="#333333" GridLines="None" 
+            Caption="Employee Report">
             <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
             <Columns>
                 <asp:BoundField DataField="Emp_ID" HeaderText="Employee ID" ReadOnly="True" 

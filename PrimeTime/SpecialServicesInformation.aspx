@@ -9,6 +9,15 @@
         {
             width: 225px;
         }
+        .style2
+        {
+            height: 45px;
+        }
+        .style3
+        {
+            width: 187px;
+            height: 45px;
+        }
     </style>
  </head>
 <body>
@@ -36,12 +45,6 @@
         <td class="style1">
             <asp:TextBox ID="ServiceID_tb" runat="server"></asp:TextBox>
 
-            <asp:RequiredFieldValidator ID="ServiceID_rf" runat="server" 
-                ControlToValidate="ServiceID_tb" ErrorMessage="Service ID is required." 
-                ForeColor="Maroon">*</asp:RequiredFieldValidator>
-            <asp:CompareValidator ID="ServiceID_cv" runat="server" 
-                ControlToValidate="ServiceID_tb" ErrorMessage="Service ID must be numeric." 
-                ForeColor="Maroon" Operator="DataTypeCheck" Type="Integer">*</asp:CompareValidator>
             <asp:Label ID="ServiceID_lbl" runat="server" Text="Label" Visible="False"></asp:Label>
 
         </td>
@@ -78,17 +81,25 @@
          </tr>
 
         <tr>
-        <td>
+        <td class="style2">
             Service Price:
         </td>
-        <td class="style1">
+        <td class="style3">
             <asp:TextBox ID="ServicePrice_tb" runat="server"></asp:TextBox>
+<<<<<<< HEAD
+&nbsp;<asp:RangeValidator ID="ServicePrice2_rv" runat="server" 
+                ControlToValidate="ServicePrice_tb" 
+                ErrorMessage="Service Price must be between zero and 100,000." 
+                ForeColor="Maroon" MaximumValue="50000" MinimumValue="0">*</asp:RangeValidator>
+
+=======
             <asp:RangeValidator ID="ServicePrice2_rv" runat="server" 
                 ControlToValidate="ServicePrice_tb" 
                 ErrorMessage="Service Price must be between zero and 50,000." 
                 ForeColor="Maroon" MaximumValue="50000" MinimumValue="0">*</asp:RangeValidator>
+>>>>>>> 885f6326ec09bcb4ce818a354c606d588c97f7e1
         </td>
-        <td>
+        <td class="style2">
             <asp:DropDownList ID="SelectServiceID_ddl" runat="server" AutoPostBack="True" 
                 DataSourceID="SqlDataSource1" DataTextField="Service_Name" 
                 DataValueField="Service_ID" 

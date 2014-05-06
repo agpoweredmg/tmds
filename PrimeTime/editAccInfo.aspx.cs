@@ -4,9 +4,14 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Data;
+using System.Data.SqlClient;
+using System.Drawing;
 
 public partial class editAccInfo : System.Web.UI.Page
 {
+    private SqlConnection conn = new SqlConnection("Data Source=apcxcs3.apsu.edu;Initial Catalog=group3_6;Persist Security Info=True;User ID=webuser3_6;Password=webuser3_6abc");
+    private SqlCommand command;
 
     protected void Page_Load(object sender, EventArgs e)
     {
@@ -40,26 +45,51 @@ public partial class editAccInfo : System.Web.UI.Page
     {
         if (actionToPerform_ddl.SelectedIndex == 2 || actionToPerform_ddl.SelectedIndex == 3)
             AccountID_ddl.Visible = true;
-            
+
     }
     protected void home_btn_Click(object sender, EventArgs e)
     {
         Response.Redirect("mgmtTasks.aspx");
     }
     protected void logout_btn_Click(object sender, EventArgs e)
-    
     {
         Response.Redirect("login.aspx");
     }
 
     protected void dateDue_tb_TextChanged(object sender, EventArgs e)
     {
-       
+
     }
     protected void AccountID_ddl_SelectedIndexChanged(object sender, EventArgs e)
     {
-        AccountID_lbl.Text = AccountID_ddl.SelectedItem.ToString();
-        AccountID_lbl.Visible = true;
-        accountID_tb.Visible = false;
+        string acctID = AccountID_ddl.SelectedValue.ToString();
+        string oString = "Select * from Acct_Rec_Detail where Acct_ID = @id";
+        SqlCommand oCmd = new SqlCommand(oString, conn);
+        oCmd.Parameters.AddWithValue("@id", acctID);
+        SqlDataReader oReader;
+        try
+        {
+
+            conn.Open();
+            oReader = oCmd.ExecuteReader();
+
+            while (oReader.Read())
+            {
+
+                accountBalance_tb.Text = oReader["Acct_Bal"].ToString();
+                amountDue_tb.Text = oReader["Amt_Due"].ToString();
+                dateDue_tb.Text = oReader["Date_Due"].ToString();
+
+
+            }
+
+        }
+        catch (Exception ex)
+        {
+
+            AccountID_lbl.Text = AccountID_ddl.SelectedItem.ToString();
+            AccountID_lbl.Visible = true;
+            accountID_tb.Visible = false;
+        }
     }
 }

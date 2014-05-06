@@ -65,6 +65,7 @@ public partial class ServicesInformation : System.Web.UI.Page
     }
     protected void Submit_btn_Click(object sender, EventArgs e)
     {
+
         if (ChooseSpecialServices_ddl.SelectedIndex == 1)
         {
             SqlCommand command = new SqlCommand("new_special_service", conn);
@@ -81,5 +82,22 @@ public partial class ServicesInformation : System.Web.UI.Page
 
             conn.Close();
         }
+        if (ChooseSpecialServices_ddl.SelectedIndex == 2)
+        {
+            SqlCommand command = new SqlCommand("delete_Special_Services", conn);
+
+            command.CommandType = CommandType.StoredProcedure;
+
+            command.Parameters.AddWithValue("@Service_ID", ServiceID_lbl.Text.ToString());
+
+
+
+            conn.Open();
+
+            command.ExecuteNonQuery();
+
+            conn.Close();
+        }
     }
+
 }
