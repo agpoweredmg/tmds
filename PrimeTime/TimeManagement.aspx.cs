@@ -98,8 +98,16 @@ public partial class TimeManagment : System.Web.UI.Page
     {
         Response.Redirect("Login.aspx");
     }
-    protected void back_btn_Click(object sender, EventArgs e)
-    {
 
+    protected void home_btn_Click(object sender, EventArgs e)
+    {
+        if (Convert.ToBoolean(Request.Cookies["cred"]["mgr"]))
+        {
+            Response.Redirect("mgmtTasks.aspx");
+        }
+        else
+        {
+            Response.Redirect("employeeMain.aspx");
+        }
     }
 }

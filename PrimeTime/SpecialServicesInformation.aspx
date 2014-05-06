@@ -87,8 +87,11 @@
         <td class="style3">
             <asp:TextBox ID="ServicePrice_tb" runat="server"></asp:TextBox>
 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 194808614314583a92b44554be9ea22e1bd0e8e2
             <asp:RangeValidator ID="ServicePrice2_rv" runat="server" 
                 ControlToValidate="ServicePrice_tb" 
                 ErrorMessage="Service Price must be between zero and 50,000." 
