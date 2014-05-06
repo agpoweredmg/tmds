@@ -150,8 +150,11 @@
     <br />
     <asp:Button ID="submit_btn" runat="server" BorderColor="Black" BorderStyle="Double"
         Height="38px" Style="text-align: center" Text="Submit" Width="69px" 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> ca7923aa915c1fc234246a83180487faae49ceaa
         onclick="submit_btn_Click" />
 
 

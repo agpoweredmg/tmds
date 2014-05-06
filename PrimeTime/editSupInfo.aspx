@@ -99,7 +99,7 @@
 
                     </th>
                     <th>
-                        <asp:DropDownList ID="choosesupplierid_ddl" runat="server" AutoPostBack="True" 
+                        <asp:DropDownList ID="choosesupplierid_ddl" runat="server" 
                             Visible="False" DataSourceID="SqlDataSource1" 
                             DataTextField="Supplier_Name" DataValueField="Supplier_ID" 
                             onselectedindexchanged="choosesupplierid_ddl_SelectedIndexChanged">

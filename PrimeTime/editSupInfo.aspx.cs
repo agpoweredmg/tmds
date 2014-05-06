@@ -105,7 +105,7 @@ public partial class editSupInfo : System.Web.UI.Page
 
 
         string ID = choosesupplierid_ddl.SelectedValue.ToString();
-        string oString = "Select * from Suppliers where Supplier_ID = @id";
+        string oString = "SELECT * FROM Supplier WHERE Supplier.Supplier_ID = @id";
         SqlCommand oCmd = new SqlCommand(oString, conn);
         oCmd.Parameters.AddWithValue("@id", ID);
         SqlDataReader oReader;
@@ -129,7 +129,7 @@ public partial class editSupInfo : System.Web.UI.Page
                 supplierZip_tb.Text = oReader["Supplier_Zip"].ToString();
 
             }
-
+            conn.Close();
         }
         catch (Exception ex)
         {
